@@ -43,5 +43,31 @@ services:
       meta_server:
         condition: service_healthy
     restart: always
-    command: ./Server --server localhost --port 29200 --players 1 --bet 0 mtg
+    command: ./Server --server localhost --port 29200 --players 2 --bet 0 mtg
 
+  table_2:
+    image: lesserfish/gccg-base:latest
+    network_mode: "service:factory_server"
+    depends_on:
+      meta_server:
+        condition: service_healthy
+    restart: always
+    command: ./Server --server localhost --port 29201 --players 2 --bet 5 mtg
+
+  table_3:
+    image: lesserfish/gccg-base:latest
+    network_mode: "service:factory_server"
+    depends_on:
+      meta_server:
+        condition: service_healthy
+    restart: always
+    command: ./Server --server localhost --port 29202 --players 2 --bet 10 mtg
+
+  table_4:
+    image: lesserfish/gccg-base:latest
+    network_mode: "service:factory_server"
+    depends_on:
+      meta_server:
+        condition: service_healthy
+    restart: always
+    command: ./Server --server localhost --port 29203 --players 2 --bet 20 mtg
