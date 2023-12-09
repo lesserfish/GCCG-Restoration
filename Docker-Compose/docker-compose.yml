@@ -1,0 +1,23 @@
+version: '3'
+services:
+  server-factory:
+    image: lesserfish/gccg-base:latest
+    ports:
+      - "29101:29101"
+    networks:
+      - gccg-network
+    working_dir: /server
+    command: ./Server factory-mtg
+
+  server-meta:
+    image: lesserfish/gccg-base:latest
+    ports:
+      - "29100:29100"
+    networks:
+      - gccg-network
+    working_dir: /server
+    command: ./Server beta-mtg
+
+networks:
+  gccg-network:
+    driver: bridge

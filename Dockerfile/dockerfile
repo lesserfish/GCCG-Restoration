@@ -19,3 +19,5 @@ RUN wget -P /server/ http://gccg.sourceforge.net/modules/gccg-core-1.0.10.tgz \
 
 # Install gccg and MTG
 RUN ./gccg_package install client fonts linux-i386 mtg server mtg-server
+COPY scripts/meta-server.triggers scripts/
+COPY scripts/meta-server.functions scripts/
