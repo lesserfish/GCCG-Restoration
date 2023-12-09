@@ -5,6 +5,8 @@ services:
     image: lesserfish/gccg-base:latest
     ports:
       - "29101:29101"
+      - "29100:29100"
+      - "29200-29299:29200-29299"
     healthcheck:
       test: ["CMD", "netcat", "-z", "-w", "5", "localhost", "29101"]
       interval: 30s
@@ -17,8 +19,7 @@ services:
 
   meta_server:
     image: lesserfish/gccg-base:latest
-    ports:
-      - "29100:29100"
+    network_mode: "service:factory_server"
     depends_on:
       factory_server:
         condition: service_healthy
@@ -37,30 +38,10 @@ services:
   
   table_1:
     image: lesserfish/gccg-base:latest
-    ports:
-      - 29200:29200
+    network_mode: "service:factory_server"
     depends_on:
       meta_server:
         condition: service_healthy
     restart: always
-    command: ./Server --server meta_server --port 29200 --players 2 --bet 0 mtg
+    command: ./Server --server localhost --port 29200 --players 1 --bet 0 mtg
 
-  table_2:
-    image: lesserfish/gccg-base:latest
-    ports:
-      - 29201:29201
-    depends_on:
-      meta_server:
-        condition: service_healthy
-    restart: always
-    command: ./Server --server meta_server --port 29201 --players 2 --bet 5 mtg
-
-  table_3:
-    image: lesserfish/gccg-base:latest
-    ports:
-      - 29202:29202
-    depends_on:
-      meta_server:
-        condition: service_healthy
-    restart: always
-    command: ./Server --server meta_server --port 29202 --players 2 --bet 10 mtg
