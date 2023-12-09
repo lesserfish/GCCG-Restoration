@@ -7,6 +7,7 @@ RUN dpkg --add-architecture i386
 RUN apt update \
     && apt install -y \
         wget \
+        netcat \
         libsdl1.2debian:i386 \
         libsdl-image1.2:i386 \
         libsdl-ttf2.0-0:i386 \

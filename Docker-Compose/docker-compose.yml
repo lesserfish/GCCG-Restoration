@@ -1,22 +1,36 @@
 version: '3'
 services:
-  server-factory:
+  factory-server:
     image: lesserfish/gccg-base:latest
     ports:
       - "29101:29101"
     networks:
       - gccg-network
-    working_dir: /server
+    healthcheck:
+      test: ["netcat", "-z", "-w", "5", "localhost", "20101"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    restart: always
     command: ./Server factory-mtg
 
-  server-meta:
+  meta-server:
     image: lesserfish/gccg-base:latest
     ports:
       - "29100:29100"
     networks:
       - gccg-network
-    working_dir: /server
-    command: ./Server beta-mtg
+    depends_on:
+      factory-server:
+        condition: service_healthy
+    healthcheck:
+      test: ["netcat", "-z", "-w", "5", "localhost", "20100"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    restart: always
+
+    command: ./Server meta-mtg
 
 networks:
   gccg-network:
