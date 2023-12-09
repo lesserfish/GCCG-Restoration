@@ -31,7 +31,7 @@ trigger "init" "" code
 
   execute("common.include");
 
-  factory.server_name="factory-server";
+  factory.server_name="factory_server";
 
   tables=(,);
   draft.tables=(,);
