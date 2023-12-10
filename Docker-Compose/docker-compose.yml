@@ -14,7 +14,7 @@ services:
       retries: 3
     restart: always
     working_dir: /mtg
-    command: bash -c "cp -nr /server/* /mtg/ && ./Server factory-mtg"
+    command: bash -c "cp -nr /server/* /mtg/ && ./ccg_server --load factory-server.triggers mtg.xml"
     volumes: 
       - ./mtg:/mtg
 
@@ -31,7 +31,7 @@ services:
       retries: 3
     restart: always
     working_dir: /mtg
-    command: ./Server meta-mtg
+    command: ./ccg_server --load meta-server.triggers mtg.xml
     volumes: 
       - ./mtg:/mtg
 
@@ -48,7 +48,7 @@ services:
         condition: service_healthy
     restart: always
     working_dir: /mtg
-    command: ./Server --server localhost --port 29200 --players 2 --bet 0 mtg
+    command: ./ccg_server --server localhost --port 29200 --players 2 --bet 0 --load server.triggers mtg.xml
 
 
   table_2:
@@ -61,7 +61,7 @@ services:
         condition: service_healthy
     restart: always
     working_dir: /mtg
-    command: ./Server --server localhost --port 29201 --players 2 --bet 5 mtg
+    command: ./ccg_server --server localhost --port 29201 --players 2 --bet 5 --load server.triggers mtg.xml
 
   table_3:
     image: lesserfish/gccg-base:latest
@@ -73,7 +73,7 @@ services:
         condition: service_healthy
     restart: always
     working_dir: /mtg
-    command: ./Server --server localhost --port 29202 --players 2 --bet 10 mtg
+    command: ./ccg_server --server localhost --port 29202 --players 2 --bet 10 --load server.triggers mtg.xml
 
   table_4:
     image: lesserfish/gccg-base:latest
@@ -85,4 +85,4 @@ services:
         condition: service_healthy
     restart: always
     working_dir: /mtg
-    command: ./Server --server localhost --port 29203 --players 2 --bet 20 mtg
+    command: ./ccg_server --server localhost --port 29203 --players 2 --bet 20 --load server.triggers mtg.xml
