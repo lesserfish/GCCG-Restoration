@@ -13,9 +13,9 @@ services:
       timeout: 10s
       retries: 3
     restart: always
-    command: ./Server factory-mtg
+    command: bash -c "cp -nr /server/* /mtg/ && /mtg/Server factory-mtg"
     volumes: 
-      - ./factory_data:/server/save
+      - ./mtg:/mtg
 
   meta_server:
     image: lesserfish/gccg-base:latest
@@ -29,9 +29,9 @@ services:
       timeout: 10s
       retries: 3
     restart: always
-    command: ./Server meta-mtg
+    command: /mtg/Server meta-mtg
     volumes: 
-      - ./meta_data:/server/save
+      - ./mtg:/mtg
 
 
   # Tables: 
@@ -39,35 +39,44 @@ services:
   table_1:
     image: lesserfish/gccg-base:latest
     network_mode: "service:factory_server"
+    volumes: 
+      - ./mtg:/mtg
     depends_on:
       meta_server:
         condition: service_healthy
     restart: always
-    command: ./Server --server localhost --port 29200 --players 2 --bet 0 mtg
+    command: /mtg/Server --server localhost --port 29200 --players 2 --bet 0 mtg
+
 
   table_2:
     image: lesserfish/gccg-base:latest
     network_mode: "service:factory_server"
+    volumes: 
+      - ./mtg:/mtg
     depends_on:
       meta_server:
         condition: service_healthy
     restart: always
-    command: ./Server --server localhost --port 29201 --players 2 --bet 5 mtg
+    command: /mtg/Server --server localhost --port 29201 --players 2 --bet 5 mtg
 
   table_3:
     image: lesserfish/gccg-base:latest
     network_mode: "service:factory_server"
+    volumes: 
+      - ./mtg:/mtg
     depends_on:
       meta_server:
         condition: service_healthy
     restart: always
-    command: ./Server --server localhost --port 29202 --players 2 --bet 10 mtg
+    command: /mtg/Server --server localhost --port 29202 --players 2 --bet 10 mtg
 
   table_4:
     image: lesserfish/gccg-base:latest
     network_mode: "service:factory_server"
+    volumes: 
+      - ./mtg:/mtg
     depends_on:
       meta_server:
         condition: service_healthy
     restart: always
-    command: ./Server --server localhost --port 29203 --players 2 --bet 20 mtg
+    command: /mtg/Server --server localhost --port 29203 --players 2 --bet 20 mtg
