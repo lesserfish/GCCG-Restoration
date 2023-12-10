@@ -13,7 +13,8 @@ services:
       timeout: 10s
       retries: 3
     restart: always
-    command: bash -c "cp -nr /server/* /mtg/ && /mtg/Server factory-mtg"
+    working_dir: /mtg
+    command: bash -c "cp -nr /server/* /mtg/ && ./Server factory-mtg"
     volumes: 
       - ./mtg:/mtg
 
@@ -29,7 +30,8 @@ services:
       timeout: 10s
       retries: 3
     restart: always
-    command: /mtg/Server meta-mtg
+    working_dir: /mtg
+    command: ./Server meta-mtg
     volumes: 
       - ./mtg:/mtg
 
@@ -45,7 +47,8 @@ services:
       meta_server:
         condition: service_healthy
     restart: always
-    command: /mtg/Server --server localhost --port 29200 --players 2 --bet 0 mtg
+    working_dir: /mtg
+    command: ./Server --server localhost --port 29200 --players 2 --bet 0 mtg
 
 
   table_2:
@@ -57,7 +60,8 @@ services:
       meta_server:
         condition: service_healthy
     restart: always
-    command: /mtg/Server --server localhost --port 29201 --players 2 --bet 5 mtg
+    working_dir: /mtg
+    command: ./Server --server localhost --port 29201 --players 2 --bet 5 mtg
 
   table_3:
     image: lesserfish/gccg-base:latest
@@ -68,7 +72,8 @@ services:
       meta_server:
         condition: service_healthy
     restart: always
-    command: /mtg/Server --server localhost --port 29202 --players 2 --bet 10 mtg
+    working_dir: /mtg
+    command: ./Server --server localhost --port 29202 --players 2 --bet 10 mtg
 
   table_4:
     image: lesserfish/gccg-base:latest
@@ -79,4 +84,5 @@ services:
       meta_server:
         condition: service_healthy
     restart: always
-    command: /mtg/Server --server localhost --port 29203 --players 2 --bet 20 mtg
+    working_dir: /mtg
+    command: ./Server --server localhost --port 29203 --players 2 --bet 20 mtg
