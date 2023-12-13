@@ -8,7 +8,7 @@ services:
       - "29100:29100"
       - "29200-29299:29200-29299"
     healthcheck:
-      test: ["CMD", "netcat", "-z", "-w", "5", "localhost", "29101"]
+      test: ["CMD", "netcat", "-z", "-w", "5", "mtg.lesser.fish", "29101"]
       interval: 30s
       timeout: 10s
       retries: 3
@@ -25,7 +25,7 @@ services:
       factory_server:
         condition: service_healthy
     healthcheck:
-      test: ["CMD", "netcat", "-z", "-w", "5", "localhost", "29100"]
+      test: ["CMD", "netcat", "-z", "-w", "5", "mtg.lesser.fish", "29100"]
       interval: 30s
       timeout: 10s
       retries: 3
