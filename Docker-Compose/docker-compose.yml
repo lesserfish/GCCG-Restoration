@@ -16,7 +16,7 @@ services:
     working_dir: /mtg
     command: bash -c "cp -nr /server/* /mtg/ && ./ccg_server --load factory-server.triggers mtg.xml"
     volumes: 
-      - ./mtg:/mtg
+      - ../mtg:/mtg
 
   meta_server:
     image: lesserfish/gccg-base:latest
@@ -33,7 +33,7 @@ services:
     working_dir: /mtg
     command: ./ccg_server --load meta-server.triggers mtg.xml
     volumes: 
-      - ./mtg:/mtg
+      - ../mtg:/mtg
 
 
   # Tables: 
@@ -42,7 +42,7 @@ services:
     image: lesserfish/gccg-base:latest
     network_mode: "service:factory_server"
     volumes: 
-      - ./mtg:/mtg
+      - ../mtg:/mtg
     depends_on:
       meta_server:
         condition: service_healthy
@@ -55,7 +55,7 @@ services:
     image: lesserfish/gccg-base:latest
     network_mode: "service:factory_server"
     volumes: 
-      - ./mtg:/mtg
+      - ../mtg:/mtg
     depends_on:
       meta_server:
         condition: service_healthy
@@ -67,7 +67,7 @@ services:
     image: lesserfish/gccg-base:latest
     network_mode: "service:factory_server"
     volumes: 
-      - ./mtg:/mtg
+      - ../mtg:/mtg
     depends_on:
       meta_server:
         condition: service_healthy
@@ -79,7 +79,7 @@ services:
     image: lesserfish/gccg-base:latest
     network_mode: "service:factory_server"
     volumes: 
-      - ./mtg:/mtg
+      - ../mtg:/mtg
     depends_on:
       meta_server:
         condition: service_healthy
