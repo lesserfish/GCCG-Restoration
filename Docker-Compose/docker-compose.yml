@@ -38,7 +38,7 @@ services:
 
   # Tables: 
   
-  table_1:
+  table_1a:
     image: lesserfish/gccg-base:latest
     network_mode: "service:factory_server"
     volumes: 
@@ -48,10 +48,9 @@ services:
         condition: service_healthy
     restart: always
     working_dir: /mtg
-    command: ./ccg_server --server localhost --port 29200 --players 2 --bet 0 --load server.triggers mtg.xml
+    command: ./ccg_server --server localhost --port 29200 --players 1 --bet 0 --load server.triggers mtg.xml
 
-
-  table_2:
+  table_1b:
     image: lesserfish/gccg-base:latest
     network_mode: "service:factory_server"
     volumes: 
@@ -61,7 +60,33 @@ services:
         condition: service_healthy
     restart: always
     working_dir: /mtg
-    command: ./ccg_server --server localhost --port 29201 --players 2 --bet 5 --load server.triggers mtg.xml
+    command: ./ccg_server --server localhost --port 29201 --players 1 --bet 0 --load server.triggers mtg.xml
+
+
+  table_2a:
+    image: lesserfish/gccg-base:latest
+    network_mode: "service:factory_server"
+    volumes: 
+      - ../mtg:/mtg
+    depends_on:
+      meta_server:
+        condition: service_healthy
+    restart: always
+    working_dir: /mtg
+    command: ./ccg_server --server localhost --port 29202 --players 2 --bet 0 --load server.triggers mtg.xml
+
+  table_2b:
+    image: lesserfish/gccg-base:latest
+    network_mode: "service:factory_server"
+    volumes: 
+      - ../mtg:/mtg
+    depends_on:
+      meta_server:
+        condition: service_healthy
+    restart: always
+    working_dir: /mtg
+    command: ./ccg_server --server localhost --port 29203 --players 2 --bet 0 --load server.triggers mtg.xml
+
 
   table_3:
     image: lesserfish/gccg-base:latest
@@ -73,7 +98,7 @@ services:
         condition: service_healthy
     restart: always
     working_dir: /mtg
-    command: ./ccg_server --server localhost --port 29202 --players 2 --bet 10 --load server.triggers mtg.xml
+    command: ./ccg_server --server localhost --port 29204 --players 3 --bet 0 --load server.triggers mtg.xml
 
   table_4:
     image: lesserfish/gccg-base:latest
@@ -85,4 +110,29 @@ services:
         condition: service_healthy
     restart: always
     working_dir: /mtg
-    command: ./ccg_server --server localhost --port 29203 --players 2 --bet 20 --load server.triggers mtg.xml
+    command: ./ccg_server --server localhost --port 29205 --players 4 --bet 0 --load server.triggers mtg.xml
+
+  table_bet_2a:
+    image: lesserfish/gccg-base:latest
+    network_mode: "service:factory_server"
+    volumes: 
+      - ../mtg:/mtg
+    depends_on:
+      meta_server:
+        condition: service_healthy
+    restart: always
+    working_dir: /mtg
+    command: ./ccg_server --server localhost --port 29206 --players 2 --bet 5 --load server.triggers mtg.xml
+
+  table_bet_2b:
+    image: lesserfish/gccg-base:latest
+    network_mode: "service:factory_server"
+    volumes: 
+      - ../mtg:/mtg
+    depends_on:
+      meta_server:
+        condition: service_healthy
+    restart: always
+    working_dir: /mtg
+    command: ./ccg_server --server localhost --port 29207 --players 2 --bet 10 --load server.triggers mtg.xml
+
