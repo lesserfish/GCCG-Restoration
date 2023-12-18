@@ -1,0 +1,149 @@
+#
+# IsCockatriceDeck(file content) - Return 1 if the file is a Cockatrice deck.
+#
+def IsCockatriceDeck
+{
+  push(i);
+  i=0;
+  return(1);
+  for(i)(ARG)
+  {
+    i=trim(i);
+    if(length(i)>0 && (left(i,1)!="<" || right(i,1)!=">"))
+      return(0);
+  }
+  i=pop();
+}
+
+#
+# ImportCockatriceDeck(file content) - Importer for Cockatrice deck.
+#
+def ImportCockatriceDeck
+{
+  import.part="deck";
+  ImportReaderLineByLine(ARG,"None","TrimSpaces","None","CockatriceFormatParser");
+}
+
+#
+# CockatriceFormatParser(text line) - Text line parser for Cockatrice deck.
+#
+def CockatriceFormatParser
+{
+  push(l);
+  push(c);
+  push(n);
+  l=ARG;
+
+  if(left(l,12)=='<zone name="')
+    import.part=ReverseZoneName((split(l,'"'))[1]);
+  else if(l=='</zone>')
+    import.part="deck";
+  else if(left(l,14)=='<card number="')
+  {
+    l=substr(l,14);
+    n=find('"',l);
+    if(n!=NULL)
+      n=toint(left(l,n));
+      
+    c=find(' name="',l);
+    if(c!=NULL)
+    {
+      l=substr(l,c+7);
+      if(right(l,3)=='"/>')
+        c=left(l,length(l)-3);
+      else
+        c=NULL;
+    }
+
+    if(c==NULL || n==NULL || n<1)
+      ImportErrorAdd(ARG);
+    else
+    {
+      c=RecognizeCard(c);
+      if(c==NULL)
+        ImportErrorAdd(ARG);
+      else
+        ImportAdd(n,c);
+    }
+  }
+  n=pop();
+  c=pop();
+  l=pop();
+}
+
+#
+# ExportCockatriceDeck(deck name,deck structure) - Convert a deck to
+#   XML file compliant with Cockatrice format.
+#
+def ExportCockatriceDeck
+{
+  push(x);
+  push(p);
+  push(c);
+  
+  x=('<?xml version="1.0" encoding="ISO-8859-1"?>',
+  '<cockatrice_deck version="1">',
+  '    <deckname>'+ARG[0]+'</deckname>',
+  '    <comments></comments>');
+  
+  for(p)(keys(ARG[1]))
+    x=x+('    <zone name="'+ZoneName(p)+'">',)
+       +forall("'        <card number=\"'+#[1]+'\" price=\"0\" name=\"'+#[0]+'\"/>'",
+                   sort(CountNameOrderedPairs(SelectByAttr(ARG[1]{p},"type","Land"))))
+       +forall("'        <card number=\"'+#[1]+'\" price=\"0\" name=\"'+#[0]+'\"/>'",
+                   sort(CountNameOrderedPairs(InverseSelectByAttr(SelectByAttr(ARG[1]{p},"type","Creature"),"type","Land"))))
+       +forall("'        <card number=\"'+#[1]+'\" price=\"0\" name=\"'+#[0]+'\"/>'",
+                   sort(CountNameOrderedPairs(InverseSelectByAttr(InverseSelectByAttr(ARG[1]{p},"type","Creature"),"type","Land"))))
+       +('    </zone>',);
+  
+  x=x+('</cockatrice_deck>',);
+  return(x);
+  c=pop();
+  p=pop();
+  x=pop();
+}
+
+#
+# CockatriceFormatSuffix() - Return filename suffix .cod for Cockatrice format.
+#
+def CockatriceFormatSuffix
+{
+  return(".cod");
+}
+
+#
+# CountNameOrderedPairs(list of card numbers) - Return list of cards in (name, number) list format.
+#
+def CountNameOrderedPairs
+{
+  push(c);
+  c=unique(sort(ARG));
+  return(forall("(name(#),count(#,ARG))",c));
+  c=pop();
+}
+
+#
+# def ZoneName(name) - Return translation of zone name.
+#
+def ZoneName
+{
+  if(ARG=="deck")
+    return("main");
+  else if(ARG=="sideboard")
+    return("side");
+  else
+    return(ARG);
+}
+
+#
+# def ReverseZoneName(name) - Return reverse translation of zone name.
+#
+def ReverseZoneName
+{
+  if(ARG=="main")
+    return("deck");
+  else if(ARG=="side")
+    return("sideboard");
+  else
+    return(ARG);
+}

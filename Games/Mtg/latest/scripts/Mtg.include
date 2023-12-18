@@ -1,0 +1,1906 @@
+#
+# VARIABLES
+# =========
+
+HELP{"chat"}{"startdraft"}[3]=HELP{"chat"}{"startdraft"}[3]+" Available cubes for MtG are Legacy, Vintage and Legendary. Therefore, accepted syntaxes are '/startdraft n legacy cube', '/startdraft n vintage cube' and '/startdraft n legendary cube'.";
+
+# Morph and manifest overlays; the format is different from Mtg-server.include's for ease of use, but the name of the variable is the same for consistency.
+special_cardback=(870,871);
+
+#these exist so the format filters don't get clogged with page after page of basic lands from early sets
+MIN_STANDARD_AGE=93;
+MIN_MODERN_AGE=42;
+MIN_CARD_NUMBER=1001;
+
+# Size of columns of the decklist in pixels.
+DECKBOX_SIZE=(20,225,120);
+# Number of cards in hand.
+HANDSIZE=7;
+# keep-tapped text
+STRING_KEEP_TAPPED="{T}";
+# keep-untapped text
+STRING_KEEP_UNTAPPED="{UT}";
+# minor version number for filter algorithm
+BOOK_FILTER_VERSION_MINOR=".1";
+# Default export format.
+DEFAULT_EXPORT_FORMAT="Gccg";
+# default book sorting criteria.
+BOOK_DEFAULT_SORT=("[age]","[color]","[name]");
+# if imprint>0, next card played will be imprinted
+imprint=0;
+# Servers
+if(server.name=="NO.DEFAULT.SERVER.FOR.THIS.GAME")
+  server.name="gccg.bornano.fr";
+
+# lobby background color
+BGCOLOR=(98,52,23);
+# lobby foreground color
+FGCOLOR=(248,201,111);
+# lobby border color
+BRCOLOR=(175,160,75);
+# in-game background color
+BGCOLOR2=(98,52,23);
+# in-game foreground color
+FGCOLOR2=(88,42,11);
+# in-game border color
+BRCOLOR2=(175,160,75);
+# item text color
+TXCOLOR=(248,201,111);
+# command text color
+INCOLOR=(255,255,255);
+# book background
+BKBGCOLOR=(98,52,23);
+# book border
+BKBRCOLOR=(248,201,111);
+
+if(!rarity.display)
+  rarity.display = (,);
+rarity.display{"L"}="";
+rarity.display{"C"}="";
+rarity.display{"U"}="{154,154,154}";
+rarity.display{"R"}="{gold}";
+rarity.display{"M"}="{red}";
+rarity.display{"P"}="{154,77,154}";
+rarity.display{"S"}="{154,77,154}";
+
+if(!port)
+  port=29100;
+
+# Products following default naming scheme are now handled automatically,
+# so only exceptional cases need listing here (and none currently exist)
+product.image=(,);
+#product.image{"Limited Edition Beta booster"}="Beta_booster.jpg";
+#product.image{"Limited Edition Beta starter"}="Beta_starter.jpg";
+
+game.bindings=(
+  ("KeyControlKey0","{orange}Cleanup step.",),
+  ("KeyControlKey1","{orange}Upkeep step.",),
+  ("KeyControlKey2","{orange}Draw step.",),
+  ("KeyControlKey3","{orange}Main phase.",),
+  ("KeyControlKey4","{orange}Beginning of combat step.",),
+  ("KeyControlKey5","{orange}Declare attackers step.",),
+  ("KeyControlKey6","{orange}Declare blockers step.",),
+  ("KeyControlKey7","{orange}Combat damage step.",),
+  ("KeyControlKey8","{orange}End of combat step.",),
+  ("KeyControlKey9","{orange}End step.",),);
+
+# MENUS
+# =====
+#if(!VersionCompare(VERSION,"0.9.7"))
+  GAME_MENU{"Main Menu - Chat"}=(
+    (1,"Show/Hide {blue}Schemes","","ToggleSchemes()"),
+    (1,"Show/Hide {blue}Planes","","TogglePlanes()"),
+    (1,"Show/Hide {blue}Hero's Path","","ToggleChallenge()"),
+  );
+  GAME_MENU{"Main Menu - Offline"}=GAME_MENU{"Main Menu - Chat"};
+
+GAME_MENU{"Main Menu - Play"}=(
+ (1,"{hr}","",""),
+ (1,"Play Colorless Token","",'Send("Transfer",(1,("out.of.play",1),("play",0)))'),
+ (1,"Play White Token","",'Send("Transfer",(1,("out.of.play",6),("play",0)))'),
+ (1,"Play Blue Token","",'Send("Transfer",(1,("out.of.play",3),("play",0)))'),
+ (1,"Play Black Token","",'Send("Transfer",(1,("out.of.play",2),("play",0)))'),
+ (1,"Play Red Token","",'Send("Transfer",(1,("out.of.play",5),("play",0)))'),
+ (1,"Play Green Token","",'Send("Transfer",(1,("out.of.play",4),("play",0)))'),
+ (1,"{hr}","",""),
+ (1,"Select Token Type...","","TokenSubmenu()"),
+ (1,"Select Transformed Card...","","DFCSubmenu()"),
+ (1,"Select Emblem Type...","","EmblemSubmenu()"),
+ (1,"{hr}","",""),
+ (1,"Play Jitte Counter","",'Send("Transfer",(1,("out.of.play",7),("play",0)))'),
+ (1,"Play Storm Counter","",'Send("Transfer",(1,("out.of.play",8),("play",0)))'),
+ (1,"Play Poison Counter","",'Send("Transfer",(1,("out.of.play",999),("play",0)))'),
+ (1,"{hr}","",""),
+ (1,"Look at your sideboard","",'search.source=sideboard;Send("SearchDeck",sideboard)'),
+ );
+
+GAME_MENU{"Current Deck Menu"}=(
+ (1,"Add sideboard","","EditAddSideboard()"),
+ );
+
+GAME_MENU{"Tap a card"}=(
+ (1,"Tap/Untap","middle click",""),
+ (1,"Tap and keep tapped","","SetStayTapped()"),
+ (1,"Keep untapped","","SetStayUntapped()"),
+ (1,"Turn around","",'Send("Rotate",(object.number,((card_data(object.number))[1]+180)%360))'),
+ (1,"Flip over","Ctrl+F",""),
+);
+
+GAME_MENU{"A Card"}=(
+ ("1","Imprint/Equip","Ctrl+I",""),
+ );
+
+FILTER_OPTIONS=(
+ ("Sealed deck","first(book_entry(card.book,#))",(1,"[color]","[name]")),
+ "{hr}",
+ ("Common","find('C',Attr('rarity',#))!=NULL",(1,"[age]","[color]","[name]")),
+ ("Uncommon","find('U',Attr('rarity',#))!=NULL",(1,"[age]","[color]","[name]")),
+ ("Rare","find('R',Attr('rarity',#))!=NULL",(1,"[age]","[color]","[name]")),
+ ("Mythic","find('M',Attr('rarity',#))!=NULL",(1,"[age]","[color]","[name]")),
+ "{hr}",
+ ("White","find('White',Attr('color',#))!=NULL",(1,"[age]","[color]","[name]")),
+ ("Blue","find('Blue',Attr('color',#))!=NULL",(1,"[age]","[color]","[name]")),
+ ("Black","find('Black',Attr('color',#))!=NULL",(1,"[age]","[color]","[name]")),
+ ("Red","find('Red',Attr('color',#))!=NULL",(1,"[age]","[color]","[name]")),
+ ("Green","find('Green',Attr('color',#))!=NULL",(1,"[age]","[color]","[name]")),
+ ("Multicolored","find(' ',Attr('color',#))!=NULL",(1,"[age]","[color]","[name]")),
+ ("Colorless","find(Attr('color',#),'ArtifactLandColorless')!=NULL",(1,"[age]","[name]")),
+ "{hr}",
+ ("Legendary","find('Legendary',Attr('type',#))!=NULL",(1,"[color]","[name]")),
+ ("Artifacts","find('Artifact',Attr('type',#))!=NULL",(1,"[age]","[name]")),
+ ("Creatures","find('Creature',Attr('type',#))!=NULL",(1,"[age]","[color]","[name]")),
+ ("Enchantments","find('Enchant',Attr('type',#))!=NULL",(1,"[age]","[color]","[name]")),
+ ("Lands","find('Land',Attr('type',#))!=NULL",(1,"[age]","[name]")),
+ ("Instants","find('Instant',Attr('type',#))!=NULL",(1,"[age]","[color]","[name]")),
+ ("Sorceries","find('Sorcery',Attr('type',#))!=NULL",(1,"[age]","[color]","[name]")),
+ ("Planeswalkers","find('Planeswalker',Attr('type',#))!=NULL",(1,"[color]","[name]")),
+ ("Auras","find('Aura',Attr('subtype',#))!=NULL",(1,"[age]","[color]","[name]")),
+ ("Equipment","find('Equipment',Attr('subtype',#))!=NULL",(1,"[age]","[color]","[name]")),
+ "{hr}",
+ ("Vintage Restricted","TypeRestricted('Vintage',#)",(1,"[age]","[color]","[name]")),
+ ("Legacy Banned","!TypeLegal('Legacy',#)",(1,"[age]","[color]","[name]")),
+ ("Commander Banned","!TypeLegal('Commander',#)",(1,"[age]","[color]","[name]")),
+ ("Modern Legal","TypeLegal('Modern',#)&&age(#)>=MIN_MODERN_AGE",(1,"[age]","[color]","[name]")),
+ ("Standard Legal","TypeLegal('Standard',#)&&age(#)>=MIN_STANDARD_AGE",(1,"[age]","[color]","[name]"))
+);
+
+FILTER_FUNCTIONS=(,);
+#FILTER_FUNCTIONS{"mana"}=("i","converted mana cost");
+FILTER_FUNCTIONS{"pt"}=("s","power and toughness");
+
+GAME_ATTRIBUTES=(,);
+GAME_ATTRIBUTES{"power"}="i";
+GAME_ATTRIBUTES{"p"}="a:power";
+GAME_ATTRIBUTES{"toughness"}="i";
+GAME_ATTRIBUTES{"t"}="a:toughness";
+GAME_ATTRIBUTES{"cmc"}="i";
+GAME_ATTRIBUTES{"mana"}="a:cmc";
+GAME_ATTRIBUTES{"cn"}="i";
+GAME_ATTRIBUTES{"permanent"}="i";
+GAME_ATTRIBUTES{"coloridentity"}="i";
+
+# FILTERS
+# =======
+
+#
+# mana(cost string) - Helper function to filter_mana(). Return the
+#   converted mana cost for a single cost string.
+# No longer needed, CMC is now included as a primitive in card data.
+#
+#def mana
+#{
+#  return(sum(forall("toint(#)",split(strreplace(tr(ARG,"RGBUW","1.0"),"21.0","2"),"{"))));
+#}
+
+#
+# filter_mana(card number) - Return converted mana cost of the card.
+#
+#def filter_mana
+#{
+#  if((cmc=Attr("cost",ARG)) == "")
+#    return(0);
+#  else
+#    return(min(apply("mana",split(cmc,"//"))));
+#}
+
+#
+# filter_pt(card number) - Return slash-separated power and toughness.
+#
+def filter_pt
+{
+  if((pt=Attr("power",ARG)+"/"+Attr("toughness",ARG)) == "/")
+    return("");
+  else
+    return(pt);
+}
+
+# FUNCTIONS
+# =========
+
+
+#
+# EditAddSideboard() - Add sideboard to the current deck.
+#
+def EditAddSideboard
+{
+  AddDeckPart("sideboard");
+}
+
+#
+# EditRemoveSideboard() - Remove sideboard from the current deck if exist.
+#
+def EditRemoveSideboard
+{
+  RemoveDeckPart("sideboard");
+}
+
+#
+# NewDeck() - Game specific creation of empty deck structure.
+#
+def NewDeck
+{
+  return((("deck",(,)),));
+}
+
+#
+# InitializeHook() - Game specific program startup procedure.
+#
+def InitializeHook
+{
+#  if(!VersionCompare(VERSION,"0.9.7"))
+#  {
+    planes.book=create_book(w(5),h(190),obj=obj+1,"Plane Browser",3,3,500);
+    book_set_index(planes.book,sort_by(("[name]",),seq(501,586),0));
+    set_attr(planes.book,"ontop",Z_COLLECTION);
+    set_bgcolor(planes.book,BKBGCOLOR);
+    set_fgcolor(planes.book,BKTXCOLOR);
+    set_textcolor(planes.book,BKBRCOLOR);
+    book_set_page(planes.book,0);
+    
+    schemes.book=create_book(w(5),h(165),obj=obj+1,"Scheme Browser",2,4,700);
+    book_set_index(schemes.book,sort_by(("[name]",),seq(701,750),0));
+    set_attr(schemes.book,"ontop",Z_COLLECTION);
+    set_bgcolor(schemes.book,BKBGCOLOR);
+    set_fgcolor(schemes.book,COLORS{'BLACK'});
+    set_textcolor(schemes.book,BKBRCOLOR);
+    book_set_page(schemes.book,0);
+    
+    challenge.book=create_book(w(70),h(215),obj=obj+1,"Hero's Path",3,5,800);
+    book_set_index(challenge.book,("Heroes",)+seq(801,819)+(869,820,821,"Hydra",)+seq(822,836)+("Horde",)+seq(838,852)+("God",)+seq(854,868));
+    set_attr(challenge.book,"ontop",Z_COLLECTION);
+    set_bgcolor(challenge.book,BKBGCOLOR);
+    set_fgcolor(challenge.book,COLORS{'VIOLET'});
+    set_textcolor(challenge.book,BKBRCOLOR);
+    book_set_page(challenge.book,0);
+    
+    books = books+(planes.book,schemes.book,challenge.book);
+#  }
+}
+
+#
+# InitializeGame() - Game specific variable setting when entering play mode.
+#
+def InitializeGame
+{
+}
+
+#
+# StartGame() - What to do when game begins.
+#
+def StartGame
+{
+  Send("UploadDeck",decks{deck.name});
+  Send("ShuffleDeck",deck);
+  if(has_entry('exile',decks{deck.name}))
+  {
+    if(min(decks{deck.name}{'exile'})>822)
+      Send("Score",(me,toint(score[me])*2));
+  }
+}
+
+#
+# EndGame() - Game over.
+#
+def EndGame
+{
+}
+
+#
+# ShowGameSpecificHelp() - Additional help text.
+#
+def ShowGameSpecificHelp
+{
+}
+
+def TogglePlanes
+{
+  set_attr(planes.book,"visible",!get_attr(planes.book,"visible"));
+  raise(planes.book);
+}
+
+def ToggleSchemes
+{
+  set_attr(schemes.book,"visible",!get_attr(schemes.book,"visible"));
+  raise(schemes.book);
+}
+
+def ToggleChallenge
+{
+  set_attr(challenge.book,"visible",!get_attr(challenge.book,"visible"));
+  raise(challenge.book);
+}
+
+#
+# MOUSE
+# =====
+
+#
+# MouseLeftClickSideboard() - Look at sideboard.
+#
+def MouseLeftClickSideboard
+  PlayKeyControlKeyL();
+
+#
+# MouseLeftClickExile() - Look at exile.
+#
+def MouseLeftClickExile
+  PlayKeyControlKeyL();
+
+#
+# MouseWheelPlaneBrowser(dir) - Scroll through planes (0=up, 1=down).
+#
+def MouseWheelPlaneBrowser
+{
+  if(ARG)
+    KeyPageDown();
+  else
+    KeyPageUp();
+}
+
+#
+# MouseWheelSchemeBrowser(dir) - Scroll through schemes (0=up, 1=down).
+#
+def MouseWheelSchemeBrowser
+{
+  if(ARG)
+    KeyPageDown();
+  else
+    KeyPageUp();
+}
+
+#
+# MouseWheelHerosPath(dir) - Scroll through challenge cards (0=up, 1=down).
+#
+def MouseWheelHerosPath
+{
+  if(ARG)
+    KeyPageDown();
+  else
+    KeyPageUp();
+}
+
+#
+# MouseLeftClickPlaneBrowser() - Remove a card from the planar deck.
+#
+def MouseLeftClickPlaneBrowser
+{
+  raise(object.number);
+  if(deck.name != NULL && card_back(card.number)!=card.number && card.number!=NULL && has_entry("planes",decks{deck.name}))
+    EditDel("planes",card.number);
+}
+
+#
+# MouseLeftClickSchemeBrowser() - Remove a card from the scheme deck.
+#
+def MouseLeftClickSchemeBrowser
+{
+  raise(object.number);
+  if(deck.name != NULL && card_back(card.number)!=card.number && card.number!=NULL && has_entry("schemes",decks{deck.name}))
+    EditDel("schemes",card.number);
+}
+
+#
+# MouseLeftClickHerosPath() - Remove a card from the challenge deck.
+#
+def MouseLeftClickHerosPath
+{
+  push(dp);
+  raise(object.number);
+  if(deck.name != NULL && card_back(card.number)!=card.number && card.number!=NULL)
+  {
+    dp="challenge";
+    if(card.number<822)
+    {
+      dp="exile";
+      if(has_entry("command",decks{deck.name}))
+        dp="command";
+    }
+    if(has_entry(dp,decks{deck.name}))
+      EditDel(dp,card.number);
+  }
+  dp=pop();
+}
+
+#
+# MouseMiddleClickPlaneBrowser() - Add a card to the planar deck.
+#
+def MouseMiddleClickPlaneBrowser
+{
+  raise(object.number);
+  if(deck.name != NULL && card_back(card.number)!=card.number && card.number!=NULL)
+     EditAdd("planes",card.number);
+}
+
+#
+# MouseMiddleClickSchemeBrowser() - Add a card to the scheme deck.
+#
+def MouseMiddleClickSchemeBrowser
+{
+  raise(object.number);
+  if(deck.name != NULL && card_back(card.number)!=card.number && card.number!=NULL)
+    EditAdd("schemes",card.number);
+}
+
+#
+# MouseMiddleClickHerosPath() - Add a card to the challenge deck.
+#
+def MouseMiddleClickHerosPath
+{
+  raise(object.number);
+  if(deck.name != NULL && card_back(card.number)!=card.number && card.number!=NULL)
+    EditAdd(deck.part,card.number);
+}
+
+#
+# MENU FUNCTIONS
+# ==============
+
+def DFCSubmenu 
+{
+  Submenu("Select Transform",(
+   ("{red}Afflicted Deserter -> Werewolf Ransacker","",'Send("Transfer",(1,("out.of.play",146),("play",0)))'),
+   ("Bloodline Keeper -> Lord of Lineage","",'Send("Transfer",(1,("out.of.play",126),("play",0)))'),
+   ("{128,128,128}Chalice of Life -> Chalice of Death","",'Send("Transfer",(1,("out.of.play",147),("play",0)))'),
+   ("Chosen of Markov -> Markov's Servant","",'Send("Transfer",(1,("out.of.play",148),("play",0)))'),
+   ("{blue}Civilized Scholar -> {red}Homicidal Brute","",'Send("Transfer",(1,("out.of.play",127),("play",0)))'),
+   ("{yellow}Cloistered Youth -> {black}Unholy Fiend","",'Send("Transfer",(1,("out.of.play",128),("play",0)))'),
+   ("{green}Daybreak Ranger -> Nightfall Predator","",'Send("Transfer",(1,("out.of.play",129),("play",0)))'),
+   ("{blue}Delver of Secrets -> Insectile Aberration","",'Send("Transfer",(1,("out.of.play",130),("play",0)))'),
+   ("{128,128,128}Elbrus, the Binding Blade -> {black}Withengar Unbound","",'Send("Transfer",(1,("out.of.play",149),("play",0)))'),
+   ("{green}Garruk Relentless -> Garruk, the {black}Veil-Cursed","",'Send("Transfer",(1,("out.of.play",131),("play",0)))'),
+   ("{green}Gatstaf Shepherd -> Gatstaf Howler","",'Send("Transfer",(1,("out.of.play",132),("play",0)))'),
+   ("{green}Grizzled Outcasts -> Krallenhorde Wantons","",'Send("Transfer",(1,("out.of.play",133),("play",0)))'),
+   ("{red}Hanweir Watchkeep -> Bane of Hanweir","",'Send("Transfer",(1,("out.of.play",134),("play",0)))'),
+   ("{red}Hinterland Hermit -> Hinterland Scourge","",'Send("Transfer",(1,("out.of.play",150),("play",0)))'),
+   ("{gold}Huntmaster of the Fells -> Ravager of the Fells","",'Send("Transfer",(1,("out.of.play",151),("play",0)))'),
+   ("{red}Instigator Gang -> Wildblood Pack","",'Send("Transfer",(1,("out.of.play",135),("play",0)))'),
+   ("{red}Kruin Outlaw -> Terror of Kruin Pass","",'Send("Transfer",(1,("out.of.play",136),("play",0)))'),
+   ("{green}Lambholt Elder -> Silverpelt Werewolf","",'Send("Transfer",(1,("out.of.play",152),("play",0)))'),
+   ("{yellow}Loyal Cathar -> {black}Unhallowed Cathar","",'Send("Transfer",(1,("out.of.play",153),("play",0)))'),
+   ("{blue}Ludevic's Test Subject -> Ludevic's Abomination","",'Send("Transfer",(1,("out.of.play",137),("play",0)))'),
+   ("{green}Mayor of Avabruck -> Howlpack Alpha","",'Send("Transfer",(1,("out.of.play",138),("play",0)))'),
+   ("{red}Mondronen Shaman -> Tovolar's Magehunter","",'Send("Transfer",(1,("out.of.play",154),("play",0)))'),
+   ("Ravenous Demon -> Archdemon of Greed","",'Send("Transfer",(1,("out.of.play",155),("play",0)))'),
+   ("{red}Reckless Waif -> Merciless Predator","",'Send("Transfer",(1,("out.of.play",139),("play",0)))'),
+   ("{green}Scorned Villager -> Moonscarred Werewolf","",'Send("Transfer",(1,("out.of.play",156),("play",0)))'),
+   ("Screeching Bat -> Stalking Vampire","",'Send("Transfer",(1,("out.of.play",140),("play",0)))'),
+   ("{blue}Soul Seizer -> Ghastly Haunting","",'Send("Transfer",(1,("out.of.play",157),("play",0)))'),
+   ("{yellow}Thraben Sentry -> Thraben Militia","",'Send("Transfer",(1,("out.of.play",141),("play",0)))'),
+   ("{red}Tormented Pariah -> Rampaging Werewolf","",'Send("Transfer",(1,("out.of.play",142),("play",0)))'),
+   ("{green}Ulvenwald Mystics -> Ulvenwald Primordials","",'Send("Transfer",(1,("out.of.play",143),("play",0)))'),
+   ("{red}Village Ironsmith -> Ironfang","",'Send("Transfer",(1,("out.of.play",144),("play",0)))'),
+   ("{green}Villagers of Estwald -> Howlpack of Estwald","",'Send("Transfer",(1,("out.of.play",145),("play",0)))'),
+   ("{green}Wolfbitten Captive -> Krallenhorde Killer","",'Send("Transfer",(1,("out.of.play",158),("play",0)))'),
+  ));
+}
+
+def EmblemSubmenu 
+{
+  Submenu("Select Emblem",(
+  ("Ajani Steadfast","",'Send("Transfer",(1,("out.of.play",224),("play",0)))'),
+  ("Dack Fayden","",'Send("Transfer",(1,("out.of.play",225),("play",0)))'),
+  ("Daretti, Scrap Savant","",'Send("Transfer",(1,("out.of.play",243),("play",0)))'),
+  ("Domri Rade","",'Send("Transfer",(1,("out.of.play",187),("play",0)))'),
+  ("Chandra, Fire of Kaladesh","",'Send("Transfer",(1,("out.of.play",254),("play",0)))'),
+  ("Elspeth, Knight-Errant","",'Send("Transfer",(1,("out.of.play",167),("play",0)))'),
+  ("Elspeth, Sun's Champion","",'Send("Transfer",(1,("out.of.play",199),("play",0)))'),
+  ("Garruk, Caller of Beasts","",'Send("Transfer",(1,("out.of.play",191),("play",0)))'),
+  ("Garruk, Apex Predator","",'Send("Transfer",(1,("out.of.play",226),("play",0)))'),
+  ("Gideon, Ally of Zendikar","",'Send("Transfer",(1,("out.of.play",270),("play",0)))'),
+  ("Jace, Telepath Unbound","",'Send("Transfer",(1,("out.of.play",255),("play",0)))'),
+  ("Kiora, the Crashing Wave","",'Send("Transfer",(1,("out.of.play",200),("play",0)))'),
+  ("Kiora, Master of the Depths","",'Send("Transfer",(1,("out.of.play",271),("play",0)))'),
+  ("Koth of the Hammer","",'Send("Transfer",(1,("out.of.play",168),("play",0)))'),
+  ("Liliana, Defiant Necromancer","",'Send("Transfer",(1,("out.of.play",256),("play",0)))'),
+  ("Liliana of the Dark Realms","",'Send("Transfer",(1,("out.of.play",175),("play",0)))'),
+  ("Narset Transcendent","",'Send("Transfer",(1,("out.of.play",250),("play",0)))'),
+  ("Ob Nixilis of the Black Oath","",'Send("Transfer",(1,("out.of.play",244),("play",0)))'),
+  ("Ob Nixilis Reignited","",'Send("Transfer",(1,("out.of.play",272),("play",0)))'),
+  ("Sarkhan, the Dragonspeaker","",'Send("Transfer",(1,("out.of.play",231),("play",0)))'),
+  ("Sorin, Lord of Innistrad","",'Send("Transfer",(1,("out.of.play",169),("play",0)))'),
+  ("Sorin, Solemn Visitor","",'Send("Transfer",(1,("out.of.play",232),("play",0)))'),
+  ("Tamiyo, the Moon Sage","",'Send("Transfer",(1,("out.of.play",170),("play",0)))'),
+  ("Teferi, Temporal Archmage","",'Send("Transfer",(1,("out.of.play",245),("play",0)))'),
+  ("Venser, the Sojourner","",'Send("Transfer",(1,("out.of.play",171),("play",0)))'),
+  ));
+}
+
+# 
+# TokenSubmenu() - Create a submenu of token options.
+# 
+
+def TokenSubmenu
+{
+  Submenu("Select Token",(
+   ("A","","TokenSubmenuA()"),
+   ("B","","TokenSubmenuB()"),
+   ("C","","TokenSubmenuC()"),
+   ("D","","TokenSubmenuD()"),
+   ("E","","TokenSubmenuE()"),
+   ("F","","TokenSubmenuF()"),
+   ("G","","TokenSubmenuG()"),
+   ("H","","TokenSubmenuH()"),
+   ("I","","TokenSubmenuI()"),
+   ("K","","TokenSubmenuK()"),
+   ("L","","TokenSubmenuL()"),
+   ("M","","TokenSubmenuM()"),
+   ("O","","TokenSubmenuO()"),
+   ("P","","TokenSubmenuP()"),
+   ("R","","TokenSubmenuR()"),
+   ("S","","TokenSubmenuS()"),
+   ("T","","TokenSubmenuT()"),
+   ("U","","TokenSubmenuU()"),
+   ("V","","TokenSubmenuV()"),
+   ("W","","TokenSubmenuW()"),
+   ("Z","","TokenSubmenuZ()"),
+   ));
+}
+
+def TokenSubmenuA 
+{
+  Submenu("Select Token",(
+   ("{blue}{sz12}<back>","","TokenSubmenu()"),
+   ("Angel 3/3 (W, flying)","",'Send("Transfer",(1,("out.of.play",275),("play",0)))'),
+   ("Angel 4/4 (W, flying)","",'Send("Transfer",(1,("out.of.play",9),("play",0)))'),
+   ("Ape 3/3 (G)","",'Send("Transfer",(1,("out.of.play",233),("play",0)))'),
+   ("Ashaya, the Awoken World 4/4 (G)","",'Send("Transfer",(1,("out.of.play",252),("play",0)))'),
+   ("Assassin 1/1 (B, lethal)","",'Send("Transfer",(1,("out.of.play",176),("play",0)))'),
+   ("Avatar */* (W)","",'Send("Transfer",(1,("out.of.play",10),("play",0)))'),
+  ));
+}
+
+def TokenSubmenuB 
+{
+  Submenu("Select Token",(
+   ("{blue}{sz12}<back>","","TokenSubmenu()"),
+   ("Bat 1/1 (B, flying)","",'Send("Transfer",(1,("out.of.play",189),("play",0)))'),
+   ("Bear 2/2 (G)","",'Send("Transfer",(1,("out.of.play",11),("play",0)))'),
+   ("Bear 4/4 (G)","",'Send("Transfer",(1,("out.of.play",227),("play",0)))'),
+   ("Beast 3/3 (B, deathtouch)","",'Send("Transfer",(1,("out.of.play",215),("play",0)))'),
+   ("Beast 3/3 (G)","",'Send("Transfer",(1,("out.of.play",12),("play",0)))'),
+   ("Beast 4/4 (G)","",'Send("Transfer",(1,("out.of.play",13),("play",0)))'),
+   ("Beast 5/5 (G)","",'Send("Transfer",(1,("out.of.play",14),("play",0)))'),
+   ("Beast 8/8 (RGW)","",'Send("Transfer",(1,("out.of.play",15),("play",0)))'),
+   ("Bird 1/1 (U, flying)","",'Send("Transfer",(1,("out.of.play",16),("play",0)))'),
+   ("Bird 1/1 (UW, flying)","",'Send("Transfer",(1,("out.of.play",17),("play",0)))'),
+   ("Bird 1/1 (W, flying)","",'Send("Transfer",(1,("out.of.play",18),("play",0)))'),
+   ("Bird 2/2 (U, flying)","",'Send("Transfer",(1,("out.of.play",192),("play",0)))'),
+   ("Bird 2/2 (U, flying, enchantment)","",'Send("Transfer",(1,("out.of.play",203),("play",0)))'),
+   ("Bird 3/3 (W, flying)","",'Send("Transfer",(1,("out.of.play",112),("play",0)))'),
+   ("Bird 3/4 (W, flying)","",'Send("Transfer",(1,("out.of.play",228),("play",0)))'),
+   ("Bird Soldier 1/1 (W, flying)","",'Send("Transfer",(1,("out.of.play",19),("play",0)))'),
+   ("Boar 2/2 (G)","",'Send("Transfer",(1,("out.of.play",193),("play",0)))'),
+  ));
+}
+
+def TokenSubmenuC 
+{
+  Submenu("Select Token",(
+   ("{blue}{sz12}<back>","","TokenSubmenu()"),
+   ("Cat 1/1 (R)","",'Send("Transfer",(1,("out.of.play",20),("play",0)))'),
+   ("Cat 2/1 (B)","",'Send("Transfer",(1,("out.of.play",21),("play",0)))'),
+   ("Cat 2/2 (W)","",'Send("Transfer",(1,("out.of.play",113),("play",0)))'),
+   ("Cat Soldier 1/1 (W, vigilance)","",'Send("Transfer",(1,("out.of.play",201),("play",0)))'),
+   ("Centaur 3/3 (G)","",'Send("Transfer",(1,("out.of.play",22),("play",0)))'),
+   ("Centaur 3/3 (G, protection from black)","",'Send("Transfer",(1,("out.of.play",182),("play",0)))'),
+   ("Centaur 3/3 (G, enchantment)","",'Send("Transfer",(1,("out.of.play",207),("play",0)))'),
+   ("Cleric 1/1 (BW, reanimation)","",'Send("Transfer",(1,("out.of.play",183),("play",0)))'),
+   ("Cleric 2/1 (W, enchantment)","",'Send("Transfer",(1,("out.of.play",194),("play",0)))'),
+   ("Construct 1/1 (C, defender)","",'Send("Transfer",(1,("out.of.play",216),("play",0)))'),
+   ("Construct 6/12 (C, trample)","",'Send("Transfer",(1,("out.of.play",100),("play",0)))'),
+  ));
+}
+
+def TokenSubmenuD 
+{
+  Submenu("Select Token",(
+   ("{blue}{sz12}<back>","","TokenSubmenu()"),
+   ("Demon */* (B, flying)","",'Send("Transfer",(1,("out.of.play",23),("play",0)))'),
+   ("Demon 5/5 (B, flying)","",'Send("Transfer",(1,("out.of.play",160),("play",0)))'),
+   ("Djinn Monk 2/2 (U, flying)","",'Send("Transfer",(1,("out.of.play",248),("play",0)))'),
+   ("Dragon 1/1 (RG, flying, devour)","",'Send("Transfer",(1,("out.of.play",24),("play",0)))'),
+   ("Dragon 2/2 (R, flying)","",'Send("Transfer",(1,("out.of.play",217),("play",0)))'),
+   ("Dragon 4/4 (R, flying)","",'Send("Transfer",(1,("out.of.play",25),("play",0)))'),
+   ("Dragon 5/5 (R, flying)","",'Send("Transfer",(1,("out.of.play",26),("play",0)))'),
+   ("Dragon 6/6 (R, flying)","",'Send("Transfer",(1,("out.of.play",177),("play",0)))'),
+   ("Dragon Spirit 5/5 (U, flying)","",'Send("Transfer",(1,("out.of.play",27),("play",0)))'),
+   ("Drake 2/2 (U, flying)","",'Send("Transfer",(1,("out.of.play",174),("play",0)))'),
+   ("Drake 2/2 (UG, flying)","",'Send("Transfer",(1,("out.of.play",28),("play",0)))'),
+  ));
+}
+   
+def TokenSubmenuE
+{
+  Submenu("Select Token",(
+   ("{blue}{sz12}<back>","","TokenSubmenu()"),
+   ("Eldrazi 10/10 (C)","",'Send("Transfer",(1,("out.of.play",262),("play",0)))'),
+   ("Eldrazi Scion 1/1 (C)","",'Send("Transfer",(1,("out.of.play",263),("play",0)))'),
+   ("Eldrazi Spawn 0/1 (C)","",'Send("Transfer",(1,("out.of.play",101),("play",0)))'),
+   ("Elemental 1/0 (U)","",'Send("Transfer",(1,("out.of.play",195),("play",0)))'),
+   ("Elemental 1/1 (R, haste)","",'Send("Transfer",(1,("out.of.play",29),("play",0)))'),
+   ("Elemental 2/2 (G)","",'Send("Transfer",(1,("out.of.play",253),("play",0)))'),
+   ("Elemental 2/2 (U, flying)","",'Send("Transfer",(1,("out.of.play",30),("play",0)))'),
+   ("Elemental 3/1 (R, haste, enchantment)","",'Send("Transfer",(1,("out.of.play",206),("play",0)))'),
+   ("Elemental 3/1 (R, haste)","",'Send("Transfer",(1,("out.of.play",31),("play",0)))'),
+   ("Elemental 3/1 (R, trample, haste)","",'Send("Transfer",(1,("out.of.play",264),("play",0)))'),
+   ("Elemental 3/3 (R)","",'Send("Transfer",(1,("out.of.play",32),("play",0)))'),
+   ("Elemental 4/4 (G)","",'Send("Transfer",(1,("out.of.play",33),("play",0)))'),
+   ("Elemental 4/4 (W, flying)","",'Send("Transfer",(1,("out.of.play",34),("play",0)))'),
+   ("Elemental 5/3 (G)","",'Send("Transfer",(1,("out.of.play",234),("play",0)))'),
+   ("Elemental 5/5 (BR)","",'Send("Transfer",(1,("out.of.play",35),("play",0)))'),
+   ("Elemental 5/5 (RG)","",'Send("Transfer",(1,("out.of.play",265),("play",0)))'),
+   ("Elemental 5/5 (UR, flying)","",'Send("Transfer",(1,("out.of.play",36),("play",0)))'),
+   ("Elemental 7/1 (R, trample, haste)","",'Send("Transfer",(1,("out.of.play",114),("play",0)))'),
+   ("Elemental 7/7 (G, trample)","",'Send("Transfer",(1,("out.of.play",37),("play",0)))'),
+   ("Elemental 8/8 (GW, vigilance)","",'Send("Transfer",(1,("out.of.play",178),("play",0)))'),
+   ("Elemental */* (G)","",'Send("Transfer",(1,("out.of.play",38),("play",0)))'),
+   ("Elemental */* (GW)","",'Send("Transfer",(1,("out.of.play",188),("play",0)))'),
+   ("Elemental */* (R)","",'Send("Transfer",(1,("out.of.play",102),("play",0)))'),
+   ("Elemental Shaman 3/1 (R)","",'Send("Transfer",(1,("out.of.play",39),("play",0)))'),
+   ("Elephant 3/3 (G)","",'Send("Transfer",(1,("out.of.play",40),("play",0)))'),   
+   ("Elf Druid 1/1 (G, {T}: Add {G})","",'Send("Transfer",(1,("out.of.play",235),("play",0)))'),
+   ("Elf Warrior 1/1 (G)","",'Send("Transfer",(1,("out.of.play",41),("play",0)))'),
+   ("Elf Warrior 1/1 (GW)","",'Send("Transfer",(1,("out.of.play",42),("play",0)))'),
+  ));
+}
+
+def TokenSubmenuF
+{
+  Submenu("Select Token",(
+   ("{blue}{sz12}<back>","","TokenSubmenu()"),
+   ("Faerie 1/1 (U, flying)","",'Send("Transfer",(1,("out.of.play",43),("play",0)))'),
+   ("Faerie Rogue 1/1 (B, flying)","",'Send("Transfer",(1,("out.of.play",44),("play",0)))'),
+   ("Faerie Rogue 1/1 (BU, flying)","",'Send("Transfer",(1,("out.of.play",45),("play",0)))'),
+   ("Fish 3/3 (U, spawn Whale)","",'Send("Transfer",(1,("out.of.play",236),("play",0)))'),
+   ("Frog Lizard 3/3 (G)","",'Send("Transfer",(1,("out.of.play",184),("play",0)))'),
+  ));
+}
+
+def TokenSubmenuG 
+{
+  Submenu("Select Token",(
+   ("{blue}{sz12}<back>","","TokenSubmenu()"),
+   ("Gargoyle 3/4 (A, flying)","",'Send("Transfer",(1,("out.of.play",115),("play",0)))'),
+   ("Germ 0/0 (B)","",'Send("Transfer",(1,("out.of.play",103),("play",0)))'),
+   ("Giant Warrior 4/4 (GR, haste)","",'Send("Transfer",(1,("out.of.play",46),("play",0)))'),
+   ("Giant Warrior 5/5 (W)","",'Send("Transfer",(1,("out.of.play",47),("play",0)))'),
+   ("Goat 0/1 (W)","",'Send("Transfer",(1,("out.of.play",48),("play",0)))'),
+   ("Goblin 1/1 (R)","",'Send("Transfer",(1,("out.of.play",49),("play",0)))'),
+   ("Goblin Rogue 1/1 (B)","",'Send("Transfer",(1,("out.of.play",50),("play",0)))'),   
+   ("Goblin Soldier 1/1 (RW)","",'Send("Transfer",(1,("out.of.play",51),("play",0)))'),
+   ("Goblin Warrior 1/1 (GR)","",'Send("Transfer",(1,("out.of.play",52),("play",0)))'),
+   ("Gold (A)","",'Send("Transfer",(1,("out.of.play",208),("play",0)))'),
+   ("Golem 3/3 (A)","",'Send("Transfer",(1,("out.of.play",104),("play",0)))'),
+   ("Golem 3/3 (A, enchantment)","",'Send("Transfer",(1,("out.of.play",218),("play",0)))'),
+   ("Golem 9/9 (A)","",'Send("Transfer",(1,("out.of.play",105),("play",0)))'),
+   ("Griffin 2/2 (W, flying)","",'Send("Transfer",(1,("out.of.play",116),("play",0)))'),
+  ));
+}
+
+def TokenSubmenuH 
+{
+  Submenu("Select Token",(
+   ("{blue}{sz12}<back>","","TokenSubmenu()"),
+   ("Harpy 1/1 (B, flying)","",'Send("Transfer",(1,("out.of.play",196),("play",0)))'),
+   ("Hellion 4/4 (R)","",'Send("Transfer",(1,("out.of.play",106),("play",0)))'),
+   ("Hippo 1/1 (G)","",'Send("Transfer",(1,("out.of.play",53),("play",0)))'),
+   ("Homunculus 0/1 (AU)","",'Send("Transfer",(1,("out.of.play",54),("play",0)))'),
+   ("Homunculus 2/2 (U)","",'Send("Transfer",(1,("out.of.play",159),("play",0)))'),
+   ("Hornet 1/1 (A, flying, haste)","",'Send("Transfer",(1,("out.of.play",172),("play",0)))'),
+   ("Horror 1/1 (BU, flying)","",'Send("Transfer",(1,("out.of.play",185),("play",0)))'),
+   ("Horror 4/4 (B)","",'Send("Transfer",(1,("out.of.play",55),("play",0)))'),
+   ("Horror */* (C)","",'Send("Transfer",(1,("out.of.play",107),("play",0)))'),
+   ("Horror */* (B)","",'Send("Transfer",(1,("out.of.play",237),("play",0)))'),
+   ("Human 1/1 (R)","",'Send("Transfer",(1,("out.of.play",165),("play",0)))'),
+   ("Human 1/1 (W)","",'Send("Transfer",(1,("out.of.play",163),("play",0)))'),
+   ("Hydra */* (G)","",'Send("Transfer",(1,("out.of.play",209),("play",0)))'),
+  ));
+}
+
+def TokenSubmenuI 
+{
+  Submenu("Select Token",(
+   ("{blue}{sz12}<back>","","TokenSubmenu()"),
+   ("Illusion 1/1 (U, flying)","",'Send("Transfer",(1,("out.of.play",56),("play",0)))'),
+   ("Illusion 2/2 (U)","",'Send("Transfer",(1,("out.of.play",117),("play",0)))'),
+   ("Insect 1/1 (G)","",'Send("Transfer",(1,("out.of.play",57),("play",0)))'),
+   ("Insect 1/1 (G, flying, deathtouch)","",'Send("Transfer",(1,("out.of.play",219),("play",0)))'),
+   ("Insect 1/1 (G, infect)","",'Send("Transfer",(1,("out.of.play",118),("play",0)))'),
+  ));
+}
+
+def TokenSubmenuK 
+{
+  Submenu("Select Token",(
+   ("{blue}{sz12}<back>","","TokenSubmenu()"),
+   ("Kaldra 4/4 (C)","",'Send("Transfer",(1,("out.of.play",58),("play",0)))'),
+   ("Kavu 3/3 (B)","",'Send("Transfer",(1,("out.of.play",59),("play",0)))'),
+   ("Kithkin Soldier 1/1 (W)","",'Send("Transfer",(1,("out.of.play",60),("play",0)))'),   
+   ("Knight 2/2 (W, first strike)","",'Send("Transfer",(1,("out.of.play",61),("play",0)))'),
+   ("Knight 2/2 (W, vigilance)","",'Send("Transfer",(1,("out.of.play",179),("play",0)))'),
+   ("Knight Ally 2/2 (W)","",'Send("Transfer",(1,("out.of.play",266),("play",0)))'),
+   ("Kor Soldier 1/1 (W)","",'Send("Transfer",(1,("out.of.play",119),("play",0)))'),
+   ("Kor Ally 1/1 (W)","",'Send("Transfer",(1,("out.of.play",267),("play",0)))'),
+   ("Kraken 9/9 (U)","",'Send("Transfer",(1,("out.of.play",204),("play",0)))'),
+  ));
+}
+
+def TokenSubmenuL 
+{
+  Submenu("Select Token",(
+   ("{blue}{sz12}<back>","","TokenSubmenu()"),
+   ("Land Mine (A)","",'Send("Transfer",(1,("out.of.play",220),("play",0)))'),
+   ("Lightning Rager 5/1 (R, trample, haste)","",'Send("Transfer",(1,("out.of.play",273),("play",0)))'),
+   ("Lizard 2/2 (G)","",'Send("Transfer",(1,("out.of.play",62),("play",0)))'),
+  ));
+}
+
+def TokenSubmenuM 
+{
+  Submenu("Select Token",(
+   ("{blue}{sz12}<back>","","TokenSubmenu()"),
+   ("Marit Lage 20/20 (B, indestructible)","",'Send("Transfer",(1,("out.of.play",63),("play",0)))'),
+   ("Merfolk 1/1 (U)","",'Send("Transfer",(1,("out.of.play",120),("play",0)))'),
+   ("Merfolk Wizard 1/1 (U)","",'Send("Transfer",(1,("out.of.play",64),("play",0)))'),
+   ("Minion */* (B)","",'Send("Transfer",(1,("out.of.play",173),("play",0)))'),
+   ("Minotaur 2/3 (R)","",'Send("Transfer",(1,("out.of.play",210),("play",0)))'),
+   ("Monk 1/1 (W, prowess)","",'Send("Transfer",(1,("out.of.play",246),("play",0)))'),
+   ("Myr 1/1 (A)","",'Send("Transfer",(1,("out.of.play",65),("play",0)))'),
+  ));
+}
+
+def TokenSubmenuO 
+{
+  Submenu("Select Token",(
+   ("{blue}{sz12}<back>","","TokenSubmenu()"),
+   ("Octopus 8/8 (U)","",'Send("Transfer",(1,("out.of.play",268),("play",0)))'),
+   ("Ogre 3/3 (R)","",'Send("Transfer",(1,("out.of.play",108),("play",0)))'),
+   ("Ogre 4/4 (R)","",'Send("Transfer",(1,("out.of.play",221),("play",0)))'),
+   ("Ooze */* (G)","",'Send("Transfer",(1,("out.of.play",66),("play",0)))'),
+  ));
+}
+
+def TokenSubmenuP 
+{
+  Submenu("Select Token",(
+   ("{blue}{sz12}<back>","","TokenSubmenu()"),
+   ("Pegasus 1/1 (W, flying)","",'Send("Transfer",(1,("out.of.play",238),("play",0)))'),
+   ("Pentavite 1/1 (A, flying)","",'Send("Transfer",(1,("out.of.play",67),("play",0)))'),
+   ("Pest 0/1 (A)","",'Send("Transfer",(1,("out.of.play",68),("play",0)))'),
+   ("Pincher 2/2 (A)","",'Send("Transfer",(1,("out.of.play",69),("play",0)))'),
+   ("Plant 0/1 (G)","",'Send("Transfer",(1,("out.of.play",109),("play",0)))'),
+   ("Plant 1/1 (G)","",'Send("Transfer",(1,("out.of.play",269),("play",0)))'),
+  ));
+}
+
+def TokenSubmenuR 
+{
+  Submenu("Select Token",(
+   ("{blue}{sz12}<back>","","TokenSubmenu()"),
+   ("Rat 1/1 (B)","",'Send("Transfer",(1,("out.of.play",70),("play",0)))'),
+   ("Reflection */* (W)","",'Send("Transfer",(1,("out.of.play",71),("play",0)))'),   
+   ("Rhino 4/4 (G, trample)","",'Send("Transfer",(1,("out.of.play",180),("play",0)))'),
+   ("Rukh 4/4 (R, flying)","",'Send("Transfer",(1,("out.of.play",72),("play",0)))'),
+  ));
+}
+
+def TokenSubmenuS 
+{
+  Submenu("Select Token",(
+   ("{blue}{sz12}<back>","","TokenSubmenu()"),
+   ("Saproling 1/1 (G)","",'Send("Transfer",(1,("out.of.play",73),("play",0)))'),
+   ("Satyr 2/2 (RG)","",'Send("Transfer",(1,("out.of.play",197),("play",0)))'),
+   ("Shapeshifter 1/1 (C, changeling)","",'Send("Transfer",(1,("out.of.play",74),("play",0)))'),
+   ("Skeleton 1/1 (B)","",'Send("Transfer",(1,("out.of.play",75),("play",0)))'),
+   ("Sliver 1/1 (C)","",'Send("Transfer",(1,("out.of.play",76),("play",0)))'),
+   ("Snake 1/1 (G)","",'Send("Transfer",(1,("out.of.play",77),("play",0)))'),
+   ("Snake 1/1 (UG)","",'Send("Transfer",(1,("out.of.play",78),("play",0)))'),
+   ("Snake 1/1 (BG, enchantment, deathtouch)","",'Send("Transfer",(1,("out.of.play",211),("play",0)))'),
+   ("Soldier 1/1 (RW)","",'Send("Transfer",(1,("out.of.play",186),("play",0)))'),
+   ("Soldier 1/1 (R)","",'Send("Transfer",(1,("out.of.play",198),("play",0)))'),
+   ("Soldier 1/1 (W)","",'Send("Transfer",(1,("out.of.play",79),("play",0)))'),
+   ("Soldier 1/1 (W, enchantment)","",'Send("Transfer",(1,("out.of.play",202),("play",0)))'),
+   ("Soldier Ally 1/1 (W)","",'Send("Transfer",(1,("out.of.play",110),("play",0)))'),
+   ("Spawn 2/2 (A)","",'Send("Transfer",(1,("out.of.play",80),("play",0)))'),
+   ("Sphinx 4/4 (U, flying)","",'Send("Transfer",(1,("out.of.play",212),("play",0)))'),
+   ("Spider 1/2 (G, reach)","",'Send("Transfer",(1,("out.of.play",81),("play",0)))'),
+   ("Spider 1/3 (G, enchantment, reach)","",'Send("Transfer",(1,("out.of.play",213),("play",0)))'),
+   ("Spider 2/4 (B, reach)","",'Send("Transfer",(1,("out.of.play",190),("play",0)))'),
+   ("Spirit 1/1 (C)","",'Send("Transfer",(1,("out.of.play",82),("play",0)))'),
+   ("Spirit 1/1 (BW, flying)","",'Send("Transfer",(1,("out.of.play",83),("play",0)))'),
+   ("Spirit 1/1 (W, flying)","",'Send("Transfer",(1,("out.of.play",84),("play",0)))'),
+   ("Spirit 1/1 (U, flying)","",'Send("Transfer",(1,("out.of.play",166),("play",0)))'),
+   ("Spirit */* (BW)","",'Send("Transfer",(1,("out.of.play",274),("play",0)))'),
+   ("Spirit Warrior */* (BG)","",'Send("Transfer",(1,("out.of.play",229),("play",0)))'),
+   ("Squid 1/1 (U, islandwalk)","",'Send("Transfer",(1,("out.of.play",222),("play",0)))'),
+   ("Stoneforged Blade (A)","",'Send("Transfer",(1,("out.of.play",239),("play",0)))'),
+   ("Squirrel 1/1 (G)","",'Send("Transfer",(1,("out.of.play",85),("play",0)))'),
+  ));
+}
+
+def TokenSubmenuT 
+{
+  Submenu("Select Token",(
+   ("{blue}{sz12}<back>","","TokenSubmenu()"),
+   ("Thopter 1/1 (AU, flying)","",'Send("Transfer",(1,("out.of.play",86),("play",0)))'),
+   ("Thopter 1/1 (A, flying)","",'Send("Transfer",(1,("out.of.play",111),("play",0)))'),
+   ("Thrull 0/1 (B)","",'Send("Transfer",(1,("out.of.play",87),("play",0)))'),
+   ("Thrull 1/1 (B)","",'Send("Transfer",(1,("out.of.play",251),("play",0)))'),
+   ("Treefolk */* (G)","",'Send("Transfer",(1,("out.of.play",240),("play",0)))'),
+   ("Treefolk Shaman 2/5 (G)","",'Send("Transfer",(1,("out.of.play",88),("play",0)))'),
+   ("Treefolk Warrior */* (G)","",'Send("Transfer",(1,("out.of.play",223),("play",0)))'),
+   ("Tuktuk, the Returned 5/5 (A)","",'Send("Transfer",(1,("out.of.play",121),("play",0)))'),
+   ("Twin 3/4 (A)","",'Send("Transfer",(1,("out.of.play",89),("play",0)))'),
+  ));
+}
+
+def TokenSubmenuU 
+{
+  Submenu("Select Token",(
+   ("{blue}{sz12}<back>","","TokenSubmenu()"),
+   ("Urami 5/5 (B)","",'Send("Transfer",(1,("out.of.play",90),("play",0)))'),
+  ));
+}
+
+def TokenSubmenuV 
+{
+  Submenu("Select Token",(
+   ("{blue}{sz12}<back>","","TokenSubmenu()"),
+   ("Vampire 1/1 (B, lifelink)","",'Send("Transfer",(1,("out.of.play",164),("play",0)))'),
+   ("Vampire 2/2 (B, flying)","",'Send("Transfer",(1,("out.of.play",161),("play",0)))'),
+   ("Vampire */* (B)","",'Send("Transfer",(1,("out.of.play",122),("play",0)))'),
+   ("Voja 2/2 (GW)","",'Send("Transfer",(1,("out.of.play",91),("play",0)))'),   
+  ));
+}
+
+def TokenSubmenuW 
+{
+  Submenu("Select Token",(
+   ("{blue}{sz12}<back>","","TokenSubmenu()"),
+   ("Warrior 1/1 (R)","",'Send("Transfer",(1,("out.of.play",92),("play",0)))'),
+   ("Warrior 1/1 (W)","",'Send("Transfer",(1,("out.of.play",230),("play",0)))'),
+   ("Warrior 2/1 (B)","",'Send("Transfer",(1,("out.of.play",247),("play",0)))'),
+   ("Wasp 1/1 (A, flying)","",'Send("Transfer",(1,("out.of.play",93),("play",0)))'),
+   ("Whale 6/6 (U, spawn Kraken)","",'Send("Transfer",(1,("out.of.play",241),("play",0)))'),
+   ("Wolf 1/1 (B, deathtouch)","",'Send("Transfer",(1,("out.of.play",162),("play",0)))'),
+   ("Wolf 2/2 (G)","",'Send("Transfer",(1,("out.of.play",94),("play",0)))'),
+   ("Worm 1/1 (BG)","",'Send("Transfer",(1,("out.of.play",95),("play",0)))'),
+   ("Wurm 3/3 (A, deathouch)","",'Send("Transfer",(1,("out.of.play",123),("play",0)))'),
+   ("Wurm 3/3 (A, lifelink)","",'Send("Transfer",(1,("out.of.play",124),("play",0)))'),
+   ("Wurm 5/5 (G, trample)","",'Send("Transfer",(1,("out.of.play",181),("play",0)))'),
+   ("Wurm 6/6 (B, trample)","",'Send("Transfer",(1,("out.of.play",96),("play",0)))'),
+   ("Wurm 6/6 (G)","",'Send("Transfer",(1,("out.of.play",97),("play",0)))'),
+  ));
+}
+
+def TokenSubmenuZ 
+{
+  Submenu("Select Token",(
+   ("{blue}{sz12}<back>","","TokenSubmenu()"),
+   ("Zombie 2/2 (B)","",'Send("Transfer",(1,("out.of.play",98),("play",0)))'),
+   ("Zombie 2/2 (B, enchantment)","",'Send("Transfer",(1,("out.of.play",205),("play",0)))'),
+   ("Zombie */* (B)","",'Send("Transfer",(1,("out.of.play",214),("play",0)))'),
+   ("Zombie */* (U)","",'Send("Transfer",(1,("out.of.play",242),("play",0)))'),
+   ("Zombie Giant 5/5 (B)","",'Send("Transfer",(1,("out.of.play",125),("play",0)))'),
+   ("Zombie Horror */* (B)","",'Send("Transfer",(1,("out.of.play",249),("play",0)))'),
+   ("Zombie Wizard 1/1 (BU)","",'Send("Transfer",(1,("out.of.play",99),("play",0)))'),
+  ));
+}
+
+#
+# PlaySideboardMenu() - Generate menu for sideboard.
+#
+def PlaySideboardMenu
+{
+  Menu("Sideboard",(
+   ("Look at your sideboard","left click",""),
+  ));
+}
+
+#
+# PlayExileMenu() - Generate menu for exile.
+#
+def PlayExileMenu
+{
+  push(m);
+  m=(,);
+  if(card.number!=NULL)
+  {
+    m=m+(
+	  ("Look","Ctrl+L",""),
+	  ("Shuffle","Ctrl+S",""),
+	  ("Reveal/Hide deck","Ctrl+F",""),
+      );
+  }
+
+  m=m+(
+    ("Touch","Ctrl+T",""),
+  );
+
+  Menu("Exile",m);
+  m=pop();
+}
+
+#
+# PlayPlanesMenu() - Generate menu for plane deck.
+#
+def PlayPlanesMenu
+{
+  push(m);
+  m=(,);
+  if(card.number!=NULL)
+  {
+    m=m+(
+      ("Play top card","Ctrl+P",""),
+      ("{hr}","",""),
+      ("Look","Ctrl+L",""),
+      ("Reveal/Hide deck","Ctrl+F",""),
+      ("Shuffle","Ctrl+S",""),
+    );
+  }
+
+  m=m+(
+    ("Touch","Ctrl+T",""),
+  );
+
+  Menu("Planar Deck",m);
+  m=pop();
+}
+
+#
+# PlaySchemesMenu() - Generate menu for scheme deck.
+#
+def PlaySchemesMenu
+{
+  push(m);
+  m=(,);
+  if(card.number!=NULL)
+  {
+    m=m+(
+      ("Play top card","Ctrl+P",""),
+      ("{hr}","",""),
+      ("Look","Ctrl+L",""),
+      ("Reveal/Hide deck","Ctrl+F",""),
+      ("Shuffle","Ctrl+S",""),
+    );
+  }
+
+  m=m+(
+    ("Touch","Ctrl+T",""),
+  );
+
+  Menu("Scheme Deck",m);
+  m=pop();
+}
+
+#
+# PlayChallengeMenu() - Generate menu for challenge deck.
+#
+def PlayChallengeMenu
+{
+  push(m);
+  m=(,);
+  if(card.number!=NULL)
+  {
+    m=m+(
+      ("Play top card","Ctrl+P",""),
+      ("{hr}","",""),
+      ("Look","Ctrl+L",""),
+      ("Reveal/Hide deck","Ctrl+F",""),
+      ("Shuffle","Ctrl+S",""),
+    );
+  }
+
+  m=m+(
+    ("Touch","Ctrl+T",""),
+  );
+
+  Menu("Challenge Deck",m);
+  m=pop();
+}
+
+#
+# PlayChallengeDiscardMenu() - Generate menu for challenge graveyard.
+#
+def PlayChallengeDiscardMenu
+{
+  push(m);
+  m=(,);
+  if(card.number!=NULL)
+  {
+    m=m+(
+      ("Play top card","Ctrl+P",""),
+      ("{hr}","",""),
+      ("Look","Ctrl+L",""),
+      ("Shuffle to the deck","",'Send("Transfer",(length(deck(deck.objects[me]{"challenge discard"})),("deck.top",deck.objects[me]{"challenge discard"}),("deck.top",deck.objects[me]{"challenge"}))); Send("ShuffleDeck",deck.objects[me]{"challenge"});'),
+    );
+  }
+
+  m=m+(
+    ("Touch","Ctrl+T",""),
+  );
+
+  Menu("Challenge Graveyard",m);
+  m=pop();
+}
+
+#
+# PlaneBrowserMenu() - Generate menu for plane book.
+#
+def PlaneBrowserMenu
+{
+  push(b);
+  push(m);
+
+  b=(,);
+  m="Plane Browser Menu";
+  if(card.number && mode=="play")
+  {
+    m=card.name;
+    b=b+(
+      ("Bring {blue}"+card.name+"{black} to the play","",'Send("Transfer",(1,("out.of.play",card.number),("play",0)))'),
+    );
+  }
+  else if(card.number && (mode=="chat" || mode=="watch"))
+  {
+    m=card.name;
+    if(deck.name != NULL && has_entry(deck.name,decks))
+    {
+      b=b+(("Add one to the planar deck","middle click",""),
+      ("Remove one from the planar deck","left click",""));
+    }
+    b=b+(("Show card text w/ errata","Ctrl+H",""),);
+  }
+
+  b=b+(("{hr}","",""),);
+  b=b+(("Previous page","Page Up",""),("Next page","Page Down",""));
+  b=b+(("Close","Esc",'set_attr(planes.book,"visible",0)'),);
+
+  Menu(m,b);
+
+  m=pop();
+  b=pop();
+}
+
+#
+# SchemeBrowserMenu() - Generate menu for scheme book.
+#
+def SchemeBrowserMenu
+{
+  push(b);
+  push(m);
+
+  b=(,);
+  m="Scheme Browser Menu";
+  if(card.number && mode=="play")
+  {
+    m=card.name;
+    b=b+(
+      ("Bring {blue}"+card.name+"{black} to the play","",'Send("Transfer",(1,("out.of.play",card.number),("play",0)))'),
+    );
+  }
+  else if(card.number && (mode=="chat" || mode=="watch"))
+  {
+    m=card.name;
+    if(deck.name != NULL && has_entry(deck.name,decks))
+    {
+      b=b+(("Add one to the scheme deck","middle click",""),
+      ("Remove one from the scheme deck","left click",""));
+    }
+    b=b+(("Show card text w/ errata","Ctrl+H",""),);
+  }
+
+  b=b+(("{hr}","",""),);
+  b=b+(("Previous page","Page Up",""),("Next page","Page Down",""));
+  b=b+(("Close","Esc",'set_attr(schemes.book,"visible",0)'),);
+
+  Menu(m,b);
+
+  m=pop();
+  b=pop();
+}
+
+#
+# HerosPathMenu() - Generate menu for challenge book.
+#
+def HerosPathMenu
+{
+  push(b);
+  push(m);
+
+  b=(,);
+  m="Hero's Path Menu";
+  if(card.number && mode=="play")
+  {
+    m=card.name;
+    b=b+(
+      ("Bring {blue}"+card.name+"{black} to the play","",'Send("Transfer",(1,("out.of.play",card.number),("play",0)))'),
+    );
+  }
+  else if(card.number && (mode=="chat" || mode=="watch"))
+  {
+    m=card.name;
+    if(deck.name != NULL && has_entry(deck.name,decks))
+    {
+      b=b+(("Add one to the deck","middle click",""),
+      ("Remove one from the deck","left click",""));
+    }
+    b=b+(("Show card text w/ errata","Ctrl+H",""),);
+  }
+
+  b=b+(("{hr}","",""),);
+  b=b+(("Previous page","Page Up",""),("Next page","Page Down",""));
+  b=b+(("Close","Esc",'set_attr(challenge.book,"visible",0)'),);
+
+  Menu(m,b);
+
+  m=pop();
+  b=pop();
+}
+
+# SPECIAL KEYS
+# ============
+
+#
+# KeyControlKeyH() - Display card information.
+#
+def KeyControlKeyH
+{
+  push(c);
+  c=CheckForCard();
+  if(c==NULL)
+  {
+    if(object.number)
+      Msg("This is "+object_name(object.number)+".");
+  }
+  else
+  {
+    if(card_back(c) != c)
+    {
+      push(b);
+             
+      set="";
+      rarity="";
+      cost="";
+      color="";
+      type="";
+      subtype="";
+      power="";
+      toughness="";
+      loyalty="";
+      flipid="";
+      flipname="";
+      fliptext="";
+      flipcolor="";
+      fliptype="";
+      flipsubtype="";
+      flippower="";
+      fliptoughness="";
+      
+      for(b)((("set",set_of(c)),)+attrs(c))
+      {
+        if(b[1]!="")
+        {
+        	if(b[0]=="set")
+        		set="{yellow}Set:{white} "+L(b[1]) + "   ";
+        	else if(b[0]=="rarity")
+        		rarity="{yellow}Rarity:{white} "+L(b[1]) + "   ";
+        	else if(b[0]=="cost")
+        		cost="{yellow}Cost:{white} "+ L(b[1]) + "  ";
+        	else if(b[0]=="color")
+        		color="{yellow}Color:{white} "+ L(b[1]) + "   ";
+        	else if(b[0]=="type")
+        		type="{yellow}Type:{white} "+ L(b[1]) + " ";
+        	else if(b[0]=="subtype")
+        		subtype="- "+ L(b[1]) + "   ";
+        	else if(b[0]=="power")
+        		power="{yellow}P/T:{white} "+ L(b[1]) + "/";
+        	else if(b[0]=="toughness")
+        		toughness=L(b[1]) + "   ";
+        	else if(b[0]=="loyalty")
+        		loyalty="{yellow}Loyalty:{white} "+ L(b[1]) + " ";
+          else if(b[0]=="flipid")
+        		flipid="    {sz12}Card ID: {white}"+L(b[1]);
+          else if(b[0]=="flipname")
+        		flipname=L(b[1]);
+          else if(b[0]=="fliptext")
+        		fliptext=L(b[1]);
+          else if(b[0]=="flipcolor")
+        		flipcolor="{yellow}Color:{white} "+ L(b[1]) + "   ";
+        	else if(b[0]=="fliptype")
+        		fliptype="{yellow}Type:{white} "+ L(b[1]) + " ";
+        	else if(b[0]=="flipsubtype")
+        		flipsubtype="- "+ L(b[1]) + "   ";
+        	else if(b[0]=="flippower")
+        		flippower="{yellow}P/T:{white} "+ L(b[1]) + "/";
+        	else if(b[0]=="fliptoughness")
+        		fliptoughness=L(b[1]) + "   ";
+        }
+      }
+      
+      Msg("{sz4}  ");
+      
+      Msg("{sz20}{yellow}"+name(c)+"    {sz12}Card ID: {white}"+c);
+      Msg(set + rarity + cost + color);
+      Msg(text(c));
+      Msg(type + subtype + power + toughness + loyalty);
+      if(flipname!="")
+      {
+        Msg("{sz4}  ");
+        Msg("{orange}FLIP SIDE: {sz15}{yellow}"+flipname+flipid);
+        Msg(fliptext);
+        Msg(flipcolor + fliptype + flipsubtype + flippower + fliptoughness);
+
+        Msg("{sz4}  ");
+      }
+
+      b=pop();
+    }
+    else
+      Msg("This is "+object_name(object.number)+".");
+  }
+
+  c=pop();
+}
+
+#
+# KeyControlKeyR() - Roll dice.
+#
+def KeyControlKeyR
+{
+  if(has_entry("planes",decks{deck.name}))
+    Send("Roll","1d6");
+  else
+    Send("Roll","2d6");
+}
+#
+# KeyControlKeyX() - Exile a card.
+#
+def KeyControlKeyX
+{
+    TryTransferTo('deck.top',deck.objects[me]{'exile'});
+}
+
+#
+# PlayKeyControlKeyZ() - Put a card in your sideboard.
+#
+def PlayKeyControlKeyZ
+{
+    TryTransferTo('deck.top',deck.objects[me]{'sideboard'});
+}
+
+#
+# KeyShiftControlKeyR() - Produce {R}.
+#
+def KeyShiftControlKeyR
+{
+    Input("{R}");
+}
+#
+# KeyShiftControlKeyG() - Produce {G}.
+#
+def KeyShiftControlKeyG
+{
+    Input("{G}");
+}
+#
+# KeyShiftControlKeyB() - Produce {B}.
+#
+def KeyShiftControlKeyB
+{
+    Input("{B}");
+}
+#
+# KeyShiftControlKeyU() - Produce {U}.
+#
+def KeyShiftControlKeyU
+{
+    Input("{U}");
+}
+#
+# KeyShiftControlKeyW() - Produce {W}.
+#
+def KeyShiftControlKeyW
+{
+    Input("{W}");
+}
+#
+# KeyShiftControlKeyC() - Produce {C}.
+#
+def KeyShiftControlKeyC
+{
+    Input("{C}");
+}
+#
+# KeyShiftControlKeyM() - Produce {1}.
+#
+def KeyShiftControlKeyM
+{
+    Input("{1}");
+}
+
+#
+# KeyShiftControlKey0() - Produce {0}.
+#
+def KeyShiftControlKey0
+{
+    Input("{0}");
+}
+
+#
+# KeyShiftControlKeyT() - Produce {T}.
+#
+def KeyShiftControlKeyT
+{
+    Input("{T}");
+}
+
+#
+# KeyShiftControlKeyQ() - Produce {UT}.
+#
+def KeyShiftControlKeyQ
+{
+    Input("{UT}");
+}
+
+#
+# KeyShiftControlKeyX() - Produce {X}.
+#
+def KeyShiftControlKeyX
+{
+    Input("{X}");
+}
+
+#
+# KeyShiftControlKeyY() - Produce {Y}.
+#
+def KeyShiftControlKeyY
+{
+    Input("{Y}");
+}
+
+#
+# KeyShiftControlKeyZ() - Produce {Z}.
+#
+def KeyShiftControlKeyZ
+{
+    Input("{Z}");
+}
+
+#
+# PlayKeyControlKeyI() - Imprint.
+#
+def PlayKeyControlKeyI
+{
+  if(card.number!=NULL)
+  {
+    if(object.type=="card")
+    {
+      if((card_data(object.number))[0]==me)
+        ManualTarget(object.number,("attach",));
+      else
+      {
+        imprint=1;
+        TryTransferTo("play",0);
+      }
+    }
+    else
+    {
+      imprint=1;
+      TryTransferTo("play",0);
+    }
+  }
+}
+
+#
+# KeyPageUp() - Handler for key PageUp.
+#
+def KeyPageUp
+{
+  if(object.name=="Current Deck")
+    listbox_scroll(deck.box,-5);
+  else if(count(object.number,books) && object.number != NULL)
+  {
+    push(p);
+    p=book_page(object.number);
+    p=p-1;
+    if(p < 0)
+	  p=book_last_page(object.number);
+
+    book_set_page(object.number,p);
+    p=pop();
+  }
+  else if(get_attr(card.book,"visible"))
+  {
+    push(p);
+    p=book_page(card.book);
+    p=p-1;
+    if(p < 0)
+	  p=book_last_page(card.book);
+
+    SetBookPage(p);
+    p=pop();
+  }
+  else if(object.number==chat_msg.box)
+    msgbox_scroll(chat_msg.box,-7);
+  else
+    msgbox_scroll(msg.box,-7);
+}
+
+#
+# KeyPageDown() - Handler for key PageDown.
+#
+def KeyPageDown
+{
+  if(object.name=="Current Deck")
+    listbox_scroll(deck.box,5);
+  else if(count(object.number,books) && object.number != NULL)
+  {
+    push(p);
+    p=book_page(object.number);
+    p=p+1;
+    if(p > book_last_page(object.number))
+      p=0;
+    book_set_page(object.number,p);
+    p=pop();
+  }
+  else if(get_attr(card.book,"visible"))
+  {
+    push(p);
+    p=book_page(card.book);
+    p=p+1;
+    if(p > book_last_page(card.book))
+	  p=0;
+    SetBookPage(p);
+    p=pop();
+  }
+  else if(object.number==chat_msg.box)
+    msgbox_scroll(chat_msg.box,7);
+  else
+    msgbox_scroll(msg.box,7);
+}
+
+#
+# PlayKeyControlKeyO() - Tap out.
+#
+def PlayKeyControlKeyO
+{
+  for(c)(inplay(me))
+  {
+    cd = card_data(c);
+    if(find("Land",Attr("type",cd[2])) != NULL && cd[1] == 0)
+    {
+      if(!IsStayUntapped(c))
+      {
+        if(isfunction("TapHook"))
+        {
+          if(TapHook(c))
+            Send("Rotate",(c,90));
+        }
+        else
+          Send("Rotate",(c,90));
+      }
+    }
+  }
+}
+
+#
+# PlayKeyControlKeyM() - Mass attack.
+#
+def PlayKeyControlKeyM
+{
+  push(a);
+  a=0;
+  for(c)(inplay(me))
+  {
+    cd = card_data(c);
+    if(find("Creature",Attr("type",cd[2])) != NULL && cd[1] == 0)
+    {
+      if(!IsStayUntapped(c))
+      {
+        if(isfunction("TapHook"))
+        {
+          if(TapHook(c))
+          {
+            a=a+1;
+            Send("Rotate",(c,90));
+          }
+        }
+        else
+        {
+          a=a+1;
+          Send("Rotate",(c,90));
+        }
+      }
+    }
+  }
+  if(a)
+    Send("Say","{orange}Attack!");
+  a=pop();
+}
+
+def PlayCommandTapout
+{
+  PlayKeyControlKeyO();
+}
+
+def PlayCommandAlpha
+{
+  PlayKeyControlKeyM();
+}
+
+HELP{"play"}{"tapout"}=("","tap all lands",NULL,
+"Tap all your lands. You can shortcut this with {yellow}Ctrl+O{white}.");
+HELP{"play"}{"alpha"}=("","attack with all creatures",NULL,
+"Tap all your creatures and make a declaration of attack. You can shortcut this with {yellow}Ctrl+M{white}.");
+
+#
+# HOOKS
+# =====
+
+#
+# AddInputHook(left input,right input,string) - Called when a string
+#   is about to be added to the input line.
+#   This hook must add a string to the current input line and return the whole input line.
+# 
+def AddInputHook
+{
+  if(ARG[2]=="{1}")
+  {
+    push(i);
+    push(j);
+    i=right(ARG[0],3);
+    j=right(ARG[0],4);
+    if(length(i)==3 && first(i)=="{" && last(i)=="}" && count(substr(i,1,1),("1","2","3","4","5","6","7","8","9")))
+      return(left(ARG[0],length(ARG[0])-3)+"{"+(toint(substr(i,1,1))+1)+"}{|}"+ARG[1]);
+    else if(length(j)==4 && first(j)=="{" && last(j)=="}" && count(substr(j,1,2),("10","11","12","13","14","15","16","17","18","19")))
+      return(left(ARG[0],length(ARG[0])-4)+"{"+(toint(substr(j,1,2))+1)+"}{|}"+ARG[1]);
+    else
+      return(ARG[0]+ARG[2]+"{|}"+ARG[1]);
+    
+    j=pop();
+    i=pop();
+  }
+  else
+    return(ARG[0]+ARG[2]+"{|}"+ARG[1]);
+}
+
+# 
+# InputHook(input) - This hook is called when the enter key is pressed and
+#   the current input line is not going to be a pricing command. This
+#   hook should return 1, if it handles the input or 0, if default handler
+#   should be used instead.
+#
+def InputHook
+{
+  return(0);
+  if(flag.playing)
+  {
+    push(s);
+    push(d);
+
+    d=NULL;
+    s=toint(score[me]);
+
+    if(left(ARG,1)=="-" && tostr(toint(ARG))==ARG)
+      d=toint(ARG);
+    else if(left(ARG,1)=="+" && tostr(toint(substr(ARG,1)))==substr(ARG,1))
+      d=toint(substr(ARG,1));
+    else if(tostr(toint(ARG))==ARG)
+      d=toint(ARG)-s;
+
+    if(d != NULL)
+    {
+      s=s+d;
+      Send("Score",(me,s));
+    
+      if(d >= 0)
+        d="+"+d;
+      Say("{orange}Current life ("+d+") : "+s);
+
+      return(1);
+    }
+
+    d=pop();
+    s=pop();
+  }
+}
+
+#
+# MessageHook(string) - Called before output when a message is
+#  received. This hook should return the modified message.
+#
+def MessageHook
+{
+  return(ARG);
+}
+
+#
+#  CreateDeckHook(object num,owner player,name,(x,y)) - This hook is
+#    called after creation of a deck.
+#
+def CreateDeckHook
+{
+  if(ARG[2]=="sideboard" || ARG[2]=="opponent sideboard")
+  {
+    set_attr(ARG[0],"visible",0);
+    if(ARG[1]==me)
+      sideboard=ARG[0];
+  }
+}
+
+#
+# EditAddHook(deck part,card name or number) - Make sure special cards go to their proper deck sections.
+#
+def EditAddHook
+{
+# Precondition: arguments have been sanitized and assigned to "deck.addpart" and "cn" respectively.
+  return(1);
+  
+  if(cn>500 && cn<587)
+  {
+    CheckDeckPart("planes");
+    deck.addpart="planes";
+  }
+  else if(cn>700 && cn<751)
+  {
+    CheckDeckPart("schemes");
+    deck.addpart="schemes";
+  }
+  else if((cn>800 && cn<822) || cn==869)
+  {
+    if(has_entry("command",decks{deck.name}))
+      deck.addpart="command";
+    else
+    {
+      CheckDeckPart("exile");
+      deck.addpart="exile";
+    }
+  }
+  else if(cn>821 && cn<869)
+  {
+    CheckDeckPart("challenge");
+    deck.addpart="challenge";
+  }
+}
+
+#
+# PutTableHook() - Clear imprint flag.
+#
+def PutTableHook
+{
+  imprint=0;
+}
+
+#
+# SingleCardMenuHook(context) - added to menu for a single card.
+#
+def SingleCardMenuHook
+{
+  push(m);
+  m=(("Play {blue}"+card.name+"{black} as morph","","TryTransferTo('play',4)"),("Manifest {blue}"+card.name,"","TryTransferTo('play',5)"));
+  if(ARG!="exile")
+    m=m+(("Put to exile","Ctrl+X","TryTransferTo('deck.top',deck.objects[me]{'exile'})"),);
+  if(ARG!="sideboard")
+    m=m+(("Put to sideboard","Ctrl+Z","TryTransferTo('deck.top',deck.objects[me]{'sideboard'})"),);
+  return(m);
+  m=pop();
+}
+
+#
+# UntapHook(object number) - Return 1 if card should be untapped using Ctrl+U.
+#
+def UntapHook
+{
+  if((card_data(ARG))[1]==270)
+  {
+    Send("Rotate",(ARG,180));
+    return(0);
+  }
+  else if((card_data(ARG))[1]==180)
+    return(0);
+  else if((card_data(ARG))[1]!=0)
+    return(1);
+}
+
+#
+# TapHook(object number) - Return 1 if card should be tapped using Ctrl+O or Ctrl+M.
+#
+def TapHook
+{
+  if((card_data(ARG))[1]==180)
+  {
+    Send("Rotate",(ARG,270));
+    return(0);
+  }
+  else if((card_data(ARG))[1]==270)
+    return(0);
+  else if((card_data(ARG))[1]!=90)
+    return(1);
+}
+
+# PLAYING CARDS
+# =============
+
+#
+# PlayCard(card number,face down?) - Handler for playing a card and putting it in the right place.
+#
+def PlayCard
+{
+  push(a);
+  a=1;
+  if(options{"playtograve"}=="on")
+  {
+    if(imprint<=0 && !ARG[1] && toint(Attr("permanent",ARG[0]))==0)
+    {
+      Send("Transfer",(1,("play",ARG[0],0),("deck.top",discard)));
+      a=0;
+    }
+  }
+  if(a)
+  {
+
+    if(isvar("rules.category"))
+      a=FindSpace(ARG[0],0,ARG[1]);
+    else
+      a=(BASE_TABLE_WIDTH/2+random(seq(-20,20)),random(seq(0,40)));
+      
+    Send("Transfer",(1,("play",ARG[0],ARG[1]),("table",a[0]+(card.width*50)/(w(10)*w(10)),a[1]+(card.height*50)/(h(10)*h(10)),0,ARG[1])));
+
+    awaiting_card=1;
+    imprint=0;
+  }
+  a=pop();
+}
+
+#
+# LOCATION TABLES
+# ===============
+
+#
+# InitializeLocationTables() - Fill tables for location algorithm.
+#
+def InitializeLocationTables
+{
+
+# This table maps a card number 'card' to the correct location
+# category. The category is a list of one or more strings, specifying
+# the category in the order of precedence: the most general one is the
+# first. The entries of the table are checked in the order declared
+# and the first component of an entry is evaluated. If the result of
+# the evaluation is non-zero, then the second entry is evaluated and
+# the result is set as the category of the card. In addition to the
+# variable 'card', all variables mentioned as
+#             <trigger event="location hint" atribute="var"> 
+# in the game xml-file, is preset to the corresponding values of the
+# card in question. If no one of the rules matches, the value
+# ("Default",) is selected as a category. The first component of the
+# category description is called as a primary category, the second one
+# is called as a group and third as a subgroup.
+#
+# Here are some preset variables to use:
+#
+# findspace.facedown - face down status set for last FindSpace request
+# findspace.orientation - orientation set for last FindSpace request
+
+rules.category=(
+  (
+	'imprint==1','("attach","imprint")'
+  ),
+  (
+	'findspace.facedown','("permanent",current_time())'
+  ),
+  (
+	'type==NULL','("permanent","")'
+  ),
+  (
+	'toint(permanent)==0 && card>821 && card<853','("ospell","")'
+  ),
+  (
+	'toint(permanent)==0','("spell","")'
+  ),
+  (
+	'find("Land",type)!=NULL','("land",name(card))'
+  ),
+  (
+	'type=="World Enchantment"','("wenchantment",name(card))'
+  ),
+  (
+	'card>821 && card<853','("opermanent",name(card))'
+  ),
+  (
+	'1','("permanent",name(card))'
+  )
+);
+
+# This table maps categories to coordinate rules.
+# Entries are (category part,rules), where
+#  - 'category part' must match to the beginning of the full catergory description
+#  - 'rules' is a list containing (coordinate mappings, options) pairs
+#    - coordinate mappings is a list of functions and arguments to try in the defined order
+#      following functions are implemented:
+#		Stack card by group
+#       ("StacksByGroup",x,y,xoffset,yoffset,stack x-step,stack y-step)
+#       ("LocationList",((x1,y1),(x2,y2),...))
+#       ("FindOtherCard",select expression,xoffset,yoffset)
+#		Place card in random position near position <x,y>
+#       ("RandomNearPoint",x,y)
+#		Attach to card
+#       ("TargetCard",xoffset,yoffset,xsuboffset,ysuboffset)
+#       ("Default",)
+#    - options is a dictionary with following usable entries:
+#       "AutoRaiseGroupTail" if "yes", raise all cards automatically with greater card index
+#       "RaiseTarget", if "yes" raise target card after attaching in method "TargetCard"
+#       "RaiseSource", if "yes" raise source card before attaching in method "TargetCard"
+#       "ReverseAttach", if "yes" attach cards vice versa in method "TargetCard"
+#       "OffscreenEnabled" if "yes", allow cards to go out of screen
+# Following variables are set when calling function implementing a rule:
+#   findspace.category - category of a card
+#   findspace.group - group of a card
+#   findspace.options - options for current rule
+#   findspace.card - card number of the card
+#     (("StacksByGroup",8*(card.xstep+10)-36,36,-24,12,0,0),),
+
+rules.coordinate=(
+  (("land",),(
+     (("StacksByGroup",100,card.ystep+54,6,12,card.xstep+10,0),),
+     (("OffscreenEnabled","yes"),),
+     (("AutoRaiseGroupTail","yes"),)
+  )),
+  (("permanent",),(
+     (("StacksByGroup",100,15,6,12,card.xstep+10,0),),
+     (("AutoRaiseGroupTail","yes"),)
+  )),
+  (("opermanent",),(
+     (("StacksByGroup",100,-card.ystep-64,6,12,card.xstep+10,0),),
+     (("AutoRaiseGroupTail","yes"),)
+  )),
+  (("wenchantment",),(
+     (("StacksByGroup",8*(card.xstep+10),15,6,12,card.xstep+10,0),),
+     (("AutoRaiseGroupTail","yes"),)
+  )),
+  (("spell",),(
+     (("StacksByGroup",5*(card.xstep),36,24,0,0,0),),
+     (("AutoRaiseGroupTail","yes"),)
+  )),
+  (("ospell",),(
+     (("StacksByGroup",5*(card.xstep),-card.ystep-64,24,0,0,0),),
+     (("AutoRaiseGroupTail","yes"),)
+  )),
+  (("attach",),(
+     (("TargetCard",0,-h(15),0,-h(15)),),
+     (,)
+  )),
+);
+
+# This table contains grouping information of the cards
+# currently on table:
+#
+# card.group{primary category}{group}=(group index,list of object numbers,initial coordinates)
+#
+# - group index is id number of each (primary category, group) pair
+# - list of object numbers may contain "free" entries denoting removed cards
+#   and "reserved" entries denoting cards that are coming to play soon
+# - initial coordinates are positions of top left corner of cards
+
+}

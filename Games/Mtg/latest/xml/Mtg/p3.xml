@@ -1,0 +1,2318 @@
+<?xml version='1.0' encoding='latin1'?>
+<!DOCTYPE ccg-setinfo SYSTEM "../gccg-set.dtd">
+<ccg-setinfo name="Portal Three Kingdoms" dir="P3" abbrev="P3" game="Magic the Gathering">
+ <cards>
+  <card name="Alert Shu Infantry" graphics="AlertShuInfantry.jpg" text="Vigilance">
+   <attr key="rarity" value="U" />
+   <attr key="cn" value="1" />
+   <attr key="cost" value="{2}{W}" />
+   <attr key="cmc" value="3" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Human Soldier" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="White" />
+   <attr key="coloridentity" value="16" />
+   <attr key="power" value="2" />
+   <attr key="toughness" value="2" />
+   <attr key="artist" value="Solomon Au Yeung" />
+  </card>
+  <card name="Ambition's Cost" graphics="AmbitionsCost.jpg" text="You draw three cards and you lose 3 life.">
+   <attr key="rarity" value="R" />
+   <attr key="cn" value="67" />
+   <attr key="cost" value="{3}{B}" />
+   <attr key="cmc" value="4" />
+   <attr key="type" value="Sorcery" />
+   <attr key="permanent" value="0" />
+   <attr key="color" value="Black" />
+   <attr key="coloridentity" value="4" />
+   <attr key="artist" value="Junko Taguchi" />
+  </card>
+  <card name="Balance of Power" graphics="BalanceofPower.jpg" text="If target opponent has more cards in hand than you, draw cards equal to the difference.">
+   <attr key="rarity" value="R" />
+   <attr key="cn" value="34" />
+   <attr key="cost" value="{3}{U}{U}" />
+   <attr key="cmc" value="5" />
+   <attr key="type" value="Sorcery" />
+   <attr key="permanent" value="0" />
+   <attr key="color" value="Blue" />
+   <attr key="coloridentity" value="8" />
+   <attr key="artist" value="Quan Xuejun" />
+  </card>
+  <card name="Barbarian General" graphics="BarbarianGeneral.jpg" text="Horsemanship">
+   <attr key="rarity" value="U" />
+   <attr key="cn" value="100" />
+   <attr key="cost" value="{4}{R}" />
+   <attr key="cmc" value="5" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Human Barbarian Soldier" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Red" />
+   <attr key="coloridentity" value="2" />
+   <attr key="power" value="3" />
+   <attr key="toughness" value="2" />
+   <attr key="artist" value="Kuang Sheng" />
+  </card>
+  <card name="Barbarian Horde" graphics="BarbarianHorde.jpg" text="">
+   <attr key="rarity" value="C" />
+   <attr key="cn" value="101" />
+   <attr key="cost" value="{3}{R}" />
+   <attr key="cmc" value="4" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Human Barbarian Soldier" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Red" />
+   <attr key="coloridentity" value="2" />
+   <attr key="power" value="3" />
+   <attr key="toughness" value="3" />
+   <attr key="artist" value="Kuang Sheng" />
+  </card>
+  <card name="Blaze" graphics="Blaze.jpg" text="Blaze deals X damage to target creature or player.">
+   <attr key="rarity" value="U" />
+   <attr key="cn" value="102" />
+   <attr key="cost" value="{X}{R}" />
+   <attr key="cmc" value="1" />
+   <attr key="type" value="Sorcery" />
+   <attr key="permanent" value="0" />
+   <attr key="color" value="Red" />
+   <attr key="coloridentity" value="2" />
+   <attr key="artist" value="Qu Xin" />
+  </card>
+  <card name="Borrowing 100,000 Arrows" graphics="Borrowing100000Arrows.jpg" text="Draw a card for each tapped creature target opponent controls.">
+   <attr key="rarity" value="U" />
+   <attr key="cn" value="35" />
+   <attr key="cost" value="{2}{U}" />
+   <attr key="cmc" value="3" />
+   <attr key="type" value="Sorcery" />
+   <attr key="permanent" value="0" />
+   <attr key="color" value="Blue" />
+   <attr key="coloridentity" value="8" />
+   <attr key="artist" value="Song Shikai" />
+  </card>
+  <card name="Borrowing the East Wind" graphics="BorrowingtheEastWind.jpg" text="Borrowing the East Wind deals X damage to each creature with horsemanship and each player.">
+   <attr key="rarity" value="R" />
+   <attr key="cn" value="133" />
+   <attr key="cost" value="{X}{G}{G}" />
+   <attr key="cmc" value="2" />
+   <attr key="type" value="Sorcery" />
+   <attr key="permanent" value="0" />
+   <attr key="color" value="Green" />
+   <attr key="coloridentity" value="1" />
+   <attr key="artist" value="Gao Yan" />
+  </card>
+  <card name="Brilliant Plan" graphics="BrilliantPlan.jpg" text="Draw three cards.">
+   <attr key="rarity" value="U" />
+   <attr key="cn" value="36" />
+   <attr key="cost" value="{4}{U}" />
+   <attr key="cmc" value="5" />
+   <attr key="type" value="Sorcery" />
+   <attr key="permanent" value="0" />
+   <attr key="color" value="Blue" />
+   <attr key="coloridentity" value="8" />
+   <attr key="artist" value="Song Shikai" />
+  </card>
+  <card name="Broken Dam" graphics="BrokenDam.jpg" text="Tap one or two target creatures without horsemanship.">
+   <attr key="rarity" value="C" />
+   <attr key="cn" value="37" />
+   <attr key="cost" value="{U}" />
+   <attr key="cmc" value="1" />
+   <attr key="type" value="Sorcery" />
+   <attr key="permanent" value="0" />
+   <attr key="color" value="Blue" />
+   <attr key="coloridentity" value="8" />
+   <attr key="artist" value="Jiang Zhuqing" />
+  </card>
+  <card name="Burning Fields" graphics="BurningFields.jpg" text="Burning Fields deals 5 damage to target opponent.">
+   <attr key="rarity" value="C" />
+   <attr key="cn" value="103" />
+   <attr key="cost" value="{4}{R}" />
+   <attr key="cmc" value="5" />
+   <attr key="type" value="Sorcery" />
+   <attr key="permanent" value="0" />
+   <attr key="color" value="Red" />
+   <attr key="coloridentity" value="2" />
+   <attr key="artist" value="Yang Hong" />
+  </card>
+  <card name="Burning of Xinye" graphics="BurningofXinye.jpg" text="You destroy four lands you control, then target opponent destroys four lands he or she controls. Then Burning of Xinye deals 4 damage to each creature.">
+   <attr key="rarity" value="R" />
+   <attr key="cn" value="104" />
+   <attr key="cost" value="{4}{R}{R}" />
+   <attr key="cmc" value="6" />
+   <attr key="type" value="Sorcery" />
+   <attr key="permanent" value="0" />
+   <attr key="color" value="Red" />
+   <attr key="coloridentity" value="2" />
+   <attr key="artist" value="Yang Hong" />
+  </card>
+  <card name="Cao Cao, Lord of Wei" graphics="CaoCaoLordofWei.jpg" text="{T}: Target opponent discards two cards. Activate this ability only during your turn, before attackers are declared.">
+   <attr key="rarity" value="R" />
+   <attr key="cn" value="68" />
+   <attr key="cost" value="{3}{B}{B}" />
+   <attr key="cmc" value="5" />
+   <attr key="type" value="Legendary Creature" />
+   <attr key="subtype" value="Human Soldier" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Black" />
+   <attr key="coloridentity" value="4" />
+   <attr key="power" value="3" />
+   <attr key="toughness" value="3" />
+   <attr key="artist" value="Gao Jianzhang" />
+  </card>
+  <card name="Cao Ren, Wei Commander" graphics="CaoRenWeiCommander.jpg" text="Horsemanship
+When Cao Ren, Wei Commander enters the battlefield, you lose 3 life.">
+   <attr key="rarity" value="R" />
+   <attr key="cn" value="69" />
+   <attr key="cost" value="{2}{B}{B}" />
+   <attr key="cmc" value="4" />
+   <attr key="type" value="Legendary Creature" />
+   <attr key="subtype" value="Human Soldier Warrior" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Black" />
+   <attr key="coloridentity" value="4" />
+   <attr key="power" value="3" />
+   <attr key="toughness" value="3" />
+   <attr key="artist" value="Junko Taguchi" />
+  </card>
+  <card name="Capture of Jingzhou" graphics="CaptureofJingzhou.jpg" text="Take an extra turn after this one.">
+   <attr key="rarity" value="R" />
+   <attr key="cn" value="38" />
+   <attr key="cost" value="{3}{U}{U}" />
+   <attr key="cmc" value="5" />
+   <attr key="type" value="Sorcery" />
+   <attr key="permanent" value="0" />
+   <attr key="color" value="Blue" />
+   <attr key="coloridentity" value="8" />
+   <attr key="artist" value="Jack Wei" />
+  </card>
+  <card name="Champion's Victory" graphics="ChampionsVictory.jpg" text="Cast Champion's Victory only during the declare attackers step and only if you've been attacked this step.
+Return target attacking creature to its owner's hand.">
+   <attr key="rarity" value="U" />
+   <attr key="cn" value="39" />
+   <attr key="cost" value="{U}" />
+   <attr key="cmc" value="1" />
+   <attr key="type" value="Instant" />
+   <attr key="permanent" value="0" />
+   <attr key="color" value="Blue" />
+   <attr key="coloridentity" value="8" />
+   <attr key="artist" value="Hong Yan" />
+  </card>
+  <card name="Coercion" graphics="Coercion.jpg" text="Target opponent reveals his or her hand. You choose a card from it. That player discards that card.">
+   <attr key="rarity" value="U" />
+   <attr key="cn" value="70" />
+   <attr key="cost" value="{2}{B}" />
+   <attr key="cmc" value="3" />
+   <attr key="type" value="Sorcery" />
+   <attr key="permanent" value="0" />
+   <attr key="color" value="Black" />
+   <attr key="coloridentity" value="4" />
+   <attr key="artist" value="Kang Yu" />
+  </card>
+  <card name="Control of the Court" graphics="ControloftheCourt.jpg" text="Draw four cards, then discard three cards at random.">
+   <attr key="rarity" value="U" />
+   <attr key="cn" value="105" />
+   <attr key="cost" value="{1}{R}" />
+   <attr key="cmc" value="2" />
+   <attr key="type" value="Sorcery" />
+   <attr key="permanent" value="0" />
+   <attr key="color" value="Red" />
+   <attr key="coloridentity" value="2" />
+   <attr key="artist" value="Li Yousong" />
+  </card>
+  <card name="Corrupt Court Official" graphics="CorruptCourtOfficial.jpg" text="When Corrupt Court Official enters the battlefield, target opponent discards a card.">
+   <attr key="rarity" value="U" />
+   <attr key="cn" value="71" />
+   <attr key="cost" value="{1}{B}" />
+   <attr key="cmc" value="2" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Human Advisor" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Black" />
+   <attr key="coloridentity" value="4" />
+   <attr key="power" value="1" />
+   <attr key="toughness" value="1" />
+   <attr key="artist" value="Li Yousong" />
+  </card>
+  <card name="Corrupt Eunuchs" graphics="CorruptEunuchs.jpg" text="When Corrupt Eunuchs enters the battlefield, it deals 2 damage to target creature.">
+   <attr key="rarity" value="U" />
+   <attr key="cn" value="106" />
+   <attr key="cost" value="{3}{R}" />
+   <attr key="cmc" value="4" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Human Advisor" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Red" />
+   <attr key="coloridentity" value="2" />
+   <attr key="power" value="2" />
+   <attr key="toughness" value="2" />
+   <attr key="artist" value="Li Yousong" />
+  </card>
+  <card name="Council of Advisors" graphics="CouncilofAdvisors.jpg" text="When Council of Advisors enters the battlefield, draw a card.">
+   <attr key="rarity" value="U" />
+   <attr key="cn" value="40" />
+   <attr key="cost" value="{2}{U}" />
+   <attr key="cmc" value="3" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Human Advisor" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Blue" />
+   <attr key="coloridentity" value="8" />
+   <attr key="power" value="1" />
+   <attr key="toughness" value="1" />
+   <attr key="artist" value="Liu Shangying" />
+  </card>
+  <card name="Counterintelligence" graphics="Counterintelligence.jpg" text="Return one or two target creatures to their owners' hands.">
+   <attr key="rarity" value="U" />
+   <attr key="cn" value="41" />
+   <attr key="cost" value="{2}{U}{U}" />
+   <attr key="cmc" value="4" />
+   <attr key="type" value="Sorcery" />
+   <attr key="permanent" value="0" />
+   <attr key="color" value="Blue" />
+   <attr key="coloridentity" value="8" />
+   <attr key="artist" value="Wang Feng" />
+  </card>
+  <card name="Cunning Advisor" graphics="CunningAdvisor.jpg" text="{T}: Target opponent discards a card. Activate this ability only during your turn, before attackers are declared.">
+   <attr key="rarity" value="U" />
+   <attr key="cn" value="72" />
+   <attr key="cost" value="{3}{B}" />
+   <attr key="cmc" value="4" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Human Advisor" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Black" />
+   <attr key="coloridentity" value="4" />
+   <attr key="power" value="1" />
+   <attr key="toughness" value="1" />
+   <attr key="artist" value="Gao Jianzhang" />
+  </card>
+  <card name="Deception" graphics="Deception.jpg" text="Target opponent discards two cards.">
+   <attr key="rarity" value="C" />
+   <attr key="cn" value="73" />
+   <attr key="cost" value="{2}{B}" />
+   <attr key="cmc" value="3" />
+   <attr key="type" value="Sorcery" />
+   <attr key="permanent" value="0" />
+   <attr key="color" value="Black" />
+   <attr key="coloridentity" value="4" />
+   <attr key="artist" value="Wang Feng" />
+  </card>
+  <card name="Desert Sandstorm" graphics="DesertSandstorm.jpg" text="Desert Sandstorm deals 1 damage to each creature.">
+   <attr key="rarity" value="C" />
+   <attr key="cn" value="107" />
+   <attr key="cost" value="{2}{R}" />
+   <attr key="cmc" value="3" />
+   <attr key="type" value="Sorcery" />
+   <attr key="permanent" value="0" />
+   <attr key="color" value="Red" />
+   <attr key="coloridentity" value="2" />
+   <attr key="artist" value="Xu Tan" />
+  </card>
+  <card name="Desperate Charge" graphics="DesperateCharge.jpg" text="Creatures you control get +2/+0 until end of turn.">
+   <attr key="rarity" value="U" />
+   <attr key="cn" value="74" />
+   <attr key="cost" value="{2}{B}" />
+   <attr key="cmc" value="3" />
+   <attr key="type" value="Sorcery" />
+   <attr key="permanent" value="0" />
+   <attr key="color" value="Black" />
+   <attr key="coloridentity" value="4" />
+   <attr key="artist" value="Chen Weidong" />
+  </card>
+  <card name="Diaochan, Artful Beauty" graphics="DiaochanArtfulBeauty.jpg" text="{T}: Destroy target creature of your choice, then destroy target creature of an opponent's choice. Activate this ability only during your turn, before attackers are declared.">
+   <attr key="rarity" value="R" />
+   <attr key="cn" value="108" />
+   <attr key="cost" value="{3}{R}" />
+   <attr key="cmc" value="4" />
+   <attr key="type" value="Legendary Creature" />
+   <attr key="subtype" value="Human Advisor" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Red" />
+   <attr key="coloridentity" value="2" />
+   <attr key="power" value="1" />
+   <attr key="toughness" value="1" />
+   <attr key="artist" value="Miao Aili" />
+  </card>
+  <card name="Dong Zhou, the Tyrant" graphics="DongZhoutheTyrant.jpg" text="When Dong Zhou, the Tyrant enters the battlefield, target creature an opponent controls deals damage equal to its power to that player.">
+   <attr key="rarity" value="R" />
+   <attr key="cn" value="109" />
+   <attr key="cost" value="{4}{R}" />
+   <attr key="cmc" value="5" />
+   <attr key="type" value="Legendary Creature" />
+   <attr key="subtype" value="Human Soldier" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Red" />
+   <attr key="coloridentity" value="2" />
+   <attr key="power" value="3" />
+   <attr key="toughness" value="3" />
+   <attr key="artist" value="Junichi Inoue" />
+  </card>
+  <card name="Eightfold Maze" graphics="EightfoldMaze.jpg" text="Cast Eightfold Maze only during the declare attackers step and only if you've been attacked this step.
+Destroy target attacking creature.">
+   <attr key="rarity" value="R" />
+   <attr key="cn" value="2" />
+   <attr key="cost" value="{2}{W}" />
+   <attr key="cmc" value="3" />
+   <attr key="type" value="Instant" />
+   <attr key="permanent" value="0" />
+   <attr key="color" value="White" />
+   <attr key="coloridentity" value="16" />
+   <attr key="artist" value="Shang Huitong" />
+  </card>
+  <card name="Empty City Ruse" graphics="EmptyCityRuse.jpg" text="Target opponent skips all combat phases of his or her next turn.">
+   <attr key="rarity" value="U" />
+   <attr key="cn" value="3" />
+   <attr key="cost" value="{W}" />
+   <attr key="cmc" value="1" />
+   <attr key="type" value="Sorcery" />
+   <attr key="permanent" value="0" />
+   <attr key="color" value="White" />
+   <attr key="coloridentity" value="16" />
+   <attr key="artist" value="Qu Xin" />
+  </card>
+  <card name="Eunuchs' Intrigues" graphics="EunuchsIntrigues.jpg" text="Target opponent chooses a creature he or she controls. Other creatures he or she controls can't block this turn.">
+   <attr key="rarity" value="U" />
+   <attr key="cn" value="110" />
+   <attr key="cost" value="{2}{R}" />
+   <attr key="cmc" value="3" />
+   <attr key="type" value="Sorcery" />
+   <attr key="permanent" value="0" />
+   <attr key="color" value="Red" />
+   <attr key="coloridentity" value="2" />
+   <attr key="artist" value="Li Yousong" />
+  </card>
+  <card name="Exhaustion" graphics="Exhaustion.jpg" text="Creatures and lands target opponent controls don't untap during his or her next untap step.">
+   <attr key="rarity" value="R" />
+   <attr key="cn" value="42" />
+   <attr key="cost" value="{2}{U}" />
+   <attr key="cmc" value="3" />
+   <attr key="type" value="Sorcery" />
+   <attr key="permanent" value="0" />
+   <attr key="color" value="Blue" />
+   <attr key="coloridentity" value="8" />
+   <attr key="artist" value="Qu Xin" />
+  </card>
+  <card name="Extinguish" graphics="Extinguish.jpg" text="Counter target sorcery spell.">
+   <attr key="rarity" value="C" />
+   <attr key="cn" value="43" />
+   <attr key="cost" value="{1}{U}" />
+   <attr key="cmc" value="2" />
+   <attr key="type" value="Instant" />
+   <attr key="permanent" value="0" />
+   <attr key="color" value="Blue" />
+   <attr key="coloridentity" value="8" />
+   <attr key="artist" value="Ding Songjian" />
+  </card>
+  <card name="False Defeat" graphics="FalseDefeat.jpg" text="Return target creature card from your graveyard to the battlefield.">
+   <attr key="rarity" value="C" />
+   <attr key="cn" value="4" />
+   <attr key="cost" value="{3}{W}" />
+   <attr key="cmc" value="4" />
+   <attr key="type" value="Sorcery" />
+   <attr key="permanent" value="0" />
+   <attr key="color" value="White" />
+   <attr key="coloridentity" value="16" />
+   <attr key="artist" value="Li Wang" />
+  </card>
+  <card name="False Mourning" graphics="FalseMourning.jpg" text="Put target card from your graveyard on top of your library.">
+   <attr key="rarity" value="U" />
+   <attr key="cn" value="134" />
+   <attr key="cost" value="{G}" />
+   <attr key="cmc" value="1" />
+   <attr key="type" value="Sorcery" />
+   <attr key="permanent" value="0" />
+   <attr key="color" value="Green" />
+   <attr key="coloridentity" value="1" />
+   <attr key="artist" value="Koji" />
+  </card>
+  <card name="Famine" graphics="Famine.jpg" text="Famine deals 3 damage to each creature and each player.">
+   <attr key="rarity" value="U" />
+   <attr key="cn" value="75" />
+   <attr key="cost" value="{3}{B}{B}" />
+   <attr key="cmc" value="5" />
+   <attr key="type" value="Sorcery" />
+   <attr key="permanent" value="0" />
+   <attr key="color" value="Black" />
+   <attr key="coloridentity" value="4" />
+   <attr key="artist" value="Sun Nan" />
+  </card>
+  <card name="Fire Ambush" graphics="FireAmbush.jpg" text="Fire Ambush deals 3 damage to target creature or player.">
+   <attr key="rarity" value="C" />
+   <attr key="cn" value="111" />
+   <attr key="cost" value="{1}{R}" />
+   <attr key="cmc" value="2" />
+   <attr key="type" value="Sorcery" />
+   <attr key="permanent" value="0" />
+   <attr key="color" value="Red" />
+   <attr key="coloridentity" value="2" />
+   <attr key="artist" value="Tang Xiaogu" />
+  </card>
+  <card name="Fire Bowman" graphics="FireBowman.jpg" text="Sacrifice Fire Bowman: Fire Bowman deals 1 damage to target creature or player. Activate this ability only during your turn, before attackers are declared.">
+   <attr key="rarity" value="U" />
+   <attr key="cn" value="112" />
+   <attr key="cost" value="{R}" />
+   <attr key="cmc" value="1" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Human Soldier Archer" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Red" />
+   <attr key="coloridentity" value="2" />
+   <attr key="power" value="1" />
+   <attr key="toughness" value="1" />
+   <attr key="artist" value="Cai Tingting" />
+  </card>
+  <card name="Flanking Troops" graphics="FlankingTroops.jpg" text="Whenever Flanking Troops attacks, you may tap target creature.">
+   <attr key="rarity" value="U" />
+   <attr key="cn" value="5" />
+   <attr key="cost" value="{2}{W}{W}" />
+   <attr key="cmc" value="4" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Human Soldier" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="White" />
+   <attr key="coloridentity" value="16" />
+   <attr key="power" value="2" />
+   <attr key="toughness" value="2" />
+   <attr key="artist" value="Li Wang" />
+  </card>
+  <card name="Forced Retreat" graphics="ForcedRetreat.jpg" text="Put target creature on top of its owner's library.">
+   <attr key="rarity" value="C" />
+   <attr key="cn" value="44" />
+   <attr key="cost" value="{2}{U}" />
+   <attr key="cmc" value="3" />
+   <attr key="type" value="Sorcery" />
+   <attr key="permanent" value="0" />
+   <attr key="color" value="Blue" />
+   <attr key="coloridentity" value="8" />
+   <attr key="artist" value="Huang Qishi" />
+  </card>
+  <card name="Forest" graphics="Forest.jpg" text="{G}">
+   <attr key="rarity" value="L" />
+   <attr key="cn" value="178" />
+   <attr key="cmc" value="0" />
+   <attr key="type" value="Basic Land" />
+   <attr key="subtype" value="Forest" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Land" />
+   <attr key="coloridentity" value="1" />
+   <attr key="artist" value="Ji Yong" />
+  </card>
+  <card name="Forest" graphics="Forest2.jpg" text="{G}">
+   <attr key="rarity" value="L" />
+   <attr key="cn" value="179" />
+   <attr key="cmc" value="0" />
+   <attr key="type" value="Basic Land" />
+   <attr key="subtype" value="Forest" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Land" />
+   <attr key="coloridentity" value="1" />
+   <attr key="artist" value="Ji Yong" />
+  </card>
+  <card name="Forest" graphics="Forest3.jpg" text="{G}">
+   <attr key="rarity" value="L" />
+   <attr key="cn" value="180" />
+   <attr key="cmc" value="0" />
+   <attr key="type" value="Basic Land" />
+   <attr key="subtype" value="Forest" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Land" />
+   <attr key="coloridentity" value="1" />
+   <attr key="artist" value="Ji Yong" />
+  </card>
+  <card name="Forest Bear" graphics="ForestBear.jpg" text="">
+   <attr key="rarity" value="C" />
+   <attr key="cn" value="135" />
+   <attr key="cost" value="{1}{G}" />
+   <attr key="cmc" value="2" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Bear" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Green" />
+   <attr key="coloridentity" value="1" />
+   <attr key="power" value="2" />
+   <attr key="toughness" value="2" />
+   <attr key="artist" value="Wang Yuqun" />
+  </card>
+  <card name="Ghostly Visit" graphics="GhostlyVisit.jpg" text="Destroy target nonblack creature.">
+   <attr key="rarity" value="C" />
+   <attr key="cn" value="76" />
+   <attr key="cost" value="{2}{B}" />
+   <attr key="cmc" value="3" />
+   <attr key="type" value="Sorcery" />
+   <attr key="permanent" value="0" />
+   <attr key="color" value="Black" />
+   <attr key="coloridentity" value="4" />
+   <attr key="artist" value="Kang Yu" />
+  </card>
+  <card name="Guan Yu, Sainted Warrior" graphics="GuanYuSaintedWarrior.jpg" text="Horsemanship
+When Guan Yu, Sainted Warrior is put into your graveyard from the battlefield, you may shuffle Guan Yu into your library.">
+   <attr key="rarity" value="R" />
+   <attr key="cn" value="6" />
+   <attr key="cost" value="{3}{W}{W}" />
+   <attr key="cmc" value="5" />
+   <attr key="type" value="Legendary Creature" />
+   <attr key="subtype" value="Human Soldier Warrior" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="White" />
+   <attr key="coloridentity" value="16" />
+   <attr key="power" value="3" />
+   <attr key="toughness" value="5" />
+   <attr key="artist" value="Zhao Dafu" />
+  </card>
+  <card name="Guan Yu's 1,000-Li March" graphics="GuanYus1000LiMarch.jpg" text="Destroy all tapped creatures.">
+   <attr key="rarity" value="R" />
+   <attr key="cn" value="7" />
+   <attr key="cost" value="{4}{W}{W}" />
+   <attr key="cmc" value="6" />
+   <attr key="type" value="Sorcery" />
+   <attr key="permanent" value="0" />
+   <attr key="color" value="White" />
+   <attr key="coloridentity" value="16" />
+   <attr key="artist" value="Yang Guangmai" />
+  </card>
+  <card name="Heavy Fog" graphics="HeavyFog.jpg" text="Cast Heavy Fog only during the declare attackers step and only if you've been attacked this step.
+Prevent all damage that would be dealt to you this turn by attacking creatures.">
+   <attr key="rarity" value="U" />
+   <attr key="cn" value="136" />
+   <attr key="cost" value="{1}{G}" />
+   <attr key="cmc" value="2" />
+   <attr key="type" value="Instant" />
+   <attr key="permanent" value="0" />
+   <attr key="color" value="Green" />
+   <attr key="coloridentity" value="1" />
+   <attr key="artist" value="Liu Shangying" />
+  </card>
+  <card name="Hua Tuo, Honored Physician" graphics="HuaTuoHonoredPhysician.jpg" text="{T}: Put target creature card from your graveyard on top of your library. Activate this ability only during your turn, before attackers are declared.">
+   <attr key="rarity" value="R" />
+   <attr key="cn" value="137" />
+   <attr key="cost" value="{1}{G}{G}" />
+   <attr key="cmc" value="3" />
+   <attr key="type" value="Legendary Creature" />
+   <attr key="subtype" value="Human" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Green" />
+   <attr key="coloridentity" value="1" />
+   <attr key="power" value="1" />
+   <attr key="toughness" value="2" />
+   <attr key="artist" value="Gao Jianzhang" />
+  </card>
+  <card name="Huang Zhong, Shu General" graphics="HuangZhongShuGeneral.jpg" text="Huang Zhong, Shu General can't be blocked by more than one creature.">
+   <attr key="rarity" value="R" />
+   <attr key="cn" value="8" />
+   <attr key="cost" value="{2}{W}{W}" />
+   <attr key="cmc" value="4" />
+   <attr key="type" value="Legendary Creature" />
+   <attr key="subtype" value="Human Soldier" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="White" />
+   <attr key="coloridentity" value="16" />
+   <attr key="power" value="2" />
+   <attr key="toughness" value="3" />
+   <attr key="artist" value="Quan Xuejun" />
+  </card>
+  <card name="Hunting Cheetah" graphics="HuntingCheetah.jpg" text="Whenever Hunting Cheetah deals damage to an opponent, you may search your library for a Forest card, reveal that card, put it into your hand, then shuffle your library.">
+   <attr key="rarity" value="U" />
+   <attr key="cn" value="138" />
+   <attr key="cost" value="{2}{G}" />
+   <attr key="cmc" value="3" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Cat" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Green" />
+   <attr key="coloridentity" value="1" />
+   <attr key="power" value="2" />
+   <attr key="toughness" value="3" />
+   <attr key="artist" value="Fang Yue" />
+  </card>
+  <card name="Imperial Edict" graphics="ImperialEdict.jpg" text="Target opponent chooses a creature he or she controls. Destroy it.">
+   <attr key="rarity" value="C" />
+   <attr key="cn" value="77" />
+   <attr key="cost" value="{1}{B}" />
+   <attr key="cmc" value="2" />
+   <attr key="type" value="Sorcery" />
+   <attr key="permanent" value="0" />
+   <attr key="color" value="Black" />
+   <attr key="coloridentity" value="4" />
+   <attr key="artist" value="Xu Xiaoming" />
+  </card>
+  <card name="Imperial Recruiter" graphics="ImperialRecruiter.jpg" text="When Imperial Recruiter enters the battlefield, search your library for a creature card with power 2 or less, reveal it, and put it into your hand. Then shuffle your library.">
+   <attr key="rarity" value="U" />
+   <attr key="cn" value="113" />
+   <attr key="cost" value="{2}{R}" />
+   <attr key="cmc" value="3" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Human Advisor" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Red" />
+   <attr key="coloridentity" value="2" />
+   <attr key="power" value="1" />
+   <attr key="toughness" value="1" />
+   <attr key="artist" value="Mitsuaki Sagiri" />
+  </card>
+  <card name="Imperial Seal" graphics="ImperialSeal.jpg" text="Search your library for a card, then shuffle your library and put that card on top of it. You lose 2 life.">
+   <attr key="rarity" value="R" />
+   <attr key="cn" value="78" />
+   <attr key="cost" value="{B}" />
+   <attr key="cmc" value="1" />
+   <attr key="type" value="Sorcery" />
+   <attr key="permanent" value="0" />
+   <attr key="color" value="Black" />
+   <attr key="coloridentity" value="4" />
+   <attr key="artist" value="Li Tie" />
+  </card>
+  <card name="Independent Troops" graphics="IndependentTroops.jpg" text="">
+   <attr key="rarity" value="C" />
+   <attr key="cn" value="114" />
+   <attr key="cost" value="{1}{R}" />
+   <attr key="cmc" value="2" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Human Soldier" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Red" />
+   <attr key="coloridentity" value="2" />
+   <attr key="power" value="2" />
+   <attr key="toughness" value="1" />
+   <attr key="artist" value="Kuang Sheng" />
+  </card>
+  <card name="Island" graphics="Island.jpg" text="{U}">
+   <attr key="rarity" value="L" />
+   <attr key="cn" value="169" />
+   <attr key="cmc" value="0" />
+   <attr key="type" value="Basic Land" />
+   <attr key="subtype" value="Island" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Land" />
+   <attr key="coloridentity" value="8" />
+   <attr key="artist" value="Ku Xueming" />
+  </card>
+  <card name="Island" graphics="Island2.jpg" text="{U}">
+   <attr key="rarity" value="L" />
+   <attr key="cn" value="170" />
+   <attr key="cmc" value="0" />
+   <attr key="type" value="Basic Land" />
+   <attr key="subtype" value="Island" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Land" />
+   <attr key="coloridentity" value="8" />
+   <attr key="artist" value="Ku Xueming" />
+  </card>
+  <card name="Island" graphics="Island3.jpg" text="{U}">
+   <attr key="rarity" value="L" />
+   <attr key="cn" value="171" />
+   <attr key="cmc" value="0" />
+   <attr key="type" value="Basic Land" />
+   <attr key="subtype" value="Island" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Land" />
+   <attr key="coloridentity" value="8" />
+   <attr key="artist" value="Ku Xueming" />
+  </card>
+  <card name="Kongming, &quot;Sleeping Dragon&quot;" graphics="KongmingSleepingDragon.jpg" text="Other creatures you control get +1/+1.">
+   <attr key="rarity" value="R" />
+   <attr key="cn" value="9" />
+   <attr key="cost" value="{2}{W}{W}" />
+   <attr key="cmc" value="4" />
+   <attr key="type" value="Legendary Creature" />
+   <attr key="subtype" value="Human Advisor" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="White" />
+   <attr key="coloridentity" value="16" />
+   <attr key="power" value="2" />
+   <attr key="toughness" value="2" />
+   <attr key="artist" value="Gao Yan" />
+  </card>
+  <card name="Kongming's Contraptions" graphics="KongmingsContraptions.jpg" text="{T}: Kongming's Contraptions deals 2 damage to target attacking creature. Activate this ability only during the declare attackers step and only if you've been attacked this step.">
+   <attr key="rarity" value="R" />
+   <attr key="cn" value="10" />
+   <attr key="cost" value="{3}{W}" />
+   <attr key="cmc" value="4" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Human Soldier" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="White" />
+   <attr key="coloridentity" value="16" />
+   <attr key="power" value="2" />
+   <attr key="toughness" value="4" />
+   <attr key="artist" value="Jiaming" />
+  </card>
+  <card name="Lady Sun" graphics="LadySun.jpg" text="{T}: Return Lady Sun and another target creature to their owners' hands. Activate this ability only during your turn, before attackers are declared.">
+   <attr key="rarity" value="R" />
+   <attr key="cn" value="45" />
+   <attr key="cost" value="{1}{U}{U}" />
+   <attr key="cmc" value="3" />
+   <attr key="type" value="Legendary Creature" />
+   <attr key="subtype" value="Human Advisor" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Blue" />
+   <attr key="coloridentity" value="8" />
+   <attr key="power" value="1" />
+   <attr key="toughness" value="1" />
+   <attr key="artist" value="Miao Aili" />
+  </card>
+  <card name="Lady Zhurong, Warrior Queen" graphics="LadyZhurongWarriorQueen.jpg" text="Horsemanship">
+   <attr key="rarity" value="R" />
+   <attr key="cn" value="139" />
+   <attr key="cost" value="{4}{G}" />
+   <attr key="cmc" value="5" />
+   <attr key="type" value="Legendary Creature" />
+   <attr key="subtype" value="Human Soldier Warrior" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Green" />
+   <attr key="coloridentity" value="1" />
+   <attr key="power" value="4" />
+   <attr key="toughness" value="3" />
+   <attr key="artist" value="Miao Aili" />
+  </card>
+  <card name="Liu Bei, Lord of Shu" graphics="LiuBeiLordofShu.jpg" text="Horsemanship
+Liu Bei, Lord of Shu gets +2/+2 as long as you control a permanent named Guan Yu, Sainted Warrior or a permanent named Zhang Fei, Fierce Warrior.">
+   <attr key="rarity" value="R" />
+   <attr key="cn" value="11" />
+   <attr key="cost" value="{3}{W}{W}" />
+   <attr key="cmc" value="5" />
+   <attr key="type" value="Legendary Creature" />
+   <attr key="subtype" value="Human Soldier" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="White" />
+   <attr key="coloridentity" value="16" />
+   <attr key="power" value="2" />
+   <attr key="toughness" value="4" />
+   <attr key="artist" value="Zhao Dafu" />
+  </card>
+  <card name="Lone Wolf" graphics="LoneWolf.jpg" text="You may have Lone Wolf assign its combat damage as though it weren't blocked.">
+   <attr key="rarity" value="U" />
+   <attr key="cn" value="140" />
+   <attr key="cost" value="{2}{G}" />
+   <attr key="cmc" value="3" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Wolf" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Green" />
+   <attr key="coloridentity" value="1" />
+   <attr key="power" value="2" />
+   <attr key="toughness" value="2" />
+   <attr key="artist" value="Yang Jun Kwon" />
+  </card>
+  <card name="Loyal Retainers" graphics="LoyalRetainers.jpg" text="Sacrifice Loyal Retainers: Return target legendary creature card from your graveyard to the battlefield. Activate this ability only during your turn, before attackers are declared.">
+   <attr key="rarity" value="U" />
+   <attr key="cn" value="12" />
+   <attr key="cost" value="{2}{W}" />
+   <attr key="cmc" value="3" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Human Advisor" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="White" />
+   <attr key="coloridentity" value="16" />
+   <attr key="power" value="1" />
+   <attr key="toughness" value="1" />
+   <attr key="artist" value="Solomon Au Yeung" />
+  </card>
+  <card name="Lu Bu, Master-at-Arms" graphics="LuBuMasteratArms.jpg" text="Haste; horsemanship">
+   <attr key="rarity" value="R" />
+   <attr key="cn" value="115" />
+   <attr key="cost" value="{5}{R}" />
+   <attr key="cmc" value="6" />
+   <attr key="type" value="Legendary Creature" />
+   <attr key="subtype" value="Human Soldier Warrior" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Red" />
+   <attr key="coloridentity" value="2" />
+   <attr key="power" value="4" />
+   <attr key="toughness" value="3" />
+   <attr key="artist" value="Gao Jianzhang" />
+  </card>
+  <card name="Lu Meng, Wu General" graphics="LuMengWuGeneral.jpg" text="Horsemanship">
+   <attr key="rarity" value="R" />
+   <attr key="cn" value="46" />
+   <attr key="cost" value="{3}{U}{U}" />
+   <attr key="cmc" value="5" />
+   <attr key="type" value="Legendary Creature" />
+   <attr key="subtype" value="Human Soldier" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Blue" />
+   <attr key="coloridentity" value="8" />
+   <attr key="power" value="4" />
+   <attr key="toughness" value="4" />
+   <attr key="artist" value="Gao Yan" />
+  </card>
+  <card name="Lu Su, Wu Advisor" graphics="LuSuWuAdvisor.jpg" text="{T}: Draw a card. Activate this ability only during your turn, before attackers are declared.">
+   <attr key="rarity" value="R" />
+   <attr key="cn" value="47" />
+   <attr key="cost" value="{3}{U}{U}" />
+   <attr key="cmc" value="5" />
+   <attr key="type" value="Legendary Creature" />
+   <attr key="subtype" value="Human Advisor" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Blue" />
+   <attr key="coloridentity" value="8" />
+   <attr key="power" value="1" />
+   <attr key="toughness" value="2" />
+   <attr key="artist" value="Zhao Tan" />
+  </card>
+  <card name="Lu Xun, Scholar General" graphics="LuXunScholarGeneral.jpg" text="Horsemanship
+Whenever Lu Xun, Scholar General deals damage to an opponent, you may draw a card.">
+   <attr key="rarity" value="R" />
+   <attr key="cn" value="48" />
+   <attr key="cost" value="{2}{U}{U}" />
+   <attr key="cmc" value="4" />
+   <attr key="type" value="Legendary Creature" />
+   <attr key="subtype" value="Human Soldier" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Blue" />
+   <attr key="coloridentity" value="8" />
+   <attr key="power" value="1" />
+   <attr key="toughness" value="3" />
+   <attr key="artist" value="Xu Xiaoming" />
+  </card>
+  <card name="Ma Chao, Western Warrior" graphics="MaChaoWesternWarrior.jpg" text="Horsemanship
+Whenever Ma Chao, Western Warrior attacks alone, it can't be blocked this combat.">
+   <attr key="rarity" value="R" />
+   <attr key="cn" value="116" />
+   <attr key="cost" value="{3}{R}{R}" />
+   <attr key="cmc" value="5" />
+   <attr key="type" value="Legendary Creature" />
+   <attr key="subtype" value="Human Soldier Warrior" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Red" />
+   <attr key="coloridentity" value="2" />
+   <attr key="power" value="3" />
+   <attr key="toughness" value="3" />
+   <attr key="artist" value="Koji" />
+  </card>
+  <card name="Marshaling the Troops" graphics="MarshalingtheTroops.jpg" text="Tap any number of untapped creatures you control. You gain 4 life for each creature tapped this way.">
+   <attr key="rarity" value="R" />
+   <attr key="cn" value="141" />
+   <attr key="cost" value="{1}{G}" />
+   <attr key="cmc" value="2" />
+   <attr key="type" value="Sorcery" />
+   <attr key="permanent" value="0" />
+   <attr key="color" value="Green" />
+   <attr key="coloridentity" value="1" />
+   <attr key="artist" value="Liu Shangying" />
+  </card>
+  <card name="Meng Huo, Barbarian King" graphics="MengHuoBarbarianKing.jpg" text="Other green creatures you control get +1/+1.">
+   <attr key="rarity" value="R" />
+   <attr key="cn" value="142" />
+   <attr key="cost" value="{3}{G}{G}" />
+   <attr key="cmc" value="5" />
+   <attr key="type" value="Legendary Creature" />
+   <attr key="subtype" value="Human Barbarian Soldier" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Green" />
+   <attr key="coloridentity" value="1" />
+   <attr key="power" value="4" />
+   <attr key="toughness" value="4" />
+   <attr key="artist" value="Yang Guangmai" />
+  </card>
+  <card name="Meng Huo's Horde" graphics="MengHuosHorde.jpg" text="">
+   <attr key="rarity" value="C" />
+   <attr key="cn" value="143" />
+   <attr key="cost" value="{4}{G}" />
+   <attr key="cmc" value="5" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Human Soldier" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Green" />
+   <attr key="coloridentity" value="1" />
+   <attr key="power" value="4" />
+   <attr key="toughness" value="5" />
+   <attr key="artist" value="s/b Lie Tiu" />
+  </card>
+  <card name="Misfortune's Gain" graphics="MisfortunesGain.jpg" text="Destroy target creature. Its owner gains 4 life.">
+   <attr key="rarity" value="C" />
+   <attr key="cn" value="13" />
+   <attr key="cost" value="{3}{W}" />
+   <attr key="cmc" value="4" />
+   <attr key="type" value="Sorcery" />
+   <attr key="permanent" value="0" />
+   <attr key="color" value="White" />
+   <attr key="coloridentity" value="16" />
+   <attr key="artist" value="Jiaming" />
+  </card>
+  <card name="Mountain" graphics="Mountain.jpg" text="{R}">
+   <attr key="rarity" value="L" />
+   <attr key="cn" value="175" />
+   <attr key="cmc" value="0" />
+   <attr key="type" value="Basic Land" />
+   <attr key="subtype" value="Mountain" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Land" />
+   <attr key="coloridentity" value="2" />
+   <attr key="artist" value="Qin Jun" />
+  </card>
+  <card name="Mountain" graphics="Mountain2.jpg" text="{R}">
+   <attr key="rarity" value="L" />
+   <attr key="cn" value="176" />
+   <attr key="cmc" value="0" />
+   <attr key="type" value="Basic Land" />
+   <attr key="subtype" value="Mountain" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Land" />
+   <attr key="coloridentity" value="2" />
+   <attr key="artist" value="Qin Jun" />
+  </card>
+  <card name="Mountain" graphics="Mountain3.jpg" text="{R}">
+   <attr key="rarity" value="L" />
+   <attr key="cn" value="177" />
+   <attr key="cmc" value="0" />
+   <attr key="type" value="Basic Land" />
+   <attr key="subtype" value="Mountain" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Land" />
+   <attr key="coloridentity" value="2" />
+   <attr key="artist" value="Qin Jun" />
+  </card>
+  <card name="Mountain Bandit" graphics="MountainBandit.jpg" text="Haste">
+   <attr key="rarity" value="C" />
+   <attr key="cn" value="117" />
+   <attr key="cost" value="{R}" />
+   <attr key="cmc" value="1" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Human Soldier Rogue" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Red" />
+   <attr key="coloridentity" value="2" />
+   <attr key="power" value="1" />
+   <attr key="toughness" value="1" />
+   <attr key="artist" value="Xu Xiaoming" />
+  </card>
+  <card name="Mystic Denial" graphics="MysticDenial.jpg" text="Counter target creature or sorcery spell.">
+   <attr key="rarity" value="U" />
+   <attr key="cn" value="49" />
+   <attr key="cost" value="{1}{U}{U}" />
+   <attr key="cmc" value="3" />
+   <attr key="type" value="Instant" />
+   <attr key="permanent" value="0" />
+   <attr key="color" value="Blue" />
+   <attr key="coloridentity" value="8" />
+   <attr key="artist" value="Kang Yu" />
+  </card>
+  <card name="Overwhelming Forces" graphics="OverwhelmingForces.jpg" text="Destroy all creatures target opponent controls. Draw a card for each creature destroyed this way.">
+   <attr key="rarity" value="R" />
+   <attr key="cn" value="79" />
+   <attr key="cost" value="{6}{B}{B}" />
+   <attr key="cmc" value="8" />
+   <attr key="type" value="Sorcery" />
+   <attr key="permanent" value="0" />
+   <attr key="color" value="Black" />
+   <attr key="coloridentity" value="4" />
+   <attr key="artist" value="Gao Yan" />
+  </card>
+  <card name="Pang Tong, &quot;Young Phoenix&quot;" graphics="PangTongYoungPhoenix.jpg" text="{T}: Target creature gets +0/+2 until end of turn. Activate this ability only during your turn, before attackers are declared.">
+   <attr key="rarity" value="R" />
+   <attr key="cn" value="14" />
+   <attr key="cost" value="{1}{W}{W}" />
+   <attr key="cmc" value="3" />
+   <attr key="type" value="Legendary Creature" />
+   <attr key="subtype" value="Human Advisor" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="White" />
+   <attr key="coloridentity" value="16" />
+   <attr key="power" value="1" />
+   <attr key="toughness" value="2" />
+   <attr key="artist" value="Li Tie" />
+  </card>
+  <card name="Peach Garden Oath" graphics="PeachGardenOath.jpg" text="You gain 2 life for each creature you control.">
+   <attr key="rarity" value="U" />
+   <attr key="cn" value="15" />
+   <attr key="cost" value="{W}" />
+   <attr key="cmc" value="1" />
+   <attr key="type" value="Sorcery" />
+   <attr key="permanent" value="0" />
+   <attr key="color" value="White" />
+   <attr key="coloridentity" value="16" />
+   <attr key="artist" value="Zhao Dafu" />
+  </card>
+  <card name="Plains" graphics="Plains.jpg" text="{W}">
+   <attr key="rarity" value="L" />
+   <attr key="cn" value="166" />
+   <attr key="cmc" value="0" />
+   <attr key="type" value="Basic Land" />
+   <attr key="subtype" value="Plains" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Land" />
+   <attr key="coloridentity" value="16" />
+   <attr key="artist" value="He Jiancheng" />
+  </card>
+  <card name="Plains" graphics="Plains2.jpg" text="{W}">
+   <attr key="rarity" value="L" />
+   <attr key="cn" value="167" />
+   <attr key="cmc" value="0" />
+   <attr key="type" value="Basic Land" />
+   <attr key="subtype" value="Plains" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Land" />
+   <attr key="coloridentity" value="16" />
+   <attr key="artist" value="He Jiancheng" />
+  </card>
+  <card name="Plains" graphics="Plains3.jpg" text="{W}">
+   <attr key="rarity" value="L" />
+   <attr key="cn" value="168" />
+   <attr key="cmc" value="0" />
+   <attr key="type" value="Basic Land" />
+   <attr key="subtype" value="Plains" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Land" />
+   <attr key="coloridentity" value="16" />
+   <attr key="artist" value="He Jiancheng" />
+  </card>
+  <card name="Poison Arrow" graphics="PoisonArrow.jpg" text="Destroy target nonblack creature. You gain 3 life.">
+   <attr key="rarity" value="U" />
+   <attr key="cn" value="80" />
+   <attr key="cost" value="{4}{B}{B}" />
+   <attr key="cmc" value="6" />
+   <attr key="type" value="Sorcery" />
+   <attr key="permanent" value="0" />
+   <attr key="color" value="Black" />
+   <attr key="coloridentity" value="4" />
+   <attr key="artist" value="Li Tie" />
+  </card>
+  <card name="Preemptive Strike" graphics="PreemptiveStrike.jpg" text="Counter target creature spell.">
+   <attr key="rarity" value="C" />
+   <attr key="cn" value="50" />
+   <attr key="cost" value="{1}{U}" />
+   <attr key="cmc" value="2" />
+   <attr key="type" value="Instant" />
+   <attr key="permanent" value="0" />
+   <attr key="color" value="Blue" />
+   <attr key="coloridentity" value="8" />
+   <attr key="artist" value="Jiaming" />
+  </card>
+  <card name="Rally the Troops" graphics="RallytheTroops.jpg" text="Cast Rally the Troops only during the declare attackers step and only if you've been attacked this step.
+Untap all creatures you control.">
+   <attr key="rarity" value="U" />
+   <attr key="cn" value="16" />
+   <attr key="cost" value="{W}" />
+   <attr key="cmc" value="1" />
+   <attr key="type" value="Instant" />
+   <attr key="permanent" value="0" />
+   <attr key="color" value="White" />
+   <attr key="coloridentity" value="16" />
+   <attr key="artist" value="Shang Huitong" />
+  </card>
+  <card name="Ravages of War" graphics="RavagesofWar.jpg" text="Destroy all lands.">
+   <attr key="rarity" value="R" />
+   <attr key="cn" value="17" />
+   <attr key="cost" value="{3}{W}" />
+   <attr key="cmc" value="4" />
+   <attr key="type" value="Sorcery" />
+   <attr key="permanent" value="0" />
+   <attr key="color" value="White" />
+   <attr key="coloridentity" value="16" />
+   <attr key="artist" value="Fang Yue" />
+  </card>
+  <card name="Ravaging Horde" graphics="RavagingHorde.jpg" text="When Ravaging Horde enters the battlefield, destroy target land.">
+   <attr key="rarity" value="U" />
+   <attr key="cn" value="118" />
+   <attr key="cost" value="{3}{R}{R}" />
+   <attr key="cmc" value="5" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Human Soldier" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Red" />
+   <attr key="coloridentity" value="2" />
+   <attr key="power" value="3" />
+   <attr key="toughness" value="3" />
+   <attr key="artist" value="Liu Jianjian" />
+  </card>
+  <card name="Red Cliffs Armada" graphics="RedCliffsArmada.jpg" text="Red Cliffs Armada can't attack unless defending player controls an Island.">
+   <attr key="rarity" value="U" />
+   <attr key="cn" value="51" />
+   <attr key="cost" value="{4}{U}" />
+   <attr key="cmc" value="5" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Human Soldier" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Blue" />
+   <attr key="coloridentity" value="8" />
+   <attr key="power" value="5" />
+   <attr key="toughness" value="4" />
+   <attr key="artist" value="Zhang Jiazhen" />
+  </card>
+  <card name="Relentless Assault" graphics="RelentlessAssault.jpg" text="Untap all creatures that attacked this turn. After this main phase, there is an additional combat phase followed by an additional main phase.">
+   <attr key="rarity" value="R" />
+   <attr key="cn" value="119" />
+   <attr key="cost" value="{2}{R}{R}" />
+   <attr key="cmc" value="4" />
+   <attr key="type" value="Sorcery" />
+   <attr key="permanent" value="0" />
+   <attr key="color" value="Red" />
+   <attr key="coloridentity" value="2" />
+   <attr key="artist" value="He Jiancheng" />
+  </card>
+  <card name="Renegade Troops" graphics="RenegadeTroops.jpg" text="Haste">
+   <attr key="rarity" value="U" />
+   <attr key="cn" value="120" />
+   <attr key="cost" value="{4}{R}" />
+   <attr key="cmc" value="5" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Human Soldier" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Red" />
+   <attr key="coloridentity" value="2" />
+   <attr key="power" value="4" />
+   <attr key="toughness" value="2" />
+   <attr key="artist" value="Liu Jianjian" />
+  </card>
+  <card name="Return to Battle" graphics="ReturntoBattle.jpg" text="Return target creature card from your graveyard to your hand.">
+   <attr key="rarity" value="C" />
+   <attr key="cn" value="81" />
+   <attr key="cost" value="{B}" />
+   <attr key="cmc" value="1" />
+   <attr key="type" value="Sorcery" />
+   <attr key="permanent" value="0" />
+   <attr key="color" value="Black" />
+   <attr key="coloridentity" value="4" />
+   <attr key="artist" value="Ding Songjian" />
+  </card>
+  <card name="Riding Red Hare" graphics="RidingRedHare.jpg" text="Target creature gets +3/+3 and gains horsemanship until end of turn.">
+   <attr key="rarity" value="C" />
+   <attr key="cn" value="18" />
+   <attr key="cost" value="{2}{W}" />
+   <attr key="cmc" value="3" />
+   <attr key="type" value="Sorcery" />
+   <attr key="permanent" value="0" />
+   <attr key="color" value="White" />
+   <attr key="coloridentity" value="16" />
+   <attr key="artist" value="Qi Baocheng" />
+  </card>
+  <card name="Riding the Dilu Horse" graphics="RidingtheDiluHorse.jpg" text="Target creature gets +2/+2 and gains horsemanship.">
+   <attr key="rarity" value="R" />
+   <attr key="cn" value="144" />
+   <attr key="cost" value="{2}{G}" />
+   <attr key="cmc" value="3" />
+   <attr key="type" value="Sorcery" />
+   <attr key="permanent" value="0" />
+   <attr key="color" value="Green" />
+   <attr key="coloridentity" value="1" />
+   <attr key="artist" value="Hong Yan" />
+  </card>
+  <card name="Rockslide Ambush" graphics="RockslideAmbush.jpg" text="Rockslide Ambush deals damage to target creature equal to the number of Mountains you control.">
+   <attr key="rarity" value="U" />
+   <attr key="cn" value="121" />
+   <attr key="cost" value="{1}{R}" />
+   <attr key="cmc" value="2" />
+   <attr key="type" value="Sorcery" />
+   <attr key="permanent" value="0" />
+   <attr key="color" value="Red" />
+   <attr key="coloridentity" value="2" />
+   <attr key="artist" value="Inoue Junichi" />
+  </card>
+  <card name="Rolling Earthquake" graphics="RollingEarthquake.jpg" text="Rolling Earthquake deals X damage to each creature without horsemanship and each player.">
+   <attr key="rarity" value="R" />
+   <attr key="cn" value="122" />
+   <attr key="cost" value="{X}{R}" />
+   <attr key="cmc" value="1" />
+   <attr key="type" value="Sorcery" />
+   <attr key="permanent" value="0" />
+   <attr key="color" value="Red" />
+   <attr key="coloridentity" value="2" />
+   <attr key="artist" value="Yang Hong" />
+  </card>
+  <card name="Sage's Knowledge" graphics="SagesKnowledge.jpg" text="Return target sorcery card from your graveyard to your hand.">
+   <attr key="rarity" value="C" />
+   <attr key="cn" value="52" />
+   <attr key="cost" value="{2}{U}" />
+   <attr key="cmc" value="3" />
+   <attr key="type" value="Sorcery" />
+   <attr key="permanent" value="0" />
+   <attr key="color" value="Blue" />
+   <attr key="coloridentity" value="8" />
+   <attr key="artist" value="Ding Songjian" />
+  </card>
+  <card name="Shu Cavalry" graphics="ShuCavalry.jpg" text="Horsemanship">
+   <attr key="rarity" value="C" />
+   <attr key="cn" value="19" />
+   <attr key="cost" value="{2}{W}" />
+   <attr key="cmc" value="3" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Human Soldier" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="White" />
+   <attr key="coloridentity" value="16" />
+   <attr key="power" value="2" />
+   <attr key="toughness" value="2" />
+   <attr key="artist" value="Li Xiaohua" />
+  </card>
+  <card name="Shu Defender" graphics="ShuDefender.jpg" text="Whenever Shu Defender blocks, it gets +0/+2 until end of turn.">
+   <attr key="rarity" value="C" />
+   <attr key="cn" value="20" />
+   <attr key="cost" value="{2}{W}" />
+   <attr key="cmc" value="3" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Human Soldier" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="White" />
+   <attr key="coloridentity" value="16" />
+   <attr key="power" value="2" />
+   <attr key="toughness" value="2" />
+   <attr key="artist" value="Sun Nan" />
+  </card>
+  <card name="Shu Elite Companions" graphics="ShuEliteCompanions.jpg" text="Horsemanship">
+   <attr key="rarity" value="U" />
+   <attr key="cn" value="21" />
+   <attr key="cost" value="{4}{W}" />
+   <attr key="cmc" value="5" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Human Soldier" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="White" />
+   <attr key="coloridentity" value="16" />
+   <attr key="power" value="3" />
+   <attr key="toughness" value="3" />
+   <attr key="artist" value="Zhao Dafu" />
+  </card>
+  <card name="Shu Elite Infantry" graphics="ShuEliteInfantry.jpg" text="">
+   <attr key="rarity" value="C" />
+   <attr key="cn" value="22" />
+   <attr key="cost" value="{3}{W}" />
+   <attr key="cmc" value="4" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Human Soldier" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="White" />
+   <attr key="coloridentity" value="16" />
+   <attr key="power" value="3" />
+   <attr key="toughness" value="3" />
+   <attr key="artist" value="Song Shikai" />
+  </card>
+  <card name="Shu Farmer" graphics="ShuFarmer.jpg" text="{T}: You gain 1 life. Activate this ability only during your turn, before attackers are declared.">
+   <attr key="rarity" value="C" />
+   <attr key="cn" value="23" />
+   <attr key="cost" value="{1}{W}" />
+   <attr key="cmc" value="2" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Human" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="White" />
+   <attr key="coloridentity" value="16" />
+   <attr key="power" value="1" />
+   <attr key="toughness" value="1" />
+   <attr key="artist" value="Li Xiaohua" />
+  </card>
+  <card name="Shu Foot Soldiers" graphics="ShuFootSoldiers.jpg" text="">
+   <attr key="rarity" value="C" />
+   <attr key="cn" value="24" />
+   <attr key="cost" value="{2}{W}" />
+   <attr key="cmc" value="3" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Human Soldier" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="White" />
+   <attr key="coloridentity" value="16" />
+   <attr key="power" value="2" />
+   <attr key="toughness" value="3" />
+   <attr key="artist" value="Xu Tan" />
+  </card>
+  <card name="Shu General" graphics="ShuGeneral.jpg" text="Vigilance; horsemanship">
+   <attr key="rarity" value="U" />
+   <attr key="cn" value="25" />
+   <attr key="cost" value="{3}{W}" />
+   <attr key="cmc" value="4" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Human Soldier" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="White" />
+   <attr key="coloridentity" value="16" />
+   <attr key="power" value="2" />
+   <attr key="toughness" value="2" />
+   <attr key="artist" value="Li Xiaohua" />
+  </card>
+  <card name="Shu Grain Caravan" graphics="ShuGrainCaravan.jpg" text="When Shu Grain Caravan enters the battlefield, you gain 2 life.">
+   <attr key="rarity" value="C" />
+   <attr key="cn" value="26" />
+   <attr key="cost" value="{2}{W}" />
+   <attr key="cmc" value="3" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Human Soldier" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="White" />
+   <attr key="coloridentity" value="16" />
+   <attr key="power" value="2" />
+   <attr key="toughness" value="2" />
+   <attr key="artist" value="Li Wang" />
+  </card>
+  <card name="Shu Soldier-Farmers" graphics="ShuSoldierFarmers.jpg" text="When Shu Soldier-Farmers enters the battlefield, you gain 4 life.">
+   <attr key="rarity" value="U" />
+   <attr key="cn" value="27" />
+   <attr key="cost" value="{4}{W}" />
+   <attr key="cmc" value="5" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Human Soldier" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="White" />
+   <attr key="coloridentity" value="16" />
+   <attr key="power" value="2" />
+   <attr key="toughness" value="4" />
+   <attr key="artist" value="Li Xiaohua" />
+  </card>
+  <card name="Sima Yi, Wei Field Marshal" graphics="SimaYiWeiFieldMarshal.jpg" text="Sima Yi, Wei Field Marshal's power is equal to the number of Swamps you control.">
+   <attr key="rarity" value="R" />
+   <attr key="cn" value="82" />
+   <attr key="cost" value="{5}{B}" />
+   <attr key="cmc" value="6" />
+   <attr key="type" value="Legendary Creature" />
+   <attr key="subtype" value="Human Soldier" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Black" />
+   <attr key="coloridentity" value="4" />
+   <attr key="power" value="*" />
+   <attr key="toughness" value="4" />
+   <attr key="artist" value="Gao Yan" />
+  </card>
+  <card name="Slashing Tiger" graphics="SlashingTiger.jpg" text="Whenever Slashing Tiger becomes blocked, it gets +2/+2 until end of turn.">
+   <attr key="rarity" value="R" />
+   <attr key="cn" value="145" />
+   <attr key="cost" value="{2}{G}{G}" />
+   <attr key="cmc" value="4" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Cat" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Green" />
+   <attr key="coloridentity" value="1" />
+   <attr key="power" value="3" />
+   <attr key="toughness" value="3" />
+   <attr key="artist" value="Yang Jun Kwon" />
+  </card>
+  <card name="Southern Elephant" graphics="SouthernElephant.jpg" text="">
+   <attr key="rarity" value="C" />
+   <attr key="cn" value="146" />
+   <attr key="cost" value="{3}{G}" />
+   <attr key="cmc" value="4" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Elephant" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Green" />
+   <attr key="coloridentity" value="1" />
+   <attr key="power" value="3" />
+   <attr key="toughness" value="4" />
+   <attr key="artist" value="Wang Yuqun" />
+  </card>
+  <card name="Spoils of Victory" graphics="SpoilsofVictory.jpg" text="Search your library for a Plains, Island, Swamp, Mountain, or Forest card and put that card onto the battlefield. Then shuffle your library.">
+   <attr key="rarity" value="U" />
+   <attr key="cn" value="147" />
+   <attr key="cost" value="{2}{G}" />
+   <attr key="cmc" value="3" />
+   <attr key="type" value="Sorcery" />
+   <attr key="permanent" value="0" />
+   <attr key="color" value="Green" />
+   <attr key="coloridentity" value="1" />
+   <attr key="artist" value="Sun Nan" />
+  </card>
+  <card name="Spring of Eternal Peace" graphics="SpringofEternalPeace.jpg" text="You gain 8 life.">
+   <attr key="rarity" value="C" />
+   <attr key="cn" value="148" />
+   <attr key="cost" value="{3}{G}{G}" />
+   <attr key="cmc" value="5" />
+   <attr key="type" value="Sorcery" />
+   <attr key="permanent" value="0" />
+   <attr key="color" value="Green" />
+   <attr key="coloridentity" value="1" />
+   <attr key="artist" value="Wang Yuqun" />
+  </card>
+  <card name="Stalking Tiger" graphics="StalkingTiger.jpg" text="Stalking Tiger can't be blocked by more than one creature.">
+   <attr key="rarity" value="C" />
+   <attr key="cn" value="149" />
+   <attr key="cost" value="{3}{G}" />
+   <attr key="cmc" value="4" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Cat" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Green" />
+   <attr key="coloridentity" value="1" />
+   <attr key="power" value="3" />
+   <attr key="toughness" value="3" />
+   <attr key="artist" value="Kang Yu" />
+  </card>
+  <card name="Stolen Grain" graphics="StolenGrain.jpg" text="Stolen Grain deals 5 damage to target opponent. You gain 5 life.">
+   <attr key="rarity" value="U" />
+   <attr key="cn" value="83" />
+   <attr key="cost" value="{4}{B}{B}" />
+   <attr key="cmc" value="6" />
+   <attr key="type" value="Sorcery" />
+   <attr key="permanent" value="0" />
+   <attr key="color" value="Black" />
+   <attr key="coloridentity" value="4" />
+   <attr key="artist" value="LHQ" />
+  </card>
+  <card name="Stone Catapult" graphics="StoneCatapult.jpg" text="{T}: Destroy target tapped nonblack creature. Activate this ability only during your turn, before attackers are declared.">
+   <attr key="rarity" value="R" />
+   <attr key="cn" value="84" />
+   <attr key="cost" value="{4}{B}" />
+   <attr key="cmc" value="5" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Human Soldier" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Black" />
+   <attr key="coloridentity" value="4" />
+   <attr key="power" value="1" />
+   <attr key="toughness" value="2" />
+   <attr key="artist" value="Shang Huitong" />
+  </card>
+  <card name="Stone Rain" graphics="StoneRain.jpg" text="Destroy target land.">
+   <attr key="rarity" value="C" />
+   <attr key="cn" value="123" />
+   <attr key="cost" value="{2}{R}" />
+   <attr key="cmc" value="3" />
+   <attr key="type" value="Sorcery" />
+   <attr key="permanent" value="0" />
+   <attr key="color" value="Red" />
+   <attr key="coloridentity" value="2" />
+   <attr key="artist" value="Mitsuaki Sagiri" />
+  </card>
+  <card name="Strategic Planning" graphics="StrategicPlanning.jpg" text="Look at the top three cards of your library. Put one of them into your hand and the rest into your graveyard.">
+   <attr key="rarity" value="U" />
+   <attr key="cn" value="53" />
+   <attr key="cost" value="{1}{U}" />
+   <attr key="cmc" value="2" />
+   <attr key="type" value="Sorcery" />
+   <attr key="permanent" value="0" />
+   <attr key="color" value="Blue" />
+   <attr key="coloridentity" value="8" />
+   <attr key="artist" value="Zhang Jiazhen" />
+  </card>
+  <card name="Straw Soldiers" graphics="StrawSoldiers.jpg" text="">
+   <attr key="rarity" value="C" />
+   <attr key="cn" value="54" />
+   <attr key="cost" value="{1}{U}" />
+   <attr key="cmc" value="2" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Scarecrow Soldier" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Blue" />
+   <attr key="coloridentity" value="8" />
+   <attr key="power" value="1" />
+   <attr key="toughness" value="3" />
+   <attr key="artist" value="Cai Tingting" />
+  </card>
+  <card name="Sun Ce, Young Conquerer" graphics="SunCeYoungConquerer.jpg" text="Horsemanship
+When Sun Ce, Young Conquerer enters the battlefield, you may return target creature to its owner's hand.">
+   <attr key="rarity" value="R" />
+   <attr key="cn" value="55" />
+   <attr key="cost" value="{3}{U}{U}" />
+   <attr key="cmc" value="5" />
+   <attr key="type" value="Legendary Creature" />
+   <attr key="subtype" value="Human Soldier" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Blue" />
+   <attr key="coloridentity" value="8" />
+   <attr key="power" value="3" />
+   <attr key="toughness" value="3" />
+   <attr key="artist" value="Yang Guangmai" />
+  </card>
+  <card name="Sun Quan, Lord of Wu" graphics="SunQuanLordofWu.jpg" text="Creatures you control have horsemanship.">
+   <attr key="rarity" value="R" />
+   <attr key="cn" value="56" />
+   <attr key="cost" value="{4}{U}{U}" />
+   <attr key="cmc" value="6" />
+   <attr key="type" value="Legendary Creature" />
+   <attr key="subtype" value="Human Soldier" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Blue" />
+   <attr key="coloridentity" value="8" />
+   <attr key="power" value="4" />
+   <attr key="toughness" value="4" />
+   <attr key="artist" value="Xu Xiaoming" />
+  </card>
+  <card name="Swamp" graphics="Swamp.jpg" text="{B}">
+   <attr key="rarity" value="L" />
+   <attr key="cn" value="172" />
+   <attr key="cmc" value="0" />
+   <attr key="type" value="Basic Land" />
+   <attr key="subtype" value="Swamp" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Land" />
+   <attr key="coloridentity" value="4" />
+   <attr key="artist" value="Wang Chuxiong" />
+  </card>
+  <card name="Swamp" graphics="Swamp2.jpg" text="{B}">
+   <attr key="rarity" value="L" />
+   <attr key="cn" value="173" />
+   <attr key="cmc" value="0" />
+   <attr key="type" value="Basic Land" />
+   <attr key="subtype" value="Swamp" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Land" />
+   <attr key="coloridentity" value="4" />
+   <attr key="artist" value="Wang Chuxiong" />
+  </card>
+  <card name="Swamp" graphics="Swamp3.jpg" text="{B}">
+   <attr key="rarity" value="L" />
+   <attr key="cn" value="174" />
+   <attr key="cmc" value="0" />
+   <attr key="type" value="Basic Land" />
+   <attr key="subtype" value="Swamp" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Land" />
+   <attr key="coloridentity" value="4" />
+   <attr key="artist" value="Wang Chuxiong" />
+  </card>
+  <card name="Taoist Hermit" graphics="TaoistHermit.jpg" text="Hexproof">
+   <attr key="rarity" value="U" />
+   <attr key="cn" value="150" />
+   <attr key="cost" value="{2}{G}" />
+   <attr key="cmc" value="3" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Human Mystic" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Green" />
+   <attr key="coloridentity" value="1" />
+   <attr key="power" value="2" />
+   <attr key="toughness" value="2" />
+   <attr key="artist" value="Wang Yuqun" />
+  </card>
+  <card name="Taoist Mystic" graphics="TaoistMystic.jpg" text="Taoist Mystic can't be blocked by creatures with horsemanship.">
+   <attr key="rarity" value="R" />
+   <attr key="cn" value="151" />
+   <attr key="cost" value="{2}{G}" />
+   <attr key="cmc" value="3" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Human Mystic" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Green" />
+   <attr key="coloridentity" value="1" />
+   <attr key="power" value="2" />
+   <attr key="toughness" value="2" />
+   <attr key="artist" value="Qu Xin" />
+  </card>
+  <card name="Taunting Challenge" graphics="TauntingChallenge.jpg" text="All creatures able to block target creature this turn do so.">
+   <attr key="rarity" value="R" />
+   <attr key="cn" value="152" />
+   <attr key="cost" value="{1}{G}{G}" />
+   <attr key="cmc" value="3" />
+   <attr key="type" value="Sorcery" />
+   <attr key="permanent" value="0" />
+   <attr key="color" value="Green" />
+   <attr key="coloridentity" value="1" />
+   <attr key="artist" value="Gao Yan" />
+  </card>
+  <card name="Three Visits" graphics="ThreeVisits.jpg" text="Search your library for a Forest card and put that card onto the battlefield. Then shuffle your library.">
+   <attr key="rarity" value="C" />
+   <attr key="cn" value="153" />
+   <attr key="cost" value="{1}{G}" />
+   <attr key="cmc" value="2" />
+   <attr key="type" value="Sorcery" />
+   <attr key="permanent" value="0" />
+   <attr key="color" value="Green" />
+   <attr key="coloridentity" value="1" />
+   <attr key="artist" value="Qu Xin" />
+  </card>
+  <card name="Trained Cheetah" graphics="TrainedCheetah.jpg" text="Whenever Trained Cheetah becomes blocked, it gets +1/+1 until end of turn.">
+   <attr key="rarity" value="U" />
+   <attr key="cn" value="155" />
+   <attr key="cost" value="{2}{G}" />
+   <attr key="cmc" value="3" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Cat" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Green" />
+   <attr key="coloridentity" value="1" />
+   <attr key="power" value="2" />
+   <attr key="toughness" value="2" />
+   <attr key="artist" value="Fang Yue" />
+  </card>
+  <card name="Trained Jackal" graphics="TrainedJackal.jpg" text="">
+   <attr key="rarity" value="C" />
+   <attr key="cn" value="155" />
+   <attr key="cost" value="{G}" />
+   <attr key="cmc" value="1" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Hound" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Green" />
+   <attr key="coloridentity" value="1" />
+   <attr key="power" value="1" />
+   <attr key="toughness" value="2" />
+   <attr key="artist" value="Yang Jun Kwon" />
+  </card>
+  <card name="Trip Wire" graphics="TripWire.jpg" text="Destroy target creature with horsemanship.">
+   <attr key="rarity" value="U" />
+   <attr key="cn" value="154" />
+   <attr key="cost" value="{2}{G}" />
+   <attr key="cmc" value="3" />
+   <attr key="type" value="Sorcery" />
+   <attr key="permanent" value="0" />
+   <attr key="color" value="Green" />
+   <attr key="coloridentity" value="1" />
+   <attr key="artist" value="Hong Yan" />
+  </card>
+  <card name="Vengeance" graphics="Vengeance.jpg" text="Destroy target tapped creature.">
+   <attr key="rarity" value="U" />
+   <attr key="cn" value="28" />
+   <attr key="cost" value="{3}{W}" />
+   <attr key="cmc" value="4" />
+   <attr key="type" value="Sorcery" />
+   <attr key="permanent" value="0" />
+   <attr key="color" value="White" />
+   <attr key="coloridentity" value="16" />
+   <attr key="artist" value="Solomon Au Yeung" />
+  </card>
+  <card name="Virtuous Charge" graphics="VirtuousCharge.jpg" text="Creatures you control get +1/+1 until end of turn.">
+   <attr key="rarity" value="C" />
+   <attr key="cn" value="29" />
+   <attr key="cost" value="{2}{W}" />
+   <attr key="cmc" value="3" />
+   <attr key="type" value="Sorcery" />
+   <attr key="permanent" value="0" />
+   <attr key="color" value="White" />
+   <attr key="coloridentity" value="16" />
+   <attr key="artist" value="Qu Xin" />
+  </card>
+  <card name="Volunteer Militia" graphics="VolunteerMilitia.jpg" text="">
+   <attr key="rarity" value="C" />
+   <attr key="cn" value="30" />
+   <attr key="cost" value="{W}" />
+   <attr key="cmc" value="1" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Human Soldier" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="White" />
+   <attr key="coloridentity" value="16" />
+   <attr key="power" value="1" />
+   <attr key="toughness" value="2" />
+   <attr key="artist" value="Lin Yan" />
+  </card>
+  <card name="Warrior's Oath" graphics="WarriorsOath.jpg" text="Take an extra turn after this one. At the beginning of that turn's end step, you lose the game.">
+   <attr key="rarity" value="R" />
+   <attr key="cn" value="124" />
+   <attr key="cost" value="{R}{R}" />
+   <attr key="cmc" value="2" />
+   <attr key="type" value="Sorcery" />
+   <attr key="permanent" value="0" />
+   <attr key="color" value="Red" />
+   <attr key="coloridentity" value="2" />
+   <attr key="artist" value="Mitsuaki Sagiri" />
+  </card>
+  <card name="Warrior's Stand" graphics="WarriorsStand.jpg" text="Cast Warrior's Stand only during the declare attackers step and only if you've been attacked this step.
+Creatures you control get +2/+2 until end of turn.">
+   <attr key="rarity" value="U" />
+   <attr key="cn" value="31" />
+   <attr key="cost" value="{1}{W}" />
+   <attr key="cmc" value="2" />
+   <attr key="type" value="Instant" />
+   <attr key="permanent" value="0" />
+   <attr key="color" value="White" />
+   <attr key="coloridentity" value="16" />
+   <attr key="artist" value="Zhao Dafu" />
+  </card>
+  <card name="Wei Ambush Force" graphics="WeiAmbushForce.jpg" text="Whenever Wei Ambush Force attacks, it gets +2/+0 until end of turn.">
+   <attr key="rarity" value="C" />
+   <attr key="cn" value="85" />
+   <attr key="cost" value="{1}{B}" />
+   <attr key="cmc" value="2" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Human Soldier" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Black" />
+   <attr key="coloridentity" value="4" />
+   <attr key="power" value="1" />
+   <attr key="toughness" value="1" />
+   <attr key="artist" value="Ku Xueming" />
+  </card>
+  <card name="Wei Assassins" graphics="WeiAssassins.jpg" text="When Wei Assassins enters the battlefield, target opponent chooses a creature he or she controls. Destroy it.">
+   <attr key="rarity" value="U" />
+   <attr key="cn" value="86" />
+   <attr key="cost" value="{3}{B}{B}" />
+   <attr key="cmc" value="5" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Human Soldier Assassin" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Black" />
+   <attr key="coloridentity" value="4" />
+   <attr key="power" value="3" />
+   <attr key="toughness" value="2" />
+   <attr key="artist" value="Xu Tan" />
+  </card>
+  <card name="Wei Elite Companions" graphics="WeiEliteCompanions.jpg" text="Horsemanship">
+   <attr key="rarity" value="U" />
+   <attr key="cn" value="87" />
+   <attr key="cost" value="{4}{B}" />
+   <attr key="cmc" value="5" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Human Soldier" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Black" />
+   <attr key="coloridentity" value="4" />
+   <attr key="power" value="3" />
+   <attr key="toughness" value="3" />
+   <attr key="artist" value="Li Youliang" />
+  </card>
+  <card name="Wei Infantry" graphics="WeiInfantry.jpg" text="">
+   <attr key="rarity" value="C" />
+   <attr key="cn" value="88" />
+   <attr key="cost" value="{1}{B}" />
+   <attr key="cmc" value="2" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Human Soldier" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Black" />
+   <attr key="coloridentity" value="4" />
+   <attr key="power" value="2" />
+   <attr key="toughness" value="1" />
+   <attr key="artist" value="LHQ" />
+  </card>
+  <card name="Wei Night Raiders" graphics="WeiNightRaiders.jpg" text="Horsemanship
+Whenever Wei Night Raiders deals damage to an opponent, that player discards a card.">
+   <attr key="rarity" value="U" />
+   <attr key="cn" value="89" />
+   <attr key="cost" value="{2}{B}{B}" />
+   <attr key="cmc" value="4" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Human Soldier" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Black" />
+   <attr key="coloridentity" value="4" />
+   <attr key="power" value="2" />
+   <attr key="toughness" value="2" />
+   <attr key="artist" value="Wang Feng" />
+  </card>
+  <card name="Wei Scout" graphics="WeiScout.jpg" text="Horsemanship">
+   <attr key="rarity" value="C" />
+   <attr key="cn" value="90" />
+   <attr key="cost" value="{1}{B}" />
+   <attr key="cmc" value="2" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Human Soldier Scout" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Black" />
+   <attr key="coloridentity" value="4" />
+   <attr key="power" value="1" />
+   <attr key="toughness" value="1" />
+   <attr key="artist" value="Jiang Zhuqing" />
+  </card>
+  <card name="Wei Strike Force" graphics="WeiStrikeForce.jpg" text="Horsemanship">
+   <attr key="rarity" value="C" />
+   <attr key="cn" value="91" />
+   <attr key="cost" value="{2}{B}" />
+   <attr key="cmc" value="3" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Human Soldier" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Black" />
+   <attr key="coloridentity" value="4" />
+   <attr key="power" value="2" />
+   <attr key="toughness" value="1" />
+   <attr key="artist" value="Tang Xiaogu" />
+  </card>
+  <card name="Wielding the Green Dragon" graphics="WieldingtheGreenDragon.jpg" text="Target creature gets +4/+4 until end of turn.">
+   <attr key="rarity" value="C" />
+   <attr key="cn" value="157" />
+   <attr key="cost" value="{1}{G}" />
+   <attr key="cmc" value="2" />
+   <attr key="type" value="Sorcery" />
+   <attr key="permanent" value="0" />
+   <attr key="color" value="Green" />
+   <attr key="coloridentity" value="1" />
+   <attr key="artist" value="Quan Xuejun" />
+  </card>
+  <card name="Wolf Pack" graphics="WolfPack.jpg" text="You may have Wolf Pack assign its combat damage as though it weren't blocked.">
+   <attr key="rarity" value="R" />
+   <attr key="cn" value="158" />
+   <attr key="cost" value="{6}{G}{G}" />
+   <attr key="cmc" value="8" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Wolf" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Green" />
+   <attr key="coloridentity" value="1" />
+   <attr key="power" value="7" />
+   <attr key="toughness" value="6" />
+   <attr key="artist" value="Yang Jun Kwon" />
+  </card>
+  <card name="Wu Admiral" graphics="WuAdmiral.jpg" text="Wu Admiral gets +1/+1 as long as an opponent controls an Island.">
+   <attr key="rarity" value="U" />
+   <attr key="cn" value="57" />
+   <attr key="cost" value="{4}{U}" />
+   <attr key="cmc" value="5" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Human Soldier" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Blue" />
+   <attr key="coloridentity" value="8" />
+   <attr key="power" value="3" />
+   <attr key="toughness" value="3" />
+   <attr key="artist" value="Zhang Jiazhen" />
+  </card>
+  <card name="Wu Elite Cavalry" graphics="WuEliteCavalry.jpg" text="Horsemanship">
+   <attr key="rarity" value="C" />
+   <attr key="cn" value="58" />
+   <attr key="cost" value="{3}{U}" />
+   <attr key="cmc" value="4" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Human Soldier" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Blue" />
+   <attr key="coloridentity" value="8" />
+   <attr key="power" value="2" />
+   <attr key="toughness" value="3" />
+   <attr key="artist" value="Li Wang" />
+  </card>
+  <card name="Wu Infantry" graphics="WuInfantry.jpg" text="">
+   <attr key="rarity" value="C" />
+   <attr key="cn" value="59" />
+   <attr key="cost" value="{1}{U}" />
+   <attr key="cmc" value="2" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Human Soldier" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Blue" />
+   <attr key="coloridentity" value="8" />
+   <attr key="power" value="2" />
+   <attr key="toughness" value="1" />
+   <attr key="artist" value="Xu Xiaoming" />
+  </card>
+  <card name="Wu Light Cavalry" graphics="WuLightCavalry.jpg" text="Horsemanship">
+   <attr key="rarity" value="C" />
+   <attr key="cn" value="60" />
+   <attr key="cost" value="{1}{U}" />
+   <attr key="cmc" value="2" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Human Soldier" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Blue" />
+   <attr key="coloridentity" value="8" />
+   <attr key="power" value="1" />
+   <attr key="toughness" value="2" />
+   <attr key="artist" value="Huang Qishi" />
+  </card>
+  <card name="Wu Longbowman" graphics="WuLongbowman.jpg" text="{T}: Wu Longbowman deals 1 damage to target creature or player. Activate this ability only during your turn, before attackers are declared.">
+   <attr key="rarity" value="U" />
+   <attr key="cn" value="61" />
+   <attr key="cost" value="{2}{U}" />
+   <attr key="cmc" value="3" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Human Soldier Archer" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Blue" />
+   <attr key="coloridentity" value="8" />
+   <attr key="power" value="1" />
+   <attr key="toughness" value="1" />
+   <attr key="artist" value="Xu Tan" />
+  </card>
+  <card name="Wu Scout" graphics="WuScout.jpg" text="Horsemanship
+When Wu Scout enters the battlefield, look at target opponent's hand.">
+   <attr key="rarity" value="C" />
+   <attr key="cn" value="62" />
+   <attr key="cost" value="{1}{U}" />
+   <attr key="cmc" value="2" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Human Soldier Scout" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Blue" />
+   <attr key="coloridentity" value="8" />
+   <attr key="power" value="1" />
+   <attr key="toughness" value="1" />
+   <attr key="artist" value="Jiaming" />
+  </card>
+  <card name="Wu Spy" graphics="WuSpy.jpg" text="When Wu Spy enters the battlefield, look at the top two cards of target player's library. Put one of them into his or her graveyard.">
+   <attr key="rarity" value="U" />
+   <attr key="cn" value="63" />
+   <attr key="cost" value="{1}{U}" />
+   <attr key="cmc" value="2" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Human Soldier Rogue" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Blue" />
+   <attr key="coloridentity" value="8" />
+   <attr key="power" value="1" />
+   <attr key="toughness" value="1" />
+   <attr key="artist" value="Zhao Tan" />
+  </card>
+  <card name="Wu Warship" graphics="WuWarship.jpg" text="Wu Warship can't attack unless defending player controls an Island.">
+   <attr key="rarity" value="C" />
+   <attr key="cn" value="64" />
+   <attr key="cost" value="{2}{U}" />
+   <attr key="cmc" value="3" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Human Soldier" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Blue" />
+   <attr key="coloridentity" value="8" />
+   <attr key="power" value="3" />
+   <attr key="toughness" value="3" />
+   <attr key="artist" value="Jiang Zhuqing" />
+  </card>
+  <card name="Xiahou Dun, the One-Eyed" graphics="XiahouDuntheOneEyed.jpg" text="Horsemanship
+Sacrifice Xiahou Dun, the One-Eyed: Return target black card from your graveyard to your hand. Activate this ability only during your turn, before attackers are declared.">
+   <attr key="rarity" value="R" />
+   <attr key="cn" value="92" />
+   <attr key="cost" value="{2}{B}{B}" />
+   <attr key="cmc" value="4" />
+   <attr key="type" value="Legendary Creature" />
+   <attr key="subtype" value="Human Soldier" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Black" />
+   <attr key="coloridentity" value="4" />
+   <attr key="power" value="3" />
+   <attr key="toughness" value="2" />
+   <attr key="artist" value="Junko Taguchi" />
+  </card>
+  <card name="Xun Yu, Wei Advisor" graphics="XunYuWeiAdvisor.jpg" text="{T}: Target creature you control gets +2/+0 until end of turn. Activate this ability only during your turn, before attackers are declared.">
+   <attr key="rarity" value="R" />
+   <attr key="cn" value="93" />
+   <attr key="cost" value="{1}{B}{B}" />
+   <attr key="cmc" value="3" />
+   <attr key="type" value="Legendary Creature" />
+   <attr key="subtype" value="Human Advisor" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Black" />
+   <attr key="coloridentity" value="4" />
+   <attr key="power" value="1" />
+   <attr key="toughness" value="1" />
+   <attr key="artist" value="Jack Wei" />
+  </card>
+  <card name="Yellow Scarves Cavalry" graphics="YellowScarvesCavalry.jpg" text="Horsemanship
+Yellow Scarves Cavalry can't block.">
+   <attr key="rarity" value="C" />
+   <attr key="cn" value="125" />
+   <attr key="cost" value="{1}{R}" />
+   <attr key="cmc" value="2" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Human Soldier" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Red" />
+   <attr key="coloridentity" value="2" />
+   <attr key="power" value="1" />
+   <attr key="toughness" value="1" />
+   <attr key="artist" value="Chen Weidong" />
+  </card>
+  <card name="Yellow Scarves General" graphics="YellowScarvesGeneral.jpg" text="Horsemanship
+Yellow Scarves General can't block.">
+   <attr key="rarity" value="R" />
+   <attr key="cn" value="126" />
+   <attr key="cost" value="{3}{R}" />
+   <attr key="cmc" value="4" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Human Soldier" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Red" />
+   <attr key="coloridentity" value="2" />
+   <attr key="power" value="2" />
+   <attr key="toughness" value="2" />
+   <attr key="artist" value="Chen Weidong" />
+  </card>
+  <card name="Yellow Scarves Troops" graphics="YellowScarvesTroops.jpg" text="Yellow Scarves Troops can't block.">
+   <attr key="rarity" value="C" />
+   <attr key="cn" value="127" />
+   <attr key="cost" value="{1}{R}" />
+   <attr key="cmc" value="2" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Human Soldier" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Red" />
+   <attr key="coloridentity" value="2" />
+   <attr key="power" value="2" />
+   <attr key="toughness" value="2" />
+   <attr key="artist" value="Chen Weidong" />
+  </card>
+  <card name="Young Wei Recruits" graphics="YoungWeiRecruits.jpg" text="Young Wei Recruits can't block.">
+   <attr key="rarity" value="C" />
+   <attr key="cn" value="94" />
+   <attr key="cost" value="{1}{B}" />
+   <attr key="cmc" value="2" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Human Soldier" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Black" />
+   <attr key="coloridentity" value="4" />
+   <attr key="power" value="2" />
+   <attr key="toughness" value="2" />
+   <attr key="artist" value="Li Youliang" />
+  </card>
+  <card name="Yuan Shao, the Indecisive" graphics="YuanShaotheIndecisive.jpg" text="Horsemanship
+Each creature you control can't be blocked by more than one creature.">
+   <attr key="rarity" value="R" />
+   <attr key="cn" value="128" />
+   <attr key="cost" value="{4}{R}" />
+   <attr key="cmc" value="5" />
+   <attr key="type" value="Legendary Creature" />
+   <attr key="subtype" value="Human Soldier" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Red" />
+   <attr key="coloridentity" value="2" />
+   <attr key="power" value="2" />
+   <attr key="toughness" value="3" />
+   <attr key="artist" value="Inoue Junichi" />
+  </card>
+  <card name="Yuan Shao's Infantry" graphics="YuanShaosInfantry.jpg" text="Whenever Yuan Shao's Infantry attacks alone, Yuan Shao's Infantry can't be blocked this combat.">
+   <attr key="rarity" value="U" />
+   <attr key="cn" value="129" />
+   <attr key="cost" value="{3}{R}" />
+   <attr key="cmc" value="4" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Human Soldier" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Red" />
+   <attr key="coloridentity" value="2" />
+   <attr key="power" value="2" />
+   <attr key="toughness" value="2" />
+   <attr key="artist" value="Lin Yan" />
+  </card>
+  <card name="Zhang Fei, Fierce Warrior" graphics="ZhangFeiFierceWarrior.jpg" text="Vigilance; horsemanship">
+   <attr key="rarity" value="R" />
+   <attr key="cn" value="32" />
+   <attr key="cost" value="{4}{W}{W}" />
+   <attr key="cmc" value="6" />
+   <attr key="type" value="Legendary Creature" />
+   <attr key="subtype" value="Human Soldier Warrior" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="White" />
+   <attr key="coloridentity" value="16" />
+   <attr key="power" value="4" />
+   <attr key="toughness" value="4" />
+   <attr key="artist" value="Zhao Dafu" />
+  </card>
+  <card name="Zhang He, Wei General" graphics="ZhangHeWeiGeneral.jpg" text="Horsemanship
+Whenever Zhang He, Wei General attacks, each other creature you control gets +1/+0 until end of turn.">
+   <attr key="rarity" value="R" />
+   <attr key="cn" value="95" />
+   <attr key="cost" value="{3}{B}{B}" />
+   <attr key="cmc" value="5" />
+   <attr key="type" value="Legendary Creature" />
+   <attr key="subtype" value="Human Soldier" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Black" />
+   <attr key="coloridentity" value="4" />
+   <attr key="power" value="4" />
+   <attr key="toughness" value="2" />
+   <attr key="artist" value="Jack Wei" />
+  </card>
+  <card name="Zhang Liao, Hero of Hefei" graphics="ZhangLiaoHeroofHefei.jpg" text="Whenever Zhang Liao, Hero of Hefei deals damage to an opponent, that opponent discards a card.">
+   <attr key="rarity" value="R" />
+   <attr key="cn" value="96" />
+   <attr key="cost" value="{4}{B}{B}" />
+   <attr key="cmc" value="6" />
+   <attr key="type" value="Legendary Creature" />
+   <attr key="subtype" value="Human Soldier" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Black" />
+   <attr key="coloridentity" value="4" />
+   <attr key="power" value="3" />
+   <attr key="toughness" value="3" />
+   <attr key="artist" value="Li Youliang" />
+  </card>
+  <card name="Zhao Zilong, Tiger General" graphics="ZhaoZilongTigerGeneral.jpg" text="Horsemanship
+Whenever Zhao Zilong, Tiger General blocks, it gets +1/+1 until end of turn.">
+   <attr key="rarity" value="R" />
+   <attr key="cn" value="33" />
+   <attr key="cost" value="{3}{W}{W}" />
+   <attr key="cmc" value="5" />
+   <attr key="type" value="Legendary Creature" />
+   <attr key="subtype" value="Human Soldier Warrior" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="White" />
+   <attr key="coloridentity" value="16" />
+   <attr key="power" value="3" />
+   <attr key="toughness" value="3" />
+   <attr key="artist" value="Quan Xuejun" />
+  </card>
+  <card name="Zhou Yu, Chief Commander" graphics="ZhouYuChiefCommander.jpg" text="Zhou Yu, Chief Commander can't attack unless defending player controls an Island.">
+   <attr key="rarity" value="R" />
+   <attr key="cn" value="65" />
+   <attr key="cost" value="{5}{U}{U}" />
+   <attr key="cmc" value="7" />
+   <attr key="type" value="Legendary Creature" />
+   <attr key="subtype" value="Human Soldier" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Blue" />
+   <attr key="coloridentity" value="8" />
+   <attr key="power" value="8" />
+   <attr key="toughness" value="8" />
+   <attr key="artist" value="Xu Xiaoming" />
+  </card>
+  <card name="Zhuge Jin, Wu Strategist" graphics="ZhugeJinWuStrategist.jpg" text="{T}: Target creature can't be blocked this turn. Activate this ability only during your turn, before attackers are declared.">
+   <attr key="rarity" value="R" />
+   <attr key="cn" value="66" />
+   <attr key="cost" value="{1}{U}{U}" />
+   <attr key="cmc" value="3" />
+   <attr key="type" value="Legendary Creature" />
+   <attr key="subtype" value="Human Advisor" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Blue" />
+   <attr key="coloridentity" value="8" />
+   <attr key="power" value="1" />
+   <attr key="toughness" value="1" />
+   <attr key="artist" value="Song Shikai" />
+  </card>
+  <card name="Zodiac Dog" graphics="ZodiacDog.jpg" text="Mountainwalk">
+   <attr key="rarity" value="C" />
+   <attr key="cn" value="130" />
+   <attr key="cost" value="{2}{R}" />
+   <attr key="cmc" value="3" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Hound" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Red" />
+   <attr key="coloridentity" value="2" />
+   <attr key="power" value="2" />
+   <attr key="toughness" value="2" />
+   <attr key="artist" value="Qi Baocheng" />
+  </card>
+  <card name="Zodiac Dragon" graphics="ZodiacDragon.jpg" text="When Zodiac Dragon is put into your graveyard from the battlefield, you may return it to your hand.">
+   <attr key="rarity" value="R" />
+   <attr key="cn" value="131" />
+   <attr key="cost" value="{7}{R}{R}" />
+   <attr key="cmc" value="9" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Dragon" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Red" />
+   <attr key="coloridentity" value="2" />
+   <attr key="power" value="8" />
+   <attr key="toughness" value="8" />
+   <attr key="artist" value="Qi Baocheng" />
+  </card>
+  <card name="Zodiac Goat" graphics="ZodiacGoat.jpg" text="Mountainwalk">
+   <attr key="rarity" value="C" />
+   <attr key="cn" value="132" />
+   <attr key="cost" value="{R}" />
+   <attr key="cmc" value="1" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Goat" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Red" />
+   <attr key="coloridentity" value="2" />
+   <attr key="power" value="1" />
+   <attr key="toughness" value="1" />
+   <attr key="artist" value="Qi Baocheng" />
+  </card>
+  <card name="Zodiac Horse" graphics="ZodiacHorse.jpg" text="Islandwalk">
+   <attr key="rarity" value="U" />
+   <attr key="cn" value="159" />
+   <attr key="cost" value="{3}{G}" />
+   <attr key="cmc" value="4" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Horse" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Green" />
+   <attr key="coloridentity" value="1" />
+   <attr key="power" value="3" />
+   <attr key="toughness" value="3" />
+   <attr key="artist" value="Ai Desheng" />
+  </card>
+  <card name="Zodiac Monkey" graphics="ZodiacMonkey.jpg" text="Forestwalk">
+   <attr key="rarity" value="C" />
+   <attr key="cn" value="160" />
+   <attr key="cost" value="{1}{G}" />
+   <attr key="cmc" value="2" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Ape" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Green" />
+   <attr key="coloridentity" value="1" />
+   <attr key="power" value="2" />
+   <attr key="toughness" value="1" />
+   <attr key="artist" value="Ai Desheng" />
+  </card>
+  <card name="Zodiac Ox" graphics="ZodiacOx.jpg" text="Swampwalk">
+   <attr key="rarity" value="U" />
+   <attr key="cn" value="161" />
+   <attr key="cost" value="{3}{G}" />
+   <attr key="cmc" value="4" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Ox" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Green" />
+   <attr key="coloridentity" value="1" />
+   <attr key="power" value="3" />
+   <attr key="toughness" value="3" />
+   <attr key="artist" value="Ai Desheng" />
+  </card>
+  <card name="Zodiac Pig" graphics="ZodiacPig.jpg" text="Swampwalk">
+   <attr key="rarity" value="U" />
+   <attr key="cn" value="97" />
+   <attr key="cost" value="{3}{B}" />
+   <attr key="cmc" value="4" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Boar" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Black" />
+   <attr key="coloridentity" value="4" />
+   <attr key="power" value="3" />
+   <attr key="toughness" value="3" />
+   <attr key="artist" value="Qi Baocheng" />
+  </card>
+  <card name="Zodiac Rabbit" graphics="ZodiacRabbit.jpg" text="Forestwalk">
+   <attr key="rarity" value="C" />
+   <attr key="cn" value="162" />
+   <attr key="cost" value="{G}" />
+   <attr key="cmc" value="1" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Rabbit" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Green" />
+   <attr key="coloridentity" value="1" />
+   <attr key="power" value="1" />
+   <attr key="toughness" value="1" />
+   <attr key="artist" value="Ai Desheng" />
+  </card>
+  <card name="Zodiac Rat" graphics="ZodiacRat.jpg" text="Swampwalk">
+   <attr key="rarity" value="C" />
+   <attr key="cn" value="98" />
+   <attr key="cost" value="{B}" />
+   <attr key="cmc" value="1" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Rat" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Black" />
+   <attr key="coloridentity" value="4" />
+   <attr key="power" value="1" />
+   <attr key="toughness" value="1" />
+   <attr key="artist" value="Qi Baocheng" />
+  </card>
+  <card name="Zodiac Rooster" graphics="ZodiacRooster.jpg" text="Plainswalk">
+   <attr key="rarity" value="C" />
+   <attr key="cn" value="163" />
+   <attr key="cost" value="{1}{G}" />
+   <attr key="cmc" value="2" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Bird" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Green" />
+   <attr key="coloridentity" value="1" />
+   <attr key="power" value="2" />
+   <attr key="toughness" value="1" />
+   <attr key="artist" value="Ai Desheng" />
+  </card>
+  <card name="Zodiac Snake" graphics="ZodiacSnake.jpg" text="Swampwalk">
+   <attr key="rarity" value="C" />
+   <attr key="cn" value="99" />
+   <attr key="cost" value="{2}{B}" />
+   <attr key="cmc" value="3" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Snake" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Black" />
+   <attr key="coloridentity" value="4" />
+   <attr key="power" value="2" />
+   <attr key="toughness" value="2" />
+   <attr key="artist" value="Qi Baocheng" />
+  </card>
+  <card name="Zodiac Tiger" graphics="ZodiacTiger.jpg" text="Forestwalk">
+   <attr key="rarity" value="U" />
+   <attr key="cn" value="164" />
+   <attr key="cost" value="{2}{G}{G}" />
+   <attr key="cmc" value="4" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Cat" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Green" />
+   <attr key="coloridentity" value="1" />
+   <attr key="power" value="3" />
+   <attr key="toughness" value="4" />
+   <attr key="artist" value="Ai Desheng" />
+  </card>
+  <card name="Zuo Ci, the Mocking Sage" graphics="ZuoCitheMockingSage.jpg" text="Hexproof
+Zuo Ci, the Mocking Sage can't be blocked by creatures with horsemanship.">
+   <attr key="rarity" value="R" />
+   <attr key="cn" value="165" />
+   <attr key="cost" value="{1}{G}{G}" />
+   <attr key="cmc" value="3" />
+   <attr key="type" value="Legendary Creature" />
+   <attr key="subtype" value="Human Advisor" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Green" />
+   <attr key="coloridentity" value="1" />
+   <attr key="power" value="1" />
+   <attr key="toughness" value="2" />
+   <attr key="artist" value="Wang Yuqun" />
+  </card>
+ </cards>
+</ccg-setinfo>

@@ -1,0 +1,660 @@
+#
+#  Magic the Gathering server
+#  --------------------------
+#
+#  Variables:
+#
+#  screen.width,screen.height - screen resolution
+#  port - server port
+#  meta.port - meta server port to connect
+#  players_wanted - how many players we will wait
+#
+#  Functions:
+#
+# SetUpPlayer(p) - create necessary structures for player 'p'
+#
+
+screen.width=1024;
+screen.height=768;
+port=29200;
+meta.port=29100;
+
+# Morph and manifest overlays
+special_cardback=(,);
+special_cardback{4}=870;
+special_cardback{5}=871;
+
+if(meta.server=="NO.DEFAULT.SERVER.FOR.THIS.GAME")
+  meta.server="gccg.bornano.fr";
+
+#
+# GAME SPECIFIC FUNCTIONS
+# =======================
+#
+
+#
+# InitServerHook(ARG) - called in server.functions
+#
+def InitServerHook
+{
+  GAME_PILES{'exile'}=("public",);
+  GAME_PILES{'sideboard'}=("self_known",);
+  GAME_PILES{'command'}=("public",);
+  GAME_PILES{'planes'}=("reveal_1",);
+  GAME_PILES{'schemes'}=("reveal_1",);
+  GAME_PILES{'challenge'}=("reveal_1",);
+  GAME_PILES{'challenge discard'}=("public",);
+#  if(server_flags == NULL) server_flags = (,);
+  server_flags=("teamscore",);
+  if(find("Momir",server_description) != NULL) server_flags = server_flags+("momir","jhoira");
+  archenemy=-1;
+  mtg.waitfor="";
+  mtg.waitforexpiry=0;
+  
+  hasplane=copy(0,ARG);
+  hasscheme=copy(0,ARG);
+  haschallenge=copy(0,ARG);
+}
+
+#
+# StartGameHook(ARG) - called in server.functions
+#
+def StartGameHook
+{ 
+  if(HasFlag("momir"))
+  {
+    if(isvar("momirbasic"))
+      momirbasic=pop();
+    push(momirbasic);
+    push(totalcards);
+    push(c);
+    push(j);
+    push(loaded);
+    momirbasic=(,);
+    momirbasic{"jhoira_instant"}=(,);
+    momirbasic{"jhoira_sorcery"}=(,);
+    momirbasic{"total_cards"}=0;
+    totalcards=length(cards());
+    for(j)(17)
+      momirbasic{"momir"+j}=(,);
+    for(j)(8)
+      momirbasic{"stone"+j}=(,);
+
+    loaded=load("momirbasic");
+    if(!loaded || momirbasic{"total_cards"}<totalcards)
+    {
+      if(loaded) delsaved("momirbasic");
+      
+      SendAll("Message","{sz27}{blue}I have to update momir-basic cards. This could take a few minutes");
+      momirbasic{"total_cards"}=length(cards());
+      for(c)(cards())
+      {
+        if(set_of(c)!="UG" && set_of(c)!="UH")
+        {
+          if(find("Instant",card_attr("type",c))!=NULL)
+          {
+            momirbasic{"jhoira_instant"}=momirbasic{"jhoira_instant"}+(c,);
+          }
+          else if(find("Sorcery",card_attr("type",c))!=NULL)
+          {
+            momirbasic{"jhoira_sorcery"}=momirbasic{"jhoira_sorcery"}+(c,);
+          }
+          else if(find("Creature",card_attr("type",c))!=NULL)
+          {
+            for(j)(17){
+              if(toint(card_attr("cmc",c))==j)
+              {
+                momirbasic{"momir"+j}=momirbasic{"momir"+j}+(c,);
+              }
+            }
+          }
+          else if(find("Equipment",card_attr("subtype",c))!=NULL)
+          {
+            for(j)(8)
+            {
+              if(toint(card_attr("cmc",c))<=j)
+              {
+                momirbasic{"stone"+j}=momirbasic{"stone"+j}+(c,);
+              }
+            }
+          }
+        }
+      }
+      if(save("momirbasic"))
+        SendAll("Message","{sz25}{blue}Cards updated! ^_^");
+    }
+    loaded=pop();
+    j=pop();
+    c=pop();
+    totalcards=pop();
+    SendAll("Message","{green}I am {blue}Momir Vig{green}! Hear me roar!");
+    SendAll("Message","{green}Use {blue}/momir [NUM]{green} to have me generate a random creature card that costs NUM mana. The ability costs {X} and discard a card, where X is the number you choose. Once per turn, sorcery speed only, please.");
+  }
+  if(HasFlag("jhoira"))
+  {
+    SendAll("Message","{blue}Jhoira of the Ghitu {red}here! If you like instants and sorceries, I'm your girl.");
+    SendAll("Message","{red}For {3} and discard a card, you can type {blue}/jhoira instant{red} or {blue}/jhoira sorcery{red} to get 3 random cards of that type, then you may play one of them for free. You can keep calling me up as long as you have the cards and mana, but you can only generate sorceries at sorcery speed. Oh, and don't forget to draw an extra card at the start of the game!");
+  }
+  if(HasFlag("momir") && !HasFlag("stone"))
+  {
+    SendAll("Message","{green}My buddy the {154,154,154}Stonehewer Giant{green} is also around, but we don't let him out of his cage very often. If you're crazy enough to think you can handle the wrath of random Equipment, type {yellow}/on stone{green}.");
+  }
+  if(HasFlag("stone"))
+  {
+    SendAll("Message","{yellow}This is {154,154,154}Stonehewer Giant{yellow}, your favorite arms dealer!");
+    SendAll("Message","{yellow}Whenever you get creatures, I'll give them random Equipment tokens of lesser cost. If I don't for some reason, you can type {154,154,154}/stone X{yellow}, where X is its converted mana cost. Oh, and you get yet another card in your opening hand!");
+  }
+  if(HasFlag("team"))
+  {
+    SendAll("Message","This is a team game. You can use {yellow}/wt{white} to whisper to team, {yellow}/ts{white} to make all messages team-whispers by default, and {yellow}/sh{white} to show your hand to the team.");
+  }
+}
+
+#
+# SetUpPlayer(p) - Create necessary structures for player 'p'.
+#
+def SetUpPlayer
+{
+  CreateDeck(ARG,"deck",40,45);
+  CreateDeck(ARG,"discard pile",40,155);
+  CreateDeck(ARG,"sideboard",40,245);
+  CreateDeck(ARG,"exile",40,245);
+}
+
+def SetFlagHook
+{
+  if(ARG == "stone" && !HasFlag("stone") && find("Momir",server_description) != NULL)
+    {
+      server_flags = server_flags+("stone",);
+      for(p)(players)
+      {
+        score[p] = score[p]-5;
+        SendAll("Score",(p,score[p]));
+      }
+      SendAll("Message","{yellow}This is {154,154,154}Stonehewer Giant{yellow}, your favorite arms dealer!");
+      SendAll("Message","{yellow}Whenever you get creatures, I'll give them random Equipment of lesser cost. If I don't for some reason, you can type {154,154,154}/stone X{yellow}, where X is its converted mana cost. Oh, and you get yet another card in your opening hand!");
+    }
+    else if(ARG == "jhoira" && !HasFlag("jhoira") && find("Momir",server_description) != NULL)
+    {
+      server_flags = server_flags+("jhoira",);
+      SendAll("Message","Jhoira server flag enabled.");
+    }
+    else if(ARG == "momir" && !HasFlag("momir") && find("Momir",server_description) != NULL)
+    {
+      server_flags = server_flags+("momir",);
+      SendAll("Message","Momir server flag enabled.");
+    }
+    else if(ARG == "2hg" && !HasFlag("team") && players_wanted > 3 && players_wanted % 2 == 0)
+    {
+      server_flags = server_flags+("team",);
+      for(p)(players)
+      {
+        score[p] = InitialScore(p);
+        SendAll("Score",(p,score[p]));
+      }
+      SendAll("Message","This is now a team game. You can use {yellow}/wt{white} to whisper to team, {yellow}/ts{white} to make all messages team-whispers by default, and {yellow}/sh{white} to show your hand to the team.");
+    }
+}
+
+def ClearFlagHook
+{
+    return(0);
+    if(f == "momir" && find("Momir",server_description) != NULL)
+    {
+      Reply("{red}Cannot disable the Momir flag at this table.");
+      return(1);
+    }
+    else if (f == "stone")
+    {
+      for(p)(players)
+      {
+        score[p] = score[p]+5;
+        SendAll("Score",(p,score[p]));
+      }
+      server_flags = server_flags-("stone",);
+      SendAll("Message","Stone server flag disabled.");
+      return(1);
+    }
+    else if (f == "2hg")
+    {
+      server_flags = server_flags-("team",);
+      SendAll("Message","Team server flag disabled.");
+      return(1);
+    }
+}
+
+def PutTableHook
+{
+  if(HasFlag("stone"))
+  {
+    if(auto_equip && find("Equipment",Attr("subtype",ARG[0])) != NULL)
+    {
+      auto_equip = 0;
+      Attach(next_object-1, last_creature);
+      Lower(next_object-1);
+    }
+    else if(find("Creature",Attr("type",ARG[0])) != NULL)
+    {
+      last_creature = next_object-1;
+      StoneEquip(ARG[0],ARG[3],ARG[4],ARG[5]);
+    }
+    
+  }
+}
+
+#
+# TransferHook() - Used for making planes and schemes go to the right piles.
+#
+def TransferHook
+{
+  if(ARG[2][0]=="deck.top" || ARG[2][0]=="deck.bottom")
+  {
+    push(c);
+    push(d);
+    c=(,);
+    if(ARG[1][0]=="table")
+      if(table{ARG[1][1]} != NULL)
+        c=(table{ARG[1][1]}[0],);
+    if(ARG[1][0]=="play")
+      if(count(ARG[1][1],play.stack[player]))
+        c=(ARG[1][1],);
+    else if(ARG[1][0]=="hand")
+      if(length(hand[ARG[1][1]]) > max(0,ARG[1][2]))
+        c=index(hand[ARG[1][1]],seq(ARG[1][2],min(ARG[1][2]+ARG[0]-1,length(hand[ARG[1][1]]))));
+    else if(ARG[1][0]=="active")
+      if(length(active[ARG[1][1]]) > max(0,ARG[1][2]))
+        c=index(active[ARG[1][1]],seq(ARG[1][2],min(ARG[1][2]+ARG[0]-1,length(active[ARG[1][1]]))));
+    else if(ARG[1][0]=="deck.top")
+      if(length(decks{ARG[1][1]}[0]) > 0)
+        c=right(decks{ARG[1][1]}[0],ARG[0]);
+    else if(ARG[1][0]=="deck.bottom")
+      if(length(decks{ARG[1][1]}[0]) > 0)
+        c=left(decks{ARG[1][1]}[0],ARG[0]);
+    
+    if(length(c)<1)
+      0;
+    else if(min(c)>499 && max(c)<700)
+    {
+      if(decks{ARG[2][1]}[2]!="planes")
+      {
+        d=FindDeck(player,"planes");
+        if(d)
+          dst[1]=d;
+        else
+        {
+          for(d)(decks)
+          {
+            if(d[1][2]=="planes")
+              dst[1]=d[0];
+          }
+        }
+        if(decks{dst[1]}[2]=="planes" && (decks{ARG[2][1]}[2]=="discard pile" || decks{ARG[2][1]}[2]=="exile"))
+          dst[0]="deck.bottom";
+       
+      }
+    }
+    else if(min(c)>699 && max(c)<800)
+    {
+      if(decks{ARG[2][1]}[2]!="schemes")
+      {
+        d=FindDeck(player,"schemes");
+
+        if(d)
+          dst[1]=d;
+        else
+        {
+          for(d)(decks)
+          {
+            if(d[1][2]=="schemes")
+              dst[1]=d[0];
+          }
+        }
+        if(decks{dst[1]}[2]=="schemes" && (decks{ARG[2][1]}[2]=="discard pile" || decks{ARG[2][1]}[2]=="exile"))
+          dst[0]="deck.bottom";
+      }
+    }
+    else if(min(c)>821 && max(c)<900)
+    {
+      if(decks{ARG[2][1]}[2]!="challenge" && decks{ARG[2][1]}[2]!="challenge discard")
+      {
+        if(decks{ARG[2][1]}[2]=="discard pile" || decks{ARG[2][1]}[2]=="exile")
+          c="challenge discard";
+        else
+          c="challenge";
+        
+        d=FindDeck(player,c);
+
+        if(d)
+          dst[1]=d;
+        else
+        {
+          for(d)(decks)
+          {
+            if(d[1][2]==c)
+              dst[1]=d[0];
+          }
+        }
+      }
+    }
+    d=pop();
+    c=pop();
+  }
+}
+
+#
+# UploadDeckHook() - If a player submits a plane or scheme deck, add a pile for it.
+#
+def UploadDeckHook
+{
+  push(i);
+  if(has_entry("planes",ARG[1]))
+  {
+    i=CreateDeck(player,"planes",40,335);
+    hasplane[player]=1;
+    
+    for(p)(watchers)
+    {
+      if(p==player)
+        Send(p,("CreateDeck",(i,player,"planes",(40,335))));
+      else
+        Send(p,("CreateDeck",(i,player,"opponent planes",CoordToPlr(decks{i}[3],decks{i}[4],p))));
+    }
+    decks{i}[0]=shuffle(ARG[1]{"planes"});
+
+    SendAll("SetDeck",(i,card_back(decks{i}[0])));
+  }
+  if(has_entry("schemes",ARG[1]))
+  {
+    i=CreateDeck(player,"schemes",40,-90);
+    hasscheme[player]=1;
+    
+    for(p)(watchers)
+    {
+      if(p==player)
+        Send(p,("CreateDeck",(i,player,"schemes",(40,-90))));
+      else
+        Send(p,("CreateDeck",(i,player,"opponent schemes",CoordToPlr(decks{i}[3],decks{i}[4],p))));
+    }
+    decks{i}[0]=shuffle(ARG[1]{"schemes"});
+
+    SendAll("SetDeck",(i,card_back(decks{i}[0])));
+  }
+  if(has_entry("challenge",ARG[1]))
+  {
+    i=CreateDeck(player,"challenge",110,245);
+    CreateDeck(player,"challenge discard",180,245);
+    haschallenge[player] = max(ARG[1]{"challenge"});
+    
+    for(p)(watchers)
+    {
+      if(p==player)
+      {
+        Send(p,("CreateDeck",(i,player,"challenge",(110,245))));
+        Send(p,("CreateDeck",(i+1,player,"challenge discard",(180,245))));
+      }
+      else
+      {
+        Send(p,("CreateDeck",(i,player,"opponent challenge",CoordToPlr(decks{i}[3],decks{i}[4],p))));
+        Send(p,("CreateDeck",(i+1,player,"opponent challenge discard",CoordToPlr(decks{i+1}[3],decks{i+1}[4],p))));
+      }
+    }
+    decks{i}[0]=shuffle(ARG[1]{"challenge"});
+
+    SendAll("SetDeck",(i,card_back(decks{i}[0])));
+  }
+  
+  if(AllDecksLoaded())
+  {
+    if(sum(hasplane))
+      SendAll("Message","{orange}Planechase! Fun! Remember that the {yellow}Delete{orange} key can put a plane card on the bottom of the planar deck when you're done with it.\n"+
+     "Roll the planar die with {yellow}Ctrl+R{orange} just like a normal die roll, but only use the {red}first die{orange}.\n"+
+     "{dice1} is Planeswalk, and {dice6} is {C} (chaos).");
+      
+    if(max(haschallenge)>821 && max(haschallenge)<837)
+      SendAll("Message","{green}Bring up to two Hero cards with you to face the Hydra!\n"+
+      "{yellow}Start by searching the Hydra deck for two Hydra Head cards and putting them on the battlefield. For a more difficult game, use three or four Hydra Heads instead.\n"+
+      "{green}The Hydra always goes last in the turn order. At the beginning of its main phase, it casts the top card of its deck (if it's a sorcery, players make all choices for it). At the beginning of its end step, it deals 1 damage to each player for each regular head, and 2 damage for each elite head.\n"+
+      "{yellow}Players can attack heads with creatures, or target them with other spells. Whenever a head dies, reveal the top two cards of the hydra deck. Any heads go to the battlefield to replace the fallen one, and any sorceries go to the graveyard without being cast.\n"+
+      "{green}At the beginning of each end step, if there are no Heads on the battlefield, the Hydra is defeated! Good luck!");
+    else if(max(haschallenge)>839 && max(haschallenge)<853)
+      SendAll("Message","{red}Bring up to three Hero cards with you to battle the Horde!\n"+
+      "{orange}Start by taking three turns, then the Horde takes its first turn. Proceed with normal turn order thereafter.\n"+
+      "{red}At the beginning of the Horde's main phase, it casts the top two cards of its deck (if it's a sorcery, players make all choices for it). Artifacts may allow it to cast additional cards, so watch out!\n"+
+      "{orange}You can attack and target the Horde as though it were a player. Anything that would cause the Horde to lose life, instead puts that many cards from the top of its deck into its graveyard.\n"+
+      "{red}If the Horde controls no creatures AND there are no cards left in its deck, you win! Good luck!");
+    else if(max(haschallenge)>855 && max(haschallenge)<869)
+      SendAll("Message","{154,77,154}You dare challenge the God, Xenagos?\n"+
+      "Use up to three Hero cards. If one of these is a Hero Equipment, also use the Forge a Godslayer sticker card to choose an extra ability for it.\n"+
+      "{154,77,154}At the start of the game, I've broken free from my deck, and brought two copies of Rollicking Throng along with me to the battlefield. You go first, but during each of my turns, I call upon two more cards from the top of my deck and cast them.\n"+
+      "You may attack me or my revelers directly, or target me as a player. We will attack when a card's effect puts us in the mood, but not otherwise.\n"+
+      "{154,77,154}To win, all you have to do is destroy me after going through all my underlings. But that will never happen, right?");
+    
+    if(players_wanted>2)
+      i=sum(hasscheme);
+    else
+      i=0;
+    
+    if(i==1)
+    {
+      SendAll("Message","{cyan}It looks like you're trying to play an Archenemy game! Type {yellow}yes{cyan} if this is correct, or {yellow}no{cyan} if I should just ignore the scheme deck behind the curtain.");
+      archenemy=find(1,hasscheme);
+      mtg.waitfor="arch confirm";
+      mtg.waitforexpiry=toint(current_time())+30;
+    }
+    else if(i==players_wanted)
+    {
+      SendAll("Message","{cyan}Oh boy! Supervillain Rumble! I wouldn't want to get too involved in a scuffle like that. Nonetheless, if you all just keep those decks around for show and only one of you is planning on using it this game, the Baddest Baddie of them All should type {yellow}me{cyan} to put their villainy to the test.");
+      mtg.waitfor="arch choose";
+      mtg.waitforexpiry=toint(current_time())+30;
+    }
+    else if(i)
+    {
+      SendAll("Message","{cyan}Multiple archenemies? I'm guessing all but one of you is an impostor, so the real one can step out of the shadows by typing {yellow}me{cyan}.");
+      mtg.waitfor="arch choose";
+      mtg.waitforexpiry=toint(current_time())+30;
+    }
+  }
+  i=pop();
+}
+
+#
+# SayHook() - used for some Mtg-specific messages
+#
+def SayHook
+{
+  return(0);
+  
+# This is in SayHook because it should be broadcast to all players even if the player has teamspeak on.
+# If it were processed by Say(), the teamspeak section would pick up on it first.
+  if(left(ARG,21)=="{orange}Current life ")
+  {
+    SendAll("Message","{yellow}"+player.name{player}+": "+ARG);
+    return(1);
+  }
+  else if(length(mtg.waitfor)>0)
+  {
+    if(mtg.waitforexpiry && current_time()>mtg.waitforexpiry)
+      mtg.waitfor="";
+    else if(mtg.waitfor=="arch confirm")
+    {
+      if(lc(ARG)=="yes" || lc(ARG)=="y")
+      {
+        mtg.waitfor="";
+        SendAll("Message","{yellow}"+player.name{player}+": "+ARG);
+        SetTeams("against",archenemy);
+        server_flags = server_flags + ("team",) - ("teamscore",);
+        score[archenemy] = InitialScore(archenemy);
+        SendAll("Score",(archenemy,score[archenemy]));
+        SendAll("Message","{cyan}Very well then. Now everyone except "+player.name{archenemy}+" is on a team together, and can use {yellow}/sh{cyan} to show hands, or {yellow}/t MESSAGE{cyan} to talk amongst yourselves. Begin!");
+        return(1);
+      }
+      else if(lc(ARG)=="no" || lc(ARG)=="n")
+      {
+        mtg.waitfor="";
+        SendAll("Message","{yellow}"+player.name{player}+": "+ARG);
+        return(1);
+      }
+    }
+    else if(mtg.waitfor=="arch choose")
+    {
+      if((lc(ARG)=="me" || lc(ARG)=="i") && hasscheme(player))
+      {
+        mtg.waitfor="";
+        SendAll("Message","{yellow}"+player.name{player}+": "+ARG);
+        archenemy=player;
+        SetTeams("against",player);
+        server_flags = server_flags + ("team",) - ("teamscore",);
+        score[archenemy] = InitialScore(player);
+        SendAll("Score",(player,score[player]));
+        SendAll("Message","{cyan}Very well then. Now everyone except "+player.name{player}+" is on a team together, and can use {yellow}/sh{cyan} to show hands, or {yellow}/t MESSAGE{cyan} to talk amongst yourselves. Begin!");
+        return(1);
+      }
+      else if(lc(ARG)=="no" || lc(ARG)=="n")
+      {
+        mtg.waitfor="";
+        SendAll("Message","{yellow}"+player.name{player}+": "+ARG);
+        return(1);
+      }
+    }
+  }
+}
+
+#
+# InitialScore(p) - Return a structure representing initial score for a player 'p'.
+#
+def InitialScore
+{
+  initscore = 20;
+  if (HasFlag("momir")) initscore = initscore + 4;
+  if (HasFlag("stone")) initscore = initscore - 5;
+  if (ARG==archenemy) initscore = initscore * 2;
+  if (HasFlag("teamscore") && HasFlag("team")) initscore = (initscore * 3 * length(team[ARG])) / 4;
+  return(initscore);
+}def CommandJhoira
+{
+  if (HasFlag("jhoira"))
+  {
+    if(!length(ARG))
+      Reply("{red}Please choose {yellow}sorcery{red} or {yellow}instant{red} (or their abbreviations {yellow}s{red} or {yellow}i{red}).");
+    else
+    {
+      argtype = lc(join(ARG));
+      cardlist = (,);
+      objtext = "";
+      if (length(ARG) && find(argtype, "instants") == 0)
+      {
+    cardlist=momirbasic{"jhoira_instant"};
+        objtext = "Jhoira for instants, with a choice of {blue}";
+      }
+      else if (length(ARG) && (find(argtype, "sorcery") == 0 || find(argtype, "sorceries") == 0))
+      {
+    cardlist=momirbasic{"jhoira_sorcery"};
+        objtext = "Jhoira for sorceries, with a choice of {blue}";
+      }
+      if(length(cardlist)==0)
+      {
+        Send(player,("Message","{red}Please specify {blue}instant{red} or {blue}sorcery{red} (or {blue}i{red} or {blue}s{red}) and try again."));
+        return;
+      }
+      else
+      {
+        mycard1=cardlist[random(length(cardlist))];
+        cardlist = del(mycard1,cardlist);
+        mycard2=cardlist[random(length(cardlist))];
+        cardlist = del(mycard2,cardlist);
+        mycard3=cardlist[random(length(cardlist))];
+    
+        SendAll("PlaySound",("dice"));
+        MsgVerbObject("activate",objtext+name(mycard1)+"{white}, {blue}"+name(mycard2)+"{white}, or {blue}"+name(mycard3)+"{white}.");
+        if(visible[player]{"active"} < 4)
+          visible[player]{"active"} = visible[player]{"active"} + 4;
+        Transfer(1,("out.of.play", mycard1),("active", player));
+        Transfer(1,("out.of.play", mycard2),("active", player));
+        Transfer(1,("out.of.play", mycard3),("active", player));
+      }
+    }
+  }
+  else
+  {
+    Send(player,"{red}Jhoira doesn't do business at this table.");
+  }
+}
+
+def CommandMomir
+{
+  if (HasFlag("momir"))
+  {
+    if(!length(ARG))
+      Reply("{red}Please choose a converted mana cost.");
+    else
+    {
+      cost=toint(ARG[0]);
+      cardlist=(,);
+      if (cost>=0 && cost<17) cardlist=momirbasic{"momir"+cost};
+      if(length(cardlist)==0)
+      {
+        MsgVerbObject("activate","Momir Vig for "+cost+", but there are {red}no creature cards{white} that cost "+cost+".");
+      }
+      else
+      {
+        mycard=cardlist[random(length(cardlist))];
+        MsgVerbObject("activate","Momir Vig for "+cost+", creating {blue}"+name(mycard)+"{white}.");
+        SendAll("PlaySound",("dice"));
+        Transfer(1,("out.of.play", mycard),("play", 0));
+      }
+    }
+  }
+  else
+  {
+    Send(player,"{red}Momir Vig doesn't do business at this table.");
+  }
+}
+
+def CommandStone
+{
+  if (HasFlag("stone"))
+  {
+    if(!length(ARG))
+      Reply("{red}Please choose a converted mana cost.");
+    else
+    {
+      cost=toint(join(ARG,""));
+      if (cost < 1)
+      {
+        Send(player,"{yellow}Sorry, the Stonehewer Giant doesn't make anything small enough for zero-cost creatures to carry.");
+      }
+      else
+      {
+        mycard=StoneSelect(cost);
+        MsgVerbObject("get","{yellow}"+name(mycard)+"{white} from Stonehewer Giant (for "+cost+").");
+        SendAll("PlaySound",("dice"));
+        Transfer(1,("out.of.play", mycard),("play", 0));
+      }
+    }
+  }
+  else
+  {
+    Send(player,"{red}The Stonehewer Giant doesn't do business at this table.");
+  }
+}
+
+def StoneEquip
+{
+  cost = toint(card_attr("cmc",ARG[0]));
+  if (cost > 0)
+  {
+    auto_equip=1;
+    mycard=StoneSelect(cost);
+    SendAll("Message","Stonehewer Giant attaches {yellow}"+name(mycard)+"{white} to "+name(ARG[0])+".");
+    Transfer(1,("out.of.play", mycard),("table",ARG[1],ARG[2]-15,ARG[3],0));
+  }
+}
+
+def StoneSelect
+{
+  cost = ARG-1;
+  cardlist=(,);
+  if (cost>=0 && cost<7) cardlist = momirbasic{"stone"+cost};
+  else cardlist=momirbasic{"stone7"};
+  return(cardlist[random(length(cardlist))]);
+}

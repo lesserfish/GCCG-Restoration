@@ -1,0 +1,1605 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE ccg-setinfo SYSTEM "../gccg-set.dtd">
+<ccg-setinfo name="Siege of Gondor" dir="Siege" abbrev="SoG" game="Lord of the Rings TCG">
+  <cards>
+    <card name="Aggression" graphics="LOTR-EN08001.jpg" text="While you have initiative, each Dwarf is damage +1. Fellowship: Spot a Dwarf who is damage +X to draw X cards. Discard this condition.">
+       <attr key="expansion" value="8"/>
+       <attr key="twilight_cost" value="1"/>
+       <attr key="card_number" value="1"/>
+       <attr key="kind" value="Free Peoples"/>
+       <attr key="rarity" value="C"/>
+       <attr key="type" value="Condition"/>
+       <attr key="culture" value="{Dwarven}"/>
+       <attr key="block" value="King"/>
+    </card>
+
+    <card name="Battle in Earnest" graphics="LOTR-EN08002.jpg" text="Spot a Dwarf who is damage +X to place X wounds on minions.">
+       <attr key="expansion" value="8"/>
+       <attr key="twilight_cost" value="1"/>
+       <attr key="card_number" value="2"/>
+       <attr key="kind" value="Free Peoples"/>
+       <attr key="rarity" value="R"/>
+       <attr key="type" value="Event"/>
+       <attr key="culture" value="{Dwarven}"/>
+       <attr key="block" value="King"/>
+    </card>
+
+    <card name="Blood Runs Chill" graphics="LOTR-EN08003.jpg" text="Spot a Dwarf who is damage +X and exert that Dwarf twice to make an opponent discard X Shadow cards.">
+       <attr key="expansion" value="8"/>
+       <attr key="twilight_cost" value="2"/>
+       <attr key="card_number" value="3"/>
+       <attr key="kind" value="Free Peoples"/>
+       <attr key="rarity" value="R"/>
+       <attr key="type" value="Event"/>
+       <attr key="culture" value="{Dwarven}"/>
+       <attr key="block" value="King"/>
+    </card>
+
+    <card name="Counts But One" graphics="LOTR-EN08004.jpg" text="If Gimli is not assigned to a skirmish, add a threat to have him replace an unbound companion in a skirmish.">
+       <attr key="expansion" value="8"/>
+       <attr key="twilight_cost" value="2"/>
+       <attr key="card_number" value="4"/>
+       <attr key="kind" value="Free Peoples"/>
+       <attr key="rarity" value="U"/>
+       <attr key="type" value="Event"/>
+       <attr key="culture" value="{Dwarven}"/>
+       <attr key="block" value="King"/>
+    </card>
+
+    <card name="·Gimli, Counter of Foes" graphics="LOTR-EN08005.jpg" text="Damage +1. For each wound on Gimli, he is strength +1 and damage +1.">
+       <attr key="unique" value="yes"/>
+       <attr key="expansion" value="8"/>
+       <attr key="twilight_cost" value="2"/>
+       <attr key="card_number" value="5"/>
+       <attr key="strength" value="6"/>
+       <attr key="signet" value="{GandalfSignet}"/>
+       <attr key="vitality" value="3"/>
+       <attr key="kind" value="Free Peoples"/>
+       <attr key="resistance" value="6"/>
+       <attr key="rarity" value="C"/>
+       <attr key="race" value="Dwarf"/>
+       <attr key="type" value="Companion"/>
+       <attr key="culture" value="{Dwarven}"/>
+       <attr key="block" value="King"/>
+    </card>
+
+    <card name="Honed" graphics="LOTR-EN08006.jpg" text="Spot a Dwarf who is damage +X to make him strength +X.">
+       <attr key="expansion" value="8"/>
+       <attr key="twilight_cost" value="0"/>
+       <attr key="card_number" value="6"/>
+       <attr key="kind" value="Free Peoples"/>
+       <attr key="rarity" value="C"/>
+       <attr key="type" value="Event"/>
+       <attr key="culture" value="{Dwarven}"/>
+       <attr key="block" value="King"/>
+    </card>
+
+    <card name="Unheard of" graphics="LOTR-EN08007.jpg" text="If a Dwarf who is damage +X wins a skirmish, wound a minion not assigned to a skirmish X times.">
+       <attr key="expansion" value="8"/>
+       <attr key="twilight_cost" value="1"/>
+       <attr key="card_number" value="7"/>
+       <attr key="kind" value="Free Peoples"/>
+       <attr key="rarity" value="R"/>
+       <attr key="type" value="Event"/>
+       <attr key="culture" value="{Dwarven}"/>
+       <attr key="block" value="King"/>
+    </card>
+
+    <card name="Wish For Our Kinfolk" graphics="LOTR-EN08008.jpg" text="Fellowship: Exert a Dwarf companion and either an {Elven} companion or a {Gondor} Man to add a {Dwarven} token here. Skirmish: Remove a {Dwarven} token here to make a companion damage +1.">
+       <attr key="expansion" value="8"/>
+       <attr key="twilight_cost" value="1"/>
+       <attr key="card_number" value="8"/>
+       <attr key="kind" value="Free Peoples"/>
+       <attr key="rarity" value="U"/>
+       <attr key="type" value="Condition"/>
+       <attr key="culture" value="{Dwarven}"/>
+       <attr key="block" value="King"/>
+    </card>
+
+    <card name="A Grey Ship" graphics="LOTR-EN08009.jpg" text="Spot an Elf companion and make the fellowship archery total -X (to a minimum of 0) to heal X unbound companions. You cannot use archery special abilities.">
+       <attr key="expansion" value="8"/>
+       <attr key="twilight_cost" value="2"/>
+       <attr key="card_number" value="9"/>
+       <attr key="kind" value="Free Peoples"/>
+       <attr key="rarity" value="U"/>
+       <attr key="type" value="Event"/>
+       <attr key="culture" value="{Elven}"/>
+       <attr key="block" value="King"/>
+    </card>
+
+    <card name="·Legolas, Elven Stalwart" graphics="LOTR-EN08010.jpg" text="Archer. While you can spot 3 wounded minions, each minion skirmishing Legolas is strength -3.">
+       <attr key="unique" value="yes"/>
+       <attr key="expansion" value="8"/>
+       <attr key="twilight_cost" value="2"/>
+       <attr key="card_number" value="10"/>
+       <attr key="strength" value="6"/>
+       <attr key="signet" value="{AragornSignet}"/>
+       <attr key="vitality" value="3"/>
+       <attr key="kind" value="Free Peoples"/>
+       <attr key="resistance" value="6"/>
+       <attr key="rarity" value="C"/>
+       <attr key="race" value="Elf"/>
+       <attr key="type" value="Companion"/>
+       <attr key="culture" value="{Elven}"/>
+       <attr key="block" value="King"/>
+    </card>
+
+    <card name="Life of the Eldar" graphics="LOTR-EN08011.jpg" text="To play, spot 2 Elves. Discard an Elf to draw 3 cards.">
+       <attr key="expansion" value="8"/>
+       <attr key="twilight_cost" value="0"/>
+       <attr key="card_number" value="11"/>
+       <attr key="kind" value="Free Peoples"/>
+       <attr key="rarity" value="R"/>
+       <attr key="type" value="Event"/>
+       <attr key="culture" value="{Elven}"/>
+       <attr key="block" value="King"/>
+    </card>
+
+    <card name="Reckless We Rode" graphics="LOTR-EN08012.jpg" text="Exert an Elf companion and make the fellowship archery total -X (to a minimum of 0) to wound a minion X times. You cannot use archery special abilities.">
+       <attr key="expansion" value="8"/>
+       <attr key="twilight_cost" value="2"/>
+       <attr key="card_number" value="12"/>
+       <attr key="kind" value="Free Peoples"/>
+       <attr key="rarity" value="R"/>
+       <attr key="type" value="Event"/>
+       <attr key="culture" value="{Elven}"/>
+       <attr key="block" value="King"/>
+    </card>
+
+    <card name="Shake Off the Shadow" graphics="LOTR-EN08013.jpg" text="Fellowship: Exert an Elf companion and either a {Gandalf} companion or a {Dwarven} companion to add an {Elven} token here. Archery: Remove an {Elven} token here to make the fellowship archery total +1 (limit +2).">
+       <attr key="expansion" value="8"/>
+       <attr key="twilight_cost" value="1"/>
+       <attr key="card_number" value="13"/>
+       <attr key="kind" value="Free Peoples"/>
+       <attr key="rarity" value="U"/>
+       <attr key="type" value="Condition"/>
+       <attr key="culture" value="{Elven}"/>
+       <attr key="block" value="King"/>
+    </card>
+
+    <card name="A Fool" graphics="LOTR-EN08014.jpg" text="At sites 1{K} to 5{K}, heal Gandalf. At any other site, prevent a Hobbit from being overwhelmed unless his or her strength is tripled.">
+       <attr key="expansion" value="8"/>
+       <attr key="twilight_cost" value="3"/>
+       <attr key="card_number" value="14"/>
+       <attr key="kind" value="Free Peoples"/>
+       <attr key="rarity" value="C"/>
+       <attr key="type" value="Event"/>
+       <attr key="culture" value="{Gandalf}"/>
+       <attr key="block" value="King"/>
+    </card>
+
+    <card name="·Gandalf, Leader of Men" graphics="LOTR-EN08015.jpg" text="When Gandalf is in your starting fellowship, his twilight cost is -2.">
+       <attr key="unique" value="yes"/>
+       <attr key="expansion" value="8"/>
+       <attr key="twilight_cost" value="4"/>
+       <attr key="card_number" value="15"/>
+       <attr key="strength" value="7"/>
+       <attr key="signet" value="{AragornSignet}"/>
+       <attr key="vitality" value="4"/>
+       <attr key="kind" value="Free Peoples"/>
+       <attr key="resistance" value="6"/>
+       <attr key="rarity" value="R"/>
+       <attr key="race" value="Wizard"/>
+       <attr key="type" value="Companion"/>
+       <attr key="culture" value="{Gandalf}"/>
+       <attr key="block" value="King"/>
+    </card>
+
+    <card name="Let Us Not Tarry" graphics="LOTR-EN08016.jpg" text="Exert Gandalf to make a minion skirmishing an unbound companion strength -1 for each Gandalf signet you spot.">
+       <attr key="expansion" value="8"/>
+       <attr key="twilight_cost" value="2"/>
+       <attr key="card_number" value="16"/>
+       <attr key="kind" value="Free Peoples"/>
+       <attr key="rarity" value="U"/>
+       <attr key="type" value="Event"/>
+       <attr key="culture" value="{Gandalf}"/>
+       <attr key="block" value="King"/>
+    </card>
+
+    <card name="Mighty Steed" graphics="LOTR-EN08017.jpg" text="If Gandalf is not assigned to a skirmish, spot Shadowfax or exert Gandalf to have Gandalf replace an unbound companion in a skirmish.">
+       <attr key="expansion" value="8"/>
+       <attr key="twilight_cost" value="3"/>
+       <attr key="card_number" value="17"/>
+       <attr key="kind" value="Free Peoples"/>
+       <attr key="rarity" value="U"/>
+       <attr key="type" value="Event"/>
+       <attr key="culture" value="{Gandalf}"/>
+       <attr key="block" value="King"/>
+    </card>
+
+    <card name="Not the First Halfling" graphics="LOTR-EN08018.jpg" text="Fellowship: Exert Gandalf and either an {Elven} companion or a {Shire} companion to add a {Gandalf} token here. Skirmish: Remove a {Gandalf} token here to make a minion skirmishing an unbound companion strength -2.">
+       <attr key="expansion" value="8"/>
+       <attr key="twilight_cost" value="1"/>
+       <attr key="card_number" value="18"/>
+       <attr key="kind" value="Free Peoples"/>
+       <attr key="rarity" value="U"/>
+       <attr key="type" value="Condition"/>
+       <attr key="culture" value="{Gandalf}"/>
+       <attr key="block" value="King"/>
+    </card>
+
+    <card name="On Your Doorstep" graphics="LOTR-EN08019.jpg" text="Spot Gandalf and exert a companion to place a card of that companion’s culture from your discard pile on top of your draw deck.">
+       <attr key="expansion" value="8"/>
+       <attr key="twilight_cost" value="1"/>
+       <attr key="card_number" value="19"/>
+       <attr key="kind" value="Free Peoples"/>
+       <attr key="rarity" value="U"/>
+       <attr key="type" value="Event"/>
+       <attr key="culture" value="{Gandalf}"/>
+       <attr key="block" value="King"/>
+    </card>
+
+    <card name="Saved From the Fire" graphics="LOTR-EN08020.jpg" text="Spot Gandalf and place a companion (except the Ring-bearer) in the dead pile to take 3 cards from that companion’s culture into hand from your draw deck. Shuffle your draw deck.">
+       <attr key="expansion" value="8"/>
+       <attr key="twilight_cost" value="3"/>
+       <attr key="card_number" value="20"/>
+       <attr key="kind" value="Free Peoples"/>
+       <attr key="rarity" value="R"/>
+       <attr key="type" value="Event"/>
+       <attr key="culture" value="{Gandalf}"/>
+       <attr key="block" value="King"/>
+    </card>
+
+    <card name="·Shadowfax, Greatheart" graphics="LOTR-EN08021.jpg" text="Bearer must be Gandalf. At the start of each skirmish involving Gandalf, each minion skirmishing Gandalf must exert. Skirmish: Add a threat to make Gandalf strength +1.">
+       <attr key="unique" value="yes"/>
+       <attr key="expansion" value="8"/>
+       <attr key="twilight_cost" value="2"/>
+       <attr key="card_number" value="21"/>
+       <attr key="kind" value="Free Peoples"/>
+       <attr key="rarity" value="R"/>
+       <attr key="type" value="Possession"/>
+       <attr key="culture" value="{Gandalf}"/>
+       <attr key="block" value="King"/>
+    </card>
+
+    <card name="Hidden Even From Her" graphics="LOTR-EN08022.jpg" text="Gollum is fierce. Shadow: Spot 6 companions to play Gollum from your discard pile and exert a companion. Place this condition on top of your draw deck.">
+       <attr key="expansion" value="8"/>
+       <attr key="twilight_cost" value="1"/>
+       <attr key="card_number" value="22"/>
+       <attr key="kind" value="Shadow"/>
+       <attr key="rarity" value="C"/>
+       <attr key="type" value="Condition"/>
+       <attr key="culture" value="{Gollum}"/>
+       <attr key="block" value="King"/>
+    </card>
+
+    <card name="Larder" graphics="LOTR-EN08023.jpg" text="To play, spot a {Gollum} minion. Regroup: Discard an Orc from hand to add a {Gollum} token here. Skirmish: Remove a {Gollum} token here to make Shelob strength +3 (limit +6).">
+       <attr key="expansion" value="8"/>
+       <attr key="twilight_cost" value="1"/>
+       <attr key="card_number" value="23"/>
+       <attr key="kind" value="Shadow"/>
+       <attr key="rarity" value="U"/>
+       <attr key="type" value="Possession"/>
+       <attr key="culture" value="{Gollum}"/>
+       <attr key="block" value="King"/>
+    </card>
+
+    <card name="·Promise Keeping" graphics="LOTR-EN08024.jpg" text="Each time a companion takes a wound during a skirmish that involved a {Gollum} minion, exert a companion.">
+       <attr key="unique" value="yes"/>
+       <attr key="expansion" value="8"/>
+       <attr key="twilight_cost" value="4"/>
+       <attr key="card_number" value="24"/>
+       <attr key="kind" value="Shadow"/>
+       <attr key="rarity" value="R"/>
+       <attr key="type" value="Condition"/>
+       <attr key="culture" value="{Gollum}"/>
+       <attr key="block" value="King"/>
+    </card>
+
+    <card name="·Shelob, Eater of Light" graphics="LOTR-EN08025.jpg" text="Fierce. When you play Shelob, you may play a {Gollum} possession from your draw deck. Shelob is strength +3 for each minion stacked on a {Gollum} possession.">
+       <attr key="unique" value="yes"/>
+       <attr key="expansion" value="8"/>
+       <attr key="twilight_cost" value="6"/>
+       <attr key="card_number" value="25"/>
+       <attr key="strength" value="8"/>
+       <attr key="vitality" value="8"/>
+       <attr key="kind" value="Shadow"/>
+       <attr key="site" value="8"/>
+       <attr key="rarity" value="R"/>
+       <attr key="race" value="Spider"/>
+       <attr key="type" value="Minion"/>
+       <attr key="culture" value="{Gollum}"/>
+       <attr key="block" value="King"/>
+    </card>
+
+    <card name="·Shelob, Last Child of Ungoliant" graphics="LOTR-EN08026.jpg" text="Enduring. Fierce. While in a fierce skirmish, Shelob is damage +1.">
+       <attr key="unique" value="yes"/>
+       <attr key="expansion" value="8"/>
+       <attr key="twilight_cost" value="6"/>
+       <attr key="card_number" value="26"/>
+       <attr key="strength" value="8"/>
+       <attr key="vitality" value="8"/>
+       <attr key="kind" value="Shadow"/>
+       <attr key="site" value="8"/>
+       <attr key="rarity" value="C"/>
+       <attr key="race" value="Spider"/>
+       <attr key="type" value="Minion"/>
+       <attr key="culture" value="{Gollum}"/>
+       <attr key="block" value="King"/>
+    </card>
+
+    <card name="·Sméagol, Slippery Sneak" graphics="LOTR-EN08027.jpg" text="Ring-bound. To play, add a burden. Skirmish: Add threats equal to the total vitality of the minions Sméagol is skirmishing to discard Sméagol. Regroup: Discard Sméagol to take a {Gollum} minion from your discard pile into hand.">
+       <attr key="unique" value="yes"/>
+       <attr key="expansion" value="8"/>
+       <attr key="twilight_cost" value="0"/>
+       <attr key="card_number" value="27"/>
+       <attr key="strength" value="3"/>
+       <attr key="signet" value="{FrodoSignet}"/>
+       <attr key="vitality" value="4"/>
+       <attr key="kind" value="Free Peoples"/>
+       <attr key="resistance" value="6"/>
+       <attr key="rarity" value="R"/>
+       <attr key="race" value="Gollum"/>
+       <attr key="type" value="Companion"/>
+       <attr key="culture" value="{Gollum}"/>
+       <attr key="block" value="King"/>
+    </card>
+
+    <card name="Spider Poison" graphics="LOTR-EN08028.jpg" text="Skirmish: Remove a threat or a burden to transfer this possession to a companion skirmishing Shelob. Each time bearer is assigned to a skirmish, bearer must exert.">
+       <attr key="expansion" value="8"/>
+       <attr key="twilight_cost" value="1"/>
+       <attr key="card_number" value="28"/>
+       <attr key="kind" value="Shadow"/>
+       <attr key="rarity" value="C"/>
+       <attr key="type" value="Possession"/>
+       <attr key="culture" value="{Gollum}"/>
+       <attr key="block" value="King"/>
+    </card>
+
+    <card name="Still Far Ahead" graphics="LOTR-EN08029.jpg" text="Spot Sméagol to play the fellowship’s next site (replacing opponent’s site if necessary). The Shadow number of the fellowship’s next site is -1 until the end of the turn.">
+       <attr key="expansion" value="8"/>
+       <attr key="twilight_cost" value="0"/>
+       <attr key="card_number" value="29"/>
+       <attr key="kind" value="Free Peoples"/>
+       <attr key="rarity" value="U"/>
+       <attr key="type" value="Event"/>
+       <attr key="culture" value="{Gollum}"/>
+       <attr key="block" value="King"/>
+    </card>
+
+    <card name="Web" graphics="LOTR-EN08030.jpg" text="Regroup: If there are fewer than 3 cards stacked here, spot your Orc or {Gollum} minion to stack that minion here. Shadow: Play a {Gollum} minion stacked here as if played from hand.">
+       <attr key="expansion" value="8"/>
+       <attr key="twilight_cost" value="1"/>
+       <attr key="card_number" value="30"/>
+       <attr key="kind" value="Shadow"/>
+       <attr key="rarity" value="C"/>
+       <attr key="type" value="Possession"/>
+       <attr key="culture" value="{Gollum}"/>
+       <attr key="block" value="King"/>
+    </card>
+
+    <card name="At His Command" graphics="LOTR-EN08031.jpg" text="Exert Aragorn to make an unbound companion with the Aragorn signet strength +1 for each threat you spot.">
+       <attr key="expansion" value="8"/>
+       <attr key="twilight_cost" value="1"/>
+       <attr key="card_number" value="31"/>
+       <attr key="kind" value="Free Peoples"/>
+       <attr key="rarity" value="C"/>
+       <attr key="type" value="Event"/>
+       <attr key="culture" value="{Gondor}"/>
+       <attr key="block" value="King"/>
+    </card>
+
+    <card name="Catapult" graphics="LOTR-EN08032.jpg" text="To play, spot 2 {Gondor} knights. Maneuver: Discard 2 cards from hand to reveal the top card of an opponent’s draw deck. Choose an opponent who must discard a Shadow card that has a twilight cost that is the same as the twilight cost of the revealed card.">
+       <attr key="expansion" value="8"/>
+       <attr key="twilight_cost" value="1"/>
+       <attr key="card_number" value="32"/>
+       <attr key="kind" value="Free Peoples"/>
+       <attr key="rarity" value="R"/>
+       <attr key="type" value="Possession"/>
+       <attr key="culture" value="{Gondor}"/>
+       <attr key="block" value="King"/>
+    </card>
+
+    <card name="Elessar's Edict" graphics="LOTR-EN08033.jpg" text="If a {Gondor} Wraith is about to be killed, discard him and either exhaust another {Gondor} Wraith or spot another exhausted {Gondor} Wraith to prevent that.">
+       <attr key="expansion" value="8"/>
+       <attr key="twilight_cost" value="1"/>
+       <attr key="card_number" value="33"/>
+       <attr key="kind" value="Free Peoples"/>
+       <attr key="rarity" value="R"/>
+       <attr key="type" value="Event"/>
+       <attr key="culture" value="{Gondor}"/>
+       <attr key="block" value="King"/>
+    </card>
+
+    <card name="·Faramir, Defender of Osgiliath" graphics="LOTR-EN08034.jpg" text="Knight. When you play Faramir (except in your starting fellowship), you may reveal the top 10 cards of your draw deck. You may play a knight revealed. Shuffle your draw deck.">
+       <attr key="unique" value="yes"/>
+       <attr key="expansion" value="8"/>
+       <attr key="twilight_cost" value="3"/>
+       <attr key="card_number" value="34"/>
+       <attr key="strength" value="7"/>
+       <attr key="signet" value="{GandalfSignet}"/>
+       <attr key="vitality" value="3"/>
+       <attr key="kind" value="Free Peoples"/>
+       <attr key="resistance" value="6"/>
+       <attr key="rarity" value="C"/>
+       <attr key="race" value="Man"/>
+       <attr key="type" value="Companion"/>
+       <attr key="culture" value="{Gondor}"/>
+       <attr key="block" value="King"/>
+    </card>
+
+    <card name="Fourth Level" graphics="LOTR-EN08035.jpg" text="Fortification. Skirmish: Exert 2 {Gondor} Men or spot 3 knights to transfer this condition from your support area to a minion skirmishing a {Gondor} Man. Exhaust that minion.">
+       <attr key="expansion" value="8"/>
+       <attr key="twilight_cost" value="2"/>
+       <attr key="card_number" value="35"/>
+       <attr key="strength" value="-1"/>
+       <attr key="kind" value="Free Peoples"/>
+       <attr key="rarity" value="C"/>
+       <attr key="type" value="Condition"/>
+       <attr key="culture" value="{Gondor}"/>
+       <attr key="block" value="King"/>
+    </card>
+
+    <card name="·Garrison of Gondor" graphics="LOTR-EN08036.jpg" text="Archer. Knight. To play, spot 3 {Gondor} companions. While you can spot a fortification, Garrison of Gondor is defender +1.">
+       <attr key="unique" value="yes"/>
+       <attr key="expansion" value="8"/>
+       <attr key="twilight_cost" value="3"/>
+       <attr key="card_number" value="36"/>
+       <attr key="strength" value="8"/>
+       <attr key="vitality" value="3"/>
+       <attr key="kind" value="Free Peoples"/>
+       <attr key="resistance" value="6"/>
+       <attr key="rarity" value="R"/>
+       <attr key="race" value="Man"/>
+       <attr key="type" value="Companion"/>
+       <attr key="culture" value="{Gondor}"/>
+       <attr key="block" value="King"/>
+    </card>
+
+    <card name="·Imrahil, Prince of Dol Amroth" graphics="LOTR-EN08037.jpg" text="Knight. To play, spot a knight. Each time Imrahil wins a skirmish, you may exert 2 minions.">
+       <attr key="unique" value="yes"/>
+       <attr key="expansion" value="8"/>
+       <attr key="twilight_cost" value="3"/>
+       <attr key="card_number" value="37"/>
+       <attr key="strength" value="7"/>
+       <attr key="vitality" value="3"/>
+       <attr key="kind" value="Free Peoples"/>
+       <attr key="resistance" value="6"/>
+       <attr key="rarity" value="R"/>
+       <attr key="race" value="Man"/>
+       <attr key="type" value="Companion"/>
+       <attr key="culture" value="{Gondor}"/>
+       <attr key="block" value="King"/>
+    </card>
+
+    <card name="·King of the Dead, Oathbreaker" graphics="LOTR-EN08038.jpg" text="Enduring. To play, spot a {Gondor} Wraith and add 2 threats. Response: If Aragorn is about to take a wound in a skirmish, exert King of the Dead to prevent that wound.">
+       <attr key="unique" value="yes"/>
+       <attr key="expansion" value="8"/>
+       <attr key="twilight_cost" value="4"/>
+       <attr key="card_number" value="38"/>
+       <attr key="strength" value="7"/>
+       <attr key="signet" value="{AragornSignet}"/>
+       <attr key="vitality" value="4"/>
+       <attr key="kind" value="Free Peoples"/>
+       <attr key="resistance" value="6"/>
+       <attr key="rarity" value="R"/>
+       <attr key="race" value="Wraith"/>
+       <attr key="type" value="Companion"/>
+       <attr key="culture" value="{Gondor}"/>
+       <attr key="block" value="King"/>
+    </card>
+
+    <card name="Knight of Dol Amroth" graphics="LOTR-EN08039.jpg" text="Knight. Each time this companion wins a skirmish, you may wound a minion he is skirmishing.">
+       <attr key="expansion" value="8"/>
+       <attr key="twilight_cost" value="2"/>
+       <attr key="card_number" value="39"/>
+       <attr key="strength" value="6"/>
+       <attr key="vitality" value="3"/>
+       <attr key="kind" value="Free Peoples"/>
+       <attr key="resistance" value="6"/>
+       <attr key="rarity" value="C"/>
+       <attr key="race" value="Man"/>
+       <attr key="type" value="Companion"/>
+       <attr key="culture" value="{Gondor}"/>
+       <attr key="block" value="King"/>
+    </card>
+
+    <card name="Knight's Mount" graphics="LOTR-EN08040.jpg" text="Bearer must be a knight. Each time bearer wins a skirmish, you may wound a minion who is not assigned to a skirmish.">
+       <attr key="expansion" value="8"/>
+       <attr key="twilight_cost" value="1"/>
+       <attr key="card_number" value="40"/>
+       <attr key="strength" value="+1"/>
+       <attr key="kind" value="Free Peoples"/>
+       <attr key="rarity" value="C"/>
+       <attr key="type" value="Possession"/>
+       <attr key="culture" value="{Gondor}"/>
+       <attr key="block" value="King"/>
+    </card>
+
+    <card name="Oathbreaker" graphics="LOTR-EN08041.jpg" text="Enduring. To play, add a threat. Skirmish: Discard 3 cards from hand to discard a possession borne by a minion skirmishing this companion.">
+       <attr key="expansion" value="8"/>
+       <attr key="twilight_cost" value="2"/>
+       <attr key="card_number" value="41"/>
+       <attr key="strength" value="6"/>
+       <attr key="signet" value="{AragornSignet}"/>
+       <attr key="vitality" value="3"/>
+       <attr key="kind" value="Free Peoples"/>
+       <attr key="resistance" value="6"/>
+       <attr key="rarity" value="C"/>
+       <attr key="race" value="Wraith"/>
+       <attr key="type" value="Companion"/>
+       <attr key="culture" value="{Gondor}"/>
+       <attr key="block" value="King"/>
+    </card>
+
+    <card name="A Path Appointed" graphics="LOTR-EN08042.jpg" text="Fellowship: Exert a {Gondor} Man and either a {Dwarven} companion or a {Rohan} companion to add a {Gondor} token here. Regroup: Remove a {Gondor} token here to discard a minion.">
+       <attr key="expansion" value="8"/>
+       <attr key="twilight_cost" value="1"/>
+       <attr key="card_number" value="42"/>
+       <attr key="kind" value="Free Peoples"/>
+       <attr key="rarity" value="U"/>
+       <attr key="type" value="Condition"/>
+       <attr key="culture" value="{Gondor}"/>
+       <attr key="block" value="King"/>
+    </card>
+
+    <card name="·Shadow Host" graphics="LOTR-EN08043.jpg" text="Enduring. To play, spot 2 exhausted {Gondor} Wraiths and add 2 threats. While Shadow Host is exhausted, it is defender +1.">
+       <attr key="unique" value="yes"/>
+       <attr key="expansion" value="8"/>
+       <attr key="twilight_cost" value="5"/>
+       <attr key="card_number" value="43"/>
+       <attr key="strength" value="9"/>
+       <attr key="signet" value="{AragornSignet}"/>
+       <attr key="vitality" value="3"/>
+       <attr key="kind" value="Free Peoples"/>
+       <attr key="resistance" value="6"/>
+       <attr key="rarity" value="R"/>
+       <attr key="race" value="Wraith"/>
+       <attr key="type" value="Companion"/>
+       <attr key="culture" value="{Gondor}"/>
+       <attr key="block" value="King"/>
+    </card>
+
+    <card name="Sixth Level" graphics="LOTR-EN08044.jpg" text="Fortification. Regroup: Exert a {Gondor} Man to play a {Gondor} fortification from your discard pile (limit 1).">
+       <attr key="expansion" value="8"/>
+       <attr key="twilight_cost" value="2"/>
+       <attr key="card_number" value="44"/>
+       <attr key="kind" value="Free Peoples"/>
+       <attr key="rarity" value="U"/>
+       <attr key="type" value="Condition"/>
+       <attr key="culture" value="{Gondor}"/>
+       <attr key="block" value="King"/>
+    </card>
+
+    <card name="Sleepless Dead" graphics="LOTR-EN08045.jpg" text="Enduring. To play, add a threat. Each time this companion wins a skirmish, you may exert him to discard a minion he is skirmishing.">
+       <attr key="expansion" value="8"/>
+       <attr key="twilight_cost" value="3"/>
+       <attr key="card_number" value="45"/>
+       <attr key="strength" value="7"/>
+       <attr key="signet" value="{AragornSignet}"/>
+       <attr key="vitality" value="3"/>
+       <attr key="kind" value="Free Peoples"/>
+       <attr key="resistance" value="6"/>
+       <attr key="rarity" value="U"/>
+       <attr key="race" value="Wraith"/>
+       <attr key="type" value="Companion"/>
+       <attr key="culture" value="{Gondor}"/>
+       <attr key="block" value="King"/>
+    </card>
+
+    <card name="Spectral Sword" graphics="LOTR-EN08046.jpg" text="Bearer must be a {Gondor} Wraith. Skirmish: Discard 3 cards from hand to heal bearer.">
+       <attr key="expansion" value="8"/>
+       <attr key="twilight_cost" value="0"/>
+       <attr key="card_number" value="46"/>
+       <attr key="strength" value="+1"/>
+       <attr key="kind" value="Free Peoples"/>
+       <attr key="rarity" value="U"/>
+       <attr key="type" value="Possession"/>
+       <attr key="culture" value="{Gondor}"/>
+       <attr key="block" value="King"/>
+    </card>
+
+    <card name="Stronger and More Terrible" graphics="LOTR-EN08047.jpg" text="To play, add a threat. Each time your {Gondor} Wraith wins a skirmish, you may remove a threat.">
+       <attr key="expansion" value="8"/>
+       <attr key="twilight_cost" value="1"/>
+       <attr key="card_number" value="47"/>
+       <attr key="kind" value="Free Peoples"/>
+       <attr key="rarity" value="C"/>
+       <attr key="type" value="Condition"/>
+       <attr key="culture" value="{Gondor}"/>
+       <attr key="block" value="King"/>
+    </card>
+
+    <card name="Swept Away" graphics="LOTR-EN08048.jpg" text="Each time the fellowship moves, add a threat or discard this condition. While you have initiative, exhausted {Gondor} Wraiths cannot take wounds.">
+       <attr key="expansion" value="8"/>
+       <attr key="twilight_cost" value="0"/>
+       <attr key="card_number" value="48"/>
+       <attr key="kind" value="Free Peoples"/>
+       <attr key="rarity" value="C"/>
+       <attr key="type" value="Condition"/>
+       <attr key="culture" value="{Gondor}"/>
+       <attr key="block" value="King"/>
+    </card>
+
+    <card name="Black Númenorean" graphics="LOTR-EN08049.jpg" text="Corsair. Fierce. Skirmish: If you have initiative, remove a {Raider} token to discard a possession borne by a character skirmishing this minion.">
+       <attr key="expansion" value="8"/>
+       <attr key="twilight_cost" value="6"/>
+       <attr key="card_number" value="49"/>
+       <attr key="strength" value="12"/>
+       <attr key="vitality" value="3"/>
+       <attr key="kind" value="Shadow"/>
+       <attr key="site" value="4"/>
+       <attr key="rarity" value="R"/>
+       <attr key="race" value="Man"/>
+       <attr key="type" value="Minion"/>
+       <attr key="culture" value="{Raider}"/>
+       <attr key="block" value="King"/>
+    </card>
+
+    <card name="Black Sails of Umbar" graphics="LOTR-EN08050.jpg" text="When you play this possession, you may add a {Raider} token here. Shadow: Remove X {Raider} tokens here to play a corsair from your discard pile; its twilight cost is -X. Discard this possession.">
+       <attr key="expansion" value="8"/>
+       <attr key="twilight_cost" value="2"/>
+       <attr key="card_number" value="50"/>
+       <attr key="kind" value="Shadow"/>
+       <attr key="rarity" value="C"/>
+       <attr key="type" value="Possession"/>
+       <attr key="culture" value="{Raider}"/>
+       <attr key="block" value="King"/>
+    </card>
+
+    <card name="·Castamir of Umbar" graphics="LOTR-EN08051.jpg" text="Corsair. Enduring. Fierce. Shadow: Exert Castamir of Umbar and play a corsair to add 2 {Raider} tokens to a card that already has a {Raider} token on it.">
+       <attr key="unique" value="yes"/>
+       <attr key="expansion" value="8"/>
+       <attr key="twilight_cost" value="7"/>
+       <attr key="card_number" value="51"/>
+       <attr key="strength" value="14"/>
+       <attr key="vitality" value="4"/>
+       <attr key="kind" value="Shadow"/>
+       <attr key="site" value="4"/>
+       <attr key="rarity" value="R"/>
+       <attr key="race" value="Man"/>
+       <attr key="type" value="Minion"/>
+       <attr key="culture" value="{Raider}"/>
+       <attr key="block" value="King"/>
+    </card>
+
+    <card name="Corsair Ballista" graphics="LOTR-EN08052.jpg" text="Bearer must be a corsair. While you have initiative, bearer is an archer and fierce.">
+       <attr key="expansion" value="8"/>
+       <attr key="twilight_cost" value="0"/>
+       <attr key="card_number" value="52"/>
+       <attr key="strength" value="+2"/>
+       <attr key="kind" value="Shadow"/>
+       <attr key="rarity" value="C"/>
+       <attr key="type" value="Possession"/>
+       <attr key="culture" value="{Raider}"/>
+       <attr key="block" value="King"/>
+    </card>
+
+    <card name="Corsair Buccaneer" graphics="LOTR-EN08053.jpg" text="Corsair. When you play this minion, you may remove a threat to add 2 {Raider} tokens to a card that already has a {Raider} token on it.">
+       <attr key="expansion" value="8"/>
+       <attr key="twilight_cost" value="3"/>
+       <attr key="card_number" value="53"/>
+       <attr key="strength" value="8"/>
+       <attr key="vitality" value="2"/>
+       <attr key="kind" value="Shadow"/>
+       <attr key="site" value="4"/>
+       <attr key="rarity" value="C"/>
+       <attr key="race" value="Man"/>
+       <attr key="type" value="Minion"/>
+       <attr key="culture" value="{Raider}"/>
+       <attr key="block" value="King"/>
+    </card>
+
+    <card name="Corsair Freebooter" graphics="LOTR-EN08054.jpg" text="Corsair. When you play this minion, you may remove 2 culture tokens to add 2 {Raider} tokens to a card that already has a {Raider} token on it.">
+       <attr key="expansion" value="8"/>
+       <attr key="twilight_cost" value="3"/>
+       <attr key="card_number" value="54"/>
+       <attr key="strength" value="8"/>
+       <attr key="vitality" value="2"/>
+       <attr key="kind" value="Shadow"/>
+       <attr key="site" value="4"/>
+       <attr key="rarity" value="C"/>
+       <attr key="race" value="Man"/>
+       <attr key="type" value="Minion"/>
+       <attr key="culture" value="{Raider}"/>
+       <attr key="block" value="King"/>
+    </card>
+
+    <card name="Corsair Gunners" graphics="LOTR-EN08055.jpg" text="Corsair. Skirmish: If you have initiative, remove a {Raider} token to make a corsair fierce until the regroup phase.">
+       <attr key="expansion" value="8"/>
+       <attr key="twilight_cost" value="5"/>
+       <attr key="card_number" value="55"/>
+       <attr key="strength" value="10"/>
+       <attr key="vitality" value="3"/>
+       <attr key="kind" value="Shadow"/>
+       <attr key="site" value="4"/>
+       <attr key="rarity" value="C"/>
+       <attr key="race" value="Man"/>
+       <attr key="type" value="Minion"/>
+       <attr key="culture" value="{Raider}"/>
+       <attr key="block" value="King"/>
+    </card>
+
+    <card name="Corsair Lookout" graphics="LOTR-EN08056.jpg" text="Corsair. When you play this minion, if you have initiative, you may discard an ally to add 2 {Raider} tokens to a card that already has a {Raider} token on it.">
+       <attr key="expansion" value="8"/>
+       <attr key="twilight_cost" value="1"/>
+       <attr key="card_number" value="56"/>
+       <attr key="strength" value="5"/>
+       <attr key="vitality" value="1"/>
+       <attr key="kind" value="Shadow"/>
+       <attr key="site" value="4"/>
+       <attr key="rarity" value="U"/>
+       <attr key="race" value="Man"/>
+       <attr key="type" value="Minion"/>
+       <attr key="culture" value="{Raider}"/>
+       <attr key="block" value="King"/>
+    </card>
+
+    <card name="Corsair Marauder" graphics="LOTR-EN08057.jpg" text="Corsair. When you play this minion, if you can spot another corsair, you may discard a possession to add 2 {Raider} tokens to a card that already has a {Raider} token on it.">
+       <attr key="expansion" value="8"/>
+       <attr key="twilight_cost" value="4"/>
+       <attr key="card_number" value="57"/>
+       <attr key="strength" value="9"/>
+       <attr key="vitality" value="2"/>
+       <attr key="kind" value="Shadow"/>
+       <attr key="site" value="4"/>
+       <attr key="rarity" value="R"/>
+       <attr key="race" value="Man"/>
+       <attr key="type" value="Minion"/>
+       <attr key="culture" value="{Raider}"/>
+       <attr key="block" value="King"/>
+    </card>
+
+    <card name="Corsair Plunderer" graphics="LOTR-EN08058.jpg" text="Corsair. When you play this minion, you may discard 2 cards from hand to add 2 {Raider} tokens to a card that already has a {Raider} token on it.">
+       <attr key="expansion" value="8"/>
+       <attr key="twilight_cost" value="2"/>
+       <attr key="card_number" value="58"/>
+       <attr key="strength" value="6"/>
+       <attr key="vitality" value="2"/>
+       <attr key="kind" value="Shadow"/>
+       <attr key="site" value="4"/>
+       <attr key="rarity" value="C"/>
+       <attr key="race" value="Man"/>
+       <attr key="type" value="Minion"/>
+       <attr key="culture" value="{Raider}"/>
+       <attr key="block" value="King"/>
+    </card>
+
+    <card name="Corsair War Galley" graphics="LOTR-EN08059.jpg" text="When you play this possession, you may add a {Raider} token here. While you can spot 6 {Raider} tokens and a {Raider} Man, the Shadow has initiative, regardless of the Free Peoples player’s hand. Regroup: Add {1} for each {Raider} token you can spot. Discard this possession.">
+       <attr key="expansion" value="8"/>
+       <attr key="twilight_cost" value="1"/>
+       <attr key="card_number" value="59"/>
+       <attr key="kind" value="Shadow"/>
+       <attr key="rarity" value="U"/>
+       <attr key="type" value="Possession"/>
+       <attr key="culture" value="{Raider}"/>
+       <attr key="block" value="King"/>
+    </card>
+
+    <card name="·Haradrim Marksman" graphics="LOTR-EN08060.jpg" text="Southron. Archer. While you can spot another {Raider} Man, Ring-bound companions cannot take archery wounds.">
+       <attr key="unique" value="yes"/>
+       <attr key="expansion" value="8"/>
+       <attr key="twilight_cost" value="5"/>
+       <attr key="card_number" value="60"/>
+       <attr key="strength" value="11"/>
+       <attr key="vitality" value="3"/>
+       <attr key="kind" value="Shadow"/>
+       <attr key="site" value="4"/>
+       <attr key="rarity" value="U"/>
+       <attr key="race" value="Man"/>
+       <attr key="type" value="Minion"/>
+       <attr key="culture" value="{Raider}"/>
+       <attr key="block" value="King"/>
+    </card>
+
+    <card name="·Haradwaith" graphics="LOTR-EN08061.jpg" text="While you can spot a {Raider} minion at site 4K, the Shadow has initiative, regardless of the Free Peoples player’s hand. Response: If a companion is played, discard a {Raider} card from hand to add {5}. Discard this condition.">
+       <attr key="unique" value="yes"/>
+       <attr key="expansion" value="8"/>
+       <attr key="twilight_cost" value="1"/>
+       <attr key="card_number" value="61"/>
+       <attr key="kind" value="Shadow"/>
+       <attr key="rarity" value="C"/>
+       <attr key="type" value="Condition"/>
+       <attr key="culture" value="{Raider}"/>
+       <attr key="block" value="King"/>
+    </card>
+
+    <card name="·Heavy Axeman" graphics="LOTR-EN08062.jpg" text="Easterling. While you can spot 4 burdens, Heavy Axeman is strength +4 and fierce.">
+       <attr key="unique" value="yes"/>
+       <attr key="expansion" value="8"/>
+       <attr key="twilight_cost" value="5"/>
+       <attr key="card_number" value="62"/>
+       <attr key="strength" value="11"/>
+       <attr key="vitality" value="3"/>
+       <attr key="kind" value="Shadow"/>
+       <attr key="site" value="4"/>
+       <attr key="rarity" value="R"/>
+       <attr key="race" value="Man"/>
+       <attr key="type" value="Minion"/>
+       <attr key="culture" value="{Raider}"/>
+       <attr key="block" value="King"/>
+    </card>
+
+    <card name="Line of Defense" graphics="LOTR-EN08063.jpg" text="While you can spot a mounted {Raider} Man, {Raider} Men cannot take wounds (except during skirmishes).">
+       <attr key="expansion" value="8"/>
+       <attr key="twilight_cost" value="3"/>
+       <attr key="card_number" value="63"/>
+       <attr key="kind" value="Shadow"/>
+       <attr key="rarity" value="C"/>
+       <attr key="type" value="Condition"/>
+       <attr key="culture" value="{Raider}"/>
+       <attr key="block" value="King"/>
+    </card>
+
+    <card name="Mûmakil" graphics="LOTR-EN08064.jpg" text="Bearer must be a Southron. Bearer is fierce. While you have initiative or can spot 4 threats, bearer is damage +1.">
+       <attr key="expansion" value="8"/>
+       <attr key="twilight_cost" value="3"/>
+       <attr key="card_number" value="64"/>
+       <attr key="strength" value="+3"/>
+       <attr key="kind" value="Shadow"/>
+       <attr key="rarity" value="U"/>
+       <attr key="type" value="Possession"/>
+       <attr key="culture" value="{Raider}"/>
+       <attr key="block" value="King"/>
+    </card>
+
+    <card name="Ships of Great Draught" graphics="LOTR-EN08065.jpg" text="Shadow: Remove a threat or discard a {Raider} card from hand to add a {Raider} token here. Regroup: Remove 2 {Raider} tokens here to place a {Raider} card from your discard pile on top of your draw deck.">
+       <attr key="expansion" value="8"/>
+       <attr key="twilight_cost" value="2"/>
+       <attr key="card_number" value="65"/>
+       <attr key="kind" value="Shadow"/>
+       <attr key="rarity" value="R"/>
+       <attr key="type" value="Possession"/>
+       <attr key="culture" value="{Raider}"/>
+       <attr key="block" value="King"/>
+    </card>
+
+    <card name="Wind That Sped Ships" graphics="LOTR-EN08066.jpg" text="Make a corsair strength +1 for each {Raider} token you spot (limit +6). If you have initiative, you may place this event on top of your draw deck.">
+       <attr key="expansion" value="8"/>
+       <attr key="twilight_cost" value="1"/>
+       <attr key="card_number" value="66"/>
+       <attr key="kind" value="Shadow"/>
+       <attr key="rarity" value="C"/>
+       <attr key="type" value="Event"/>
+       <attr key="culture" value="{Raider}"/>
+       <attr key="block" value="King"/>
+    </card>
+
+    <card name="Between Nazgûl and Prey" graphics="LOTR-EN08067.jpg" text="Exert an enduring {Ringwraith} minion twice to assign that minion to an unbound companion.">
+       <attr key="expansion" value="8"/>
+       <attr key="twilight_cost" value="4"/>
+       <attr key="card_number" value="67"/>
+       <attr key="kind" value="Shadow"/>
+       <attr key="rarity" value="R"/>
+       <attr key="type" value="Event"/>
+       <attr key="culture" value="{Ringwraith}"/>
+       <attr key="block" value="King"/>
+    </card>
+
+    <card name="Beyond All Darkness" graphics="LOTR-EN08068.jpg" text="Exert a Nazgûl to make him strength +2 and damage +1. If the character he is skirmishing is killed, the Free Peoples player must place his or her hand beneath his or her draw deck.">
+       <attr key="expansion" value="8"/>
+       <attr key="twilight_cost" value="3"/>
+       <attr key="card_number" value="68"/>
+       <attr key="kind" value="Shadow"/>
+       <attr key="rarity" value="R"/>
+       <attr key="type" value="Event"/>
+       <attr key="culture" value="{Ringwraith}"/>
+       <attr key="block" value="King"/>
+    </card>
+
+    <card name="Black Dart" graphics="LOTR-EN08069.jpg" text="Archery: Spot your enduring or mounted Nazgûl to transfer this condition from your support area to an unbound companion. Discard a mount borne by that companion. Bearer cannot heal or bear mounts.">
+       <attr key="expansion" value="8"/>
+       <attr key="twilight_cost" value="3"/>
+       <attr key="card_number" value="69"/>
+       <attr key="kind" value="Shadow"/>
+       <attr key="rarity" value="U"/>
+       <attr key="type" value="Condition"/>
+       <attr key="culture" value="{Ringwraith}"/>
+       <attr key="block" value="King"/>
+    </card>
+
+    <card name="·Black Flail" graphics="LOTR-EN08070.jpg" text="Bearer must be a Nazgûl. Skirmish: If bearer is The Witch-king, exert him and spot a possession borne by a character he is skirmishing to discard that possession.">
+       <attr key="unique" value="yes"/>
+       <attr key="expansion" value="8"/>
+       <attr key="twilight_cost" value="2"/>
+       <attr key="card_number" value="70"/>
+       <attr key="strength" value="+3"/>
+       <attr key="kind" value="Shadow"/>
+       <attr key="rarity" value="R"/>
+       <attr key="type" value="Possession"/>
+       <attr key="culture" value="{Ringwraith}"/>
+       <attr key="block" value="King"/>
+    </card>
+
+    <card name="·Flung Into the Fray" graphics="LOTR-EN08071.jpg" text="When you play a minion stacked here, you may exert a companion. Regroup: If no minion is stacked here, spot your {Ringwraith} minon to stack it here. Shadow: Spot 2 {Ringwraith} minions to play a {Ringwraith} minion stacked here as if played from hand.">
+       <attr key="unique" value="yes"/>
+       <attr key="expansion" value="8"/>
+       <attr key="twilight_cost" value="1"/>
+       <attr key="card_number" value="71"/>
+       <attr key="kind" value="Shadow"/>
+       <attr key="rarity" value="U"/>
+       <attr key="type" value="Condition"/>
+       <attr key="culture" value="{Ringwraith}"/>
+       <attr key="block" value="King"/>
+    </card>
+
+    <card name="·Gothmog, Morgul Commander" graphics="LOTR-EN08072.jpg" text="While you have initiative, each {Ringwraith} minion is an archer.">
+       <attr key="unique" value="yes"/>
+       <attr key="expansion" value="8"/>
+       <attr key="twilight_cost" value="7"/>
+       <attr key="card_number" value="72"/>
+       <attr key="strength" value="13"/>
+       <attr key="vitality" value="3"/>
+       <attr key="kind" value="Shadow"/>
+       <attr key="site" value="4"/>
+       <attr key="rarity" value="R"/>
+       <attr key="race" value="Orc"/>
+       <attr key="type" value="Minion"/>
+       <attr key="culture" value="{Ringwraith}"/>
+       <attr key="block" value="King"/>
+    </card>
+
+    <card name="Mastered By Madness" graphics="LOTR-EN08073.jpg" text="Make a Nazgûl strength +2. If that Nazgûl wins this skirmish, you may discard a Free Peoples mount.">
+       <attr key="expansion" value="8"/>
+       <attr key="twilight_cost" value="1"/>
+       <attr key="card_number" value="73"/>
+       <attr key="kind" value="Shadow"/>
+       <attr key="rarity" value="U"/>
+       <attr key="type" value="Event"/>
+       <attr key="culture" value="{Ringwraith}"/>
+       <attr key="block" value="King"/>
+    </card>
+
+    <card name="Morgul Ambusher" graphics="LOTR-EN08074.jpg" text="While you can spot 3 threats, the minion archery total is +2.">
+       <attr key="expansion" value="8"/>
+       <attr key="twilight_cost" value="3"/>
+       <attr key="card_number" value="74"/>
+       <attr key="strength" value="8"/>
+       <attr key="vitality" value="2"/>
+       <attr key="kind" value="Shadow"/>
+       <attr key="site" value="4"/>
+       <attr key="rarity" value="C"/>
+       <attr key="race" value="Orc"/>
+       <attr key="type" value="Minion"/>
+       <attr key="culture" value="{Ringwraith}"/>
+       <attr key="block" value="King"/>
+    </card>
+
+    <card name="Morgul Creeper" graphics="LOTR-EN08075.jpg" text="While you can spot 3 burdens, the minion archery total is +2.">
+       <attr key="expansion" value="8"/>
+       <attr key="twilight_cost" value="3"/>
+       <attr key="card_number" value="75"/>
+       <attr key="strength" value="8"/>
+       <attr key="vitality" value="2"/>
+       <attr key="kind" value="Shadow"/>
+       <attr key="site" value="4"/>
+       <attr key="rarity" value="C"/>
+       <attr key="race" value="Orc"/>
+       <attr key="type" value="Minion"/>
+       <attr key="culture" value="{Ringwraith}"/>
+       <attr key="block" value="King"/>
+    </card>
+
+    <card name="Morgul Lurker" graphics="LOTR-EN08076.jpg" text="While you have initiative, the minion archery total is +2.">
+       <attr key="expansion" value="8"/>
+       <attr key="twilight_cost" value="3"/>
+       <attr key="card_number" value="76"/>
+       <attr key="strength" value="8"/>
+       <attr key="vitality" value="2"/>
+       <attr key="kind" value="Shadow"/>
+       <attr key="site" value="4"/>
+       <attr key="rarity" value="C"/>
+       <attr key="race" value="Orc"/>
+       <attr key="type" value="Minion"/>
+       <attr key="culture" value="{Ringwraith}"/>
+       <attr key="block" value="King"/>
+    </card>
+
+    <card name="Morgul Squealer" graphics="LOTR-EN08077.jpg" text="Shadow: Discard this minion to play a {Ringwraith} minion from your discard pile. Shadow: Spot 6 companions and discard this minion to play up to 2 {Ringwraith} minions from your draw deck; their twilight costs are each -1.">
+       <attr key="expansion" value="8"/>
+       <attr key="twilight_cost" value="3"/>
+       <attr key="card_number" value="77"/>
+       <attr key="strength" value="8"/>
+       <attr key="vitality" value="2"/>
+       <attr key="kind" value="Shadow"/>
+       <attr key="site" value="4"/>
+       <attr key="rarity" value="R"/>
+       <attr key="race" value="Orc"/>
+       <attr key="type" value="Minion"/>
+       <attr key="culture" value="{Ringwraith}"/>
+       <attr key="block" value="King"/>
+    </card>
+
+    <card name="·Streaming to the Field" graphics="LOTR-EN08078.jpg" text="For each {Ringwraith} Orc you can spot, the Free Peoples player must have an additional card in hand to have initiative. Skirmish: Discard this condition to make a {Ringwraith} Orc strength +2.">
+       <attr key="unique" value="yes"/>
+       <attr key="expansion" value="8"/>
+       <attr key="twilight_cost" value="3"/>
+       <attr key="card_number" value="78"/>
+       <attr key="kind" value="Shadow"/>
+       <attr key="rarity" value="U"/>
+       <attr key="type" value="Condition"/>
+       <attr key="culture" value="{Ringwraith}"/>
+       <attr key="block" value="King"/>
+    </card>
+
+    <card name="·Úlairë Attëa, Thrall of the One" graphics="LOTR-EN08079.jpg" text="Enduring. Regroup: Exert Úlairë Attëa and spot your {Ringwraith} minion to return that minion to your hand.">
+       <attr key="unique" value="yes"/>
+       <attr key="expansion" value="8"/>
+       <attr key="twilight_cost" value="6"/>
+       <attr key="card_number" value="79"/>
+       <attr key="strength" value="12"/>
+       <attr key="vitality" value="3"/>
+       <attr key="kind" value="Shadow"/>
+       <attr key="site" value="3"/>
+       <attr key="rarity" value="U"/>
+       <attr key="race" value="Nazgûl"/>
+       <attr key="type" value="Minion"/>
+       <attr key="culture" value="{Ringwraith}"/>
+       <attr key="block" value="King"/>
+    </card>
+
+    <card name="·Úlairë Nertëa, Thrall of the One" graphics="LOTR-EN08080.jpg" text="Enduring. Fierce. The site number of each {Ringwraith} minion is -1.">
+       <attr key="unique" value="yes"/>
+       <attr key="expansion" value="8"/>
+       <attr key="twilight_cost" value="4"/>
+       <attr key="card_number" value="80"/>
+       <attr key="strength" value="9"/>
+       <attr key="vitality" value="2"/>
+       <attr key="kind" value="Shadow"/>
+       <attr key="site" value="3"/>
+       <attr key="rarity" value="U"/>
+       <attr key="race" value="Nazgûl"/>
+       <attr key="type" value="Minion"/>
+       <attr key="culture" value="{Ringwraith}"/>
+       <attr key="block" value="King"/>
+    </card>
+
+    <card name="·Úlairë Otsëa, Thrall of the One" graphics="LOTR-EN08081.jpg" text="Enduring. Fierce. Regroup: Discard Úlairë Otsëa to add (X), where X is the current site number.">
+       <attr key="unique" value="yes"/>
+       <attr key="expansion" value="8"/>
+       <attr key="twilight_cost" value="4"/>
+       <attr key="card_number" value="81"/>
+       <attr key="strength" value="9"/>
+       <attr key="vitality" value="3"/>
+       <attr key="kind" value="Shadow"/>
+       <attr key="site" value="3"/>
+       <attr key="rarity" value="R"/>
+       <attr key="race" value="Nazgûl"/>
+       <attr key="type" value="Minion"/>
+       <attr key="culture" value="{Ringwraith}"/>
+       <attr key="block" value="King"/>
+    </card>
+
+    <card name="Unhindered" graphics="LOTR-EN08082.jpg" text="Make a Nazgûl strength +2. If that Nazgûl wins this skirmish, the Shadow has initiative until the end of the turn, regardless of the Free Peoples player’s hand.">
+       <attr key="expansion" value="8"/>
+       <attr key="twilight_cost" value="2"/>
+       <attr key="card_number" value="82"/>
+       <attr key="kind" value="Shadow"/>
+       <attr key="rarity" value="U"/>
+       <attr key="type" value="Event"/>
+       <attr key="culture" value="{Ringwraith}"/>
+       <attr key="block" value="King"/>
+    </card>
+
+    <card name="Winged Mount" graphics="LOTR-EN08083.jpg" text="To play, discard 2 cards from hand. Bearer must be a Nazgûl. Response: If bearer is about to take a wound, remove a threat to prevent that wound.">
+       <attr key="expansion" value="8"/>
+       <attr key="twilight_cost" value="1"/>
+       <attr key="card_number" value="83"/>
+       <attr key="strength" value="+2"/>
+       <attr key="kind" value="Shadow"/>
+       <attr key="rarity" value="U"/>
+       <attr key="type" value="Possession"/>
+       <attr key="culture" value="{Ringwraith}"/>
+       <attr key="block" value="King"/>
+    </card>
+
+    <card name="·The Witch-king, Black Captain" graphics="LOTR-EN08084.jpg" text="Enduring. Each Man skirmishing The Witch-king loses all strength bonuses from weapons.">
+       <attr key="unique" value="yes"/>
+       <attr key="expansion" value="8"/>
+       <attr key="twilight_cost" value="8"/>
+       <attr key="card_number" value="84"/>
+       <attr key="strength" value="14"/>
+       <attr key="vitality" value="4"/>
+       <attr key="kind" value="Shadow"/>
+       <attr key="site" value="3"/>
+       <attr key="rarity" value="R"/>
+       <attr key="race" value="Nazgûl"/>
+       <attr key="type" value="Minion"/>
+       <attr key="culture" value="{Ringwraith}"/>
+       <attr key="block" value="King"/>
+    </card>
+
+    <card name="Charged Headlong" graphics="LOTR-EN08085.jpg" text="If you have initiative, discard a {Rohan} possession to play a {Rohan} possession from your discard pile.">
+       <attr key="expansion" value="8"/>
+       <attr key="twilight_cost" value="1"/>
+       <attr key="card_number" value="85"/>
+       <attr key="kind" value="Free Peoples"/>
+       <attr key="rarity" value="U"/>
+       <attr key="type" value="Event"/>
+       <attr key="culture" value="{Rohan}"/>
+       <attr key="block" value="King"/>
+    </card>
+
+    <card name="Doom Drove Them" graphics="LOTR-EN08086.jpg" text="Fellowship: Exert a {Rohan} companion and either a {Gondor} Man or a {Shire} companion to add a {Rohan} token here. Skirmish: Remove a {Rohan} token here to exert a minion skirmishing a companion.">
+       <attr key="expansion" value="8"/>
+       <attr key="twilight_cost" value="1"/>
+       <attr key="card_number" value="86"/>
+       <attr key="kind" value="Free Peoples"/>
+       <attr key="rarity" value="U"/>
+       <attr key="type" value="Condition"/>
+       <attr key="culture" value="{Rohan}"/>
+       <attr key="block" value="King"/>
+    </card>
+
+    <card name="·Éomer, Keeper of Oaths" graphics="LOTR-EN08087.jpg" text="Valiant. When you play Éomer (except in your starting fellowship), you may reveal the top 10 cards of your draw deck. You may play each {Rohan} possession revealed. Shuffle your draw deck.">
+       <attr key="unique" value="yes"/>
+       <attr key="expansion" value="8"/>
+       <attr key="twilight_cost" value="3"/>
+       <attr key="card_number" value="87"/>
+       <attr key="strength" value="8"/>
+       <attr key="signet" value="{GandalfSignet}"/>
+       <attr key="vitality" value="3"/>
+       <attr key="kind" value="Free Peoples"/>
+       <attr key="resistance" value="6"/>
+       <attr key="rarity" value="C"/>
+       <attr key="race" value="Man"/>
+       <attr key="type" value="Companion"/>
+       <attr key="culture" value="{Rohan}"/>
+       <attr key="block" value="King"/>
+    </card>
+
+    <card name="·Éowyn's Shield" graphics="LOTR-EN08088.jpg" text="Bearer must be a {Rohan} Man. The minion archery total is -1. Skirmish: If bearer is Éowyn, add a threat and discard Éowyn’s Shield to discard a hand weapon borne by a minion she is skirmishing.">
+       <attr key="unique" value="yes"/>
+       <attr key="expansion" value="8"/>
+       <attr key="twilight_cost" value="1"/>
+       <attr key="card_number" value="88"/>
+       <attr key="kind" value="Free Peoples"/>
+       <attr key="rarity" value="R"/>
+       <attr key="type" value="Possession"/>
+       <attr key="culture" value="{Rohan}"/>
+       <attr key="block" value="King"/>
+    </card>
+
+    <card name="Fury of the Northmen" graphics="LOTR-EN08089.jpg" text="Exert a minion skirmishing a mounted {Rohan} Man.">
+       <attr key="expansion" value="8"/>
+       <attr key="twilight_cost" value="2"/>
+       <attr key="card_number" value="89"/>
+       <attr key="kind" value="Free Peoples"/>
+       <attr key="rarity" value="C"/>
+       <attr key="type" value="Event"/>
+       <attr key="culture" value="{Rohan}"/>
+       <attr key="block" value="King"/>
+    </card>
+
+    <card name="No Living Man" graphics="LOTR-EN08090.jpg" text="Exert Théoden to exert a minion for each Théoden signet you spot.">
+       <attr key="expansion" value="8"/>
+       <attr key="twilight_cost" value="2"/>
+       <attr key="card_number" value="90"/>
+       <attr key="kind" value="Free Peoples"/>
+       <attr key="rarity" value="C"/>
+       <attr key="type" value="Event"/>
+       <attr key="culture" value="{Rohan}"/>
+       <attr key="block" value="King"/>
+    </card>
+
+    <card name="·Rohirrim Army" graphics="LOTR-EN08091.jpg" text="To play, spot 3 {Rohan} companions. You may play Rohirrim Army any time you could play a regroup event. When you play Rohirrim Army, you may discard a minion.">
+       <attr key="unique" value="yes"/>
+       <attr key="expansion" value="8"/>
+       <attr key="twilight_cost" value="5"/>
+       <attr key="card_number" value="91"/>
+       <attr key="strength" value="9"/>
+       <attr key="vitality" value="3"/>
+       <attr key="kind" value="Free Peoples"/>
+       <attr key="resistance" value="6"/>
+       <attr key="rarity" value="R"/>
+       <attr key="race" value="Man"/>
+       <attr key="type" value="Companion"/>
+       <attr key="culture" value="{Rohan}"/>
+       <attr key="block" value="King"/>
+    </card>
+
+    <card name="·Théoden, Tall and Proud" graphics="LOTR-EN08092.jpg" text="Valiant. While you can spot a {Rohan} Man, Théoden’s twilight cost is -1. When Théoden is killed, you may play a {Rohan} companion from your discard pile or draw deck.">
+       <attr key="unique" value="yes"/>
+       <attr key="expansion" value="8"/>
+       <attr key="twilight_cost" value="3"/>
+       <attr key="card_number" value="92"/>
+       <attr key="strength" value="7"/>
+       <attr key="signet" value="{AragornSignet}"/>
+       <attr key="vitality" value="3"/>
+       <attr key="kind" value="Free Peoples"/>
+       <attr key="resistance" value="6"/>
+       <attr key="rarity" value="R"/>
+       <attr key="race" value="Man"/>
+       <attr key="type" value="Companion"/>
+       <attr key="culture" value="{Rohan}"/>
+       <attr key="block" value="King"/>
+    </card>
+
+    <card name="Called Away" graphics="LOTR-EN08093.jpg" text="Regroup: Discard a {Sauron} minion, spot a companion (except the Ring-bearer), and remove X burdens, where X is that companion’s vitality, to return that companion to its owner’s hand.">
+       <attr key="expansion" value="8"/>
+       <attr key="twilight_cost" value="2"/>
+       <attr key="card_number" value="93"/>
+       <attr key="kind" value="Shadow"/>
+       <attr key="rarity" value="R"/>
+       <attr key="type" value="Condition"/>
+       <attr key="culture" value="{Sauron}"/>
+       <attr key="block" value="King"/>
+    </card>
+
+    <card name="Gorgoroth Agitator" graphics="LOTR-EN08094.jpg" text="Besieger. To play, spot a {Sauron} Orc. When you play this minion, if you can spot another besieger, you may add a threat for each companion over 4. Shadow: Remove a threat to play a {Sauron} engine from your discard pile.">
+       <attr key="expansion" value="8"/>
+       <attr key="twilight_cost" value="3"/>
+       <attr key="card_number" value="94"/>
+       <attr key="strength" value="9"/>
+       <attr key="vitality" value="2"/>
+       <attr key="kind" value="Shadow"/>
+       <attr key="site" value="5"/>
+       <attr key="rarity" value="U"/>
+       <attr key="race" value="Orc"/>
+       <attr key="type" value="Minion"/>
+       <attr key="culture" value="{Sauron}"/>
+       <attr key="block" value="King"/>
+    </card>
+
+    <card name="Gorgoroth Assassin" graphics="LOTR-EN08095.jpg" text="Besieger. Assignment: Spot a {Sauron} engine or a site you control to assign this minion to an unbound companion.">
+       <attr key="expansion" value="8"/>
+       <attr key="twilight_cost" value="2"/>
+       <attr key="card_number" value="95"/>
+       <attr key="strength" value="7"/>
+       <attr key="vitality" value="2"/>
+       <attr key="kind" value="Shadow"/>
+       <attr key="site" value="5"/>
+       <attr key="rarity" value="R"/>
+       <attr key="race" value="Orc"/>
+       <attr key="type" value="Minion"/>
+       <attr key="culture" value="{Sauron}"/>
+       <attr key="block" value="King"/>
+    </card>
+
+    <card name="Gorgoroth Berserker" graphics="LOTR-EN08096.jpg" text="Besieger. Enduring. To play, spot a {Sauron} Orc. Maneuver: If you have initiative, exert this minion twice to take control of a site. Maneuver: Remove a threat and exert this minion twice to take control of a site.">
+       <attr key="expansion" value="8"/>
+       <attr key="twilight_cost" value="5"/>
+       <attr key="card_number" value="96"/>
+       <attr key="strength" value="12"/>
+       <attr key="vitality" value="3"/>
+       <attr key="kind" value="Shadow"/>
+       <attr key="site" value="5"/>
+       <attr key="rarity" value="R"/>
+       <attr key="race" value="Orc"/>
+       <attr key="type" value="Minion"/>
+       <attr key="culture" value="{Sauron}"/>
+       <attr key="block" value="King"/>
+    </card>
+
+    <card name="Gorgoroth Breaker" graphics="LOTR-EN08097.jpg" text="Besieger. Archery: Exert this minion or stack it on a site you control to make the fellowship archery total -2.">
+       <attr key="expansion" value="8"/>
+       <attr key="twilight_cost" value="3"/>
+       <attr key="card_number" value="97"/>
+       <attr key="strength" value="9"/>
+       <attr key="vitality" value="2"/>
+       <attr key="kind" value="Shadow"/>
+       <attr key="site" value="5"/>
+       <attr key="rarity" value="U"/>
+       <attr key="race" value="Orc"/>
+       <attr key="type" value="Minion"/>
+       <attr key="culture" value="{Sauron}"/>
+       <attr key="block" value="King"/>
+    </card>
+
+    <card name="Gorgoroth Looter" graphics="LOTR-EN08098.jpg" text="Besieger. When you play this minion, you may remove a burden to play a besieger stacked on a site you control.">
+       <attr key="expansion" value="8"/>
+       <attr key="twilight_cost" value="3"/>
+       <attr key="card_number" value="98"/>
+       <attr key="strength" value="9"/>
+       <attr key="vitality" value="2"/>
+       <attr key="kind" value="Shadow"/>
+       <attr key="site" value="5"/>
+       <attr key="rarity" value="U"/>
+       <attr key="race" value="Orc"/>
+       <attr key="type" value="Minion"/>
+       <attr key="culture" value="{Sauron}"/>
+       <attr key="block" value="King"/>
+    </card>
+
+    <card name="Gorgoroth Patrol" graphics="LOTR-EN08099.jpg" text="Besieger. Regroup: If this minion is stacked on a site you control, discard this minion to make the move limit for this turn -1.">
+       <attr key="expansion" value="8"/>
+       <attr key="twilight_cost" value="4"/>
+       <attr key="card_number" value="99"/>
+       <attr key="strength" value="10"/>
+       <attr key="vitality" value="2"/>
+       <attr key="kind" value="Shadow"/>
+       <attr key="site" value="5"/>
+       <attr key="rarity" value="U"/>
+       <attr key="race" value="Orc"/>
+       <attr key="type" value="Minion"/>
+       <attr key="culture" value="{Sauron}"/>
+       <attr key="block" value="King"/>
+    </card>
+
+    <card name="Gorgoroth Servitor" graphics="LOTR-EN08100.jpg" text="Besieger. Archery: Return this minion to your hand to make the fellowship archery total -2 and prevent the Free Peoples player from using archery special abilities.">
+       <attr key="expansion" value="8"/>
+       <attr key="twilight_cost" value="4"/>
+       <attr key="card_number" value="100"/>
+       <attr key="strength" value="10"/>
+       <attr key="vitality" value="2"/>
+       <attr key="kind" value="Shadow"/>
+       <attr key="site" value="5"/>
+       <attr key="rarity" value="U"/>
+       <attr key="race" value="Orc"/>
+       <attr key="type" value="Minion"/>
+       <attr key="culture" value="{Sauron}"/>
+       <attr key="block" value="King"/>
+    </card>
+
+    <card name="Gorgoroth Stormer" graphics="LOTR-EN08101.jpg" text="Besieger. Shadow: If you have initiative, exert this minion to add a burden and make the Free Peoples player draw a card.">
+       <attr key="expansion" value="8"/>
+       <attr key="twilight_cost" value="4"/>
+       <attr key="card_number" value="101"/>
+       <attr key="strength" value="10"/>
+       <attr key="vitality" value="2"/>
+       <attr key="kind" value="Shadow"/>
+       <attr key="site" value="5"/>
+       <attr key="rarity" value="C"/>
+       <attr key="race" value="Orc"/>
+       <attr key="type" value="Minion"/>
+       <attr key="culture" value="{Sauron}"/>
+       <attr key="block" value="King"/>
+    </card>
+
+    <card name="Great Hill Troll" graphics="LOTR-EN08102.jpg" text="Besieger. Fierce. The twilight cost of this minion is -1 for each {Sauron} engine you spot. When you play this minion at sites 5{K} to 9K, you may discard a Free Peoples condition.">
+       <attr key="expansion" value="8"/>
+       <attr key="twilight_cost" value="9"/>
+       <attr key="card_number" value="102"/>
+       <attr key="strength" value="16"/>
+       <attr key="vitality" value="4"/>
+       <attr key="kind" value="Shadow"/>
+       <attr key="site" value="6"/>
+       <attr key="rarity" value="C"/>
+       <attr key="race" value="Troll"/>
+       <attr key="type" value="Minion"/>
+       <attr key="culture" value="{Sauron}"/>
+       <attr key="block" value="King"/>
+    </card>
+
+    <card name="·Grond, Hammer of the Underworld" graphics="LOTR-EN08103.jpg" text="Engine. Shadow: Play a {Sauron} minion to add a {Sauron} token here. Regroup: Remove X {Sauron} tokens here to discard a Free Peoples card (except a companion) with a twilight cost of X. Discard a {Sauron} minion or this possession.">
+       <attr key="unique" value="yes"/>
+       <attr key="expansion" value="8"/>
+       <attr key="twilight_cost" value="3"/>
+       <attr key="card_number" value="103"/>
+       <attr key="kind" value="Shadow"/>
+       <attr key="rarity" value="R"/>
+       <attr key="type" value="Possession"/>
+       <attr key="culture" value="{Sauron}"/>
+       <attr key="block" value="King"/>
+    </card>
+
+    <card name="·Morgai" graphics="LOTR-EN08104.jpg" text="While you can spot a {Sauron} minion at site 5{K}, the Shadow has initiative, regardless of the Free Peoples player’s hand. Response: If a companion is played, discard a {Sauron} card from hand to take control of a site. Discard this condition.">
+       <attr key="unique" value="yes"/>
+       <attr key="expansion" value="8"/>
+       <attr key="twilight_cost" value="2"/>
+       <attr key="card_number" value="104"/>
+       <attr key="kind" value="Shadow"/>
+       <attr key="rarity" value="C"/>
+       <attr key="type" value="Condition"/>
+       <attr key="culture" value="{Sauron}"/>
+       <attr key="block" value="King"/>
+    </card>
+
+    <card name="Olog-hai of Mordor" graphics="LOTR-EN08105.jpg" text="Besieger. Fierce. The twilight cost of this minion is -2 for each {Sauron} minion stacked on a site. Each time this minion wins a skirmish, you may play a besieger stacked on a site you control. That besieger is fierce and damage +1 until the regroup phase.">
+       <attr key="expansion" value="8"/>
+       <attr key="twilight_cost" value="10"/>
+       <attr key="card_number" value="105"/>
+       <attr key="strength" value="18"/>
+       <attr key="vitality" value="4"/>
+       <attr key="kind" value="Shadow"/>
+       <attr key="site" value="5"/>
+       <attr key="rarity" value="R"/>
+       <attr key="race" value="Troll"/>
+       <attr key="type" value="Minion"/>
+       <attr key="culture" value="{Sauron}"/>
+       <attr key="block" value="King"/>
+    </card>
+
+    <card name="Siege Troop" graphics="LOTR-EN08106.jpg" text="Besieger. Regroup: Exert this minion twice to take control of a site.">
+       <attr key="expansion" value="8"/>
+       <attr key="twilight_cost" value="8"/>
+       <attr key="card_number" value="106"/>
+       <attr key="strength" value="20"/>
+       <attr key="vitality" value="4"/>
+       <attr key="kind" value="Shadow"/>
+       <attr key="site" value="5"/>
+       <attr key="rarity" value="C"/>
+       <attr key="race" value="Orc"/>
+       <attr key="type" value="Minion"/>
+       <attr key="culture" value="{Sauron}"/>
+       <attr key="block" value="King"/>
+    </card>
+
+    <card name="Their Marching Companies" graphics="LOTR-EN08107.jpg" text="Engine. To play, spot a {Sauron} minion. Regroup: Remove a threat to stack your {Sauron} minion on a site you control. Shadow: Remove a threat to play a {Sauron} minion stacked on a site you control.">
+       <attr key="expansion" value="8"/>
+       <attr key="twilight_cost" value="1"/>
+       <attr key="card_number" value="107"/>
+       <attr key="kind" value="Shadow"/>
+       <attr key="rarity" value="U"/>
+       <attr key="type" value="Condition"/>
+       <attr key="culture" value="{Sauron}"/>
+       <attr key="block" value="King"/>
+    </card>
+
+    <card name="·Troll of Gorgoroth, Abomination of Sauron" graphics="LOTR-EN08108.jpg" text="Besieger. Fierce. To play, spot a {Sauron} Orc. The twilight cost of Troll of Gorgoroth is -2 for each {Sauron} engine you spot. Regroup: Exert Troll of Gorgoroth to stack your besieger on a site you control.">
+       <attr key="unique" value="yes"/>
+       <attr key="expansion" value="8"/>
+       <attr key="twilight_cost" value="10"/>
+       <attr key="card_number" value="108"/>
+       <attr key="strength" value="14"/>
+       <attr key="vitality" value="4"/>
+       <attr key="kind" value="Shadow"/>
+       <attr key="site" value="5"/>
+       <attr key="rarity" value="R"/>
+       <attr key="race" value="Troll"/>
+       <attr key="type" value="Minion"/>
+       <attr key="culture" value="{Sauron}"/>
+       <attr key="block" value="King"/>
+    </card>
+
+    <card name="Closer and Closer He Bent" graphics="LOTR-EN08109.jpg" text="Regroup: Exert an unbound Hobbit and add a burden to reveal your hand. Place each Free Peoples card revealed this way beneath your draw deck.">
+       <attr key="expansion" value="8"/>
+       <attr key="twilight_cost" value="0"/>
+       <attr key="card_number" value="109"/>
+       <attr key="kind" value="Free Peoples"/>
+       <attr key="rarity" value="C"/>
+       <attr key="type" value="Condition"/>
+       <attr key="culture" value="{Shire}"/>
+       <attr key="block" value="King"/>
+    </card>
+
+    <card name="·Morgai Foothills" graphics="LOTR-EN08110.jpg" text="When the fellowship moves from site 4K, remove {1} for each Ring-bound companion you spot. Regroup: Discard a card from hand for each Ring-bound companion you spot. Discard this condition.">
+       <attr key="unique" value="yes"/>
+       <attr key="expansion" value="8"/>
+       <attr key="twilight_cost" value="0"/>
+       <attr key="card_number" value="110"/>
+       <attr key="kind" value="Free Peoples"/>
+       <attr key="rarity" value="U"/>
+       <attr key="type" value="Condition"/>
+       <attr key="culture" value="{Shire}"/>
+       <attr key="block" value="King"/>
+    </card>
+
+    <card name="So Fair, So Desperate" graphics="LOTR-EN08111.jpg" text="If the Shadow has initiative, add a threat to make an unbound Hobbit strength +1 for each {Shire} card you spot.">
+       <attr key="expansion" value="8"/>
+       <attr key="twilight_cost" value="1"/>
+       <attr key="card_number" value="111"/>
+       <attr key="kind" value="Free Peoples"/>
+       <attr key="rarity" value="C"/>
+       <attr key="type" value="Event"/>
+       <attr key="culture" value="{Shire}"/>
+       <attr key="block" value="King"/>
+    </card>
+
+    <card name="Song of the Shire" graphics="LOTR-EN08112.jpg" text="Fellowship: Exert a {Shire} companion and either a {Rohan} companion or a {Gandalf} companion to add a {Shire} token here. Skirmish: Remove a {Shire} token here to prevent an unbound companion from being overwhelmed unless his or her strength is tripled.">
+       <attr key="expansion" value="8"/>
+       <attr key="twilight_cost" value="1"/>
+       <attr key="card_number" value="112"/>
+       <attr key="kind" value="Free Peoples"/>
+       <attr key="rarity" value="U"/>
+       <attr key="type" value="Condition"/>
+       <attr key="culture" value="{Shire}"/>
+       <attr key="block" value="King"/>
+    </card>
+
+    <card name="·Sting, Bane of the Eight Legs" graphics="LOTR-EN08113.jpg" text="Bearer must be Frodo or Sam. Response: If a fierce skirmish involving bearer is about to end, add a threat to discard a minion involved in that skirmish.">
+       <attr key="unique" value="yes"/>
+       <attr key="expansion" value="8"/>
+       <attr key="twilight_cost" value="1"/>
+       <attr key="card_number" value="113"/>
+       <attr key="strength" value="+2"/>
+       <attr key="kind" value="Free Peoples"/>
+       <attr key="rarity" value="R"/>
+       <attr key="type" value="Possession"/>
+       <attr key="culture" value="{Shire}"/>
+       <attr key="block" value="King"/>
+    </card>
+
+    <card name="Straining Towards Us" graphics="LOTR-EN08114.jpg" text="Exert Frodo to remove {1} for each Frodo signet you spot.">
+       <attr key="expansion" value="8"/>
+       <attr key="twilight_cost" value="0"/>
+       <attr key="card_number" value="114"/>
+       <attr key="kind" value="Free Peoples"/>
+       <attr key="rarity" value="C"/>
+       <attr key="type" value="Event"/>
+       <attr key="culture" value="{Shire}"/>
+       <attr key="block" value="King"/>
+    </card>
+
+    <card name="Unheeded" graphics="LOTR-EN08115.jpg" text="If a minion exerts, exert an unbound Hobbit to wound that minion.">
+       <attr key="expansion" value="8"/>
+       <attr key="twilight_cost" value="0"/>
+       <attr key="card_number" value="115"/>
+       <attr key="kind" value="Free Peoples"/>
+       <attr key="rarity" value="R"/>
+       <attr key="type" value="Event"/>
+       <attr key="culture" value="{Shire}"/>
+       <attr key="block" value="King"/>
+    </card>
+
+    <card name="We Shall Meet Again Soon" graphics="LOTR-EN08116.jpg" text="If the fellowship moves during the regroup phase, exert an unbound Hobbit to place a Shadow card from your discard pile on top of your draw deck.">
+       <attr key="expansion" value="8"/>
+       <attr key="twilight_cost" value="0"/>
+       <attr key="card_number" value="116"/>
+       <attr key="kind" value="Free Peoples"/>
+       <attr key="rarity" value="C"/>
+       <attr key="type" value="Event"/>
+       <attr key="culture" value="{Shire}"/>
+       <attr key="block" value="King"/>
+    </card>
+
+    <card name="The Dimholt" graphics="LOTR-EN08117.jpg" text="Sanctuary. Underground. Fellowship: Add 3 threats to play an enduring companion from your draw deck.">
+       <attr key="expansion" value="8"/>
+       <attr key="twilight_cost" value="1"/>
+       <attr key="card_number" value="117"/>
+       <attr key="kind" value="Site"/>
+       <attr key="site" value="3{K}"/>
+       <attr key="rarity" value="U"/>
+       <attr key="type" value="Site"/>
+       <attr key="block" value="King"/>
+    </card>
+
+    <card name="City of the Dead" graphics="LOTR-EN08118.jpg" text="Underground. Shadow: Remove 2 burdens to play an enduring minion from your draw deck or discard pile.">
+       <attr key="expansion" value="8"/>
+       <attr key="twilight_cost" value="4"/>
+       <attr key="card_number" value="118"/>
+       <attr key="kind" value="Site"/>
+       <attr key="site" value="4{K}"/>
+       <attr key="rarity" value="U"/>
+       <attr key="type" value="Site"/>
+       <attr key="block" value="King"/>
+    </card>
+
+    <card name="Crashed Gate" graphics="LOTR-EN08119.jpg" text="At the start of the regroup phase, the Free Peoples player must add 3 threats or choose an opponent who may take control of a site.">
+       <attr key="expansion" value="8"/>
+       <attr key="twilight_cost" value="7"/>
+       <attr key="card_number" value="119"/>
+       <attr key="kind" value="Site"/>
+       <attr key="site" value="5{K}"/>
+       <attr key="rarity" value="U"/>
+       <attr key="type" value="Site"/>
+       <attr key="block" value="King"/>
+    </card>
+
+    <card name="Osgiliath Channel" graphics="LOTR-EN08120.jpg" text="River. Regroup: Spot your minion and 6 companions to make the Free Peoples player choose to move again this turn.">
+       <attr key="expansion" value="8"/>
+       <attr key="twilight_cost" value="6"/>
+       <attr key="card_number" value="120"/>
+       <attr key="kind" value="Site"/>
+       <attr key="site" value="7{K}"/>
+       <attr key="rarity" value="U"/>
+       <attr key="type" value="Site"/>
+       <attr key="block" value="King"/>
+    </card>
+
+    <card name="·Merry, Noble Warrior" graphics="LOTR-EN08121.jpg" text="To play, spot a {Rohan} companion. Skirmish: Discard 4 cards from hand to make Merry strength +2 for each {Rohan} companion you spot.">
+       <attr key="unique" value="yes"/>
+       <attr key="expansion" value="8"/>
+       <attr key="twilight_cost" value="2"/>
+       <attr key="card_number" value="121"/>
+       <attr key="strength" value="5"/>
+       <attr key="signet" value="{FrodoSignet}"/>
+       <attr key="vitality" value="4"/>
+       <attr key="kind" value="Free Peoples"/>
+       <attr key="resistance" value="6"/>
+       <attr key="rarity" value="P"/>
+       <attr key="race" value="Hobbit"/>
+       <attr key="type" value="Companion"/>
+       <attr key="culture" value="{Shire}"/>
+       <attr key="block" value="King"/>
+    </card>
+
+    <card name="·Pippin, Guard of Minas Tirith" graphics="LOTR-EN08122.jpg" text="To play, spot a {Gondor} Man. Skirmish: Discard 4 cards from hand to wound a minion Pippin is skirmishing twice if that minion bears a fortification.">
+       <attr key="unique" value="yes"/>
+       <attr key="expansion" value="8"/>
+       <attr key="twilight_cost" value="2"/>
+       <attr key="card_number" value="122"/>
+       <attr key="strength" value="5"/>
+       <attr key="signet" value="{FrodoSignet}"/>
+       <attr key="vitality" value="4"/>
+       <attr key="kind" value="Free Peoples"/>
+       <attr key="resistance" value="6"/>
+       <attr key="rarity" value="P"/>
+       <attr key="race" value="Hobbit"/>
+       <attr key="type" value="Companion"/>
+       <attr key="culture" value="{Shire}"/>
+       <attr key="block" value="King"/>
+    </card>
+
+  </cards>
+</ccg-setinfo>

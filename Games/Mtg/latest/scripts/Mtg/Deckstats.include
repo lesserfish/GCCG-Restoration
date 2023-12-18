@@ -1,0 +1,29 @@
+#
+# Deckstats.include
+# Mtg Deck Statistics helper functions
+#
+
+# CountAttr(list of cards, attribute name, text to find)
+# Counts cards that have the given search text in the value of a named attribute.
+def CountAttr
+{
+  return(length(select("find(\""+ARG[2]+"\",Attr(\""+ARG[1]+"\",#)) != NULL",ARG[0])));
+}
+
+def CountMtgManaEqual
+{
+  return(length(select("toint(Attr('cmc',#)) == ARG[1]",ARG[0])));
+}
+
+def CountMtgManaGreater
+{
+  return(length(select("toint(Attr('cmc',#)) > ARG[1]",ARG[0])));
+}
+
+def MtgAverageMana
+{
+  if(length(ARG)==0)
+    return(0);
+  else
+    return(toreal(sum(forall("toint(Attr('cmc',#))",ARG))) / length(ARG));
+}

@@ -1,0 +1,1959 @@
+<?xml version='1.0' encoding='latin1'?>
+<!DOCTYPE ccg-setinfo SYSTEM "../gccg-set.dtd">
+<ccg-setinfo name="Conflux" dir="CFX" abbrev="CFX" game="Magic the Gathering">
+ <cards>
+  <card name="Absorb Vis" graphics="AbsorbVis.jpg" text="Target player loses 4 life and you gain 4 life.
+Basic landcycling {1}{B}">
+   <attr key="rarity" value="C" />
+   <attr key="cn" value="40" />
+   <attr key="cost" value="{6}{B}" />
+   <attr key="cmc" value="7" />
+   <attr key="type" value="Sorcery" />
+   <attr key="permanent" value="0" />
+   <attr key="color" value="Black" />
+   <attr key="coloridentity" value="4" />
+   <attr key="artist" value="Brandon Kitkouski" />
+  </card>
+  <card name="Aerie Mystics" graphics="AerieMystics.jpg" text="Flying
+{1}{G}{U}: Creatures you control gain shroud until end of turn.">
+   <attr key="rarity" value="U" />
+   <attr key="cn" value="1" />
+   <attr key="cost" value="{4}{W}" />
+   <attr key="cmc" value="5" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Bird Wizard" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="White" />
+   <attr key="coloridentity" value="25" />
+   <attr key="power" value="3" />
+   <attr key="toughness" value="3" />
+   <attr key="artist" value="Mark Zug" />
+  </card>
+  <card name="Ancient Ziggurat" graphics="AncientZiggurat.jpg" text="{T}: Add one mana of any color to your mana pool. Spend this mana only to cast a creature spell.">
+   <attr key="rarity" value="U" />
+   <attr key="cn" value="141" />
+   <attr key="cmc" value="0" />
+   <attr key="type" value="Land" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Land" />
+   <attr key="coloridentity" value="0" />
+   <attr key="artist" value="John Avon" />
+  </card>
+  <card name="Apocalypse Hydra" graphics="ApocalypseHydra.jpg" text="Apocalypse Hydra enters the battlefield with X +1/+1 counters on it. If X is 5 or more, it enters the battlefield with an additional X +1/+1 counters on it.
+{1}{R}, Remove a +1/+1 counter from Apocalypse Hydra: Apocalypse Hydra deals 1 damage to target creature or player.">
+   <attr key="rarity" value="M" />
+   <attr key="cn" value="98" />
+   <attr key="cost" value="{X}{R}{G}" />
+   <attr key="cmc" value="2" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Hydra" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Green Red" />
+   <attr key="coloridentity" value="3" />
+   <attr key="power" value="0" />
+   <attr key="toughness" value="0" />
+   <attr key="artist" value="Jason Chan" />
+  </card>
+  <card name="Armillary Sphere" graphics="ArmillarySphere.jpg" text="{2}, {T}, Sacrifice Armillary Sphere: Search your library for up to two basic land cards, reveal them, and put them into your hand. Then shuffle your library.">
+   <attr key="rarity" value="C" />
+   <attr key="cn" value="134" />
+   <attr key="cost" value="{2}" />
+   <attr key="cmc" value="2" />
+   <attr key="type" value="Artifact" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Artifact" />
+   <attr key="coloridentity" value="0" />
+   <attr key="artist" value="Franz Vohwinkel" />
+  </card>
+  <card name="Asha's Favor" graphics="AshasFavor.jpg" text="Enchant creature
+Enchanted creature has flying, first strike, and vigilance.">
+   <attr key="rarity" value="C" />
+   <attr key="cn" value="2" />
+   <attr key="cost" value="{2}{W}" />
+   <attr key="cmc" value="3" />
+   <attr key="type" value="Enchantment" />
+   <attr key="subtype" value="Aura" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="White" />
+   <attr key="coloridentity" value="16" />
+   <attr key="artist" value="Donato Giancola" />
+  </card>
+  <card name="Aven Squire" graphics="AvenSquire.jpg" text="Flying
+Exalted">
+   <attr key="rarity" value="C" />
+   <attr key="cn" value="3" />
+   <attr key="cost" value="{1}{W}" />
+   <attr key="cmc" value="2" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Bird Soldier" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="White" />
+   <attr key="coloridentity" value="16" />
+   <attr key="power" value="1" />
+   <attr key="toughness" value="1" />
+   <attr key="artist" value="David Palumbo" />
+  </card>
+  <card name="Aven Trailblazer" graphics="AvenTrailblazer.jpg" text="Flying
+Domain - Aven Trailblazer's toughness is equal to the number of basic land types among lands you control.">
+   <attr key="rarity" value="C" />
+   <attr key="cn" value="4" />
+   <attr key="cost" value="{2}{W}" />
+   <attr key="cmc" value="3" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Bird Soldier" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="White" />
+   <attr key="coloridentity" value="16" />
+   <attr key="power" value="2" />
+   <attr key="toughness" value="*" />
+   <attr key="artist" value="Chris Rahn" />
+  </card>
+  <card name="Banefire" graphics="Banefire.jpg" text="Banefire deals X damage to target creature or player.
+If X is 5 or more, Banefire can't be countered by spells or abilities and the damage can't be prevented.">
+   <attr key="rarity" value="R" />
+   <attr key="cn" value="58" />
+   <attr key="cost" value="{X}{R}" />
+   <attr key="cmc" value="1" />
+   <attr key="type" value="Sorcery" />
+   <attr key="permanent" value="0" />
+   <attr key="color" value="Red" />
+   <attr key="coloridentity" value="2" />
+   <attr key="artist" value="Raymond Swanland" />
+  </card>
+  <card name="Beacon Behemoth" graphics="BeaconBehemoth.jpg" text="{1}: Target creature with power 5 or greater gains vigilance until end of turn.">
+   <attr key="rarity" value="C" />
+   <attr key="cn" value="78" />
+   <attr key="cost" value="{3}{G}{G}" />
+   <attr key="cmc" value="5" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Beast" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Green" />
+   <attr key="coloridentity" value="1" />
+   <attr key="power" value="5" />
+   <attr key="toughness" value="3" />
+   <attr key="artist" value="Jesper Ejsing" />
+  </card>
+  <card name="Blood Tyrant" graphics="BloodTyrant.jpg" text="Flying, trample
+At the beginning of your upkeep, each player loses 1 life. Put a +1/+1 counter on Blood Tyrant for each 1 life lost this way.
+Whenever a player loses the game, put five +1/+1 counters on Blood Tyrant.">
+   <attr key="rarity" value="R" />
+   <attr key="cn" value="99" />
+   <attr key="cost" value="{4}{U}{B}{R}" />
+   <attr key="cmc" value="7" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Vampire" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Black Blue Red" />
+   <attr key="coloridentity" value="14" />
+   <attr key="power" value="5" />
+   <attr key="toughness" value="5" />
+   <attr key="artist" value="Karl Kopinski" />
+  </card>
+  <card name="Bloodhall Ooze" graphics="BloodhallOoze.jpg" text="At the beginning of your upkeep, if you control a black permanent, you may put a +1/+1 counter on Bloodhall Ooze.
+At the beginning of your upkeep, if you control a green permanent, you may put a +1/+1 counter on Bloodhall Ooze.">
+   <attr key="rarity" value="R" />
+   <attr key="cn" value="59" />
+   <attr key="cost" value="{R}" />
+   <attr key="cmc" value="1" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Ooze" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Red" />
+   <attr key="coloridentity" value="2" />
+   <attr key="power" value="1" />
+   <attr key="toughness" value="1" />
+   <attr key="artist" value="Jaime Jones" />
+  </card>
+  <card name="Bone Saw" graphics="BoneSaw.jpg" text="Equipped creature gets +1/+0.
+Equip {1}">
+   <attr key="rarity" value="C" />
+   <attr key="cn" value="135" />
+   <attr key="cost" value="{0}" />
+   <attr key="cmc" value="0" />
+   <attr key="type" value="Artifact" />
+   <attr key="subtype" value="Equipment" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Artifact" />
+   <attr key="coloridentity" value="0" />
+   <attr key="artist" value="Pete Venters" />
+  </card>
+  <card name="Brackwater Elemental" graphics="BrackwaterElemental.jpg" text="When Brackwater Elemental attacks or blocks, sacrifice it at the beginning of the next end step.
+Unearth {2}{U}">
+   <attr key="rarity" value="C" />
+   <attr key="cn" value="21" />
+   <attr key="cost" value="{2}{U}" />
+   <attr key="cmc" value="3" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Elemental" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Blue" />
+   <attr key="coloridentity" value="8" />
+   <attr key="power" value="4" />
+   <attr key="toughness" value="4" />
+   <attr key="artist" value="Thomas M. Baxa" />
+  </card>
+  <card name="Canyon Minotaur" graphics="CanyonMinotaur.jpg" text="">
+   <attr key="rarity" value="C" />
+   <attr key="cn" value="60" />
+   <attr key="cost" value="{3}{R}" />
+   <attr key="cmc" value="4" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Minotaur Warrior" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Red" />
+   <attr key="coloridentity" value="2" />
+   <attr key="power" value="3" />
+   <attr key="toughness" value="3" />
+   <attr key="artist" value="Steve Prescott" />
+  </card>
+  <card name="Celestial Purge" graphics="CelestialPurge.jpg" text="Exile target black or red permanent.">
+   <attr key="rarity" value="U" />
+   <attr key="cn" value="5" />
+   <attr key="cost" value="{1}{W}" />
+   <attr key="cmc" value="2" />
+   <attr key="type" value="Instant" />
+   <attr key="permanent" value="0" />
+   <attr key="color" value="White" />
+   <attr key="coloridentity" value="16" />
+   <attr key="artist" value="David Palumbo" />
+  </card>
+  <card name="Charnelhoard Wurm" graphics="CharnelhoardWurm.jpg" text="Trample
+Whenever Charnelhoard Wurm deals damage to an opponent, you may return target card from your graveyard to your hand.">
+   <attr key="rarity" value="R" />
+   <attr key="cn" value="100" />
+   <attr key="cost" value="{4}{B}{R}{G}" />
+   <attr key="cmc" value="7" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Wurm" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Black Green Red" />
+   <attr key="coloridentity" value="7" />
+   <attr key="power" value="6" />
+   <attr key="toughness" value="6" />
+   <attr key="artist" value="Lars Grant-West" />
+  </card>
+  <card name="Child of Alara" graphics="ChildofAlara.jpg" text="Trample
+When Child of Alara dies, destroy all nonland permanents. They can't be regenerated.">
+   <attr key="rarity" value="M" />
+   <attr key="cn" value="101" />
+   <attr key="cost" value="{W}{U}{B}{R}{G}" />
+   <attr key="cmc" value="5" />
+   <attr key="type" value="Legendary Creature" />
+   <attr key="subtype" value="Avatar" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Black Blue Green Red White" />
+   <attr key="coloridentity" value="31" />
+   <attr key="power" value="6" />
+   <attr key="toughness" value="6" />
+   <attr key="artist" value="Steve Argyle" />
+  </card>
+  <card name="Cliffrunner Behemoth" graphics="CliffrunnerBehemoth.jpg" text="Cliffrunner Behemoth has haste as long as you control a red permanent.
+Cliffrunner Behemoth has lifelink as long as you control a white permanent.">
+   <attr key="rarity" value="R" />
+   <attr key="cn" value="79" />
+   <attr key="cost" value="{3}{G}" />
+   <attr key="cmc" value="4" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Rhino Beast" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Green" />
+   <attr key="coloridentity" value="1" />
+   <attr key="power" value="5" />
+   <attr key="toughness" value="3" />
+   <attr key="artist" value="Wayne Reynolds" />
+  </card>
+  <card name="Conflux" graphics="Conflux.jpg" text="Search your library for a white card, a blue card, a black card, a red card, and a green card. Reveal those cards and put them into your hand. Then shuffle your library.">
+   <attr key="rarity" value="M" />
+   <attr key="cn" value="102" />
+   <attr key="cost" value="{3}{W}{U}{B}{R}{G}" />
+   <attr key="cmc" value="8" />
+   <attr key="type" value="Sorcery" />
+   <attr key="permanent" value="0" />
+   <attr key="color" value="Black Blue Green Red White" />
+   <attr key="coloridentity" value="31" />
+   <attr key="artist" value="Karl Kopinski" />
+  </card>
+  <card name="Constricting Tendrils" graphics="ConstrictingTendrils.jpg" text="Target creature gets -3/-0 until end of turn.
+Cycling {2}">
+   <attr key="rarity" value="C" />
+   <attr key="cn" value="22" />
+   <attr key="cost" value="{U}" />
+   <attr key="cmc" value="1" />
+   <attr key="type" value="Instant" />
+   <attr key="permanent" value="0" />
+   <attr key="color" value="Blue" />
+   <attr key="coloridentity" value="8" />
+   <attr key="artist" value="David Palumbo" />
+  </card>
+  <card name="Controlled Instincts" graphics="ControlledInstincts.jpg" text="Enchant red or green creature
+Enchanted creature doesn't untap during its controller's untap step.">
+   <attr key="rarity" value="U" />
+   <attr key="cn" value="23" />
+   <attr key="cost" value="{U}" />
+   <attr key="cmc" value="1" />
+   <attr key="type" value="Enchantment" />
+   <attr key="subtype" value="Aura" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Blue" />
+   <attr key="coloridentity" value="8" />
+   <attr key="artist" value="Ralph Horsley" />
+  </card>
+  <card name="Corrupted Roots" graphics="CorruptedRoots.jpg" text="Enchant Forest or Plains
+Whenever enchanted land becomes tapped, its controller loses 2 life.">
+   <attr key="rarity" value="U" />
+   <attr key="cn" value="41" />
+   <attr key="cost" value="{B}" />
+   <attr key="cmc" value="1" />
+   <attr key="type" value="Enchantment" />
+   <attr key="subtype" value="Aura" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Black" />
+   <attr key="coloridentity" value="4" />
+   <attr key="artist" value="Mark Hyzer" />
+  </card>
+  <card name="Countersquall" graphics="Countersquall.jpg" text="Counter target noncreature spell. Its controller loses 2 life.">
+   <attr key="rarity" value="U" />
+   <attr key="cn" value="103" />
+   <attr key="cost" value="{U}{B}" />
+   <attr key="cmc" value="2" />
+   <attr key="type" value="Instant" />
+   <attr key="permanent" value="0" />
+   <attr key="color" value="Black Blue" />
+   <attr key="coloridentity" value="12" />
+   <attr key="artist" value="Anthony Francisco" />
+  </card>
+  <card name="Court Homunculus" graphics="CourtHomunculus.jpg" text="Court Homunculus gets +1/+1 as long as you control another artifact.">
+   <attr key="rarity" value="C" />
+   <attr key="cn" value="6" />
+   <attr key="cost" value="{W}" />
+   <attr key="cmc" value="1" />
+   <attr key="type" value="Artifact Creature" />
+   <attr key="subtype" value="Homunculus" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="White" />
+   <attr key="coloridentity" value="16" />
+   <attr key="power" value="1" />
+   <attr key="toughness" value="1" />
+   <attr key="artist" value="Matt Cavotta" />
+  </card>
+  <card name="Cumber Stone" graphics="CumberStone.jpg" text="Creatures your opponents control get -1/-0.">
+   <attr key="rarity" value="U" />
+   <attr key="cn" value="24" />
+   <attr key="cost" value="{3}{U}" />
+   <attr key="cmc" value="4" />
+   <attr key="type" value="Artifact" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Blue" />
+   <attr key="coloridentity" value="8" />
+   <attr key="artist" value="Warren Mahy" />
+  </card>
+  <card name="Cylian Sunsinger" graphics="CylianSunsinger.jpg" text="{R}{G}{W}: Cylian Sunsinger and each other creature with the same name as it get +3/+3 until end of turn.">
+   <attr key="rarity" value="R" />
+   <attr key="cn" value="80" />
+   <attr key="cost" value="{1}{G}" />
+   <attr key="cmc" value="2" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Elf Shaman" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Green" />
+   <attr key="coloridentity" value="19" />
+   <attr key="power" value="2" />
+   <attr key="toughness" value="2" />
+   <attr key="artist" value="Jesper Ejsing" />
+  </card>
+  <card name="Dark Temper" graphics="DarkTemper.jpg" text="Dark Temper deals 2 damage to target creature. If you control a black permanent, destroy the creature instead.">
+   <attr key="rarity" value="C" />
+   <attr key="cn" value="61" />
+   <attr key="cost" value="{2}{R}" />
+   <attr key="cmc" value="3" />
+   <attr key="type" value="Instant" />
+   <attr key="permanent" value="0" />
+   <attr key="color" value="Red" />
+   <attr key="coloridentity" value="2" />
+   <attr key="artist" value="Jaime Jones" />
+  </card>
+  <card name="Darklit Gargoyle" graphics="DarklitGargoyle.jpg" text="Flying
+{B}: Darklit Gargoyle gets +2/-1 until end of turn.">
+   <attr key="rarity" value="C" />
+   <attr key="cn" value="7" />
+   <attr key="cost" value="{1}{W}" />
+   <attr key="cmc" value="2" />
+   <attr key="type" value="Artifact Creature" />
+   <attr key="subtype" value="Gargoyle" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="White" />
+   <attr key="coloridentity" value="20" />
+   <attr key="power" value="1" />
+   <attr key="toughness" value="2" />
+   <attr key="artist" value="Howard Lyon" />
+  </card>
+  <card name="Drag Down" graphics="DragDown.jpg" text="Domain - Target creature gets -1/-1 until end of turn for each basic land type among lands you control.">
+   <attr key="rarity" value="C" />
+   <attr key="cn" value="42" />
+   <attr key="cost" value="{2}{B}" />
+   <attr key="cmc" value="3" />
+   <attr key="type" value="Instant" />
+   <attr key="permanent" value="0" />
+   <attr key="color" value="Black" />
+   <attr key="coloridentity" value="4" />
+   <attr key="artist" value="Trevor Claxton" />
+  </card>
+  <card name="Dragonsoul Knight" graphics="DragonsoulKnight.jpg" text="First strike
+{W}{U}{B}{R}{G}: Until end of turn, Dragonsoul Knight becomes a Dragon, gets +5/+3, and gains flying and trample.">
+   <attr key="rarity" value="U" />
+   <attr key="cn" value="62" />
+   <attr key="cost" value="{2}{R}" />
+   <attr key="cmc" value="3" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Human Knight" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Red" />
+   <attr key="coloridentity" value="31" />
+   <attr key="power" value="2" />
+   <attr key="toughness" value="2" />
+   <attr key="artist" value="Justin Sweet" />
+  </card>
+  <card name="Dreadwing" graphics="Dreadwing.jpg" text="{1}{U}{R}: Dreadwing gets +3/+0 and gains flying until end of turn.">
+   <attr key="rarity" value="U" />
+   <attr key="cn" value="43" />
+   <attr key="cost" value="{B}" />
+   <attr key="cmc" value="1" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Zombie" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Black" />
+   <attr key="coloridentity" value="14" />
+   <attr key="power" value="1" />
+   <attr key="toughness" value="1" />
+   <attr key="artist" value="Mark Hyzer" />
+  </card>
+  <card name="Elder Mastery" graphics="ElderMastery.jpg" text="Enchant creature
+Enchanted creature gets +3/+3 and has flying.
+Whenever enchanted creature deals damage to a player, that player discards two cards.">
+   <attr key="rarity" value="U" />
+   <attr key="cn" value="104" />
+   <attr key="cost" value="{3}{U}{B}{R}" />
+   <attr key="cmc" value="6" />
+   <attr key="type" value="Enchantment" />
+   <attr key="subtype" value="Aura" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Black Blue Red" />
+   <attr key="coloridentity" value="14" />
+   <attr key="artist" value="Dave Allsop" />
+  </card>
+  <card name="Ember Weaver" graphics="EmberWeaver.jpg" text="Reach
+As long as you control a red permanent, Ember Weaver gets +1/+0 and has first strike.">
+   <attr key="rarity" value="C" />
+   <attr key="cn" value="81" />
+   <attr key="cost" value="{2}{G}" />
+   <attr key="cmc" value="3" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Spider" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Green" />
+   <attr key="coloridentity" value="1" />
+   <attr key="power" value="2" />
+   <attr key="toughness" value="3" />
+   <attr key="artist" value="Steve Prescott" />
+  </card>
+  <card name="Esper Cormorants" graphics="EsperCormorants.jpg" text="Flying">
+   <attr key="rarity" value="C" />
+   <attr key="cn" value="105" />
+   <attr key="cost" value="{2}{W}{U}" />
+   <attr key="cmc" value="4" />
+   <attr key="type" value="Artifact Creature" />
+   <attr key="subtype" value="Bird" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Blue White" />
+   <attr key="coloridentity" value="24" />
+   <attr key="power" value="3" />
+   <attr key="toughness" value="3" />
+   <attr key="artist" value="Warren Mahy" />
+  </card>
+  <card name="Esperzoa" graphics="Esperzoa.jpg" text="Flying
+At the beginning of your upkeep, return an artifact you control to its owner's hand.">
+   <attr key="rarity" value="U" />
+   <attr key="cn" value="25" />
+   <attr key="cost" value="{2}{U}" />
+   <attr key="cmc" value="3" />
+   <attr key="type" value="Artifact Creature" />
+   <attr key="subtype" value="Jellyfish" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Blue" />
+   <attr key="coloridentity" value="8" />
+   <attr key="power" value="4" />
+   <attr key="toughness" value="3" />
+   <attr key="artist" value="Warren Mahy" />
+  </card>
+  <card name="Ethersworn Adjudicator" graphics="EtherswornAdjudicator.jpg" text="Flying
+{1}{W}{B}, {T}: Destroy target creature or enchantment.
+{2}{U}: Untap Ethersworn Adjudicator.">
+   <attr key="rarity" value="M" />
+   <attr key="cn" value="26" />
+   <attr key="cost" value="{4}{U}" />
+   <attr key="cmc" value="5" />
+   <attr key="type" value="Artifact Creature" />
+   <attr key="subtype" value="Vedalken Knight" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Blue" />
+   <attr key="coloridentity" value="28" />
+   <attr key="power" value="4" />
+   <attr key="toughness" value="4" />
+   <attr key="artist" value="Dan Scott" />
+  </card>
+  <card name="Exotic Orchard" graphics="ExoticOrchard.jpg" text="{T}: Add to your mana pool one mana of any color that a land an opponent controls could produce.">
+   <attr key="rarity" value="R" />
+   <attr key="cn" value="142" />
+   <attr key="cmc" value="0" />
+   <attr key="type" value="Land" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Land" />
+   <attr key="coloridentity" value="0" />
+   <attr key="artist" value="Steven Belledin" />
+  </card>
+  <card name="Exploding Borders" graphics="ExplodingBorders.jpg" text="Domain - Search your library for a basic land card, put that card onto the battlefield tapped, then shuffle your library. Exploding Borders deals X damage to target player, where X is the number of basic land types among lands you control.">
+   <attr key="rarity" value="C" />
+   <attr key="cn" value="106" />
+   <attr key="cost" value="{2}{R}{G}" />
+   <attr key="cmc" value="4" />
+   <attr key="type" value="Sorcery" />
+   <attr key="permanent" value="0" />
+   <attr key="color" value="Green Red" />
+   <attr key="coloridentity" value="3" />
+   <attr key="artist" value="Zoltan Boros &amp; Gabor Szikszai" />
+  </card>
+  <card name="Extractor Demon" graphics="ExtractorDemon.jpg" text="Flying
+Whenever another creature leaves the battlefield, you may have target player put the top two cards of his or her library into his or her graveyard.
+Unearth {2}{B}">
+   <attr key="rarity" value="R" />
+   <attr key="cn" value="44" />
+   <attr key="cost" value="{4}{B}{B}" />
+   <attr key="cmc" value="6" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Demon" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Black" />
+   <attr key="coloridentity" value="4" />
+   <attr key="power" value="5" />
+   <attr key="toughness" value="5" />
+   <attr key="artist" value="Carl Critchlow" />
+  </card>
+  <card name="Faerie Mechanist" graphics="FaerieMechanist.jpg" text="Flying
+When Faerie Mechanist enters the battlefield, look at the top three cards of your library. You may reveal an artifact card from among them and put it into your hand. Put the rest on the bottom of your library in any order.">
+   <attr key="rarity" value="C" />
+   <attr key="cn" value="27" />
+   <attr key="cost" value="{3}{U}" />
+   <attr key="cmc" value="4" />
+   <attr key="type" value="Artifact Creature" />
+   <attr key="subtype" value="Faerie Artificer" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Blue" />
+   <attr key="coloridentity" value="8" />
+   <attr key="power" value="2" />
+   <attr key="toughness" value="2" />
+   <attr key="artist" value="Matt Cavotta" />
+  </card>
+  <card name="Fiery Fall" graphics="FieryFall.jpg" text="Fiery Fall deals 5 damage to target creature.
+Basic landcycling {1}{R}">
+   <attr key="rarity" value="C" />
+   <attr key="cn" value="63" />
+   <attr key="cost" value="{5}{R}" />
+   <attr key="cmc" value="6" />
+   <attr key="type" value="Instant" />
+   <attr key="permanent" value="0" />
+   <attr key="color" value="Red" />
+   <attr key="coloridentity" value="2" />
+   <attr key="artist" value="Daarken" />
+  </card>
+  <card name="Filigree Fracture" graphics="FiligreeFracture.jpg" text="Destroy target artifact or enchantment. If that permanent was blue or black, draw a card.">
+   <attr key="rarity" value="U" />
+   <attr key="cn" value="82" />
+   <attr key="cost" value="{2}{G}" />
+   <attr key="cmc" value="3" />
+   <attr key="type" value="Instant" />
+   <attr key="permanent" value="0" />
+   <attr key="color" value="Green" />
+   <attr key="coloridentity" value="1" />
+   <attr key="artist" value="Howard Lyon" />
+  </card>
+  <card name="Fleshformer" graphics="Fleshformer.jpg" text="{W}{U}{B}{R}{G}: Fleshformer gets +2/+2 and gains fear until end of turn. Target creature gets -2/-2 until end of turn. Activate this ability only during your turn.">
+   <attr key="rarity" value="U" />
+   <attr key="cn" value="45" />
+   <attr key="cost" value="{2}{B}" />
+   <attr key="cmc" value="3" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Human Wizard" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Black" />
+   <attr key="coloridentity" value="31" />
+   <attr key="power" value="2" />
+   <attr key="toughness" value="2" />
+   <attr key="artist" value="Dave Kendall" />
+  </card>
+  <card name="Font of Mythos" graphics="FontofMythos.jpg" text="At the beginning of each player's draw step, that player draws two additional cards.">
+   <attr key="rarity" value="R" />
+   <attr key="cn" value="136" />
+   <attr key="cost" value="{4}" />
+   <attr key="cmc" value="4" />
+   <attr key="type" value="Artifact" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Artifact" />
+   <attr key="coloridentity" value="0" />
+   <attr key="artist" value="Dave Allsop" />
+  </card>
+  <card name="Frontline Sage" graphics="FrontlineSage.jpg" text="Exalted
+{U}, {T}: Draw a card, then discard a card.">
+   <attr key="rarity" value="C" />
+   <attr key="cn" value="28" />
+   <attr key="cost" value="{2}{U}" />
+   <attr key="cmc" value="3" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Human Wizard" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Blue" />
+   <attr key="coloridentity" value="8" />
+   <attr key="power" value="0" />
+   <attr key="toughness" value="1" />
+   <attr key="artist" value="Volkan Baga" />
+  </card>
+  <card name="Fusion Elemental" graphics="FusionElemental.jpg" text="">
+   <attr key="rarity" value="U" />
+   <attr key="cn" value="107" />
+   <attr key="cost" value="{W}{U}{B}{R}{G}" />
+   <attr key="cmc" value="5" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Elemental" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Black Blue Green Red White" />
+   <attr key="coloridentity" value="31" />
+   <attr key="power" value="8" />
+   <attr key="toughness" value="8" />
+   <attr key="artist" value="Michael Komarck" />
+  </card>
+  <card name="Giltspire Avenger" graphics="GiltspireAvenger.jpg" text="Exalted
+{T}: Destroy target creature that dealt damage to you this turn.">
+   <attr key="rarity" value="R" />
+   <attr key="cn" value="108" />
+   <attr key="cost" value="{G}{W}{U}" />
+   <attr key="cmc" value="3" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Human Soldier" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Blue Green White" />
+   <attr key="coloridentity" value="25" />
+   <attr key="power" value="2" />
+   <attr key="toughness" value="2" />
+   <attr key="artist" value="Chris Rahn" />
+  </card>
+  <card name="Gleam of Resistance" graphics="GleamofResistance.jpg" text="Creatures you control get +1/+2 until end of turn. Untap those creatures.
+Basic landcycling {1}{W}">
+   <attr key="rarity" value="C" />
+   <attr key="cn" value="8" />
+   <attr key="cost" value="{4}{W}" />
+   <attr key="cmc" value="5" />
+   <attr key="type" value="Instant" />
+   <attr key="permanent" value="0" />
+   <attr key="color" value="White" />
+   <attr key="coloridentity" value="16" />
+   <attr key="artist" value="Matt Stewart" />
+  </card>
+  <card name="Gluttonous Slime" graphics="GluttonousSlime.jpg" text="Flash
+Devour 1">
+   <attr key="rarity" value="U" />
+   <attr key="cn" value="83" />
+   <attr key="cost" value="{2}{G}" />
+   <attr key="cmc" value="3" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Ooze" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Green" />
+   <attr key="coloridentity" value="1" />
+   <attr key="power" value="2" />
+   <attr key="toughness" value="2" />
+   <attr key="artist" value="Trevor Claxton" />
+  </card>
+  <card name="Goblin Outlander" graphics="GoblinOutlander.jpg" text="Protection from white">
+   <attr key="rarity" value="C" />
+   <attr key="cn" value="109" />
+   <attr key="cost" value="{B}{R}" />
+   <attr key="cmc" value="2" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Goblin Scout" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Black Red" />
+   <attr key="coloridentity" value="6" />
+   <attr key="power" value="2" />
+   <attr key="toughness" value="2" />
+   <attr key="artist" value="Trevor Claxton" />
+  </card>
+  <card name="Goblin Razerunners" graphics="GoblinRazerunners.jpg" text="{1}{R}, Sacrifice a land: Put a +1/+1 counter on Goblin Razerunners.
+At the beginning of your end step, you may have Goblin Razerunners deal damage equal to the number of +1/+1 counters on it to target player.">
+   <attr key="rarity" value="R" />
+   <attr key="cn" value="64" />
+   <attr key="cost" value="{2}{R}{R}" />
+   <attr key="cmc" value="4" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Goblin Warrior" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Red" />
+   <attr key="coloridentity" value="2" />
+   <attr key="power" value="3" />
+   <attr key="toughness" value="4" />
+   <attr key="artist" value="Raymond Swanland" />
+  </card>
+  <card name="Grixis Illusionist" graphics="GrixisIllusionist.jpg" text="{T}: Target land you control becomes the basic land type of your choice until end of turn.">
+   <attr key="rarity" value="C" />
+   <attr key="cn" value="29" />
+   <attr key="cost" value="{U}" />
+   <attr key="cmc" value="1" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Human Wizard" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Blue" />
+   <attr key="coloridentity" value="8" />
+   <attr key="power" value="1" />
+   <attr key="toughness" value="1" />
+   <attr key="artist" value="Mark Tedin" />
+  </card>
+  <card name="Grixis Slavedriver" graphics="GrixisSlavedriver.jpg" text="When Grixis Slavedriver leaves the battlefield, put a 2/2 black Zombie creature token onto the battlefield.
+Unearth {3}{B}">
+   <attr key="rarity" value="U" />
+   <attr key="cn" value="46" />
+   <attr key="cost" value="{5}{B}" />
+   <attr key="cmc" value="6" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Zombie Giant" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Black" />
+   <attr key="coloridentity" value="4" />
+   <attr key="power" value="4" />
+   <attr key="toughness" value="4" />
+   <attr key="artist" value="Dave Kendall" />
+  </card>
+  <card name="Gwafa Hazid, Profiteer" graphics="GwafaHazidProfiteer.jpg" text="{W}{U}, {T}: Put a bribery counter on target creature you don't control. Its controller draws a card.
+Creatures with bribery counters on them can't attack or block.">
+   <attr key="rarity" value="R" />
+   <attr key="cn" value="110" />
+   <attr key="cost" value="{1}{W}{U}" />
+   <attr key="cmc" value="3" />
+   <attr key="type" value="Legendary Creature" />
+   <attr key="subtype" value="Human Rogue" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Blue White" />
+   <attr key="coloridentity" value="24" />
+   <attr key="power" value="2" />
+   <attr key="toughness" value="2" />
+   <attr key="artist" value="Todd Lockwood" />
+  </card>
+  <card name="Hellkite Hatchling" graphics="HellkiteHatchling.jpg" text="Devour 1
+Hellkite Hatchling has flying and trample if it devoured a creature.">
+   <attr key="rarity" value="U" />
+   <attr key="cn" value="111" />
+   <attr key="cost" value="{2}{R}{G}" />
+   <attr key="cmc" value="4" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Dragon" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Green Red" />
+   <attr key="coloridentity" value="3" />
+   <attr key="power" value="2" />
+   <attr key="toughness" value="2" />
+   <attr key="artist" value="Daarken" />
+  </card>
+  <card name="Hellspark Elemental" graphics="HellsparkElemental.jpg" text="Trample, haste
+At the beginning of the end step, sacrifice Hellspark Elemental.
+Unearth {1}{R}">
+   <attr key="rarity" value="U" />
+   <attr key="cn" value="65" />
+   <attr key="cost" value="{1}{R}" />
+   <attr key="cmc" value="2" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Elemental" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Red" />
+   <attr key="coloridentity" value="2" />
+   <attr key="power" value="3" />
+   <attr key="toughness" value="1" />
+   <attr key="artist" value="Justin Sweet" />
+  </card>
+  <card name="Ignite Disorder" graphics="IgniteDisorder.jpg" text="Ignite Disorder deals 3 damage divided as you choose among one, two, or three target white and/or blue creatures.">
+   <attr key="rarity" value="U" />
+   <attr key="cn" value="66" />
+   <attr key="cost" value="{1}{R}" />
+   <attr key="cmc" value="2" />
+   <attr key="type" value="Instant" />
+   <attr key="permanent" value="0" />
+   <attr key="color" value="Red" />
+   <attr key="coloridentity" value="2" />
+   <attr key="artist" value="Zoltan Boros &amp; Gabor Szikszai" />
+  </card>
+  <card name="Infectious Horror" graphics="InfectiousHorror.jpg" text="Whenever Infectious Horror attacks, each opponent loses 2 life.">
+   <attr key="rarity" value="C" />
+   <attr key="cn" value="47" />
+   <attr key="cost" value="{3}{B}" />
+   <attr key="cmc" value="4" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Zombie Horror" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Black" />
+   <attr key="coloridentity" value="4" />
+   <attr key="power" value="2" />
+   <attr key="toughness" value="2" />
+   <attr key="artist" value="Pete Venters" />
+  </card>
+  <card name="Inkwell Leviathan" graphics="InkwellLeviathan.jpg" text="Islandwalk, trample, shroud">
+   <attr key="rarity" value="R" />
+   <attr key="cn" value="30" />
+   <attr key="cost" value="{7}{U}{U}" />
+   <attr key="cmc" value="9" />
+   <attr key="type" value="Artifact Creature" />
+   <attr key="subtype" value="Leviathan" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Blue" />
+   <attr key="coloridentity" value="8" />
+   <attr key="power" value="7" />
+   <attr key="toughness" value="11" />
+   <attr key="artist" value="Anthony Francisco" />
+  </card>
+  <card name="Jhessian Balmgiver" graphics="JhessianBalmgiver.jpg" text="{T}: Prevent the next 1 damage that would be dealt to target creature or player this turn.
+{T}: Target creature can't be blocked this turn.">
+   <attr key="rarity" value="U" />
+   <attr key="cn" value="112" />
+   <attr key="cost" value="{1}{W}{U}" />
+   <attr key="cmc" value="3" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Human Cleric" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Blue White" />
+   <attr key="coloridentity" value="24" />
+   <attr key="power" value="1" />
+   <attr key="toughness" value="1" />
+   <attr key="artist" value="David Palumbo" />
+  </card>
+  <card name="Kaleidostone" graphics="Kaleidostone.jpg" text="When Kaleidostone enters the battlefield, draw a card.
+{5}, {T}, Sacrifice Kaleidostone: Add {W}{U}{B}{R}{G} to your mana pool.">
+   <attr key="rarity" value="C" />
+   <attr key="cn" value="137" />
+   <attr key="cost" value="{2}" />
+   <attr key="cmc" value="2" />
+   <attr key="type" value="Artifact" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Artifact" />
+   <attr key="coloridentity" value="31" />
+   <attr key="artist" value="Chippy" />
+  </card>
+  <card name="Kederekt Parasite" graphics="KederektParasite.jpg" text="Whenever an opponent draws a card, if you control a red permanent, you may have Kederekt Parasite deal 1 damage to that player.">
+   <attr key="rarity" value="R" />
+   <attr key="cn" value="48" />
+   <attr key="cost" value="{B}" />
+   <attr key="cmc" value="1" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Horror" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Black" />
+   <attr key="coloridentity" value="4" />
+   <attr key="power" value="1" />
+   <attr key="toughness" value="1" />
+   <attr key="artist" value="Dan Scott" />
+  </card>
+  <card name="Knight of the Reliquary" graphics="KnightoftheReliquary.jpg" text="Knight of the Reliquary gets +1/+1 for each land card in your graveyard.
+{T}, Sacrifice a Forest or Plains: Search your library for a land card, put it onto the battlefield, then shuffle your library.">
+   <attr key="rarity" value="R" />
+   <attr key="cn" value="113" />
+   <attr key="cost" value="{1}{G}{W}" />
+   <attr key="cmc" value="3" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Human Knight" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Green White" />
+   <attr key="coloridentity" value="17" />
+   <attr key="power" value="2" />
+   <attr key="toughness" value="2" />
+   <attr key="artist" value="Michael Komarck" />
+  </card>
+  <card name="Knotvine Mystic" graphics="KnotvineMystic.jpg" text="{1}, {T}: Add {R}{G}{W} to your mana pool.">
+   <attr key="rarity" value="U" />
+   <attr key="cn" value="114" />
+   <attr key="cost" value="{R}{G}{W}" />
+   <attr key="cmc" value="3" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Elf Druid" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Green Red White" />
+   <attr key="coloridentity" value="19" />
+   <attr key="power" value="2" />
+   <attr key="toughness" value="2" />
+   <attr key="artist" value="Ariel Olivetti" />
+  </card>
+  <card name="Kranioceros" graphics="Kranioceros.jpg" text="{1}{W}: Kranioceros gets +0/+3 until end of turn.">
+   <attr key="rarity" value="C" />
+   <attr key="cn" value="67" />
+   <attr key="cost" value="{4}{R}" />
+   <attr key="cmc" value="5" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Beast" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Red" />
+   <attr key="coloridentity" value="18" />
+   <attr key="power" value="5" />
+   <attr key="toughness" value="2" />
+   <attr key="artist" value="Steve Argyle" />
+  </card>
+  <card name="Lapse of Certainty" graphics="LapseofCertainty.jpg" text="Counter target spell. If that spell is countered this way, put it on top of its owner's library instead of into that player's graveyard.">
+   <attr key="rarity" value="C" />
+   <attr key="cn" value="9" />
+   <attr key="cost" value="{2}{W}" />
+   <attr key="cmc" value="3" />
+   <attr key="type" value="Instant" />
+   <attr key="permanent" value="0" />
+   <attr key="color" value="White" />
+   <attr key="coloridentity" value="16" />
+   <attr key="artist" value="Anthony Francisco" />
+  </card>
+  <card name="Maelstrom Archangel" graphics="MaelstromArchangel.jpg" text="Flying
+Whenever Maelstrom Archangel deals combat damage to a player, you may cast a nonland card from your hand without paying its mana cost.">
+   <attr key="rarity" value="M" />
+   <attr key="cn" value="115" />
+   <attr key="cost" value="{W}{U}{B}{R}{G}" />
+   <attr key="cmc" value="5" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Angel" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Black Blue Green Red White" />
+   <attr key="coloridentity" value="31" />
+   <attr key="power" value="5" />
+   <attr key="toughness" value="5" />
+   <attr key="artist" value="Cyril Van Der Haegen" />
+  </card>
+  <card name="Magister Sphinx" graphics="MagisterSphinx.jpg" text="Flying
+When Magister Sphinx enters the battlefield, target player's life total becomes 10.">
+   <attr key="rarity" value="R" />
+   <attr key="cn" value="116" />
+   <attr key="cost" value="{4}{W}{U}{B}" />
+   <attr key="cmc" value="7" />
+   <attr key="type" value="Artifact Creature" />
+   <attr key="subtype" value="Sphinx" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Black Blue White" />
+   <attr key="coloridentity" value="28" />
+   <attr key="power" value="5" />
+   <attr key="toughness" value="5" />
+   <attr key="artist" value="Steven Belledin" />
+  </card>
+  <card name="Malfegor" graphics="Malfegor.jpg" text="Flying
+When Malfegor enters the battlefield, discard your hand. Each opponent sacrifices a creature for each card discarded this way.">
+   <attr key="rarity" value="M" />
+   <attr key="cn" value="117" />
+   <attr key="cost" value="{2}{B}{B}{R}{R}" />
+   <attr key="cmc" value="6" />
+   <attr key="type" value="Legendary Creature" />
+   <attr key="subtype" value="Demon Dragon" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Black Red" />
+   <attr key="coloridentity" value="6" />
+   <attr key="power" value="6" />
+   <attr key="toughness" value="6" />
+   <attr key="artist" value="Jason Chan" />
+  </card>
+  <card name="Mana Cylix" graphics="ManaCylix.jpg" text="{1}, {T}: Add one mana of any color to your mana pool.">
+   <attr key="rarity" value="C" />
+   <attr key="cn" value="138" />
+   <attr key="cost" value="{1}" />
+   <attr key="cmc" value="1" />
+   <attr key="type" value="Artifact" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Artifact" />
+   <attr key="coloridentity" value="0" />
+   <attr key="artist" value="Howard Lyon" />
+  </card>
+  <card name="Manaforce Mace" graphics="ManaforceMace.jpg" text="Domain - Equipped creature gets +1/+1 for each basic land type among lands you control.
+Equip {3}">
+   <attr key="rarity" value="U" />
+   <attr key="cn" value="139" />
+   <attr key="cost" value="{4}" />
+   <attr key="cmc" value="4" />
+   <attr key="type" value="Artifact" />
+   <attr key="subtype" value="Equipment" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Artifact" />
+   <attr key="coloridentity" value="0" />
+   <attr key="artist" value="Jeremy Jarvis" />
+  </card>
+  <card name="Maniacal Rage" graphics="ManiacalRage.jpg" text="Enchant creature
+Enchanted creature gets +2/+2 and can't block.">
+   <attr key="rarity" value="C" />
+   <attr key="cn" value="68" />
+   <attr key="cost" value="{1}{R}" />
+   <attr key="cmc" value="2" />
+   <attr key="type" value="Enchantment" />
+   <attr key="subtype" value="Aura" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Red" />
+   <attr key="coloridentity" value="2" />
+   <attr key="artist" value="Brandon Kitkouski" />
+  </card>
+  <card name="Mark of Asylum" graphics="MarkofAsylum.jpg" text="Prevent all noncombat damage that would be dealt to creatures you control.">
+   <attr key="rarity" value="R" />
+   <attr key="cn" value="10" />
+   <attr key="cost" value="{1}{W}" />
+   <attr key="cmc" value="2" />
+   <attr key="type" value="Enchantment" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="White" />
+   <attr key="coloridentity" value="16" />
+   <attr key="artist" value="Sal Villagran" />
+  </card>
+  <card name="Martial Coup" graphics="MartialCoup.jpg" text="Put X 1/1 white Soldier creature tokens onto the battlefield. If X is 5 or more, destroy all other creatures.">
+   <attr key="rarity" value="R" />
+   <attr key="cn" value="11" />
+   <attr key="cost" value="{X}{W}{W}" />
+   <attr key="cmc" value="2" />
+   <attr key="type" value="Sorcery" />
+   <attr key="permanent" value="0" />
+   <attr key="color" value="White" />
+   <attr key="coloridentity" value="16" />
+   <attr key="artist" value="Greg Staples" />
+  </card>
+  <card name="Master Transmuter" graphics="MasterTransmuter.jpg" text="{U}, {T}, Return an artifact you control to its owner's hand: You may put an artifact card from your hand onto the battlefield.">
+   <attr key="rarity" value="R" />
+   <attr key="cn" value="31" />
+   <attr key="cost" value="{3}{U}" />
+   <attr key="cmc" value="4" />
+   <attr key="type" value="Artifact Creature" />
+   <attr key="subtype" value="Human Artificer" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Blue" />
+   <attr key="coloridentity" value="8" />
+   <attr key="power" value="1" />
+   <attr key="toughness" value="2" />
+   <attr key="artist" value="Chippy" />
+  </card>
+  <card name="Matca Rioters" graphics="MatcaRioters.jpg" text="Domain - Matca Rioters's power and toughness are each equal to the number of basic land types among lands you control.">
+   <attr key="rarity" value="C" />
+   <attr key="cn" value="84" />
+   <attr key="cost" value="{2}{G}" />
+   <attr key="cmc" value="3" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Human Warrior" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Green" />
+   <attr key="coloridentity" value="1" />
+   <attr key="power" value="*" />
+   <attr key="toughness" value="*" />
+   <attr key="artist" value="Steve Argyle" />
+  </card>
+  <card name="Meglonoth" graphics="Meglonoth.jpg" text="Vigilance, trample
+Whenever Meglonoth blocks a creature, Meglonoth deals damage to that creature's controller equal to Meglonoth's power.">
+   <attr key="rarity" value="R" />
+   <attr key="cn" value="118" />
+   <attr key="cost" value="{3}{R}{G}{W}" />
+   <attr key="cmc" value="6" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Beast" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Green Red White" />
+   <attr key="coloridentity" value="19" />
+   <attr key="power" value="6" />
+   <attr key="toughness" value="6" />
+   <attr key="artist" value="Steve Prescott" />
+  </card>
+  <card name="Might of Alara" graphics="MightofAlara.jpg" text="Domain - Target creature gets +1/+1 until end of turn for each basic land type among lands you control.">
+   <attr key="rarity" value="C" />
+   <attr key="cn" value="85" />
+   <attr key="cost" value="{G}" />
+   <attr key="cmc" value="1" />
+   <attr key="type" value="Instant" />
+   <attr key="permanent" value="0" />
+   <attr key="color" value="Green" />
+   <attr key="coloridentity" value="1" />
+   <attr key="artist" value="Steve Prescott" />
+  </card>
+  <card name="Mirror-Sigil Sergeant" graphics="MirrorSigilSergeant.jpg" text="Trample
+At the beginning of your upkeep, if you control a blue permanent, you may put a token that's a copy of Mirror-Sigil Sergeant onto the battlefield.">
+   <attr key="rarity" value="M" />
+   <attr key="cn" value="12" />
+   <attr key="cost" value="{5}{W}" />
+   <attr key="cmc" value="6" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Rhino Soldier" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="White" />
+   <attr key="coloridentity" value="16" />
+   <attr key="power" value="4" />
+   <attr key="toughness" value="4" />
+   <attr key="artist" value="Chris Rahn" />
+  </card>
+  <card name="Molten Frame" graphics="MoltenFrame.jpg" text="Destroy target artifact creature.
+Cycling {2}">
+   <attr key="rarity" value="C" />
+   <attr key="cn" value="69" />
+   <attr key="cost" value="{1}{R}" />
+   <attr key="cmc" value="2" />
+   <attr key="type" value="Instant" />
+   <attr key="permanent" value="0" />
+   <attr key="color" value="Red" />
+   <attr key="coloridentity" value="2" />
+   <attr key="artist" value="Izzy" />
+  </card>
+  <card name="Nacatl Hunt-Pride" graphics="NacatlHuntPride.jpg" text="Vigilance
+{R}, {T}: Target creature can't block this turn.
+{G}, {T}: Target creature blocks this turn if able.">
+   <attr key="rarity" value="U" />
+   <attr key="cn" value="13" />
+   <attr key="cost" value="{5}{W}" />
+   <attr key="cmc" value="6" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Cat Warrior" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="White" />
+   <attr key="coloridentity" value="19" />
+   <attr key="power" value="5" />
+   <attr key="toughness" value="4" />
+   <attr key="artist" value="Steve Prescott" />
+  </card>
+  <card name="Nacatl Outlander" graphics="NacatlOutlander.jpg" text="Protection from blue">
+   <attr key="rarity" value="C" />
+   <attr key="cn" value="119" />
+   <attr key="cost" value="{R}{G}" />
+   <attr key="cmc" value="2" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Cat Scout" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Green Red" />
+   <attr key="coloridentity" value="3" />
+   <attr key="power" value="2" />
+   <attr key="toughness" value="2" />
+   <attr key="artist" value="Zoltan Boros &amp; Gabor Szikszai" />
+  </card>
+  <card name="Nacatl Savage" graphics="NacatlSavage.jpg" text="Protection from artifacts">
+   <attr key="rarity" value="C" />
+   <attr key="cn" value="86" />
+   <attr key="cost" value="{1}{G}" />
+   <attr key="cmc" value="2" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Cat Warrior" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Green" />
+   <attr key="coloridentity" value="1" />
+   <attr key="power" value="2" />
+   <attr key="toughness" value="1" />
+   <attr key="artist" value="Parente" />
+  </card>
+  <card name="Nicol Bolas, Planeswalker" graphics="NicolBolasPlaneswalker.jpg" text="+3: Destroy target noncreature permanent.
+-2: Gain control of target creature.
+-9: Nicol Bolas, Planeswalker deals 7 damage to target player. That player discards seven cards, then sacrifices seven permanents.">
+   <attr key="rarity" value="M" />
+   <attr key="cn" value="120" />
+   <attr key="cost" value="{4}{U}{B}{B}{R}" />
+   <attr key="cmc" value="8" />
+   <attr key="type" value="Planeswalker" />
+   <attr key="subtype" value="Bolas" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Black Blue Red" />
+   <attr key="coloridentity" value="14" />
+   <attr key="loyalty" value="5" />
+   <attr key="artist" value="D. Alexander Gregory" />
+  </card>
+  <card name="Noble Hierarch" graphics="NobleHierarch.jpg" text="Exalted
+{T}: Add {G}, {W}, or {U} to your mana pool.">
+   <attr key="rarity" value="R" />
+   <attr key="cn" value="87" />
+   <attr key="cost" value="{G}" />
+   <attr key="cmc" value="1" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Human Druid" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Green" />
+   <attr key="coloridentity" value="25" />
+   <attr key="power" value="0" />
+   <attr key="toughness" value="1" />
+   <attr key="artist" value="Mark Zug" />
+  </card>
+  <card name="Nyxathid" graphics="Nyxathid.jpg" text="As Nyxathid enters the battlefield, choose an opponent.
+Nyxathid gets -1/-1 for each card in the chosen player's hand.">
+   <attr key="rarity" value="R" />
+   <attr key="cn" value="49" />
+   <attr key="cost" value="{1}{B}{B}" />
+   <attr key="cmc" value="3" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Elemental" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Black" />
+   <attr key="coloridentity" value="4" />
+   <attr key="power" value="7" />
+   <attr key="toughness" value="7" />
+   <attr key="artist" value="Raymond Swanland" />
+  </card>
+  <card name="Obelisk of Alara" graphics="ObeliskofAlara.jpg" text="{1}{W}, {T}: You gain 5 life.
+{1}{U}, {T}: Draw a card, then discard a card.
+{1}{B}, {T}: Target creature gets -2/-2 until end of turn.
+{1}{R}, {T}: Obelisk of Alara deals 3 damage to target player.
+{1}{G}, {T}: Target creature gets +4/+4 until end of turn.">
+   <attr key="rarity" value="R" />
+   <attr key="cn" value="140" />
+   <attr key="cost" value="{6}" />
+   <attr key="cmc" value="6" />
+   <attr key="type" value="Artifact" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Artifact" />
+   <attr key="coloridentity" value="31" />
+   <attr key="artist" value="Jeremy Jarvis" />
+  </card>
+  <card name="Paleoloth" graphics="Paleoloth.jpg" text="Whenever another creature with power 5 or greater enters the battlefield under your control, you may return target creature card from your graveyard to your hand.">
+   <attr key="rarity" value="R" />
+   <attr key="cn" value="88" />
+   <attr key="cost" value="{4}{G}{G}" />
+   <attr key="cmc" value="6" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Beast" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Green" />
+   <attr key="coloridentity" value="1" />
+   <attr key="power" value="5" />
+   <attr key="toughness" value="5" />
+   <attr key="artist" value="Christopher Moeller" />
+  </card>
+  <card name="Paragon of the Amesha" graphics="ParagonoftheAmesha.jpg" text="First strike
+{W}{U}{B}{R}{G}: Until end of turn, Paragon of the Amesha becomes an Angel, gets +3/+3, and gains flying and lifelink.">
+   <attr key="rarity" value="U" />
+   <attr key="cn" value="14" />
+   <attr key="cost" value="{2}{W}" />
+   <attr key="cmc" value="3" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Human Knight" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="White" />
+   <attr key="coloridentity" value="31" />
+   <attr key="power" value="2" />
+   <attr key="toughness" value="2" />
+   <attr key="artist" value="Chris Rahn" />
+  </card>
+  <card name="Parasitic Strix" graphics="ParasiticStrix.jpg" text="Flying
+When Parasitic Strix enters the battlefield, if you control a black permanent, target player loses 2 life and you gain 2 life.">
+   <attr key="rarity" value="C" />
+   <attr key="cn" value="32" />
+   <attr key="cost" value="{2}{U}" />
+   <attr key="cmc" value="3" />
+   <attr key="type" value="Artifact Creature" />
+   <attr key="subtype" value="Bird" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Blue" />
+   <attr key="coloridentity" value="8" />
+   <attr key="power" value="2" />
+   <attr key="toughness" value="2" />
+   <attr key="artist" value="Steven Belledin" />
+  </card>
+  <card name="Path to Exile" graphics="PathtoExile.jpg" text="Exile target creature. Its controller may search his or her library for a basic land card, put that card onto the battlefield tapped, then shuffle his or her library.">
+   <attr key="rarity" value="U" />
+   <attr key="cn" value="15" />
+   <attr key="cost" value="{W}" />
+   <attr key="cmc" value="1" />
+   <attr key="type" value="Instant" />
+   <attr key="permanent" value="0" />
+   <attr key="color" value="White" />
+   <attr key="coloridentity" value="16" />
+   <attr key="artist" value="Todd Lockwood" />
+  </card>
+  <card name="Pestilent Kathari" graphics="PestilentKathari.jpg" text="Flying
+Deathtouch
+{2}{R}: Pestilent Kathari gains first strike until end of turn.">
+   <attr key="rarity" value="C" />
+   <attr key="cn" value="50" />
+   <attr key="cost" value="{2}{B}" />
+   <attr key="cmc" value="3" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Bird Warrior" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Black" />
+   <attr key="coloridentity" value="6" />
+   <attr key="power" value="1" />
+   <attr key="toughness" value="1" />
+   <attr key="artist" value="Dave Kendall" />
+  </card>
+  <card name="Progenitus" graphics="Progenitus.jpg" text="Protection from everything
+If Progenitus would be put into a graveyard from anywhere, reveal Progenitus and shuffle it into its owner's library instead.">
+   <attr key="rarity" value="M" />
+   <attr key="cn" value="121" />
+   <attr key="cost" value="{W}{W}{U}{U}{B}{B}{R}{R}{G}{G}" />
+   <attr key="cmc" value="10" />
+   <attr key="type" value="Legendary Creature" />
+   <attr key="subtype" value="Hydra Avatar" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Black Blue Green Red White" />
+   <attr key="coloridentity" value="31" />
+   <attr key="power" value="10" />
+   <attr key="toughness" value="10" />
+   <attr key="artist" value="Jaime Jones" />
+  </card>
+  <card name="Quenchable Fire" graphics="QuenchableFire.jpg" text="Quenchable Fire deals 3 damage to target player. It deals an additional 3 damage to that player at the beginning of your next upkeep step unless he or she pays {U} before that step.">
+   <attr key="rarity" value="C" />
+   <attr key="cn" value="70" />
+   <attr key="cost" value="{3}{R}" />
+   <attr key="cmc" value="4" />
+   <attr key="type" value="Sorcery" />
+   <attr key="permanent" value="0" />
+   <attr key="color" value="Red" />
+   <attr key="coloridentity" value="10" />
+   <attr key="artist" value="Jean-Sebastien Rossbach" />
+  </card>
+  <card name="Rakka Mar" graphics="RakkaMar.jpg" text="Haste
+{R}, {T}: Put a 3/1 red Elemental creature token with haste onto the battlefield.">
+   <attr key="rarity" value="R" />
+   <attr key="cn" value="71" />
+   <attr key="cost" value="{2}{R}{R}" />
+   <attr key="cmc" value="4" />
+   <attr key="type" value="Legendary Creature" />
+   <attr key="subtype" value="Human Shaman" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Red" />
+   <attr key="coloridentity" value="2" />
+   <attr key="power" value="2" />
+   <attr key="toughness" value="2" />
+   <attr key="artist" value="Jason Chan" />
+  </card>
+  <card name="Reliquary Tower" graphics="ReliquaryTower.jpg" text="You have no maximum hand size.
+{T}: Add {C} to your mana pool.">
+   <attr key="rarity" value="U" />
+   <attr key="cn" value="143" />
+   <attr key="cmc" value="0" />
+   <attr key="type" value="Land" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Land" />
+   <attr key="coloridentity" value="0" />
+   <attr key="artist" value="Jesper Ejsing" />
+  </card>
+  <card name="Rhox Bodyguard" graphics="RhoxBodyguard.jpg" text="Exalted
+When Rhox Bodyguard enters the battlefield, you gain 3 life.">
+   <attr key="rarity" value="C" />
+   <attr key="cn" value="122" />
+   <attr key="cost" value="{3}{G}{W}" />
+   <attr key="cmc" value="5" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Rhino Monk Soldier" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Green White" />
+   <attr key="coloridentity" value="17" />
+   <attr key="power" value="2" />
+   <attr key="toughness" value="3" />
+   <attr key="artist" value="Sal Villagran" />
+  </card>
+  <card name="Rhox Meditant" graphics="RhoxMeditant.jpg" text="When Rhox Meditant enters the battlefield, if you control a green permanent, draw a card.">
+   <attr key="rarity" value="C" />
+   <attr key="cn" value="16" />
+   <attr key="cost" value="{3}{W}" />
+   <attr key="cmc" value="4" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Rhino Monk" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="White" />
+   <attr key="coloridentity" value="16" />
+   <attr key="power" value="2" />
+   <attr key="toughness" value="4" />
+   <attr key="artist" value="Donato Giancola" />
+  </card>
+  <card name="Rotting Rats" graphics="RottingRats.jpg" text="When Rotting Rats enters the battlefield, each player discards a card.
+Unearth {1}{B}">
+   <attr key="rarity" value="C" />
+   <attr key="cn" value="51" />
+   <attr key="cost" value="{1}{B}" />
+   <attr key="cmc" value="2" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Zombie Rat" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Black" />
+   <attr key="coloridentity" value="4" />
+   <attr key="power" value="1" />
+   <attr key="toughness" value="1" />
+   <attr key="artist" value="Dave Allsop" />
+  </card>
+  <card name="Rupture Spire" graphics="RuptureSpire.jpg" text="Rupture Spire enters the battlefield tapped.
+When Rupture Spire enters the battlefield, sacrifice it unless you pay {1}.
+{T}: Add one mana of any color to your mana pool.">
+   <attr key="rarity" value="C" />
+   <attr key="cn" value="144" />
+   <attr key="cmc" value="0" />
+   <attr key="type" value="Land" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Land" />
+   <attr key="coloridentity" value="0" />
+   <attr key="artist" value="Jaime Jones" />
+  </card>
+  <card name="Sacellum Archers" graphics="SacellumArchers.jpg" text="{R}{W}, {T}: Sacellum Archers deals 2 damage to target attacking or blocking creature.">
+   <attr key="rarity" value="U" />
+   <attr key="cn" value="89" />
+   <attr key="cost" value="{2}{G}" />
+   <attr key="cmc" value="3" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Elf Archer" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Green" />
+   <attr key="coloridentity" value="19" />
+   <attr key="power" value="2" />
+   <attr key="toughness" value="3" />
+   <attr key="artist" value="Kev Walker" />
+  </card>
+  <card name="Salvage Slasher" graphics="SalvageSlasher.jpg" text="Salvage Slasher gets +1/+0 for each artifact card in your graveyard.">
+   <attr key="rarity" value="C" />
+   <attr key="cn" value="52" />
+   <attr key="cost" value="{1}{B}" />
+   <attr key="cmc" value="2" />
+   <attr key="type" value="Artifact Creature" />
+   <attr key="subtype" value="Human Rogue" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Black" />
+   <attr key="coloridentity" value="4" />
+   <attr key="power" value="1" />
+   <attr key="toughness" value="1" />
+   <attr key="artist" value="Anthony Francisco" />
+  </card>
+  <card name="Scarland Thrinax" graphics="ScarlandThrinax.jpg" text="Sacrifice a creature: Put a +1/+1 counter on Scarland Thrinax.">
+   <attr key="rarity" value="U" />
+   <attr key="cn" value="123" />
+   <attr key="cost" value="{B}{R}{G}" />
+   <attr key="cmc" value="3" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Lizard" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Black Green Red" />
+   <attr key="coloridentity" value="7" />
+   <attr key="power" value="2" />
+   <attr key="toughness" value="2" />
+   <attr key="artist" value="Daarken" />
+  </card>
+  <card name="Scattershot Archer" graphics="ScattershotArcher.jpg" text="{T}: Scattershot Archer deals 1 damage to each creature with flying.">
+   <attr key="rarity" value="C" />
+   <attr key="cn" value="90" />
+   <attr key="cost" value="{G}" />
+   <attr key="cmc" value="1" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Elf Archer" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Green" />
+   <attr key="coloridentity" value="1" />
+   <attr key="power" value="1" />
+   <attr key="toughness" value="2" />
+   <attr key="artist" value="Steve Argyle" />
+  </card>
+  <card name="Scepter of Dominance" graphics="ScepterofDominance.jpg" text="{W}, {T}: Tap target permanent.">
+   <attr key="rarity" value="R" />
+   <attr key="cn" value="17" />
+   <attr key="cost" value="{1}{W}{W}" />
+   <attr key="cmc" value="3" />
+   <attr key="type" value="Artifact" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="White" />
+   <attr key="coloridentity" value="16" />
+   <attr key="artist" value="Howard Lyon" />
+  </card>
+  <card name="Scepter of Fugue" graphics="ScepterofFugue.jpg" text="{1}{B}, {T}: Target player discards a card. Activate this ability only during your turn.">
+   <attr key="rarity" value="R" />
+   <attr key="cn" value="53" />
+   <attr key="cost" value="{B}{B}" />
+   <attr key="cmc" value="2" />
+   <attr key="type" value="Artifact" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Black" />
+   <attr key="coloridentity" value="4" />
+   <attr key="artist" value="Franz Vohwinkel" />
+  </card>
+  <card name="Scepter of Insight" graphics="ScepterofInsight.jpg" text="{3}{U}, {T}: Draw a card.">
+   <attr key="rarity" value="R" />
+   <attr key="cn" value="33" />
+   <attr key="cost" value="{1}{U}{U}" />
+   <attr key="cmc" value="3" />
+   <attr key="type" value="Artifact" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Blue" />
+   <attr key="coloridentity" value="8" />
+   <attr key="artist" value="Steven Belledin" />
+  </card>
+  <card name="Scornful AEther-Lich" graphics="ScornfulAEtherLich.jpg" text="{W}{B}: Scornful AEther-Lich gains fear and vigilance until end of turn.">
+   <attr key="rarity" value="U" />
+   <attr key="cn" value="34" />
+   <attr key="cost" value="{3}{U}" />
+   <attr key="cmc" value="4" />
+   <attr key="type" value="Artifact Creature" />
+   <attr key="subtype" value="Zombie Wizard" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Blue" />
+   <attr key="coloridentity" value="28" />
+   <attr key="power" value="2" />
+   <attr key="toughness" value="4" />
+   <attr key="artist" value="Steven Belledin" />
+  </card>
+  <card name="Sedraxis Alchemist" graphics="SedraxisAlchemist.jpg" text="When Sedraxis Alchemist enters the battlefield, if you control a blue permanent, return target nonland permanent to its owner's hand.">
+   <attr key="rarity" value="C" />
+   <attr key="cn" value="54" />
+   <attr key="cost" value="{2}{B}" />
+   <attr key="cmc" value="3" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Zombie Wizard" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Black" />
+   <attr key="coloridentity" value="4" />
+   <attr key="power" value="2" />
+   <attr key="toughness" value="2" />
+   <attr key="artist" value="Karl Kopinski" />
+  </card>
+  <card name="Shambling Remains" graphics="ShamblingRemains.jpg" text="Shambling Remains can't block.
+Unearth {B}{R}">
+   <attr key="rarity" value="U" />
+   <attr key="cn" value="124" />
+   <attr key="cost" value="{1}{B}{R}" />
+   <attr key="cmc" value="3" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Zombie Horror" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Black Red" />
+   <attr key="coloridentity" value="6" />
+   <attr key="power" value="4" />
+   <attr key="toughness" value="3" />
+   <attr key="artist" value="Nils Hamm" />
+  </card>
+  <card name="Shard Convergence" graphics="ShardConvergence.jpg" text="Search your library for a Plains card, an Island card, a Swamp card, and a Mountain card. Reveal those cards and put them into your hand. Then shuffle your library.">
+   <attr key="rarity" value="U" />
+   <attr key="cn" value="91" />
+   <attr key="cost" value="{3}{G}" />
+   <attr key="cmc" value="4" />
+   <attr key="type" value="Sorcery" />
+   <attr key="permanent" value="0" />
+   <attr key="color" value="Green" />
+   <attr key="coloridentity" value="1" />
+   <attr key="artist" value="Vance Kovacs" />
+  </card>
+  <card name="Sigil of the Empty Throne" graphics="SigiloftheEmptyThrone.jpg" text="Whenever you cast an enchantment spell, put a 4/4 white Angel creature token with flying onto the battlefield.">
+   <attr key="rarity" value="R" />
+   <attr key="cn" value="18" />
+   <attr key="cost" value="{3}{W}{W}" />
+   <attr key="cmc" value="5" />
+   <attr key="type" value="Enchantment" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="White" />
+   <attr key="coloridentity" value="16" />
+   <attr key="artist" value="Cyril Van Der Haegen" />
+  </card>
+  <card name="Skyward Eye Prophets" graphics="SkywardEyeProphets.jpg" text="Vigilance
+{T}: Reveal the top card of your library. If it's a land card, put it onto the battlefield. Otherwise, put it into your hand.">
+   <attr key="rarity" value="U" />
+   <attr key="cn" value="125" />
+   <attr key="cost" value="{3}{G}{W}{U}" />
+   <attr key="cmc" value="6" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Human Wizard" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Blue Green White" />
+   <attr key="coloridentity" value="25" />
+   <attr key="power" value="3" />
+   <attr key="toughness" value="3" />
+   <attr key="artist" value="Matt Stewart" />
+  </card>
+  <card name="Sludge Strider" graphics="SludgeStrider.jpg" text="Whenever another artifact enters the battlefield under your control or another artifact you control leaves the battlefield, you may pay {1}. If you do, target player loses 1 life and you gain 1 life.">
+   <attr key="rarity" value="U" />
+   <attr key="cn" value="126" />
+   <attr key="cost" value="{1}{W}{U}{B}" />
+   <attr key="cmc" value="4" />
+   <attr key="type" value="Artifact Creature" />
+   <attr key="subtype" value="Insect" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Black Blue White" />
+   <attr key="coloridentity" value="28" />
+   <attr key="power" value="3" />
+   <attr key="toughness" value="3" />
+   <attr key="artist" value="Franz Vohwinkel" />
+  </card>
+  <card name="Soul's Majesty" graphics="SoulsMajesty.jpg" text="Draw cards equal to the power of target creature you control.">
+   <attr key="rarity" value="R" />
+   <attr key="cn" value="92" />
+   <attr key="cost" value="{4}{G}" />
+   <attr key="cmc" value="5" />
+   <attr key="type" value="Sorcery" />
+   <attr key="permanent" value="0" />
+   <attr key="color" value="Green" />
+   <attr key="coloridentity" value="1" />
+   <attr key="artist" value="Jesper Ejsing" />
+  </card>
+  <card name="Sphinx Summoner" graphics="SphinxSummoner.jpg" text="Flying
+When Sphinx Summoner enters the battlefield, you may search your library for an artifact creature card, reveal it, and put it into your hand. If you do, shuffle your library.">
+   <attr key="rarity" value="R" />
+   <attr key="cn" value="127" />
+   <attr key="cost" value="{3}{U}{B}" />
+   <attr key="cmc" value="5" />
+   <attr key="type" value="Artifact Creature" />
+   <attr key="subtype" value="Sphinx" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Black Blue" />
+   <attr key="coloridentity" value="12" />
+   <attr key="power" value="3" />
+   <attr key="toughness" value="3" />
+   <attr key="artist" value="Jaime Jones" />
+  </card>
+  <card name="Spore Burst" graphics="SporeBurst.jpg" text="Domain - Put a 1/1 green Saproling creature token onto the battlefield for each basic land type among lands you control.">
+   <attr key="rarity" value="U" />
+   <attr key="cn" value="93" />
+   <attr key="cost" value="{3}{G}" />
+   <attr key="cmc" value="4" />
+   <attr key="type" value="Sorcery" />
+   <attr key="permanent" value="0" />
+   <attr key="color" value="Green" />
+   <attr key="coloridentity" value="1" />
+   <attr key="artist" value="Daarken" />
+  </card>
+  <card name="Suicidal Charge" graphics="SuicidalCharge.jpg" text="Sacrifice Suicidal Charge: Creatures your opponents control get -1/-1 until end of turn. Those creatures attack this turn if able.">
+   <attr key="rarity" value="C" />
+   <attr key="cn" value="128" />
+   <attr key="cost" value="{3}{B}{R}" />
+   <attr key="cmc" value="5" />
+   <attr key="type" value="Enchantment" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Black Red" />
+   <attr key="coloridentity" value="6" />
+   <attr key="artist" value="Daarken" />
+  </card>
+  <card name="Sylvan Bounty" graphics="SylvanBounty.jpg" text="Target player gains 8 life.
+Basic landcycling {1}{G}">
+   <attr key="rarity" value="C" />
+   <attr key="cn" value="94" />
+   <attr key="cost" value="{5}{G}" />
+   <attr key="cmc" value="6" />
+   <attr key="type" value="Instant" />
+   <attr key="permanent" value="0" />
+   <attr key="color" value="Green" />
+   <attr key="coloridentity" value="1" />
+   <attr key="artist" value="Chris Rahn" />
+  </card>
+  <card name="Telemin Performance" graphics="TeleminPerformance.jpg" text="Target opponent reveals cards from the top of his or her library until he or she reveals a creature card. That player puts all noncreature cards revealed this way into his or her graveyard, then you put the creature card onto the battlefield under your control.">
+   <attr key="rarity" value="R" />
+   <attr key="cn" value="35" />
+   <attr key="cost" value="{3}{U}{U}" />
+   <attr key="cmc" value="5" />
+   <attr key="type" value="Sorcery" />
+   <attr key="permanent" value="0" />
+   <attr key="color" value="Blue" />
+   <attr key="coloridentity" value="8" />
+   <attr key="artist" value="Izzy" />
+  </card>
+  <card name="Thornling" graphics="Thornling.jpg" text="{G}: Thornling gains haste until end of turn.
+{G}: Thornling gains trample until end of turn.
+{G}: Thornling gains indestructible until end of turn.
+{1}: Thornling gets +1/-1 until end of turn.
+{1}: Thornling gets -1/+1 until end of turn.">
+   <attr key="rarity" value="M" />
+   <attr key="cn" value="95" />
+   <attr key="cost" value="{3}{G}{G}" />
+   <attr key="cmc" value="5" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Elemental Shapeshifter" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Green" />
+   <attr key="coloridentity" value="1" />
+   <attr key="power" value="4" />
+   <attr key="toughness" value="4" />
+   <attr key="artist" value="Kev Walker" />
+  </card>
+  <card name="Toxic Iguanar" graphics="ToxicIguanar.jpg" text="Toxic Iguanar has deathtouch as long as you control a green permanent.">
+   <attr key="rarity" value="C" />
+   <attr key="cn" value="72" />
+   <attr key="cost" value="{R}" />
+   <attr key="cmc" value="1" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Lizard" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Red" />
+   <attr key="coloridentity" value="2" />
+   <attr key="power" value="1" />
+   <attr key="toughness" value="1" />
+   <attr key="artist" value="Brandon Kitkouski" />
+  </card>
+  <card name="Traumatic Visions" graphics="TraumaticVisions.jpg" text="Counter target spell.
+Basic landcycling {1}{U}">
+   <attr key="rarity" value="C" />
+   <attr key="cn" value="36" />
+   <attr key="cost" value="{3}{U}{U}" />
+   <attr key="cmc" value="5" />
+   <attr key="type" value="Instant" />
+   <attr key="permanent" value="0" />
+   <attr key="color" value="Blue" />
+   <attr key="coloridentity" value="8" />
+   <attr key="artist" value="Cyril Van Der Haegen" />
+  </card>
+  <card name="Tukatongue Thallid" graphics="TukatongueThallid.jpg" text="When Tukatongue Thallid dies, put a 1/1 green Saproling creature token onto the battlefield.">
+   <attr key="rarity" value="C" />
+   <attr key="cn" value="96" />
+   <attr key="cost" value="{G}" />
+   <attr key="cmc" value="1" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Fungus" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Green" />
+   <attr key="coloridentity" value="1" />
+   <attr key="power" value="1" />
+   <attr key="toughness" value="1" />
+   <attr key="artist" value="Vance Kovacs" />
+  </card>
+  <card name="Unstable Frontier" graphics="UnstableFrontier.jpg" text="{T}: Add {C} to your mana pool.
+{T}: Target land you control becomes the basic land type of your choice until end of turn.">
+   <attr key="rarity" value="U" />
+   <attr key="cn" value="145" />
+   <attr key="cmc" value="0" />
+   <attr key="type" value="Land" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Land" />
+   <attr key="coloridentity" value="0" />
+   <attr key="artist" value="John Avon" />
+  </card>
+  <card name="Unsummon" graphics="Unsummon.jpg" text="Return target creature to its owner's hand.">
+   <attr key="rarity" value="C" />
+   <attr key="cn" value="37" />
+   <attr key="cost" value="{U}" />
+   <attr key="cmc" value="1" />
+   <attr key="type" value="Instant" />
+   <attr key="permanent" value="0" />
+   <attr key="color" value="Blue" />
+   <attr key="coloridentity" value="8" />
+   <attr key="artist" value="Izzy" />
+  </card>
+  <card name="Vagrant Plowbeasts" graphics="VagrantPlowbeasts.jpg" text="{1}: Regenerate target creature with power 5 or greater.">
+   <attr key="rarity" value="U" />
+   <attr key="cn" value="129" />
+   <attr key="cost" value="{5}{G}{W}" />
+   <attr key="cmc" value="7" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Beast" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Green White" />
+   <attr key="coloridentity" value="17" />
+   <attr key="power" value="6" />
+   <attr key="toughness" value="6" />
+   <attr key="artist" value="Zoltan Boros &amp; Gabor Szikszai" />
+  </card>
+  <card name="Valeron Outlander" graphics="ValeronOutlander.jpg" text="Protection from black">
+   <attr key="rarity" value="C" />
+   <attr key="cn" value="130" />
+   <attr key="cost" value="{G}{W}" />
+   <attr key="cmc" value="2" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Human Scout" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Green White" />
+   <attr key="coloridentity" value="17" />
+   <attr key="power" value="2" />
+   <attr key="toughness" value="2" />
+   <attr key="artist" value="Matt Stewart" />
+  </card>
+  <card name="Valiant Guard" graphics="ValiantGuard.jpg" text="">
+   <attr key="rarity" value="C" />
+   <attr key="cn" value="19" />
+   <attr key="cost" value="{W}" />
+   <attr key="cmc" value="1" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Human Soldier" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="White" />
+   <attr key="coloridentity" value="16" />
+   <attr key="power" value="0" />
+   <attr key="toughness" value="3" />
+   <attr key="artist" value="Chris Rahn" />
+  </card>
+  <card name="Vectis Agents" graphics="VectisAgents.jpg" text="{U}{B}: Vectis Agents gets -2/-0 until end of turn and can't be blocked this turn.">
+   <attr key="rarity" value="C" />
+   <attr key="cn" value="131" />
+   <attr key="cost" value="{3}{U}{B}" />
+   <attr key="cmc" value="5" />
+   <attr key="type" value="Artifact Creature" />
+   <attr key="subtype" value="Human Rogue" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Black Blue" />
+   <attr key="coloridentity" value="12" />
+   <attr key="power" value="4" />
+   <attr key="toughness" value="3" />
+   <attr key="artist" value="Chippy" />
+  </card>
+  <card name="Vedalken Outlander" graphics="VedalkenOutlander.jpg" text="Protection from red">
+   <attr key="rarity" value="C" />
+   <attr key="cn" value="132" />
+   <attr key="cost" value="{W}{U}" />
+   <attr key="cmc" value="2" />
+   <attr key="type" value="Artifact Creature" />
+   <attr key="subtype" value="Vedalken Scout" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Blue White" />
+   <attr key="coloridentity" value="24" />
+   <attr key="power" value="2" />
+   <attr key="toughness" value="2" />
+   <attr key="artist" value="Izzy" />
+  </card>
+  <card name="Viashino Slaughtermaster" graphics="ViashinoSlaughtermaster.jpg" text="Double strike
+{B}{G}: Viashino Slaughtermaster gets +1/+1 until end of turn. Activate this ability only once each turn.">
+   <attr key="rarity" value="U" />
+   <attr key="cn" value="73" />
+   <attr key="cost" value="{1}{R}" />
+   <attr key="cmc" value="2" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Viashino Warrior" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Red" />
+   <attr key="coloridentity" value="7" />
+   <attr key="power" value="1" />
+   <attr key="toughness" value="1" />
+   <attr key="artist" value="Raymond Swanland" />
+  </card>
+  <card name="View from Above" graphics="ViewfromAbove.jpg" text="Target creature gains flying until end of turn. If you control a white permanent, return View from Above to its owner's hand.">
+   <attr key="rarity" value="U" />
+   <attr key="cn" value="38" />
+   <attr key="cost" value="{1}{U}" />
+   <attr key="cmc" value="2" />
+   <attr key="type" value="Instant" />
+   <attr key="permanent" value="0" />
+   <attr key="color" value="Blue" />
+   <attr key="coloridentity" value="8" />
+   <attr key="artist" value="Howard Lyon" />
+  </card>
+  <card name="Voices from the Void" graphics="VoicesfromtheVoid.jpg" text="Domain - Target player discards a card for each basic land type among lands you control.">
+   <attr key="rarity" value="U" />
+   <attr key="cn" value="55" />
+   <attr key="cost" value="{4}{B}" />
+   <attr key="cmc" value="5" />
+   <attr key="type" value="Sorcery" />
+   <attr key="permanent" value="0" />
+   <attr key="color" value="Black" />
+   <attr key="coloridentity" value="4" />
+   <attr key="artist" value="rk post" />
+  </card>
+  <card name="Volcanic Fallout" graphics="VolcanicFallout.jpg" text="Volcanic Fallout can't be countered.
+Volcanic Fallout deals 2 damage to each creature and each player.">
+   <attr key="rarity" value="U" />
+   <attr key="cn" value="74" />
+   <attr key="cost" value="{1}{R}{R}" />
+   <attr key="cmc" value="3" />
+   <attr key="type" value="Instant" />
+   <attr key="permanent" value="0" />
+   <attr key="color" value="Red" />
+   <attr key="coloridentity" value="2" />
+   <attr key="artist" value="Zoltan Boros &amp; Gabor Szikszai" />
+  </card>
+  <card name="Voracious Dragon" graphics="VoraciousDragon.jpg" text="Flying
+Devour 1
+When Voracious Dragon enters the battlefield, it deals damage to target creature or player equal to twice the number of Goblins it devoured.">
+   <attr key="rarity" value="R" />
+   <attr key="cn" value="75" />
+   <attr key="cost" value="{3}{R}{R}" />
+   <attr key="cmc" value="5" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Dragon" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Red" />
+   <attr key="coloridentity" value="2" />
+   <attr key="power" value="4" />
+   <attr key="toughness" value="4" />
+   <attr key="artist" value="Dominick Domingo" />
+  </card>
+  <card name="Wall of Reverence" graphics="WallofReverence.jpg" text="Defender, flying
+At the beginning of your end step, you may gain life equal to the power of target creature you control.">
+   <attr key="rarity" value="R" />
+   <attr key="cn" value="20" />
+   <attr key="cost" value="{3}{W}" />
+   <attr key="cmc" value="4" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Spirit Wall" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="White" />
+   <attr key="coloridentity" value="16" />
+   <attr key="power" value="1" />
+   <attr key="toughness" value="6" />
+   <attr key="artist" value="Wayne Reynolds" />
+  </card>
+  <card name="Wandering Goblins" graphics="WanderingGoblins.jpg" text="Domain - {3}: Wandering Goblins gets +1/+0 until end of turn for each basic land type among lands you control.">
+   <attr key="rarity" value="C" />
+   <attr key="cn" value="76" />
+   <attr key="cost" value="{2}{R}" />
+   <attr key="cmc" value="3" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Goblin Warrior" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Red" />
+   <attr key="coloridentity" value="2" />
+   <attr key="power" value="0" />
+   <attr key="toughness" value="3" />
+   <attr key="artist" value="Karl Kopinski" />
+  </card>
+  <card name="Wild Leotau" graphics="WildLeotau.jpg" text="At the beginning of your upkeep, sacrifice Wild Leotau unless you pay {G}.">
+   <attr key="rarity" value="C" />
+   <attr key="cn" value="97" />
+   <attr key="cost" value="{2}{G}{G}" />
+   <attr key="cmc" value="4" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Cat" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Green" />
+   <attr key="coloridentity" value="1" />
+   <attr key="power" value="5" />
+   <attr key="toughness" value="4" />
+   <attr key="artist" value="Michael Komarck" />
+  </card>
+  <card name="Worldheart Phoenix" graphics="WorldheartPhoenix.jpg" text="Flying
+You may cast Worldheart Phoenix from your graveyard by paying {W}{U}{B}{R}{G} rather than paying its mana cost. If you do, it enters the battlefield with two +1/+1 counters on it.">
+   <attr key="rarity" value="R" />
+   <attr key="cn" value="77" />
+   <attr key="cost" value="{3}{R}" />
+   <attr key="cmc" value="4" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Phoenix" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Red" />
+   <attr key="coloridentity" value="31" />
+   <attr key="power" value="2" />
+   <attr key="toughness" value="2" />
+   <attr key="artist" value="Aleksi Briclot" />
+  </card>
+  <card name="Worldly Counsel" graphics="WorldlyCounsel.jpg" text="Domain - Look at the top X cards of your library, where X is the number of basic land types among lands you control. Put one of those cards into your hand and the rest on the bottom of your library in any order.">
+   <attr key="rarity" value="C" />
+   <attr key="cn" value="39" />
+   <attr key="cost" value="{1}{U}" />
+   <attr key="cmc" value="2" />
+   <attr key="type" value="Instant" />
+   <attr key="permanent" value="0" />
+   <attr key="color" value="Blue" />
+   <attr key="coloridentity" value="8" />
+   <attr key="artist" value="Matt Cavotta" />
+  </card>
+  <card name="Wretched Banquet" graphics="WretchedBanquet.jpg" text="Destroy target creature if it has the least power or is tied for least power among creatures on the battlefield.">
+   <attr key="rarity" value="C" />
+   <attr key="cn" value="56" />
+   <attr key="cost" value="{B}" />
+   <attr key="cmc" value="1" />
+   <attr key="type" value="Sorcery" />
+   <attr key="permanent" value="0" />
+   <attr key="color" value="Black" />
+   <attr key="coloridentity" value="4" />
+   <attr key="artist" value="Nils Hamm" />
+  </card>
+  <card name="Yoke of the Damned" graphics="YokeoftheDamned.jpg" text="Enchant creature
+When a creature dies, destroy enchanted creature.">
+   <attr key="rarity" value="C" />
+   <attr key="cn" value="57" />
+   <attr key="cost" value="{1}{B}" />
+   <attr key="cmc" value="2" />
+   <attr key="type" value="Enchantment" />
+   <attr key="subtype" value="Aura" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Black" />
+   <attr key="coloridentity" value="4" />
+   <attr key="artist" value="Paul Bonner" />
+  </card>
+  <card name="Zombie Outlander" graphics="ZombieOutlander.jpg" text="Protection from green">
+   <attr key="rarity" value="C" />
+   <attr key="cn" value="133" />
+   <attr key="cost" value="{U}{B}" />
+   <attr key="cmc" value="2" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Zombie Scout" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Black Blue" />
+   <attr key="coloridentity" value="12" />
+   <attr key="power" value="2" />
+   <attr key="toughness" value="2" />
+   <attr key="artist" value="Nils Hamm" />
+  </card>
+ </cards>
+</ccg-setinfo>

@@ -1,0 +1,756 @@
+#
+# Variables:
+#
+# distribution{set}{product} - rarity distribution of the product
+# rarities - generate these distributions from the card data
+# promo.booster{set} - remaining booster cards to give as prizes
+
+#
+# CONSTANTS
+# =========
+
+if(!port)
+  port=29100;
+
+INITIAL_MONEY=50.0;
+GAME_BONUS=13.0;
+BET_BONUS_MULTIPLIER=1;
+LOSER_PERCENTAGE=0.2;
+DRAW_PERCENTAGE=0.4;
+PLAYSET_COUNT=4;
+DRAFT_MIN_PLAYERS=2;
+DRAFT_MAX_PLAYERS=8;
+# Number of packs per player used in a typical draft
+DRAFT_DEFAULT_PRODUCTS=3;
+DRAFT_MAX_PRODUCTS=6;
+MAX_DECK_SIZE=1000;
+
+cubecontents=(,);
+
+CUBES=(,);
+
+CUBES{"Legacy"}=forall("last(images(#))",("Champion of the Parish","Elite Vanguard","Isamaru, Hound of Konda","Kytheon, Hero of Akros","Mother of Runes","Soldier of the Pantheon","Student of Warfare","Accorder Paladin","Anafenza, Kin-Tree Spirit","Hidden Dragonslayer","Kami of Ancient Law","Kor Skyfisher","Leonin Relic-Warder","Precinct Captain","Seeker of the Way","Soulfire Grand Master","Thalia, Guardian of Thraben","Wall of Omens","Banisher Priest","Blade Splicer","Brimaz, King of Oreskos","Fiend Hunter","Flickerwisp","Frontline Medic","Hallowed Spiritkeeper","Mentor of the Meek","Mirran Crusader","Monastery Mentor","Silverblade Paladin","Emeria Angel","Hero of Bladehold","Linvala, Keeper of Silence","Ranger of Eos","Restoration Angel","Sublime Archangel","Archangel of Thune","Baneslayer Angel","Cloudgoat Ranger","Karmic Guide","Reveillark","Exalted Angel","Sun Titan","Yosei, the Morning Star","Angel of Serenity","Elesh Norn, Grand Cenobite","Eternal Dragon","Ajani, Caller of the Pride","Ajani Goldmane","Elspeth, Knight-Errant","Gideon, Ally of Zendikar","Elspeth Tirel","Gideon Jura","Elspeth, Sun's Champion","Porcelain Legionnaire","Condemn","Mana Tithe","Path to Exile","Swords to Plowshares","Raise the Alarm","Secure the Wastes","Unexpectedly Absent","Oust","Gather the Townsfolk","Council's Judgment","Lingering Souls","Spectral Procession","Armageddon","Day of Judgment","Ravages of War","Wrath of God","Righteous Confluence","Terminus","Martial Coup","Entreat the Angels","Land Tax","Crusade","Honor of the Pure","Journey to Nowhere","Banishing Light","Glorious Anthem","Oblivion Ring","Faith's Fetters","Parallax Wave","Dictate of Heliod","Quarantine Field","Spear of Heliod","Delver of Secrets","Augur of Bolas","Coralhelm Commander","Harbinger of the Tides","Jace, Vryn's Prodigy","Looter il-Kor","Merfolk Looter","Phantasmal Image","Snapcaster Mage","Stratus Dancer","Waterfront Bouncer","Chasm Skulker","Deceiver Exarch","Kira, Great Glass-Spinner","Man-o'-War","Old Man of the Sea","Pestermite","Sea Gate Oracle","Serendib Efreet","Vendilion Clique","Wake Thrasher","Dungeon Geists","Glen Elendra Archmage","Master of Waves","Sower of Temptation","Talrand, Sky Summoner","Venser, Shaper Savant","Whirler Rogue","Meloku the Clouded Mirror","Mulldrifter","Riftwing Cloudskate","Teferi, Mage of Zhalfir","Consecrated Sphinx","Frost Titan","Keiga, the Tide Star","Stormtide Leviathan","Jace Beleren","Jace, Architect of Thought","Jace, the Mind Sculptor","Tamiyo, the Moon Sage","Phyrexian Metamorph","Brainstorm","Force Spike","Spell Pierce","Counterspell","Cyclonic Rift","Daze","Impulse","Into the Roil","Miscalculation","Negate","Remand","Remove Soul","Dissipate","Dissolve","Exclude","Forbid","Forbidden Alchemy","Cryptic Command","Dismiss","Fact or Fiction","Gifts Ungiven","Force of Will","Mystic Confluence","Pact of Negation","Repeal","Stroke of Genius","Ancestral Vision","Careful Study","Gitaxian Probe","Ponder","Preordain","Serum Visions","Compulsive Research","Show and Tell","Deep Analysis","Time Warp","Part the Waterveil","Upheaval","Legacy's Allure","Threads of Disloyalty","Control Magic","Opposition","Future Sight","Treachery","Thassa, God of the Sea","Bloodsoaked Champion","Carrion Feeder","Gravecrawler","Viscera Seer","Blood Artist","Bloodghast","Bloodthrone Vampire","Carrier Thrall","Dark Confidant","Gatekeeper of Malakir","Oona's Prowler","Pack Rat","Vampire Hexmage","Zulaport Cutthroat","Bone Shredder","Drana, Liberator of Malakir","Geralf's Messenger","Hypnotic Specter","Liliana, Heretical Healer","Mogis's Marauder","Nantuko Husk","Ophiomancer","Vampire Nighthawk","Abyssal Persecutor","Desecration Demon","Disciple of Bolas","Nekrataal","Phyrexian Obliterator","Skinrender","Gilt-Leaf Winnower","Gray Merchant of Asphodel","Shriekmaw","Sidisi, Undead Vizier","Grave Titan","Kokusho, the Evening Star","Massacre Wurm","Tasigur, the Golden Fang","Abhorrent Overlord","Rune-Scarred Demon","Sheoldred, Whispering One","Griselbrand","Liliana of the Veil","Liliana Vess","Ob Nixilis Reignited","Sorin Markov","Dark Ritual","Disfigure","Entomb","Doom Blade","Go for the Throat","Malicious Affliction","Ultimate Price","Dismember","Hero's Downfall","Slaughter Pact","Makeshift Mannequin","Murderous Cut","Wretched Confluence","Duress","Inquisition of Kozilek","Reanimate","Thoughtseize","Chainer's Edict","Exhume","Hymn to Tourach","Buried Alive","Read the Bones","Toxic Deluge","Damnation","Dread Return","Languish","Crux of Fate","Dark Petition","Living Death","Unburial Rites","Profane Command","Animate Dead","Bitterblossom","Dance of the Dead","Attrition","Necromancy","Phyrexian Arena","Recurring Nightmare","Underworld Connections","Diabolic Servitude","Whip of Erebos","Erebos, God of the Dead","Frenzied Goblin","Goblin Bushwhacker","Goblin Glory Chaser","Goblin Guide","Grim Lavamancer","Jackal Pup","Monastery Swiftspear","Spikeshot Elder","Stromkirk Noble","Abbot of Keral Keep","Firefist Striker","Gore-House Chainwalker","Ire Shaman","Kiln Fiend","Lightning Mauler","Mogg War Marshal","Young Pyromancer","Chandra's Phoenix","Chandra, Fire of Kaladesh","Cunning Sparkmage","Dualcaster Mage","Flamewake Phoenix","Goblin Rabblemaster","Imperial Recruiter","Manic Vandal","Prophetic Flamespeaker","Ashcloud Phoenix","Avalanche Riders","Beetleback Chief","Flametongue Kavu","Hellrider","Pia and Kiran Nalaar","Thunderbreak Regent","Kiki-Jiki, Mirror Breaker","Siege-Gang Commander","Stormbreath Dragon","Thundermaw Hellkite","Zealous Conscripts","Inferno Titan","Bogardan Hellkite","Greater Gargadon","Chandra, Pyromaster","Koth of the Hammer","Chandra Nalaar","Sarkhan, the Dragonspeaker","Burst Lightning","Lightning Bolt","Incinerate","Lightning Strike","Magma Jet","Searing Spear","Skullcrack","Brimstone Volley","Char","Staggershock","Stoke the Flames","Act of Aggression","Through the Breach","Chain Lightning","Firebolt","Flame Slash","Forked Bolt","Pillar of Flame","Arc Trail","Dragon Fodder","Krenko's Command","Mizzium Mortars","Roast","Anger of the Gods","Exquisite Firecraft","Hordeling Outburst","Rift Bolt","Slagstorm","Fiery Confluence","Banefire","Crater's Claws","Devil's Play","Meteor Blast","Bonfire of the Damned","Seal of Fire","Goblin Bombardment","Outpost Siege","Sneak Attack","Splinter Twin","Purphoros, God of the Forge","Arbor Elf","Avacyn's Pilgrim","Birds of Paradise","Elves of Deep Shadow","Elvish Mystic","Fyndhorn Elves","Joraga Treespeaker","Llanowar Elves","Noble Hierarch","Ainok Survivalist","Den Protector","Fauna Shaman","Lotus Cobra","Overgrown Battlement","Rofellos, Llanowar Emissary","Sakura-Tribe Elder","Scavenging Ooze","Sylvan Caryatid","Tarmogoyf","Voyaging Satyr","Wall of Blossoms","Wall of Roots","Eternal Witness","Managorger Hydra","Nissa, Vastwood Seer","Ohran Viper","Reclamation Sage","Shaman of Forgotten Ways","Wood Elves","Yavimaya Elder","Chameleon Colossus","Master of the Wild Hunt","Obstinate Baloth","Oracle of Mul Daya","Polukranos, World Eater","Surrak, the Hunt Caller","Thrun, the Last Troll","Vengevine","Acidic Slime","Deranged Hermit","Indrik Stomphowler","Thragtusk","Whisperwood Elemental","Wolfir Silverheart","Greenwarden of Murasa","Primeval Titan","Rampaging Baloths","Avenger of Zendikar","Genesis Hydra","Hornet Queen","Craterhoof Behemoth","Terastodon","Woodfall Primus","Garruk Relentless","Garruk Wildspeaker","Freyalise, Llanowar's Fury","Garruk, Primal Hunter","Nissa, Worldwaker","Garruk, Caller of Beasts","Birthing Pod","Beast Within","Collected Company","Summoning Trap","Chord of Calling","Explore","Farseek","Nature's Lore","Rampant Growth","Regrowth","Cultivate","Kodama's Reach","Search for Tomorrow","Eureka","Harmonize","Natural Order","Primal Command","Green Sun's Zenith","Tooth and Nail","Genesis Wave","Utopia Sprawl","Evolutionary Leap","Fertile Ground","Sylvan Library","Song of the Dryads","From Beyond","Courser of Kruphix","Geist of Saint Traft","Brago, King Eternal","Dragonlord Ojutai","Venser, the Sojourner","Sphinx's Revelation","Supreme Verdict","Nightveil Specter","Psychatog","Shadowmage Infiltrator","Dragonlord Silumgar","Ashiok, Nightmare Weaver","Baleful Strix","Ashenmoor Gouger","Falkenrath Aristocrat","Olivia Voldaren","Terminate","Dreadbore","Rakdos's Return","Bloodbraid Elf","Huntmaster of the Fells","Dragonlord Atarka","Omnath, Locus of Rage","Domri Rade","Xenagos, the Reveler","Gaddock Teeg","Qasali Pridemage","Kitchen Finks","Dragonlord Dromoka","Dromoka's Command","Mirari's Wake","Sin Collector","Divinity of Pride","Ashen Rider","Sorin, Solemn Visitor","Tidehollow Sculler","Vindicate","Deathrite Shaman","Catacomb Sifter","Vraska the Unseen","Garruk, Apex Predator","Abrupt Decay","Maelstrom Pulse","Kiora's Follower","Edric, Spymaster of Trest","Trygon Predator","Mystic Snake","Kiora, the Crashing Wave","Shardless Agent","Ral Zarek","Izzet Charm","Electrolyze","Brutal Expulsion","Keranos, God of Storms","Boros Reckoner","Ajani Vengeant","Boros Charm","Lightning Helix","Warleader's Helix","Assemble the Legion","Nicol Bolas, Planeswalker","Progenitus","Kozilek, Butcher of Truth","Ulamog, the Ceaseless Hunger","Ulamog, the Infinite Gyre","Emrakul, the Aeons Torn","Karn Liberated","Ugin, the Spirit Dragon","Phyrexian Revoker","Spellskite","Solemn Simulacrum","Precursor Golem","Duplicant","Wurmcoil Engine","Myr Battlesphere","Sundering Titan","Hangarback Walker","Bonesplitter","Cursed Scroll","Elixir of Immortality","Relic of Progenitus","Sensei's Divining Top","Isochron Scepter","Lightning Greaves","Ratchet Bomb","Scroll Rack","Winter Orb","Chromatic Lantern","Grafted Wargear","Hall of Triumph","Loxodon Warhammer","Mimic Vat","Tangle Wire","Batterskull","Eldrazi Monument","Gilded Lotus","Adarkar Wastes","Ancient Tomb","Arid Mesa","Badlands","Battlefield Forge","Bayou","Blood Crypt","Bloodstained Mire","Breeding Pool","Brushland","Caves of Koilos","City of Brass","Clifftop Retreat","Dark Depths","Dragonskull Summit","Drowned Catacomb","Flooded Strand","Gaea's Cradle","Glacial Fortress","Godless Shrine","Hallowed Fountain","High Market","Hinterland Harbor","Isolated Chapel","Karplusan Forest","Llanowar Wastes","Mana Confluence","Marsh Flats","Mishra's Factory","Misty Rainforest","Mutavault","Nykthos, Shrine to Nyx","Overgrown Tomb","Plateau","Polluted Delta","Reflecting Pool","Rishadan Port","Rootbound Crag","Sacred Foundry","Savannah","Scalding Tarn","Scrubland","Shivan Reef","Steam Vents","Stomping Ground","Sulfur Falls","Sulfurous Springs","Sunpetal Grove","Taiga","Tectonic Edge","Temple Garden","Temple of Abandon","Temple of Deceit","Temple of Enlightenment","Temple of Epiphany","Temple of Malady","Temple of Malice","Temple of Mystery","Temple of Plenty","Temple of Silence","Temple of Triumph","Thespian's Stage","Tropical Island","Tundra","Underground River","Underground Sea","Verdant Catacombs","Volcanic Island","Volrath's Stronghold","Watery Grave","Windbrisk Heights","Windswept Heath","Wooded Foothills","Woodland Cemetery","Yavimaya Coast",));
+
+CUBES{"Legendary"}=forall("last(images(#))",("Isamaru, Hound of Konda","Kytheon, Hero of Akros","Anafenza, Kin-Tree Spirit","Eight-and-a-Half-Tails","Kataki, War's Wage","Knight of the White Orchid","Sensei Golden-Tail","Wall of Omens","Brimaz, King of Oreskos","Kemba, Kha Regent","Mesa Enchantress","Orim, Samite Healer","Pianna, Nomad Captain","Ajani's Chosen","Cho-Manno, Revolutionary","Daghatar the Adamant","Glimmerpoint Stag","Jazal Goldmane","Linvala, Keeper of Silence","Odric, Master Tactician","Sidar Jabari","Avacyn, Guardian Angel","Baneslayer Angel","Mageta the Lion","Crovax, Ascendant Hero","Jareth, Leonine Titan","Linvala, the Preserver","Mikaeus, the Lunarch","Yosei, the Morning Star","Elesh Norn, Grand Cenobite","Eternal Dragon","Silent Sentinel","Akroma, Angel of Wrath","Avacyn, Angel of Hope","Myojin of Cleansing Fire","Reya Dawnbringer","Tithe","Celestial Flare","Radiant Purge","Crib Swap","Oblation","Divine Deflection","Fated Retribution","Idyllic Tutor","Terashi's Grasp","Hallowed Burial","Planar Cleansing","Plea for Guidance","Enduring Ideal","Pacifism","Seal of Cleansing","Silkwrap","Cage of Hands","Pariah","Recumbent Bliss","Citadel Siege","Day of Destiny","Faith's Fetters","Honden of Cleansing Fire","Martial Law","Opalescence","Sigil of the Empty Throne","Skybind","Starfield of Nyx","Heliod, God of the Sun","Dakra Mystic","Augur of Bolas","Jace, Vryn's Prodigy","Kira, Great Glass-Spinner","Muzzio, Visionary Architect","Skaab Ruinator","Thada Adel, Acquisitor","Treasure Mage","Vendilion Clique","Academy Elite","Havengul Runebinder","Kaho, Minamo Historian","Lu Xun, Scholar General","Sakashima the Impostor","Talrand, Sky Summoner","Vedalken Archmage","Venser, Shaper Savant","Azami, Lady of Scrolls","Disciple of the Ring","Stitcher Geralf","Sun Ce, Young Conquerer","Teferi, Mage of Zhalfir","Keiga, the Tide Star","Sun Quan, Lord of Wu","Uyo, Silent Prophet","Alhammarret, High Arbiter","Phyrexian Ingester","Sphinx of Uthuun","Tromokratis","Kederekt Leviathan","Tezzeret the Seeker","Faerie Mechanist","Phyrexian Metamorph","Brainstorm","Mental Note","Stubborn Denial","Arcane Denial","Cyclonic Rift","Impulse","Into the Roil","Muddle the Mixture","Prohibit","Twincast","Forbidden Alchemy","Polymorphist's Jest","Thirst for Knowledge","Fact or Fiction","Mystical Teachings","Misdirection","Repeal","Time Stop","Strategic Planning","Compulsive Research","Deep Analysis","Pull from the Deep","Rush of Knowledge","Ugin's Insight","Crush of Tentacles","Interpret the Signs","Beacon of Tomorrows","Jace's Sanctum","March of the Machines","Mystic Restraints","Honden of Seeing Winds","Cast Through Time","Bident of Thassa","Drana, Liberator of Malakir","Graveblade Marauder","Haakon, Stromgald Scourge","Toshiro Umezawa","Akuta, Born of Ash","Ashling, the Extinguisher","Horobi, Death's Wail","Kalitas, Traitor of Ghet","Mirri the Cursed","Sewer Nemesis","Xiahou Dun, the One-Eyed","Drana, Kalastria Bloodchief","Endrek Sahr, Master Breeder","Ghoulcaller Gisa","Kagemaro, First to Suffer","Ob Nixilis, the Fallen","Seizan, Perverter of Truth","Sidisi, Undead Vizier","Hythonia the Cruel","Kokusho, the Evening Star","Kothophed, Soul Hoarder","Mikaeus, the Unhallowed","Ob Nixilis, Unshackled","Tasigur, the Golden Fang","Deathbringer Regent","Kalitas, Bloodchief of Ghet","Phage the Untouchable","Scourge of Nel Toth","Griselbrand","Ghastly Demise","Vendetta","Corpse Churn","Devour in Shadow","Nameless Inversion","Smother","Tainted Pact","Foul-Tongue Invocation","Foul Renewal","Annihilate","Death Denied","Duress","Night's Whisper","Sign in Blood","Read the Bones","Ruinous Path","Toxic Deluge","Ancient Craving","Bitter Revelation","Empty the Catacombs","Gild","Corpsehatch","Crux of Fate","Dark Petition","Exile into Darkness","Black Sun's Zenith","Dread Summons","Army of the Damned","Forced March","Dregs of Sorrow","Phyrexian Arena","Honden of Night's Reach","Tombstone Stairwell","Yawgmoth's Agenda","Nighthowler","Doomwake Giant","Zurgo Bellstriker","Ashling the Pilgrim","Adamaro, First to Desire","Alesha, Who Smiles at Death","Brothers Yamazaki","Dragonspeaker Shaman","Jaya Ballard, Task Mage","Squee, Goblin Nabob","Tuktuk the Explorer","Jeska, Warrior Adept","Krenko, Mob Boss","Kurkesh, Onakke Ancient","Pia and Kiran Nalaar","Rakka Mar","Thunderbreak Regent","Galvanoth","Heartless Hidetsugu","Hoarding Dragon","Jiwari, the Earth Aflame","Kazuul, Tyrant of the Cliffs","Tahngarth, Talruum Hero","Urabrask the Hidden","Zirilan of the Claw","Charmbreaker Devils","Godo, Bandit Warlord","Kamahl, Pit Fighter","Ryusei, the Falling Star","Kilnmouth Dragon","Thunder Dragon","Bogardan Hellkite","Utvara Hellkite","Chandra, the Firebrand","Daretti, Scrap Savant","Increasing Vengeance","Chaos Warp","Reiterate","Resounding Thunder","Sarkhan's Triumph","Scrap","Urza's Rage","Wild Ricochet","Beacon of Destruction","Burn Away","Word of Seizing","Fiery Fall","Faithless Looting","Mizzium Mortars","Roast","Tormenting Voice","Trash for Treasure","Chain Reaction","Explosive Revelation","Lightning Surge","Blasphemous Act","Dragonstorm","Volley of Boulders","Braid of Fire","Dragon Tempest","Honden of Infinite Rage","Outpost Siege","Where Ancients Tread","Warstorm Surge","Joraga Warcaller","Argothian Enchantress","Herald of the Pantheon","Priest of Titania","Rofellos, Llanowar Emissary","Sylvan Ranger","Azusa, Lost but Seeking","Elvish Archdruid","Elvish Harbinger","Ezuri, Renegade Leader","Farhaven Elf","Fierce Empath","Imperious Perfect","Nissa, Vastwood Seer","Omnath, Locus of Mana","Reclamation Sage","Reki, the History of Kamigawa","Rhys the Exiled","Splinterfright","Wood Elves","Dwynen, Gilt-Leaf Daen","Glissa Sunseeker","Immaculate Magistrate","Masked Admirers","Sylvan Messenger","Yeva, Nature's Herald","Golgari Grave-Troll","Titania, Protector of Argoth","Voice of the Woods","Verdeloth the Ancient","Ghoultree","Vorinclex, Voice of Hunger","Slice in Twain","Sudden Reclamation","Commune with the Gods","Explore","Life from the Loam","Mulch","Regrowth","Time of Need","Tracker's Instincts","Kruphix's Insight","Nature's Resurgence","All Suns' Dawn","Spider Spawning","Nissa's Revelation","Genesis Wave","Praetor's Counsel","Abundant Growth","Fertile Ground","Ancestral Mask","Awakening Zone","Enchantress's Presence","Song of the Dryads","Frontier Siege","Doubling Season","Honden of Life's Web","Epic Proportions","Mana Bloom","Mana Reflection","Primeval Bounty","Zendikar Resurgent","Courser of Kruphix","Eidolon of Blossoms","Nylea, God of the Hunt","Brago, King Eternal","Dragonlord Ojutai","Lavinia of the Tenth","Noyan Dar, Roil Shaper","Ojutai, Soul of Winter","Vanish into Memory","Evil Twin","Havengul Lich","Dragonlord Silumgar","Silumgar, the Drifting Death","Wrexial, the Risen Deep","Spite // Malice","Tymaret, the Murder King","Lyzolda, the Blood Witch","Kolaghan, the Storm's Fury","Bladewing the Risen","Grenzo, Dungeon Warden","Kaervek the Merciless","Radha, Heir to Keld","Mina and Denn, Wildborn","Wort, the Raidmother","Atarka, World Render","Dragonlord Atarka","Hull Breach","Rhys the Redeemed","Selvala, Explorer Returned","Captain Sisay","Dromoka, the Eternal","Dragonlord Dromoka","Mirari's Wake","Ayli, Eternal Pilgrim","Karlov of the Ghost Council","Daxos the Returned","Obzedat, Ghost Council","Vish Kal, Blood Arbiter","Utter End","Varolz, the Scar-Striped","Jarad, Golgari Lich Lord","Meren of Clan Nel Toth","Lord of Extinction","Grisly Salvage","Pharika, God of Affliction","Edric, Spymaster of Trest","Ezuri, Claw of Progress","Momir Vig, Simic Visionary","Prime Speaker Zegana","Urban Evolution","Fable of Wolf and Owl","Mizzix of the Izmagnus","Melek, Izzet Paragon","Niv-Mizzet, Dracogenius","Niv-Mizzet, the Firemind","Prophetic Bolt","Call the Skybreaker","Brion Stoutarm","Tajic, Blade of the Legion","Jor Kadeen, the Prevailer","Aurelia, the Warleader","Wear // Tear","Warleader's Helix","Kresh the Bloodbraided","Lavalanche","Marath, Will of the Wild","Mayael the Anima","Rafiq of the Many","Roon of the Hidden Realm","Zur the Enchanter","Sharuum the Hegemon","Thraximundar","Cruel Ultimatum","Narset, Enlightened Master","Jeskai Ascendancy","Zurgo Helmsmasher","Hide // Seek","Ghave, Guru of Spores","Karador, Ghost Chieftain","Sidisi, Brood Tyrant","Sultai Charm","Maelstrom Wanderer","Temur Ascendancy","Scion of the Ur-Dragon","Emrakul, the Aeons Torn","Millikin","Burnished Hart","Darksteel Myr","Pilgrim's Eye","Solemn Simulacrum","Karn, Silver Golem","Myr Battlesphere","Platinum Angel","Everflowing Chalice","Basilisk Collar","Brittle Effigy","Expedition Map","Scrabbling Claws","Wayfarer's Bauble","Alchemist's Vial","Armillary Sphere","Charcoal Diamond","Coldsteel Heart","Elsewhere Flask","Fellwar Stone","Fire Diamond","Hero's Blade","Ichor Wellspring","Kaleidostone","Lightning Greaves","Marble Diamond","Mind Stone","Moss Diamond","Mycosynth Wellspring","Prismatic Lens","Runechanter's Pike","Sky Diamond","Swiftfoot Boots","Sword of the Animist","Sword of the Chosen","Thought Vessel","Champion's Helm","Crystal Ball","Darksteel Ingot","Druidic Satchel","Helvault","Honor-Worn Shaku","Mimic Vat","Oblivion Stone","Pristine Talisman","Rings of Brighthearth","Sculpting Steel","Seer's Lantern","Tenza, Godo's Maul","Unstable Obelisk","Bonehoard","Hedron Archive","Perilous Vault","Seer's Sundial","Trading Post","Vedalken Orrery","Alhammarret's Archive","Cauldron of Souls","Conjurer's Closet","Engineered Explosives","Gilded Lotus","Heroes' Podium","Mind's Eye","Mirari","Pyromancer's Goggles","Caged Sun","Dreamstone Hedron","Staff of Nin","Tatsumasa, the Dragon's Fang","Akroma's Memorial","Elbrus, the Binding Blade","Sphinx-Bone Wand","Spine of Ish Sah","Arcane Sanctum","Azorius Chancery","Badlands","Barren Moor","Bayou","Blood Crypt","Boros Garrison","Breeding Pool","Buried Ruin","Cephalid Coliseum","Clifftop Retreat","Crucible of the Spirit Dragon","Crumbling Necropolis","Crypt of Agadeem","Dimir Aqueduct","Dragonskull Summit","Drowned Catacomb","Eiganjo Castle","Evolving Wilds","Flamekin Village","Forgotten Cave","Frontier Bivouac","Glacial Fortress","Godless Shrine","Golgari Rot Farm","Gruul Turf","Hallowed Fountain","Haven of the Spirit Dragon","Hinterland Harbor","Isolated Chapel","Izzet Boilerworks","Jungle Shrine","Krosan Verge","Lonely Sandbar","Lotus Vale","Mikokoro, Center of the Sea","Minamo, School at Water's Edge","Miren, the Moaning Well","Mystic Monastery","Nomad Outpost","Okina, Temple to the Grandfathers","Opulent Palace","Oran-Rief, the Vastwood","Orzhov Basilica","Overgrown Tomb","Plateau","Rakdos Carnarium","Reflecting Pool","Rootbound Crag","Rupture Spire","Sacred Foundry","Sandsteppe Citadel","Savage Lands","Savannah","Scrubland","Seaside Citadel","Secluded Steppe","Selesnya Sanctuary","Serra's Sanctum","Shinka, the Bloodsoaked Keep","Shizo, Death's Storehouse","Simic Growth Chamber","Springjack Pasture","Steam Vents","Stomping Ground","Sulfur Falls","Sunpetal Grove","Taiga","Temple Garden","Temple of Abandon","Temple of Deceit","Temple of Enlightenment","Temple of Epiphany","Temple of Malady","Temple of Malice","Temple of Mystery","Temple of Plenty","Temple of Silence","Temple of Triumph","Temple of the False God","Terramorphic Expanse","Tranquil Thicket","Transguild Promenade","Tropical Island","Tundra","Underground Sea","Volcanic Island","Watery Grave","Woodland Cemetery",));
+
+CUBES{"Vintage"}=forall("last(images(#))",("Isamaru, Hound of Konda","Kytheon, Hero of Akros","Mardu Woe-Reaper","Mother of Runes","Soldier of the Pantheon","Student of Warfare","Weathered Wayfarer","Leonin Arbiter","Leonin Relic-Warder","Seeker of the Way","Soulfire Grand Master","Spirit of the Labyrinth","Stoneforge Mystic","Thalia, Guardian of Thraben","Wall of Omens","War Priest of Thune","Banisher Priest","Blade Splicer","Brimaz, King of Oreskos","Fiend Hunter","Flickerwisp","Hallowed Spiritkeeper","Mirran Crusader","Monastery Mentor","Silverblade Paladin","Emeria Angel","Hero of Bladehold","Ranger of Eos","Restoration Angel","Archangel of Thune","Baneslayer Angel","Cloudgoat Ranger","Reveillark","Exalted Angel","Sun Titan","Angel of Serenity","Elesh Norn, Grand Cenobite","Iona, Shield of Emeria","Ajani, Caller of the Pride","Ajani Goldmane","Elspeth, Knight-Errant","Gideon Jura","Elspeth, Sun's Champion","Porcelain Legionnaire","Enlightened Tutor","Mana Tithe","Path to Exile","Swords to Plowshares","Disenchant","Secure the Wastes","Unexpectedly Absent","Balance","Council's Judgment","Lingering Souls","Spectral Procession","Armageddon","Day of Judgment","Ravages of War","Wrath of God","Land Tax","Honor of the Pure","Journey to Nowhere","Banishing Light","Oblivion Ring","Faith's Fetters","Moat","Parallax Wave","Spear of Heliod","Delver of Secrets","Augur of Bolas","Jace, Vryn's Prodigy","Looter il-Kor","Phantasmal Image","Snapcaster Mage","Deceiver Exarch","Man-o'-War","Pestermite","Thada Adel, Acquisitor","Trinket Mage","True-Name Nemesis","Vendilion Clique","Glen Elendra Archmage","Sower of Temptation","Venser, Shaper Savant","Meloku the Clouded Mirror","Mulldrifter","Riftwing Cloudskate","Consecrated Sphinx","Frost Titan","Palinchron","Jace Beleren","Jace, Architect of Thought","Jace, the Mind Sculptor","Tamiyo, the Moon Sage","Tezzeret the Seeker","Phyrexian Metamorph","Inkwell Leviathan","Ancestral Recall","Brainstorm","Force Spike","High Tide","Mental Misstep","Mystical Tutor","Quicken","Spell Pierce","Anticipate","Brain Freeze","Counterspell","Daze","Impulse","Mana Drain","Mana Leak","Remand","Frantic Search","Thirst for Knowledge","Cryptic Command","Fact or Fiction","Gifts Ungiven","Turnabout","Force of Will","Gush","Repeal","Dig Through Time","Ancestral Vision","Careful Study","Gitaxian Probe","Ponder","Preordain","Time Walk","Compulsive Research","Show and Tell","Timetwister","Tinker","Bribery","Mind's Desire","Time Spiral","Upheaval","Treasure Cruise","Control Magic","Opposition","Treachery","Putrid Imp","Brain Maggot","Dark Confidant","Gatekeeper of Malakir","Mesmeric Fiend","Nezumi Graverobber","Nezumi Shortfang","Oona's Prowler","Pack Rat","Bone Shredder","Hypnotic Specter","Lifebane Zombie","Liliana, Heretical Healer","Ophiomancer","Vampire Nighthawk","Bloodline Keeper","Braids, Cabal Minion","Desecration Demon","Nekrataal","Skinrender","Puppeteer Clique","Shriekmaw","Sidisi, Undead Vizier","Grave Titan","Massacre Wurm","Tasigur, the Golden Fang","Gurmag Angler","Sheoldred, Whispering One","Griselbrand","Tombstalker","Liliana of the Veil","Dark Ritual","Disfigure","Entomb","Vampiric Tutor","Cabal Ritual","Diabolic Edict","Go for the Throat","Shallow Grave","Ultimate Price","Corpse Dance","Dismember","Hero's Downfall","Makeshift Mannequin","Murderous Cut","Duress","Imperial Seal","Inquisition of Kozilek","Reanimate","Thoughtseize","Demonic Tutor","Hymn to Tourach","Buried Alive","Toxic Deluge","Yawgmoth's Will","Damnation","Tendrils of Agony","Dark Petition","Living Death","Unburial Rites","Mind Twist","Animate Dead","Bitterblossom","Necromancy","Necropotence","Recurring Nightmare","The Abyss","Yawgmoth's Bargain","Firedrinker Satyr","Goblin Guide","Goblin Welder","Grim Lavamancer","Jackal Pup","Monastery Swiftspear","Stromkirk Noble","Zurgo Bellstriker","Abbot of Keral Keep","Eidolon of the Great Revel","Gore-House Chainwalker","Kargan Dragonlord","Lightning Mauler","Torch Fiend","Young Pyromancer","Alesha, Who Smiles at Death","Chandra's Phoenix","Dualcaster Mage","Guttersnipe","Imperial Recruiter","Magus of the Moon","Manic Vandal","Avalanche Riders","Flametongue Kavu","Hellrider","Hero of Oxid Ridge","Kiki-Jiki, Mirror Breaker","Siege-Gang Commander","Stormbreath Dragon","Thundermaw Hellkite","Zealous Conscripts","Inferno Titan","Chandra, Pyromaster","Daretti, Scrap Savant","Koth of the Hammer","Sarkhan, the Dragonspeaker","Burst Lightning","Lightning Bolt","Ancient Grudge","Incinerate","Lightning Strike","Magma Jet","Searing Blaze","Searing Spear","Smash to Smithereens","Brimstone Volley","Char","Seething Song","Through the Breach","Fireblast","Chain Lightning","Faithless Looting","Firebolt","Mizzium Mortars","Roast","Exquisite Firecraft","Rift Bolt","Wheel of Fortune","Empty the Warrens","Burning of Xinye","Crater's Claws","Wildfire","Bonfire of the Damned","Sulfuric Vortex","Outpost Siege","Sneak Attack","Splinter Twin","Arbor Elf","Avacyn's Pilgrim","Birds of Paradise","Elves of Deep Shadow","Elvish Mystic","Fyndhorn Elves","Joraga Treespeaker","Llanowar Elves","Noble Hierarch","Den Protector","Fauna Shaman","Lotus Cobra","Rofellos, Llanowar Emissary","Sakura-Tribe Elder","Scavenging Ooze","Sylvan Caryatid","Tarmogoyf","Wall of Blossoms","Wall of Roots","Courser of Kruphix","Eternal Witness","Managorger Hydra","Reclamation Sage","Yavimaya Elder","Master of the Wild Hunt","Oracle of Mul Daya","Polukranos, World Eater","Thrun, the Last Troll","Vengevine","Acidic Slime","Deranged Hermit","Indrik Stomphowler","Thragtusk","Whisperwood Elemental","Wolfir Silverheart","Primeval Titan","Avenger of Zendikar","Craterhoof Behemoth","Terastodon","Woodfall Primus","Garruk Relentless","Garruk Wildspeaker","Freyalise, Llanowar's Fury","Garruk, Primal Hunter","Nissa, Worldwaker","Garruk, Caller of Beasts","Birthing Pod","Nature's Claim","Beast Within","Channel","Regrowth","Search for Tomorrow","Eureka","Harmonize","Natural Order","Primal Command","Stunted Growth","Green Sun's Zenith","Tooth and Nail","Genesis Wave","Fastbond","Oath of Druids","Survival of the Fittest","Sylvan Library","Awakening Zone","Heartbeat of Spring","Song of the Dryads","Pattern of Rebirth","Geist of Saint Traft","Brago, King Eternal","Venser, the Sojourner","Sphinx's Revelation","Supreme Verdict","Shadowmage Infiltrator","Dragonlord Silumgar","Ashiok, Nightmare Weaver","Tezzeret, Agent of Bolas","Baleful Strix","Rakdos Cackler","Olivia Voldaren","Terminate","Dreadbore","Rakdos's Return","Bloodbraid Elf","Huntmaster of the Fells","Dragonlord Atarka","Domri Rade","Xenagos, the Reveler","Qasali Pridemage","Kitchen Finks","Dragonlord Dromoka","Dromoka's Command","Mirari's Wake","Sin Collector","Sorin, Lord of Innistrad","Tidehollow Sculler","Utter End","Vindicate","Deathrite Shaman","Garruk, Apex Predator","Abrupt Decay","Maelstrom Pulse","Pernicious Deed","Edric, Spymaster of Trest","Trygon Predator","Mystic Snake","Kiora, the Crashing Wave","Bring to Light","Dack Fayden","Ral Zarek","Fire // Ice","Izzet Charm","Electrolyze","Figure of Destiny","Boros Reckoner","Ajani Vengeant","Boros Charm","Lightning Helix","Sphinx of the Steel Wind","Nicol Bolas, Planeswalker","Villainous Wealth","Progenitus","Kozilek, Butcher of Truth","Ulamog, the Ceaseless Hunger","Ulamog, the Infinite Gyre","Emrakul, the Aeons Torn","Karn Liberated","Ugin, the Spirit Dragon","Hangarback Walker","Phyrexian Revoker","Spellskite","Metalworker","Lodestone Golem","Solemn Simulacrum","Kuldotha Forgemaster","Duplicant","Wurmcoil Engine","Myr Battlesphere","Sundering Titan","Blightsteel Colossus","Black Lotus","Chrome Mox","Everflowing Chalice","Lion's Eye Diamond","Lotus Bloom","Mana Crypt","Mox Diamond","Mox Emerald","Mox Jet","Mox Pearl","Mox Ruby","Mox Sapphire","Zuran Orb","Mana Vault","Pithing Needle","Sensei's Divining Top","Skullclamp","Sol Ring","Azorius Signet","Boros Signet","Dimir Signet","Golgari Signet","Grim Monolith","Gruul Signet","Isochron Scepter","Izzet Signet","Lightning Greaves","Orzhov Signet","Pentad Prism","Rakdos Signet","Scroll Rack","Selesnya Signet","Shrine of Burning Rage","Simic Signet","Umezawa's Jitte","Winter Orb","Basalt Monolith","Coalition Relic","Crucible of Worlds","Staff of Domination","Sword of Body and Mind","Sword of Feast and Famine","Sword of Fire and Ice","Sword of Light and Shadow","Sword of War and Peace","Tangle Wire","Vedalken Shackles","Worn Powerstone","Hedron Archive","Nevinyrral's Disk","Smokestack","Thran Dynamo","Batterskull","Gilded Lotus","Memory Jar","Mindslaver","Academy Ruins","Ancient Tomb","Arid Mesa","Badlands","Bayou","Bazaar of Baghdad","Blood Crypt","Bloodstained Mire","Breeding Pool","Clifftop Retreat","Dragonskull Summit","Drowned Catacomb","Flooded Strand","Gaea's Cradle","Glacial Fortress","Godless Shrine","Hallowed Fountain","Hinterland Harbor","Isolated Chapel","Karakas","Library of Alexandria","Mana Confluence","Marsh Flats","Maze of Ith","Mishra's Factory","Mishra's Workshop","Misty Rainforest","Mutavault","Nykthos, Shrine to Nyx","Overgrown Tomb","Plateau","Polluted Delta","Rishadan Port","Rootbound Crag","Sacred Foundry","Savannah","Scalding Tarn","Scrubland","Shelldock Isle","Steam Vents","Stomping Ground","Strip Mine","Sulfur Falls","Sunpetal Grove","Taiga","Temple Garden","Temple of Abandon","Temple of Deceit","Temple of Enlightenment","Temple of Epiphany","Temple of Malady","Temple of Malice","Temple of Mystery","Temple of Plenty","Temple of Silence","Temple of Triumph","Tolarian Academy","Tropical Island","Tundra","Underground Sea","Urborg, Tomb of Yawgmoth","Verdant Catacombs","Volcanic Island","Wasteland","Watery Grave","Windswept Heath","Wooded Foothills","Woodland Cemetery",));
+
+
+
+ANONYMOUS_IP="www.wizards.com";
+
+# Order in which bonus sets need to be filled out
+REWARD_ORDER = ("UG","UH","P1","P2","P3","S1","COM","PC2","C13");
+
+if(!binary_load("products"))
+{
+  products=(,);
+  products{"Beta booster"}=(50000,2.45,("BE","booster"),50000);
+  products{"Beta starter"}=(50000,7.95,("BE","starter"),50000);
+  products{"Arabian Nights booster"}=(50000,1.45,("AN","booster"),50000);
+  products{"Antiquities booster"}=(50000,1.45,("AQ","booster"),50000);
+  products{"Legends booster"}=(50000,2.45,("LG","booster"),50000);
+  products{"The Dark booster"}=(50000,1.45,("DK","booster"),50000);
+  products{"Fallen Empires booster"}=(50000,1.45,("FE","booster"),50000);
+  binary_save("products");
+}
+
+promo.booster = (,);
+
+#
+# HOOKS
+# =====
+
+# SealedStartHook(sealed player name,mode name,money,options) - This hook is called after
+#   initialization of sealed mode is complete. Current user is a
+#   player entering in the sealed mode. Note: This hook can be called more often than end hook.
+#
+def SealedStartHook
+{
+  check_card(ARG[0],1098);
+  if(users{ARG[0]}[2]{1098}[0]==0)
+  {
+    Reply("Adding some lands...");
+    AddCards(ARG[0],1098,45);
+    AddCards(ARG[0],1135,45);
+    AddCards(ARG[0],1175,45);
+    AddCards(ARG[0],1201,45);
+    AddCards(ARG[0],1254,45);
+    Refresh(1098,1135,1175,1201,1254);
+  }
+}
+
+#
+# SealedStartCount() - Return number of cards that are automatically given to new sealed users.
+#
+def SealedStartCount
+{
+  return(225);
+}
+
+# SealedEndHook() - This hook is called before ending sealed
+#   mode. Current user is sealed mode player.
+#
+def SealedEndHook
+{
+  check_card(User(),1098);
+  if(users{User()}[2]{1098}[0] > 0)
+  {
+    Reply("Removing extra lands...");
+    DelCards(User(),1098,45);
+    DelCards(User(),1135,45);
+    DelCards(User(),1175,45);
+    DelCards(User(),1201,45);
+    DelCards(User(),1254,45);
+    Refresh(1098,1135,1175,1201,1254);
+  }
+}
+
+# EndGameHook(player name who declared,result,result options,player numbers,player names,bet) - This
+#   hook is called at the beginning of the game result
+#   prosessing. Note: this hook is not called for undecided results.
+#
+def EndGameHook
+{
+  if(length(ARG[3])>1)
+  {
+    push(p);
+    push(c);
+    for(p)(ARG[4])
+    {
+      if(users{p}[4][1][0]==0)
+      {
+         if(!has_entry("reward",users{UserWithoutMode(p)}[3][0]))
+           InitializeReward(p);
+         RewardCard(UserWithoutMode(p),users{UserWithoutMode(p)}[3][0]{"reward"});
+         
+         c=random(300);
+         if(c==297)
+           RewardCard(UserWithoutMode(p),"COM");
+         else if(c==298)
+           RewardCard(UserWithoutMode(p),"PC2");
+         else if(c==299)
+           RewardCard(UserWithoutMode(p),"C13");
+      }
+    }
+    c=pop();
+    p=pop();
+  }
+}
+
+#
+# RegisterHook(set) - Called after registering a set. Used for updating reward sets.
+#
+def RegisterHook
+{
+  push(i);
+  
+  i=find(ARG[0],REWARD_ORDER);
+  
+  if(i != NULL && i+1 < length(REWARD_ORDER))
+  {
+    users{User()}[3][0]{"reward"} = REWARD_ORDER[i+1];
+    Reply("{green}The reward cards you receive after a game will now be from {yellow}"+REWARD_ORDER[i+1]+"{green}.");
+    Reply("{green}If you still want to collect cards from the old set, you can use {yellow}/set reward "+REWARD_ORDER[i]+"{green}.");
+  }
+  
+  i=pop();
+}
+
+#
+# SetHook(setting name, value) - Called before checking a setting to apply. Return 0 if not handled.
+#
+def SetHook
+{
+  push(r);
+  push(s);
+  return(0);
+  
+  if(ARG[0]=="reward")
+  {
+    return(1);
+    if(typeof(ARG[1])!="string")
+    {
+      if(!has_entry("reward",users{UserWithoutMode()}[3][0]))
+        InitializeReward(UserWithoutMode());
+      Reply("{green}You are currently set up to receive your reward cards from {yellow}"+users{UserWithoutMode()}[3][0]{"reward"}+"{green}.");
+    }
+    else
+    {
+      s=uc(ARG[1]);
+      r=find(s,REWARD_ORDER);
+  
+      if(r != NULL)
+      {
+        push(f);
+        f=0;
+        
+# a player can always collect a reward set they've already completed
+        if(count(s,users{UserWithoutMode()}[3][2]))
+          f=1;
+# a player can always collect the first reward set
+        else if(r==0)
+          f=1;
+# otherwise, a player can only collect a reward set if all the previous sets in line are registered
+        else
+        {
+          for(s)(r)
+          {
+            if(count(REWARD_ORDER[s],users{UserWithoutMode()}[3][2]))
+              f=f+1;
+          }
+          f=f/r;
+        }
+        
+        if(f)
+        {
+          users{UserWithoutMode()}[3][0]{"reward"} = s;
+          Reply("{green}The reward cards you receive after a game will now be from {yellow}"+s+"{green}.");
+        }
+        else
+          Reply("{red}You still have other reward sets to collect before you can move on to that one.");
+        f=pop();
+      }
+      else
+        Reply("{red}That isn't a reward set. The reward sets are {yellow}"+join(REWARD_ORDER,", ")+"{red}, and they must be collected in that order.");
+    }
+  }
+  
+  s=pop();
+  r=pop();
+}
+
+# FUNCTIONS:
+#
+# InitializeReward(player) - Set a player's reward set to the next one they need to complete.
+#
+def InitializeReward
+{
+  push(r);
+  push(s);
+  
+  r="";
+  for(s)(REWARD_ORDER)
+  {
+    if(r=="" && !count(s,users{UserWithoutMode(ARG)}[3][2]))
+      r=s;
+  } 
+  
+  if(r=="")
+    r=s;
+  
+  users{UserWithoutMode(ARG)}[3][0]{"reward"} = r;
+  
+  s=pop();
+  r=pop();
+}
+
+#
+# RewardCard(player, set) - Give player a bonus card selected from the set.
+#
+def RewardCard
+{
+  push(p);
+  push(c);
+  push(s);
+  push(ready);
+  p=ARG[0];
+  s=ARG[1];
+  if(length(s)<1)
+  {
+    if(Con(p)>-1)
+      Send(Con(p),("Message","{red}You were supposed to get a reward card for the game, but something bad happened. Contact a server administrator."));
+    Log("Attempted to give "+p+" a reward card from bad set: "+tostr(s));
+  }
+  else
+  {
+    if(!has_entry(s,promo.booster))
+      promo.booster{s} = (,);
+  
+    if(!length(promo.booster{s}))
+      promo.booster{s}=shuffle(flatten(Produce(s,"booster",1)));
+  }
+  
+  c=first(promo.booster{s});
+  promo.booster{s}=tail(promo.booster{s});
+  AddCard(p,c);
+  SendAll("Message","{blue}"+p+" receives{gold} #"+c+"# {blue}as a reward for the game.");
+  if(Con(p)>-1)
+    Send(Con(p),("SetCardbook",((c,users{p}[2]{c}),)));
+           
+  ready=pop();
+  s=pop();
+  c=pop();
+  p=pop();
+}
+
+
+command.acl{"/addvirtualproduct"}=(-1,("God","Salesman"));
+
+#
+# CommandAddvirtualproduct(num, virtual set code, type, price, name) - Implementation of the command /addvirtualproduct.
+#  Adds a virtual product, which needs its own distribution or specific function.
+#
+def CommandAddvirtualproduct
+{
+  push(n);
+  push(b);
+  push(p);
+  push(i);
+  n=toint(ARG[0]);
+  b=(ARG[1],ARG[2]);
+  p=toreal(ARG[3]);
+  if(length(ARG)>5)
+    for(i)(length(ARG)-5)
+      ARG[4]=ARG[4]+" "+ARG[5+i];
+  if(n==0)
+    Reply("{red}First argument must be > 0 (# of products).");
+  else if(p <= 0.0)
+    Reply("{red}Fourth argument must be > 0.0 (# price).");
+  else if(length(ARG)<5)
+    Reply("{red}Not enough arguments.");
+  else
+  {
+    push(e);
+    if(!has_entry(ARG[1],set.data))
+    {
+      i=ARG[4]+" "+ARG[2];
+      if(has_entry(i,products))
+        Reply("{red}Product already added.");
+      else
+      {
+        e=(n,p,b,n);
+        SendAll("Message","{green}New product "+i+" arrived!");
+        products{i}=e;
+        SendAll("SetProducts",products);
+      }
+    }
+    else
+      Reply("{red}"+ARG[1]+" is a valid product code. Use /addproduct instead.");
+    e=pop();
+  }
+  i=pop();
+  p=pop();
+  b=pop();
+  n=pop();
+}
+
+#
+# InitDistributions() - Initialize product distribution data.
+#
+def InitDistributions
+{
+  distribution=(,);
+# BE products have custom procedure
+  distribution{"AN"}=(,);
+  distribution{"AN"}{"booster"}=((5,"C"),(2,"U"),(1,"R"));
+  distribution{"AQ"}=(,);
+  distribution{"AQ"}{"booster"}=((5,"C"),(2,"U"),(1,"R"));
+  distribution{"LG"}=(,);
+  distribution{"LG"}{"booster"}=((11,"C"),(3,"U"),(1,"R"));
+  distribution{"DK"}=(,);
+  distribution{"DK"}{"booster"}=((5,"C"),(2,"U"),(1,"R"));
+  distribution{"FE"}=(,);
+  distribution{"FE"}{"booster"}=((5,"C"),(2,"U"),(1,"R"));
+  distribution{"IA"}=(,);
+  distribution{"IA"}{"booster"}=((11,"C"),(3,"U"),(1,"R"));
+  distribution{"IA"}{"starter"}=((22,"2*L"),(26,"C"),(9,"U"),(3,"R"));
+  distribution{"HL"}=(,);
+  distribution{"HL"}{"booster"}=((5,"C"),(2,"U"),(1,"R"));
+  distribution{"AL"}=(,);
+  distribution{"AL"}{"booster"}=((8,"C"),(3,"U"),(1,"R"));
+  distribution{"MI"}=(,);
+  distribution{"MI"}{"booster"}=((11,"C"),(3,"U"),(1,"R"));
+  distribution{"MI"}{"starter"}=((22,"2*L"),(26,"C"),(9,"U"),(3,"R"));
+  distribution{"VI"}=(,);
+  distribution{"VI"}{"booster"}=((11,"C"),(3,"U"),(1,"R"));
+  distribution{"WL"}=(,);
+  distribution{"WL"}{"booster"}=((11,"C"),(3,"U"),(1,"R"));
+  distribution{"TE"}=(,);
+  distribution{"TE"}{"booster"}=((11,"C"),(3,"U"),(1,"R"));
+  distribution{"TE"}{"starter"}=((22,"2*L"),(26,"C"),(9,"U"),(3,"R"));
+  distribution{"SH"}=(,);
+  distribution{"SH"}{"booster"}=((11,"C"),(3,"U"),(1,"R"));
+  distribution{"EX"}=(,);
+  distribution{"EX"}{"booster"}=((11,"C"),(3,"U"),(1,"R"));
+  distribution{"US"}=(,);
+  distribution{"US"}{"booster"}=((11,"C"),(3,"U"),(1,"R"));
+  distribution{"US"}{"starter"}=((30,"2*L"),(32,"C"),(10,"U"),(3,"R"));
+  distribution{"UL"}=(,);
+  distribution{"UL"}{"booster"}=((11,"C"),(3,"U"),(1,"R"));
+  distribution{"UD"}=(,);
+  distribution{"UD"}{"booster"}=((11,"C"),(3,"U"),(1,"R"));
+  distribution{"MM"}=(,);
+  distribution{"MM"}{"booster"}=((11,"C"),(3,"U"),(1,"R"));
+  distribution{"MM"}{"starter"}=((30,"2*L"),(32,"C"),(10,"U"),(3,"R"));
+  distribution{"NE"}=(,);
+  distribution{"NE"}{"booster"}=((11,"C"),(3,"U"),(1,"R"));
+  distribution{"PY"}=(,);
+  distribution{"PY"}{"booster"}=((11,"C"),(3,"U"),(1,"R"));
+  distribution{"IN"}=(,);
+  distribution{"IN"}{"booster"}=((11,"C"),(3,"U"),(1,"R"));
+  distribution{"IN"}{"starter"}=((30,"2*L"),(32,"C"),(10,"U"),(3,"R"));
+  distribution{"PS"}=(,);
+  distribution{"PS"}{"booster"}=((11,"C"),(3,"U"),(1,"R"));
+  distribution{"AP"}=(,);
+  distribution{"AP"}{"booster"}=((11,"C"),(3,"U"),(1,"R"));
+  distribution{"OD"}=(,);
+  distribution{"OD"}{"booster"}=((11,"C"),(3,"U"),(1,"R"));
+  distribution{"OD"}{"starter"}=((30,"2*L"),(32,"C"),(10,"U"),(3,"R"));
+  distribution{"UG"}=(,);
+  distribution{"UG"}{"booster"}=((1,"L"),(6,"C"),(2,"U"),(1,"R"));
+  distribution{"TO"}=(,);
+  distribution{"TO"}{"booster"}=((11,"C"),(3,"U"),(1,"R"));
+  distribution{"JD"}=(,);
+  distribution{"JD"}{"booster"}=((11,"C"),(3,"U"),(1,"R"));
+  distribution{"ON"}=(,);
+  distribution{"ON"}{"booster"}=((11,"C"),(3,"U"),(1,"R"));
+  distribution{"ON"}{"starter"}=((30,"2*L"),(32,"C"),(10,"U"),(3,"R"));
+  distribution{"LE"}=(,);
+  distribution{"LE"}{"booster"}=((11,"C"),(3,"U"),(1,"R"));
+  distribution{"SC"}=(,);
+  distribution{"SC"}{"booster"}=((11,"C"),(3,"U"),(1,"R"));
+  distribution{"MR"}=(,);
+  distribution{"MR"}{"booster"}=((11,"C"),(3,"U"),(1,"R"));
+  distribution{"MR"}{"starter"}=((30,"2*L"),(32,"C"),(10,"U"),(3,"R"));
+  distribution{"4TH"}=(,);
+  distribution{"4TH"}{"booster"}=((11,"C"),(3,"U"),(1,"R"));
+  distribution{"4TH"}{"starter"}=((22,"2*L"),(26,"C"),(9,"U"),(3,"R"));
+  distribution{"5TH"}=(,);
+  distribution{"5TH"}{"booster"}=((11,"C"),(3,"U"),(1,"R"));
+  distribution{"5TH"}{"starter"}=((22,"2*L"),(26,"C"),(9,"U"),(3,"R"));
+  distribution{"6TH"}=(,);
+  distribution{"6TH"}{"booster"}=((11,"C"),(3,"U"),(1,"R"));
+  distribution{"6TH"}{"starter"}=((30,"2*L"),(32,"C"),(10,"U"),(3,"R"));
+  distribution{"7TH"}=(,);
+  distribution{"7TH"}{"booster"}=((1,"L"),(10,"C"),(3,"U"),(1,"R"));
+  distribution{"7TH"}{"starter"}=((30,"2*L"),(32,"C"),(10,"U"),(3,"R"));
+  distribution{"8TH"}=(,);
+  distribution{"8TH"}{"booster"}=((11,"C"),(3,"U"),(1,"R"));
+  distribution{"8TH"}{"starter"}=((30,"2*L"),(32,"C"),(10,"U"),(3,"R"));
+  distribution{"9TH"}=(,);
+  distribution{"9TH"}{"booster"}=((11,"C"),(3,"U"),(1,"R"));
+  distribution{"9TH"}{"starter"}=((30,"2*L"),(32,"C"),(10,"U"),(3,"R"));
+  distribution{"XE"}=(,);
+  distribution{"XE"}{"booster"}=((11,"C"),(3,"U"),(1,"R"));
+  distribution{"XE"}{"starter"}=((30,"2*L"),(32,"C"),(10,"U"),(3,"R"));
+  distribution{"M10"}=(,);
+  distribution{"M10"}{"booster"}=((11,"C"),(3,"U"),(1,"R+R+M"));
+  distribution{"M11"}=(,);
+  distribution{"M11"}{"booster"}=((11,"C"),(3,"U"),(1,"R+R+M"));
+  distribution{"M12"}=(,);
+  distribution{"M12"}{"booster"}=((11,"C"),(3,"U"),(1,"R+R+M"));
+  distribution{"RV"}=(,);
+  distribution{"RV"}{"booster"}=((11,"C+3*L"),(3,"U+2*L"),(1,"R"));
+  distribution{"RV"}{"starter"}=((45,"C+3*L"),(13,"U+2*L"),(2,"R"));
+  distribution{"DS"}=(,);
+  distribution{"DS"}{"booster"}=((11,"C"),(3,"U"),(1,"R"));
+  distribution{"FD"}=(,);
+  distribution{"FD"}{"booster"}=((11,"C"),(3,"U"),(1,"R"));
+  distribution{"CK"}=(,);
+  distribution{"CK"}{"booster"}=((11,"C"),(3,"U"),(1,"R"));
+  distribution{"CK"}{"starter"}=((30,"2*L"),(32,"C"),(10,"U"),(3,"R"));
+  distribution{"UH"}=(,);
+  distribution{"UH"}{"booster"}=((10,"C"),(3,"U"),(1,"L"),(1,"R"));
+  distribution{"BK"}=(,);
+  distribution{"BK"}{"booster"}=((1,"L"),(10,"C"),(3,"U"),(1,"R"));
+  distribution{"P1"}=(,);
+  distribution{"P1"}{"booster"}=((1,"L"),(10,"C"),(3,"U"),(1,"R"));
+  distribution{"P2"}=(,);
+  distribution{"P2"}{"booster"}=((1,"L"),(10,"C"),(3,"U"),(1,"R"));
+  distribution{"P3"}=(,);
+  distribution{"P3"}{"booster"}=((1,"L"),(10,"C"),(3,"U"),(1,"R"));
+  distribution{"S1"}=(,);
+  distribution{"S1"}{"booster"}=((1,"L"),(10,"C"),(3,"U"),(1,"R"));
+  distribution{"SK"}=(,);
+  distribution{"SK"}{"booster"}=((11,"C"),(3,"U"),(1,"R"));
+  distribution{"RA"}=(,);
+  distribution{"RA"}{"booster"}=((11,"C"),(3,"U"),(1,"R"));
+  distribution{"RA"}{"starter"}=((30,"2*L"),(32,"C"),(10,"U"),(3,"R"));
+  distribution{"GP"}=(,);
+  distribution{"GP"}{"booster"}=((11,"C"),(3,"U"),(1,"R"));
+  distribution{"DI"}=(,);
+  distribution{"DI"}{"booster"}=((11,"C"),(3,"U"),(1,"R"));
+  distribution{"CS"}=(,);
+  distribution{"CS"}{"booster"}=((11,"C"),(3,"U"),(1,"R"));
+  distribution{"TS"}=(,);
+  distribution{"TS"}{"booster"}=((10,"C"),(3,"U"),(1,"S"),(1,"R"));
+  distribution{"TS"}{"starter"}=((30,"2*L"),(29,"C"),(10,"U"),(3,"S"),(3,"R"));
+  distribution{"PC"}=(,);
+  distribution{"PC"}{"booster"}=((11,"C"),(3,"U"),(1,"R"));
+  distribution{"FS"}=(,);
+  distribution{"FS"}{"booster"}=((11,"C"),(3,"U"),(1,"R"));
+  distribution{"LRW"}=(,);
+  distribution{"LRW"}{"booster"}=((1,"L"),(10,"C"),(3,"U"),(1,"R"));
+  distribution{"MOR"}=(,);
+  distribution{"MOR"}{"booster"}=((11,"C"),(3,"U"),(1,"R"));
+  distribution{"SM"}=(,);
+  distribution{"SM"}{"booster"}=((1,"L"),(10,"C"),(3,"U"),(1,"R"));
+  distribution{"EVE"}=(,);
+  distribution{"EVE"}{"booster"}=((11,"C"),(3,"U"),(1,"R"));
+  distribution{"ALA"}=(,);
+  distribution{"ALA"}{"booster"}=((1,"L"),(10,"C"),(3,"U"),(1,"2*R+M"));
+  distribution{"CFX"}=(,);
+  distribution{"CFX"}{"booster"}=((11,"C"),(3,"U"),(1,"2*R+M"));
+  distribution{"ARE"}=(,);
+  distribution{"ARE"}{"booster"}=((11,"C"),(3,"U"),(1,"2*R+M"));
+  distribution{"ZDK"}=(,);
+  distribution{"ZDK"}{"booster"}=((1,"L"),(10,"C"),(3,"U"),(1,"2*R+M"));
+  distribution{"WWK"}=(,);
+  distribution{"WWK"}{"booster"}=((1,"ZDK/L"),(10,"C"),(3,"U"),(1,"2*R+M"));
+  distribution{"ROE"}=(,);
+  distribution{"ROE"}{"booster"}=((1,"L"),(10,"C"),(3,"U"),(1,"2*R+M"));
+  distribution{"SOM"}=(,);
+  distribution{"SOM"}{"booster"}=((1,"L"),(10,"C"),(3,"U"),(1,"2*R+M"));
+  distribution{"MBS"}=(,);
+  distribution{"MBS"}{"booster"}=((1,"L"),(10,"C"),(3,"U"),(1,"2*R+M"));
+  distribution{"NPH"}=(,);
+  distribution{"NPH"}{"booster"}=((1,"L"),(10,"C"),(3,"U"),(1,"2*R+M"));
+  distribution{"ISD"}=(,);
+  distribution{"ISD"}{"booster"}=((1,"L"),(9,"C"),(3,"U"),(1,"2*R+M"),(1,"11*SC+6*SU+2*SR+SM"));
+  distribution{"DKA"}=(,);
+  distribution{"DKA"}{"booster"}=((1,"ISD/L"),(9,"C"),(3,"U"),(1,"2*R+M"),(1,"12*SC+6*SU+2*SR+SM"));
+  distribution{"AVR"}=(,);
+  distribution{"AVR"}{"booster"}=((1,"L"),(10,"C"),(3,"U"),(1,"2*R+M"));
+  distribution{"M13"}=(,);
+  distribution{"M13"}{"booster"}=((1,"L"),(10,"C"),(3,"U"),(1,"2*R+M"));
+# these next three sets don't actually have boosters, but the reward function needs to be able to generate them
+  distribution{"COM"}=(,);
+  distribution{"COM"}{"booster"}=((1,"L"),(10,"C"),(3,"U"),(1,"2*R+M"));
+  distribution{"PC2"}=(,);
+  distribution{"PC2"}{"booster"}=((1,"L"),(10,"C"),(3,"U"),(1,"2*R+M"));
+  distribution{"C13"}=(,);
+  distribution{"C13"}{"booster"}=((1,"L"),(10,"C"),(3,"U"),(1,"2*R+M"));
+  distribution{"RTR"}=(,);
+  distribution{"RTR"}{"booster"}=((1,"L"),(10,"C"),(3,"U"),(1,"2*R+M"));
+  distribution{"GTC"}=(,);
+  distribution{"GTC"}{"booster"}=((1,"RTR/L"),(10,"C"),(3,"U"),(1,"2*R+M"));
+  distribution{"DGM"}=(,);
+  distribution{"DGM"}{"booster"}=((1,"10*L+2*RTR/RL+2*GTC/RL+ML"),(10,"C"),(3,"U"),(1,"2*R+M"));
+# the following is only for reference, since MOD has a separate procedure
+  distribution{"MOD"}=(,);
+  distribution{"MOD"}{"booster"}=((1,"12*C+6*U+2*R+M"),(10,"C"),(3,"U"),(1,"2*R+M"));
+  distribution{"M14"}=(,);
+  distribution{"M14"}{"booster"}=((1,"L"),(10,"C"),(3,"U"),(1,"2*R+M"));
+  distribution{"THS"}=(,);
+  distribution{"THS"}{"booster"}=((1,"L"),(10,"C"),(3,"U"),(1,"2*R+M"));
+  distribution{"BNG"}=(,);
+  distribution{"BNG"}{"booster"}=((1,"THS/L"),(10,"C"),(3,"U"),(1,"2*R+M"));
+  distribution{"JOU"}=(,);
+  distribution{"JOU"}{"booster"}=((1,"THS/L"),(10,"C"),(3,"U"),(1,"2*R+M"));
+# the following is only for reference, since VMA has a separate procedure
+  distribution{"VMA"}=(,);
+  distribution{"VMA"}{"booster"}=((1,"285*C+108*U+24*R+12*M+92*S"),(10,"C"),(3,"U"),(1,"2*R+M"));
+  distribution{"CNS"}=(,);
+  distribution{"CNS"}{"booster"}=((1,"4*SC+2*SU+SR"),(10,"C"),(3,"U"),(1,"2*R+M"));
+  distribution{"M15"}=(,);
+  distribution{"M15"}{"booster"}=((1,3*"L"+S),(10,"C"),(3,"U"),(1,"2*R+M"));
+  distribution{"KTK"}=(,);
+  distribution{"KTK"}{"booster"}=((1,"L"),(10,"C"),(3,"U"),(1,"2*R+M"));
+  distribution{"C14"}=(,);
+  distribution{"C14"}{"booster"}=((1,"L"),(10,"C"),(3,"U"),(1,"2*R+M"));
+  distribution{"FRF"}=(,);
+  distribution{"FRF"}{"booster"}=((1,"L+20*CL+2*KTK/RL"),(10,"C"),(3,"U"),(1,"2*R+M"));
+  distribution{"DTK"}=(,);
+  distribution{"DTK"}{"booster"}=((1,"L"),(10,"C"),(3,"U"),(1,"2*R+M"));
+  distribution{"TPR"}=(,);
+  distribution{"TPR"}{"booster"}=((1,"L"),(10,"C"),(3,"U"),(1,"2*R+M"));
+# the following is only for reference, since MM2 has a separate procedure
+  distribution{"MM2"}=(,);
+  distribution{"MM2"}{"booster"}=((1,"12*C+6*U+2*R+M"),(10,"C"),(3,"U"),(1,"2*R+M"));
+# the following is only here to enable the set for drafting purposes, since CHAOS is a virtual booster
+  distribution{"CHAOS"}=(,);
+  distribution{"CHAOS"}{"booster"}=((15,"BE/L"));
+# the following is only here to enable the set for drafting purposes, since CUBE is a virtual booster
+  distribution{"CUBE"}=(,);
+  distribution{"CUBE"}{"booster"}=((15,"BE/L"));
+  distribution{"ORI"}=(,);
+  distribution{"ORI"}{"booster"}=((1,"L"),(10,"C"),(3,"U"),(1,"2*R+M"));
+  distribution{"BFZ"}=(,);
+  distribution{"BFZ"}{"booster"}=((1,"L"),(1,"50*C+EXP/M"),(9,"C"),(3,"U"),(1,"2*R+M"));
+  distribution{"C15"}=(,);
+  distribution{"C15"}{"booster"}=((1,"L"),(10,"C"),(3,"U"),(1,"2*R+M"));
+  distribution{"OGW"}=(,);
+  distribution{"OGW"}{"booster"}=((1,"BFZ/L"),(1,"58*C+29*CL+EXP/SM"),(9,"2*C+CL"),(3,"U"),(1,"2*R+M"));
+  distribution{"SOI"}=(,);
+  distribution{"SOI"}{"booster"}=((1,"L"),(1,"C+2*SR+SM"),(8,"C"),(1,"10*SC+4*SU"),(3,"U"),(1,"2*R+M"));
+}
+
+#
+# ProduceCUBE_Booster() - Produce booster for cube drafting purposes.
+#
+def ProduceCUBE_Booster
+{
+  push(j);
+  j=left(cubecontents{con},15);
+  return(j);
+  cubecontents{con}=right(cubecontents{con},length(cubecontents{con})-15);
+  j=pop();
+}
+
+#
+# ProduceCHAOS_Booster() - Produce random booster for chaos limited purposes.
+#
+def ProduceCHAOS_Booster
+{
+  push(randproducts);
+  push(j);
+  
+  randproduct=(,);
+  for(j)(keys(products))
+  {
+    if(products{j}[1]==2.45 && has_entry(products{j}[2][0],set.data))
+      randproduct=randproduct+(j,);
+  }
+  j=randproduct[random(length(randproduct))];
+  j=(call("Produce",(products{j}[2]+(1,))))[0];
+  return(j);
+  j=pop();
+  randproduct=pop();
+}
+
+#
+# ProduceVMA_Booster() - Produce Vintage Masters booster.
+#
+def ProduceVMA_Booster
+{
+  push(p);
+  push(i);
+  p=RandomCardSet("VMA",((11,"C"),(3,"U"),(1,"2*R+M")));
+
+# falling back on the procedure given in distribution{"VMA"} involves
+# constructing and destructing a 40000-element list for every single pack,
+# which is wasteful
+  i=random(41133);
+
+  if(i<828)
+    p[0]=random(cards{"VMA"}{"S"});
+  else if(i<1188)
+    p[0]=random(cards{"VMA"}{"M"});
+  else if(i<3708)
+    p[0]=random(cards{"VMA"}{"R"});
+  else if(i<12348)
+    p[0]=random(cards{"VMA"}{"U"});
+  else
+# it's already a common, but replace it with a new one anyway
+# since the foil slot is supposed to allow duplicates
+    p[0]=random(cards{"VMA"}{"C"});
+
+  return(p);
+  i=pop();
+  p=pop();
+}
+
+#
+# ProduceMOD_Booster() - Produce Modern Masters booster.
+#
+def ProduceMOD_Booster
+{
+  push(p);
+  push(i);
+  p=RandomCardSet("MOD",((11,"C"),(3,"U"),(1,"2*R+M")));
+
+# falling back on the procedure given in distribution{"MOD"} involves
+# constructing and destructing a 1600-element list for every single pack,
+# which is wasteful
+  i=random(1693);
+
+  if(i<15)
+    p[0]=random(cards{"MOD"}{"M"});
+  else if(i<121)
+    p[0]=random(cards{"MOD"}{"R"});
+  else if(i<481)
+    p[0]=random(cards{"MOD"}{"U"});
+  else
+# it's already a common, but replace it with a new one anyway
+# since the foil slot is supposed to allow duplicates
+    p[0]=random(cards{"MOD"}{"C"});
+
+  return(p);
+  i=pop();
+  p=pop();
+}
+
+#
+# ProduceMM2_Booster() - Produce Modern Masters booster.
+#
+def ProduceMM2_Booster
+{
+  push(p);
+  push(i);
+  p=RandomCardSet("MM2",((11,"C"),(3,"U"),(1,"2*R+M")));
+
+# falling back on the procedure given in distribution{"MM2"} involves
+# constructing and destructing a 1800-element list for every single pack,
+# which is wasteful
+  i=random(1813);
+
+  if(i<15)
+    p[0]=random(cards{"MM2"}{"M"});
+  else if(i<121)
+    p[0]=random(cards{"MM2"}{"R"});
+  else if(i<601)
+    p[0]=random(cards{"MM2"}{"U"});
+  else
+# it's already a common, but replace it with a new one anyway
+# since the foil slot is supposed to allow duplicates
+    p[0]=random(cards{"MM2"}{"C"});
+
+  return(p);
+  i=pop();
+  p=pop();
+}
+
+#
+# ProduceBE_Booster() - Produce beta booster.
+#
+def ProduceBE_Booster
+{
+  push(p);
+  p=RandomCardSet("BE",((11,"C"),(3,"U"),(1,"R")));
+  i=0;
+  while(i < 11)
+  {
+    if(random(121) < 46)
+      p[i]=random(cards{"BE"}{"L"});
+    i=i+1;
+  }
+  while(i < 14)
+  {
+    if(random(121) < 26)
+      p[i]=random(cards{"BE"}{"L"});
+    i=i+1;
+  }
+  if(random(121) < 4)
+    p[i]=random(cards{"BE"}{"L"});
+  return(p);
+  p=pop();
+}
+
+#
+# ProduceBE_Starter() - Produce beta starter.
+#
+def ProduceBE_Starter
+{
+  push(p);
+  p=RandomCardSet("BE",((45,"C"),(13,"U"),(2,"R")));
+  i=0;
+  while(i < 45)
+  {
+    if(random(121) < 46)
+      p[i]=random(cards{"BE"}{"L"});
+    i=i+1;
+  }
+  while(i < 58)
+  {
+    if(random(121) < 26)
+      p[i]=random(cards{"BE"}{"L"});
+    i=i+1;
+  }
+  if(random(121) < 4)
+    p[58]=random(cards{"BE"}{"L"});
+  if(random(121) < 4)
+    p[59]=random(cards{"BE"}{"L"});
+  return(p);
+  p=pop();
+}

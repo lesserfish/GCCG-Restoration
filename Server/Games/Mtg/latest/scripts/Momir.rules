@@ -1,0 +1,13 @@
+#
+# DECK RULES
+# ==========
+
+deck_rules=(,);
+server_description="{shadow}{green}Momir Basic";
+deck_rules{"Momir Basic"}=(,);
+deck_rules{"Momir Basic"}{"deck"}=(
+  ("RuleDeckMinimum",60),
+  ("RuleDeckMaximum",60),
+  ("RuleLimitEachByExpression",(0,"Attr(\"type\",#) != \"Basic Land\" && Attr(\"type\",#) != \"Basic Snow Land\"")),
+  ("RulePass",NULL),
+);

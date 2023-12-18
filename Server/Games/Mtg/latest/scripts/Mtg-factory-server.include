@@ -1,0 +1,434 @@
+#
+# VARIABLES:
+#
+# distribution{set}{product} - rarity distribution of the product
+# port - server port of the factory
+# rarities - generate these distributions from the card data
+#
+# FUNCTIONS:
+#
+# InitDistributions() - Initialize product distribution data.
+#
+
+if(!port)
+  port=29101;
+
+#
+# InitDistributions() - Initialize product distribution data.
+#
+def InitDistributions
+{
+  distribution=(,);
+# BE products have custom procedure
+  distribution{"AN"}=(,);
+  distribution{"AN"}{"booster"}=((5,"C"),(2,"U"),(1,"R"));
+  distribution{"AQ"}=(,);
+  distribution{"AQ"}{"booster"}=((5,"C"),(2,"U"),(1,"R"));
+  distribution{"LG"}=(,);
+  distribution{"LG"}{"booster"}=((11,"C"),(3,"U"),(1,"R"));
+  distribution{"DK"}=(,);
+  distribution{"DK"}{"booster"}=((5,"C"),(2,"U"),(1,"R"));
+  distribution{"FE"}=(,);
+  distribution{"FE"}{"booster"}=((5,"C"),(2,"U"),(1,"R"));
+  distribution{"IA"}=(,);
+  distribution{"IA"}{"booster"}=((11,"C"),(3,"U"),(1,"R"));
+  distribution{"IA"}{"starter"}=((22,"2*L"),(26,"C"),(9,"U"),(3,"R"));
+  distribution{"HL"}=(,);
+  distribution{"HL"}{"booster"}=((5,"C"),(2,"U"),(1,"R"));
+  distribution{"AL"}=(,);
+  distribution{"AL"}{"booster"}=((8,"C"),(3,"U"),(1,"R"));
+  distribution{"MI"}=(,);
+  distribution{"MI"}{"booster"}=((11,"C"),(3,"U"),(1,"R"));
+  distribution{"MI"}{"starter"}=((22,"2*L"),(26,"C"),(9,"U"),(3,"R"));
+  distribution{"VI"}=(,);
+  distribution{"VI"}{"booster"}=((11,"C"),(3,"U"),(1,"R"));
+  distribution{"WL"}=(,);
+  distribution{"WL"}{"booster"}=((11,"C"),(3,"U"),(1,"R"));
+  distribution{"TE"}=(,);
+  distribution{"TE"}{"booster"}=((11,"C"),(3,"U"),(1,"R"));
+  distribution{"TE"}{"starter"}=((22,"2*L"),(26,"C"),(9,"U"),(3,"R"));
+  distribution{"SH"}=(,);
+  distribution{"SH"}{"booster"}=((11,"C"),(3,"U"),(1,"R"));
+  distribution{"EX"}=(,);
+  distribution{"EX"}{"booster"}=((11,"C"),(3,"U"),(1,"R"));
+  distribution{"US"}=(,);
+  distribution{"US"}{"booster"}=((11,"C"),(3,"U"),(1,"R"));
+  distribution{"US"}{"starter"}=((30,"2*L"),(32,"C"),(10,"U"),(3,"R"));
+  distribution{"UL"}=(,);
+  distribution{"UL"}{"booster"}=((11,"C"),(3,"U"),(1,"R"));
+  distribution{"UD"}=(,);
+  distribution{"UD"}{"booster"}=((11,"C"),(3,"U"),(1,"R"));
+  distribution{"MM"}=(,);
+  distribution{"MM"}{"booster"}=((11,"C"),(3,"U"),(1,"R"));
+  distribution{"MM"}{"starter"}=((30,"2*L"),(32,"C"),(10,"U"),(3,"R"));
+  distribution{"NE"}=(,);
+  distribution{"NE"}{"booster"}=((11,"C"),(3,"U"),(1,"R"));
+  distribution{"PY"}=(,);
+  distribution{"PY"}{"booster"}=((11,"C"),(3,"U"),(1,"R"));
+  distribution{"IN"}=(,);
+  distribution{"IN"}{"booster"}=((11,"C"),(3,"U"),(1,"R"));
+  distribution{"IN"}{"starter"}=((30,"2*L"),(32,"C"),(10,"U"),(3,"R"));
+  distribution{"PS"}=(,);
+  distribution{"PS"}{"booster"}=((11,"C"),(3,"U"),(1,"R"));
+  distribution{"AP"}=(,);
+  distribution{"AP"}{"booster"}=((11,"C"),(3,"U"),(1,"R"));
+  distribution{"OD"}=(,);
+  distribution{"OD"}{"booster"}=((11,"C"),(3,"U"),(1,"R"));
+  distribution{"OD"}{"starter"}=((30,"2*L"),(32,"C"),(10,"U"),(3,"R"));
+  distribution{"UG"}=(,);
+  distribution{"UG"}{"booster"}=((1,"L"),(6,"C"),(2,"U"),(1,"R"));
+  distribution{"TO"}=(,);
+  distribution{"TO"}{"booster"}=((11,"C"),(3,"U"),(1,"R"));
+  distribution{"JD"}=(,);
+  distribution{"JD"}{"booster"}=((11,"C"),(3,"U"),(1,"R"));
+  distribution{"ON"}=(,);
+  distribution{"ON"}{"booster"}=((11,"C"),(3,"U"),(1,"R"));
+  distribution{"ON"}{"starter"}=((30,"2*L"),(32,"C"),(10,"U"),(3,"R"));
+  distribution{"LE"}=(,);
+  distribution{"LE"}{"booster"}=((11,"C"),(3,"U"),(1,"R"));
+  distribution{"SC"}=(,);
+  distribution{"SC"}{"booster"}=((11,"C"),(3,"U"),(1,"R"));
+  distribution{"MR"}=(,);
+  distribution{"MR"}{"booster"}=((11,"C"),(3,"U"),(1,"R"));
+  distribution{"MR"}{"starter"}=((30,"2*L"),(32,"C"),(10,"U"),(3,"R"));
+  distribution{"4TH"}=(,);
+  distribution{"4TH"}{"booster"}=((11,"C"),(3,"U"),(1,"R"));
+  distribution{"4TH"}{"starter"}=((22,"2*L"),(26,"C"),(9,"U"),(3,"R"));
+  distribution{"5TH"}=(,);
+  distribution{"5TH"}{"booster"}=((11,"C"),(3,"U"),(1,"R"));
+  distribution{"5TH"}{"starter"}=((22,"2*L"),(26,"C"),(9,"U"),(3,"R"));
+  distribution{"6TH"}=(,);
+  distribution{"6TH"}{"booster"}=((11,"C"),(3,"U"),(1,"R"));
+  distribution{"6TH"}{"starter"}=((30,"2*L"),(32,"C"),(10,"U"),(3,"R"));
+  distribution{"7TH"}=(,);
+  distribution{"7TH"}{"booster"}=((1,"L"),(10,"C"),(3,"U"),(1,"R"));
+  distribution{"7TH"}{"starter"}=((30,"2*L"),(32,"C"),(10,"U"),(3,"R"));
+  distribution{"8TH"}=(,);
+  distribution{"8TH"}{"booster"}=((11,"C"),(3,"U"),(1,"R"));
+  distribution{"8TH"}{"starter"}=((30,"2*L"),(32,"C"),(10,"U"),(3,"R"));
+  distribution{"9TH"}=(,);
+  distribution{"9TH"}{"booster"}=((11,"C"),(3,"U"),(1,"R"));
+  distribution{"9TH"}{"starter"}=((30,"2*L"),(32,"C"),(10,"U"),(3,"R"));
+  distribution{"XE"}=(,);
+  distribution{"XE"}{"booster"}=((11,"C"),(3,"U"),(1,"R"));
+  distribution{"XE"}{"starter"}=((30,"2*L"),(32,"C"),(10,"U"),(3,"R"));
+  distribution{"M10"}=(,);
+  distribution{"M10"}{"booster"}=((11,"C"),(3,"U"),(1,"R+R+M"));
+  distribution{"M11"}=(,);
+  distribution{"M11"}{"booster"}=((11,"C"),(3,"U"),(1,"R+R+M"));
+  distribution{"M12"}=(,);
+  distribution{"M12"}{"booster"}=((11,"C"),(3,"U"),(1,"R+R+M"));
+  distribution{"RV"}=(,);
+  distribution{"RV"}{"booster"}=((11,"C+3*L"),(3,"U+2*L"),(1,"R"));
+  distribution{"RV"}{"starter"}=((45,"C+3*L"),(13,"U+2*L"),(2,"R"));
+  distribution{"DS"}=(,);
+  distribution{"DS"}{"booster"}=((11,"C"),(3,"U"),(1,"R"));
+  distribution{"FD"}=(,);
+  distribution{"FD"}{"booster"}=((11,"C"),(3,"U"),(1,"R"));
+  distribution{"CK"}=(,);
+  distribution{"CK"}{"booster"}=((11,"C"),(3,"U"),(1,"R"));
+  distribution{"CK"}{"starter"}=((30,"2*L"),(32,"C"),(10,"U"),(3,"R"));
+  distribution{"UH"}=(,);
+  distribution{"UH"}{"booster"}=((10,"C"),(3,"U"),(1,"L"),(1,"R"));
+  distribution{"BK"}=(,);
+  distribution{"BK"}{"booster"}=((1,"L"),(10,"C"),(3,"U"),(1,"R"));
+  distribution{"P1"}=(,);
+  distribution{"P1"}{"booster"}=((1,"L"),(10,"C"),(3,"U"),(1,"R"));
+  distribution{"P2"}=(,);
+  distribution{"P2"}{"booster"}=((1,"L"),(10,"C"),(3,"U"),(1,"R"));
+  distribution{"P3"}=(,);
+  distribution{"P3"}{"booster"}=((1,"L"),(10,"C"),(3,"U"),(1,"R"));
+  distribution{"S1"}=(,);
+  distribution{"S1"}{"booster"}=((1,"L"),(10,"C"),(3,"U"),(1,"R"));
+  distribution{"SK"}=(,);
+  distribution{"SK"}{"booster"}=((11,"C"),(3,"U"),(1,"R"));
+  distribution{"RA"}=(,);
+  distribution{"RA"}{"booster"}=((11,"C"),(3,"U"),(1,"R"));
+  distribution{"RA"}{"starter"}=((30,"2*L"),(32,"C"),(10,"U"),(3,"R"));
+  distribution{"GP"}=(,);
+  distribution{"GP"}{"booster"}=((11,"C"),(3,"U"),(1,"R"));
+  distribution{"DI"}=(,);
+  distribution{"DI"}{"booster"}=((11,"C"),(3,"U"),(1,"R"));
+  distribution{"CS"}=(,);
+  distribution{"CS"}{"booster"}=((11,"C"),(3,"U"),(1,"R"));
+  distribution{"TS"}=(,);
+  distribution{"TS"}{"booster"}=((10,"C"),(3,"U"),(1,"S"),(1,"R"));
+  distribution{"TS"}{"starter"}=((30,"2*L"),(29,"C"),(10,"U"),(3,"S"),(3,"R"));
+  distribution{"PC"}=(,);
+  distribution{"PC"}{"booster"}=((11,"C"),(3,"U"),(1,"R"));
+  distribution{"FS"}=(,);
+  distribution{"FS"}{"booster"}=((11,"C"),(3,"U"),(1,"R"));
+  distribution{"LRW"}=(,);
+  distribution{"LRW"}{"booster"}=((1,"L"),(10,"C"),(3,"U"),(1,"R"));
+  distribution{"MOR"}=(,);
+  distribution{"MOR"}{"booster"}=((11,"C"),(3,"U"),(1,"R"));
+  distribution{"SM"}=(,);
+  distribution{"SM"}{"booster"}=((1,"L"),(10,"C"),(3,"U"),(1,"R"));
+  distribution{"EVE"}=(,);
+  distribution{"EVE"}{"booster"}=((11,"C"),(3,"U"),(1,"R"));
+  distribution{"ALA"}=(,);
+  distribution{"ALA"}{"booster"}=((1,"L"),(10,"C"),(3,"U"),(1,"2*R+M"));
+  distribution{"CFX"}=(,);
+  distribution{"CFX"}{"booster"}=((11,"C"),(3,"U"),(1,"2*R+M"));
+  distribution{"ARE"}=(,);
+  distribution{"ARE"}{"booster"}=((11,"C"),(3,"U"),(1,"2*R+M"));
+  distribution{"ZDK"}=(,);
+  distribution{"ZDK"}{"booster"}=((1,"L"),(10,"C"),(3,"U"),(1,"2*R+M"));
+  distribution{"WWK"}=(,);
+  distribution{"WWK"}{"booster"}=((1,"ZDK/L"),(10,"C"),(3,"U"),(1,"2*R+M"));
+  distribution{"ROE"}=(,);
+  distribution{"ROE"}{"booster"}=((1,"L"),(10,"C"),(3,"U"),(1,"2*R+M"));
+  distribution{"SOM"}=(,);
+  distribution{"SOM"}{"booster"}=((1,"L"),(10,"C"),(3,"U"),(1,"2*R+M"));
+  distribution{"MBS"}=(,);
+  distribution{"MBS"}{"booster"}=((1,"L"),(10,"C"),(3,"U"),(1,"2*R+M"));
+  distribution{"NPH"}=(,);
+  distribution{"NPH"}{"booster"}=((1,"L"),(10,"C"),(3,"U"),(1,"2*R+M"));
+  distribution{"ISD"}=(,);
+  distribution{"ISD"}{"booster"}=((1,"L"),(9,"C"),(3,"U"),(1,"2*R+M"),(1,"11*SC+6*SU+2*SR+SM"));
+  distribution{"DKA"}=(,);
+  distribution{"DKA"}{"booster"}=((1,"ISD/L"),(9,"C"),(3,"U"),(1,"2*R+M"),(1,"12*SC+6*SU+2*SR+SM"));
+  distribution{"AVR"}=(,);
+  distribution{"AVR"}{"booster"}=((1,"L"),(10,"C"),(3,"U"),(1,"2*R+M"));
+  distribution{"M13"}=(,);
+  distribution{"M13"}{"booster"}=((1,"L"),(10,"C"),(3,"U"),(1,"2*R+M"));
+# these next three sets don't actually have boosters, but the reward function needs to be able to generate them
+  distribution{"COM"}=(,);
+  distribution{"COM"}{"booster"}=((1,"L"),(10,"C"),(3,"U"),(1,"2*R+M"));
+  distribution{"PC2"}=(,);
+  distribution{"PC2"}{"booster"}=((1,"L"),(10,"C"),(3,"U"),(1,"2*R+M"));
+  distribution{"C13"}=(,);
+  distribution{"C13"}{"booster"}=((1,"L"),(10,"C"),(3,"U"),(1,"2*R+M"));
+  distribution{"RTR"}=(,);
+  distribution{"RTR"}{"booster"}=((1,"L"),(10,"C"),(3,"U"),(1,"2*R+M"));
+  distribution{"GTC"}=(,);
+  distribution{"GTC"}{"booster"}=((1,"RTR/L"),(10,"C"),(3,"U"),(1,"2*R+M"));
+  distribution{"DGM"}=(,);
+  distribution{"DGM"}{"booster"}=((1,"10*L+2*RTR/RL+2*GTC/RL+ML"),(10,"C"),(3,"U"),(1,"2*R+M"));
+# the following is only for reference, since MOD has a separate procedure
+  distribution{"MOD"}=(,);
+  distribution{"MOD"}{"booster"}=((1,"12*C+6*U+2*R+M"),(10,"C"),(3,"U"),(1,"2*R+M"));
+  distribution{"M14"}=(,);
+  distribution{"M14"}{"booster"}=((1,"L"),(10,"C"),(3,"U"),(1,"2*R+M"));
+  distribution{"THS"}=(,);
+  distribution{"THS"}{"booster"}=((1,"L"),(10,"C"),(3,"U"),(1,"2*R+M"));
+  distribution{"BNG"}=(,);
+  distribution{"BNG"}{"booster"}=((1,"THS/L"),(10,"C"),(3,"U"),(1,"2*R+M"));
+  distribution{"JOU"}=(,);
+  distribution{"JOU"}{"booster"}=((1,"THS/L"),(10,"C"),(3,"U"),(1,"2*R+M"));
+# the following is only for reference, since VMA has a separate procedure
+  distribution{"VMA"}=(,);
+  distribution{"VMA"}{"booster"}=((1,"285*C+108*U+24*R+12*M+92*S"),(10,"C"),(3,"U"),(1,"2*R+M"));
+  distribution{"CNS"}=(,);
+  distribution{"CNS"}{"booster"}=((1,"4*SC+2*SU+SR"),(10,"C"),(3,"U"),(1,"2*R+M"));
+  distribution{"M15"}=(,);
+  distribution{"M15"}{"booster"}=((1,3*"L"+S),(10,"C"),(3,"U"),(1,"2*R+M"));
+  distribution{"KTK"}=(,);
+  distribution{"KTK"}{"booster"}=((1,"L"),(10,"C"),(3,"U"),(1,"2*R+M"));
+  distribution{"C14"}=(,);
+  distribution{"C14"}{"booster"}=((1,"L"),(10,"C"),(3,"U"),(1,"2*R+M"));
+  distribution{"FRF"}=(,);
+  distribution{"FRF"}{"booster"}=((1,"L+20*CL+2*KTK/RL"),(10,"C"),(3,"U"),(1,"2*R+M"));
+  distribution{"DTK"}=(,);
+  distribution{"DTK"}{"booster"}=((1,"L"),(10,"C"),(3,"U"),(1,"2*R+M"));
+  distribution{"TPR"}=(,);
+  distribution{"TPR"}{"booster"}=((1,"L"),(10,"C"),(3,"U"),(1,"2*R+M"));
+# the following is only for reference, since MM2 has a separate procedure
+  distribution{"MM2"}=(,);
+  distribution{"MM2"}{"booster"}=((1,"12*C+6*U+2*R+M"),(10,"C"),(3,"U"),(1,"2*R+M"));
+# the following is only here to enable the set for drafting purposes, since CHAOS is a virtual booster
+  distribution{"CHAOS"}=(,);
+  distribution{"CHAOS"}{"booster"}=((15,"BE/L"));
+# the following is only here to enable the set for drafting purposes, since CUBE is a virtual booster
+  distribution{"CUBE"}=(,);
+  distribution{"CUBE"}{"booster"}=((15,"BE/L"));
+  distribution{"ORI"}=(,);
+  distribution{"ORI"}{"booster"}=((1,"L"),(10,"C"),(3,"U"),(1,"2*R+M"));
+  distribution{"BFZ"}=(,);
+  distribution{"BFZ"}{"booster"}=((1,"L"),(1,"50*C+EXP/M"),(9,"C"),(3,"U"),(1,"2*R+M"));
+  distribution{"C15"}=(,);
+  distribution{"C15"}{"booster"}=((1,"L"),(10,"C"),(3,"U"),(1,"2*R+M"));
+  distribution{"OGW"}=(,);
+  distribution{"OGW"}{"booster"}=((1,"BFZ/L"),(1,"58*C+29*CL+EXP/SM"),(9,"2*C+CL"),(3,"U"),(1,"2*R+M"));
+  distribution{"SOI"}=(,);
+  distribution{"SOI"}{"booster"}=((1,"L"),(1,"C+2*SR+SM"),(8,"C"),(1,"10*SC+4*SU"),(3,"U"),(1,"2*R+M"));
+}
+
+#
+# ProduceCUBE_Booster() - Produce booster for cube drafting purposes.
+#
+def ProduceCUBE_Booster
+{
+  push(j);
+  j=left(cubecontents{con},15);
+  return(j);
+  cubecontents{con}=right(cubecontents{con},length(cubecontents{con})-15);
+  j=pop();
+}
+
+#
+# ProduceCHAOS_Booster() - Produce random booster for chaos limited purposes.
+#
+def ProduceCHAOS_Booster
+{
+  push(randproducts);
+  push(j);
+  
+  randproduct=(,);
+  for(j)(keys(products))
+  {
+    if(products{j}[1]==2.45)
+      randproduct=randproduct+(j,);
+  }
+  j=randproduct[random(length(randproduct))];
+  
+  return(call("Produce",(products{j}[2]+(1,))));
+  j=pop();
+  randproduct=pop();
+}
+
+#
+# ProduceVMA_Booster() - Produce Vintage Masters booster.
+#
+def ProduceVMA_Booster
+{
+  push(p);
+  push(i);
+  p=RandomCardSet("VMA",((11,"C"),(3,"U"),(1,"2*R+M")));
+
+# falling back on the procedure given in distribution{"VMA"} involves
+# constructing and destructing a 40000-element list for every single pack,
+# which is wasteful
+  i=random(41133);
+
+  if(i<828)
+    p[0]=random(cards{"VMA"}{"S"});
+  else if(i<1188)
+    p[0]=random(cards{"VMA"}{"M"});
+  else if(i<3708)
+    p[0]=random(cards{"VMA"}{"R"});
+  else if(i<12348)
+    p[0]=random(cards{"VMA"}{"U"});
+  else
+# it's already a common, but replace it with a new one anyway
+# since the foil slot is supposed to allow duplicates
+    p[0]=random(cards{"VMA"}{"C"});
+
+  return(p);
+  i=pop();
+  p=pop();
+}
+
+#
+# ProduceMOD_Booster() - Produce Modern Masters booster.
+#
+def ProduceMOD_Booster
+{
+  push(p);
+  push(i);
+  p=RandomCardSet("MOD",((11,"C"),(3,"U"),(1,"2*R+M")));
+
+# falling back on the procedure given in distribution{"MOD"} involves
+# constructing and destructing a 1700-element list for every single pack,
+# which is wasteful
+  i=random(1693);
+
+  if(i<15)
+    p[0]=random(cards{"MOD"}{"M"});
+  else if(i<121)
+    p[0]=random(cards{"MOD"}{"R"});
+  else if(i<481)
+    p[0]=random(cards{"MOD"}{"U"});
+  else
+# it's already a common, but replace it with a new one anyway
+# since the foil slot is supposed to allow duplicates
+    p[0]=random(cards{"MOD"}{"C"});
+
+  return(p);
+  i=pop();
+  p=pop();
+}
+
+#
+# ProduceMM2_Booster() - Produce Modern Masters booster.
+#
+def ProduceMM2_Booster
+{
+  push(p);
+  push(i);
+  p=RandomCardSet("MM2",((11,"C"),(3,"U"),(1,"2*R+M")));
+
+# falling back on the procedure given in distribution{"MM2"} involves
+# constructing and destructing a 1800-element list for every single pack,
+# which is wasteful
+  i=random(1813);
+
+  if(i<15)
+    p[0]=random(cards{"MM2"}{"M"});
+  else if(i<121)
+    p[0]=random(cards{"MM2"}{"R"});
+  else if(i<601)
+    p[0]=random(cards{"MM2"}{"U"});
+  else
+# it's already a common, but replace it with a new one anyway
+# since the foil slot is supposed to allow duplicates
+    p[0]=random(cards{"MM2"}{"C"});
+
+  return(p);
+  i=pop();
+  p=pop();
+}
+
+#
+# ProduceBE_Booster() - Produce beta booster.
+#
+def ProduceBE_Booster
+{
+  push(p);
+  p=RandomCardSet("BE",((11,"C"),(3,"U"),(1,"R")));
+  i=0;
+  while(i < 11)
+  {
+    if(random(121) < 46)
+      p[i]=random(cards{"BE"}{"L"});
+    i=i+1;
+  }
+  while(i < 14)
+  {
+    if(random(121) < 26)
+      p[i]=random(cards{"BE"}{"L"});
+    i=i+1;
+  }
+  if(random(121) < 4)
+    p[i]=random(cards{"BE"}{"L"});
+  return(p);
+  p=pop();
+}
+
+#
+# ProduceBE_Starter() - Produce beta starter.
+#
+def ProduceBE_Starter
+{
+  push(p);
+  p=RandomCardSet("BE",((45,"C"),(13,"U"),(2,"R")));
+  i=0;
+  while(i < 45)
+  {
+    if(random(121) < 46)
+      p[i]=random(cards{"BE"}{"L"});
+    i=i+1;
+  }
+  while(i < 58)
+  {
+    if(random(121) < 26)
+      p[i]=random(cards{"BE"}{"L"});
+    i=i+1;
+  }
+  if(random(121) < 4)
+    p[58]=random(cards{"BE"}{"L"});
+  if(random(121) < 4)
+    p[59]=random(cards{"BE"}{"L"});
+  return(p);
+  p=pop();
+}

@@ -1,0 +1,732 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE ccg-setinfo SYSTEM "../gccg-set.dtd">
+<ccg-setinfo name="Reflections" dir="Reflections" abbrev="Refl" game="Lord of the Rings TCG">
+  <cards>
+    <card name="·The One Ring, The Binding Ring" graphics="LOTR-EN09001.jpg" text="Fellowship: Add 2 burdens to play a ring from your draw deck. Maneuver: Exert bearer to wear The One Ring until the regroup phase. While wearing The One Ring, each time the Ring-bearer is about to take a wound, add a burden instead.">
+       <attr key="unique" value="yes"/>
+       <attr key="expansion" value="9"/>
+       <attr key="card_number" value="1"/>
+       <attr key="strength" value="+1"/>
+       <attr key="kind" value="Ring"/>
+       <attr key="vitality" value="+1"/>
+       <attr key="rarity" value="R+"/>
+       <attr key="type" value="The One Ring"/>
+       <attr key="block" value="Refl"/>
+    </card>
+
+    <card name="·Freca, Hungry Savage" graphics="LOTR-EN09002.jpg" text="When you play Freca, you may spot another {Dunland} Man to take control of a site. When Freca is killed, the Free Peoples player may liberate a site.">
+       <attr key="unique" value="yes"/>
+       <attr key="expansion" value="9"/>
+       <attr key="twilight_cost" value="4"/>
+       <attr key="card_number" value="2"/>
+       <attr key="strength" value="9"/>
+       <attr key="vitality" value="1"/>
+       <attr key="kind" value="Shadow"/>
+       <attr key="site" value="3"/>
+       <attr key="rarity" value="R+"/>
+       <attr key="race" value="Man"/>
+       <attr key="type" value="Minion"/>
+       <attr key="culture" value="{Dunland}"/>
+       <attr key="block" value="Refl"/>
+    </card>
+
+    <card name="·Durin III, Dwarven Lord" graphics="LOTR-EN09003.jpg" text="Damage +1. While you can spot 2 Dwarves, Durin III is twilight cost -2. Durin III is strength +1 for each artifact and each possession he bears.">
+       <attr key="unique" value="yes"/>
+       <attr key="expansion" value="9"/>
+       <attr key="twilight_cost" value="4"/>
+       <attr key="card_number" value="3"/>
+       <attr key="strength" value="7"/>
+       <attr key="vitality" value="4"/>
+       <attr key="kind" value="Free Peoples"/>
+       <attr key="resistance" value="6"/>
+       <attr key="rarity" value="R+"/>
+       <attr key="race" value="Dwarf"/>
+       <attr key="type" value="Companion"/>
+       <attr key="culture" value="{Dwarven}"/>
+       <attr key="block" value="Refl"/>
+    </card>
+
+    <card name="·Gimli, Bearer of Grudges" graphics="LOTR-EN09004.jpg" text="Damage +1. While Gimli is the Ring-bearer, at the start of each skirmish involving him, add 2 burdens or 2 threats. While Gimli is damage +X, he is resistance +X.">
+       <attr key="unique" value="yes"/>
+       <attr key="expansion" value="9"/>
+       <attr key="twilight_cost" value="2"/>
+       <attr key="card_number" value="4"/>
+       <attr key="strength" value="6"/>
+       <attr key="ring-bearer" value="yes"/>
+       <attr key="vitality" value="3"/>
+       <attr key="kind" value="Free Peoples"/>
+       <attr key="resistance" value="4"/>
+       <attr key="rarity" value="R+"/>
+       <attr key="race" value="Dwarf"/>
+       <attr key="type" value="Companion"/>
+       <attr key="culture" value="{Dwarven}"/>
+       <attr key="block" value="Refl"/>
+    </card>
+
+    <card name="·Linnar, Dwarven Lord" graphics="LOTR-EN09005.jpg" text="Each time a Dwarf wins a fierce skirmish, you may heal that Dwarf. Skirmish: Discard a {Dwarven} card from hand to make a Dwarf damage +1.">
+       <attr key="unique" value="yes"/>
+       <attr key="expansion" value="9"/>
+       <attr key="twilight_cost" value="2"/>
+       <attr key="card_number" value="5"/>
+       <attr key="strength" value="7"/>
+       <attr key="vitality" value="3"/>
+       <attr key="kind" value="Free Peoples"/>
+       <attr key="resistance" value="6"/>
+       <attr key="rarity" value="R"/>
+       <attr key="race" value="Dwarf"/>
+       <attr key="type" value="Companion"/>
+       <attr key="culture" value="{Dwarven}"/>
+       <attr key="block" value="Refl"/>
+    </card>
+
+    <card name="·Ring of Accretion" graphics="LOTR-EN09006.jpg" text="Bearer must be a Dwarf. Bearer is damage +1. Maneuver: For each Dwarf you spot, reveal a card from the top of your draw deck. Take all Free Peoples cards revealed into hand and discard the rest. Discard this artifact.">
+       <attr key="unique" value="yes"/>
+       <attr key="expansion" value="9"/>
+       <attr key="twilight_cost" value="0"/>
+       <attr key="card_number" value="6"/>
+       <attr key="strength" value="+1"/>
+       <attr key="kind" value="Free Peoples"/>
+       <attr key="rarity" value="R"/>
+       <attr key="type" value="Artifact"/>
+       <attr key="culture" value="{Dwarven}"/>
+       <attr key="block" value="Refl"/>
+    </card>
+
+    <card name="·Ring of Fury" graphics="LOTR-EN09007.jpg" text="Bearer must be a Dwarf. Bearer is damage +2. Regroup: Spot a Dwarf that is damage +X to heal X Dwarves. Discard this artifact.">
+       <attr key="unique" value="yes"/>
+       <attr key="expansion" value="9"/>
+       <attr key="twilight_cost" value="0"/>
+       <attr key="card_number" value="7"/>
+       <attr key="strength" value="+1"/>
+       <attr key="kind" value="Free Peoples"/>
+       <attr key="rarity" value="R+"/>
+       <attr key="type" value="Artifact"/>
+       <attr key="culture" value="{Dwarven}"/>
+       <attr key="block" value="Refl"/>
+    </card>
+
+    <card name="·Ring of Guile" graphics="LOTR-EN09008.jpg" text="Bearer must be a Dwarf. Bearer is damage +1. Maneuver: Take a {Dwarven} event into hand from your discard pile. Discard this artifact.">
+       <attr key="unique" value="yes"/>
+       <attr key="expansion" value="9"/>
+       <attr key="twilight_cost" value="0"/>
+       <attr key="card_number" value="8"/>
+       <attr key="strength" value="+1"/>
+       <attr key="kind" value="Free Peoples"/>
+       <attr key="rarity" value="R"/>
+       <attr key="type" value="Artifact"/>
+       <attr key="culture" value="{Dwarven}"/>
+       <attr key="block" value="Refl"/>
+    </card>
+
+    <card name="·Ring of Retribution" graphics="LOTR-EN09009.jpg" text="Bearer must be a Dwarf. Response: If bearer wins a skirmish, discard this artifact to exert each Orc.">
+       <attr key="unique" value="yes"/>
+       <attr key="expansion" value="9"/>
+       <attr key="twilight_cost" value="0"/>
+       <attr key="card_number" value="9"/>
+       <attr key="strength" value="+1"/>
+       <attr key="vitality" value="+1"/>
+       <attr key="kind" value="Free Peoples"/>
+       <attr key="rarity" value="R"/>
+       <attr key="type" value="Artifact"/>
+       <attr key="culture" value="{Dwarven}"/>
+       <attr key="block" value="Refl"/>
+    </card>
+
+    <card name="·Sindri, Dwarven Lord" graphics="LOTR-EN09010.jpg" text="You may play {Dwarven} skirmish events stacked on {Dwarven} conditions as if from hand.">
+       <attr key="unique" value="yes"/>
+       <attr key="expansion" value="9"/>
+       <attr key="twilight_cost" value="2"/>
+       <attr key="card_number" value="10"/>
+       <attr key="strength" value="6"/>
+       <attr key="vitality" value="3"/>
+       <attr key="kind" value="Free Peoples"/>
+       <attr key="resistance" value="6"/>
+       <attr key="rarity" value="R"/>
+       <attr key="race" value="Dwarf"/>
+       <attr key="type" value="Companion"/>
+       <attr key="culture" value="{Dwarven}"/>
+       <attr key="block" value="Refl"/>
+    </card>
+
+    <card name="·Úri, Dwarven Lord" graphics="LOTR-EN09011.jpg" text="Skirmish: If Úri is damage +X, exert him to make him strength +X.">
+       <attr key="unique" value="yes"/>
+       <attr key="expansion" value="9"/>
+       <attr key="twilight_cost" value="2"/>
+       <attr key="card_number" value="11"/>
+       <attr key="strength" value="5"/>
+       <attr key="vitality" value="4"/>
+       <attr key="kind" value="Free Peoples"/>
+       <attr key="resistance" value="6"/>
+       <attr key="rarity" value="R"/>
+       <attr key="race" value="Dwarf"/>
+       <attr key="type" value="Companion"/>
+       <attr key="culture" value="{Dwarven}"/>
+       <attr key="block" value="Refl"/>
+    </card>
+
+    <card name="·Aiglos" graphics="LOTR-EN09012.jpg" text="Bearer must be an Elf. If bearer is Gil-galad, he is strength +1 for each {Elven} artifact you can spot (limit +6). Regroup: Discard Aiglos to wound a minion for each Elf you spot.">
+       <attr key="unique" value="yes"/>
+       <attr key="expansion" value="9"/>
+       <attr key="twilight_cost" value="2"/>
+       <attr key="card_number" value="12"/>
+       <attr key="vitality" value="+1"/>
+       <attr key="kind" value="Free Peoples"/>
+       <attr key="rarity" value="R+"/>
+       <attr key="type" value="Artifact"/>
+       <attr key="culture" value="{Elven}"/>
+       <attr key="block" value="Refl"/>
+    </card>
+
+    <card name="·Elven Rope" graphics="LOTR-EN09013.jpg" text="To play, spot an Elf. Bearer must be an Elf or Hobbit. Maneuver: Discard this possession to make a Shadow player return a minion with strength 6 or less to its owner's hand.">
+       <attr key="unique" value="yes"/>
+       <attr key="expansion" value="9"/>
+       <attr key="twilight_cost" value="1"/>
+       <attr key="card_number" value="13"/>
+       <attr key="kind" value="Free Peoples"/>
+       <attr key="rarity" value="R"/>
+       <attr key="type" value="Possession"/>
+       <attr key="culture" value="{Elven}"/>
+       <attr key="block" value="Refl"/>
+    </card>
+
+    <card name="·Galadriel, Bearer of Wisdom" graphics="LOTR-EN09014.jpg" text="While Galadriel bears an artifact or The One Ring, she is resistance +1 for each {Elven} companion you can spot.">
+       <attr key="unique" value="yes"/>
+       <attr key="expansion" value="9"/>
+       <attr key="twilight_cost" value="3"/>
+       <attr key="card_number" value="14"/>
+       <attr key="strength" value="3"/>
+       <attr key="ring-bearer" value="yes"/>
+       <attr key="vitality" value="3"/>
+       <attr key="kind" value="Free Peoples"/>
+       <attr key="resistance" value="3"/>
+       <attr key="rarity" value="R+"/>
+       <attr key="race" value="Elf"/>
+       <attr key="type" value="Companion"/>
+       <attr key="culture" value="{Elven}"/>
+       <attr key="block" value="Refl"/>
+    </card>
+
+    <card name="·Gil-galad, Elven High King" graphics="LOTR-EN09015.jpg" text="To play, spot 2 {Elven} companions. Regroup: Exert Gil-Galad to wound each wounded minion.">
+       <attr key="unique" value="yes"/>
+       <attr key="expansion" value="9"/>
+       <attr key="twilight_cost" value="5"/>
+       <attr key="card_number" value="15"/>
+       <attr key="strength" value="9"/>
+       <attr key="vitality" value="4"/>
+       <attr key="kind" value="Free Peoples"/>
+       <attr key="resistance" value="6"/>
+       <attr key="rarity" value="R+"/>
+       <attr key="race" value="Elf"/>
+       <attr key="type" value="Companion"/>
+       <attr key="culture" value="{Elven}"/>
+       <attr key="block" value="Refl"/>
+    </card>
+
+    <card name="·Glorfindel, Revealed in Wrath" graphics="LOTR-EN09016.jpg" text="When Glorfindel is in your starting fellowship, his twilight cost is -2. Skirmish: Reveal the top card of your draw deck. You may exert Glorfindel to make a Nazgûl he is skirmishing strength -X, where X is the twilight cost of the card revealed.">
+       <attr key="unique" value="yes"/>
+       <attr key="expansion" value="9"/>
+       <attr key="twilight_cost" value="4"/>
+       <attr key="card_number" value="16"/>
+       <attr key="strength" value="9"/>
+       <attr key="vitality" value="3"/>
+       <attr key="kind" value="Free Peoples"/>
+       <attr key="resistance" value="6"/>
+       <attr key="rarity" value="R+"/>
+       <attr key="race" value="Elf"/>
+       <attr key="type" value="Companion"/>
+       <attr key="culture" value="{Elven}"/>
+       <attr key="block" value="Refl"/>
+    </card>
+
+    <card name="·Knife of the Galadhrim" graphics="LOTR-EN09017.jpg" text="Bearer must be a {Gondor} Man. If bearer is Aragorn, he may bear this hand weapon in addition to 1 other hand weapon. Skirmish: Discard this weapon to wound a minion bearer is skirmishing.">
+       <attr key="unique" value="yes"/>
+       <attr key="expansion" value="9"/>
+       <attr key="twilight_cost" value="1"/>
+       <attr key="card_number" value="17"/>
+       <attr key="strength" value="+1"/>
+       <attr key="kind" value="Free Peoples"/>
+       <attr key="rarity" value="R+"/>
+       <attr key="type" value="Possession"/>
+       <attr key="culture" value="{Elven}"/>
+       <attr key="block" value="Refl"/>
+    </card>
+
+    <card name="·Merry's Dagger" graphics="LOTR-EN09018.jpg" text="Bearer must be Merry. Skirmish: Exert Merry twice or discard this possession to wound a minion he is skirmishing. Any Shadow player may remove {1} to prevent this.">
+       <attr key="unique" value="yes"/>
+       <attr key="expansion" value="9"/>
+       <attr key="twilight_cost" value="1"/>
+       <attr key="card_number" value="18"/>
+       <attr key="strength" value="+2"/>
+       <attr key="kind" value="Free Peoples"/>
+       <attr key="rarity" value="R"/>
+       <attr key="type" value="Possession"/>
+       <attr key="culture" value="{Elven}"/>
+       <attr key="block" value="Refl"/>
+    </card>
+
+    <card name="·Narya, Ring of Fire" graphics="LOTR-EN09019.jpg" text="Bearer must be Círdan or Gandalf. Fellowship: Remove X culture tokens, where X is equal to bearer’s vitality. Discard this artifact.">
+       <attr key="unique" value="yes"/>
+       <attr key="expansion" value="9"/>
+       <attr key="twilight_cost" value="1"/>
+       <attr key="card_number" value="19"/>
+       <attr key="vitality" value="+1"/>
+       <attr key="kind" value="Free Peoples"/>
+       <attr key="rarity" value="R"/>
+       <attr key="type" value="Artifact"/>
+       <attr key="culture" value="{Elven}"/>
+       <attr key="block" value="Refl"/>
+    </card>
+
+    <card name="·Nenya, Ring of Adamant" graphics="LOTR-EN09020.jpg" text="Bearer must be Galadriel. Maneuver: Heal 2 companions and place up to 2 cards from hand on top of your draw deck. Discard this artifact.">
+       <attr key="unique" value="yes"/>
+       <attr key="expansion" value="9"/>
+       <attr key="twilight_cost" value="0"/>
+       <attr key="card_number" value="20"/>
+       <attr key="vitality" value="+1"/>
+       <attr key="kind" value="Free Peoples"/>
+       <attr key="rarity" value="R"/>
+       <attr key="type" value="Artifact"/>
+       <attr key="culture" value="{Elven}"/>
+       <attr key="block" value="Refl"/>
+    </card>
+
+    <card name="·Pippin's Dagger" graphics="LOTR-EN09021.jpg" text="Bearer must be Pippin. Skirmish: Exert Pippin twice or discard this possession to wound a minion an Elf is skirmishing. Any Shadow player may remove {1} to prevent this.">
+       <attr key="unique" value="yes"/>
+       <attr key="expansion" value="9"/>
+       <attr key="twilight_cost" value="1"/>
+       <attr key="card_number" value="21"/>
+       <attr key="strength" value="+2"/>
+       <attr key="kind" value="Free Peoples"/>
+       <attr key="rarity" value="R"/>
+       <attr key="type" value="Possession"/>
+       <attr key="culture" value="{Elven}"/>
+       <attr key="block" value="Refl"/>
+    </card>
+
+    <card name="·Strands of Elven Hair" graphics="LOTR-EN09022.jpg" text="To play, spot a Dwarf. When you play this possession, add 2 {Elven} tokens here. Fellowship: Discard this possession or remove an {Elven} token from here to reveal the top card of your draw deck. If it is a {Dwarven} or {Elven} card, you may take it into hand.">
+       <attr key="unique" value="yes"/>
+       <attr key="expansion" value="9"/>
+       <attr key="twilight_cost" value="1"/>
+       <attr key="card_number" value="22"/>
+       <attr key="kind" value="Free Peoples"/>
+       <attr key="rarity" value="R"/>
+       <attr key="type" value="Possession"/>
+       <attr key="culture" value="{Elven}"/>
+       <attr key="block" value="Refl"/>
+    </card>
+
+    <card name="·Vilya, Ring of Air" graphics="LOTR-EN09023.jpg" text="Bearer must be Elrond or Gil-galad. Skirmish: Discard the top card of your draw deck. Make a minion skirmishing an Elf strength -X, where X is the twilight cost of the discarded card. Discard this artifact.">
+       <attr key="unique" value="yes"/>
+       <attr key="expansion" value="9"/>
+       <attr key="twilight_cost" value="0"/>
+       <attr key="card_number" value="23"/>
+       <attr key="vitality" value="+1"/>
+       <attr key="kind" value="Free Peoples"/>
+       <attr key="rarity" value="R"/>
+       <attr key="type" value="Artifact"/>
+       <attr key="culture" value="{Elven}"/>
+       <attr key="block" value="Refl"/>
+    </card>
+
+    <card name="Ent Draught" graphics="LOTR-EN09024.jpg" text="To play, spot an Ent. Bearer must be a companion. Limit 1 per bearer. Skirmish: Exert bearer to make him or her damage +1.">
+       <attr key="expansion" value="9"/>
+       <attr key="twilight_cost" value="1"/>
+       <attr key="card_number" value="24"/>
+       <attr key="vitality" value="+1"/>
+       <attr key="kind" value="Free Peoples"/>
+       <attr key="rarity" value="R"/>
+       <attr key="type" value="Condition"/>
+       <attr key="culture" value="{Gandalf}"/>
+       <attr key="block" value="Refl"/>
+    </card>
+
+    <card name="Huorn" graphics="LOTR-EN09025.jpg" text="Damage +1. This companion is strength +1 for each Ent you spot. Response: If this companion is about to take a wound, exert an Ent to prevent that.">
+       <attr key="expansion" value="9"/>
+       <attr key="twilight_cost" value="2"/>
+       <attr key="card_number" value="25"/>
+       <attr key="strength" value="6"/>
+       <attr key="vitality" value="4"/>
+       <attr key="kind" value="Free Peoples"/>
+       <attr key="resistance" value="6"/>
+       <attr key="rarity" value="R"/>
+       <attr key="race" value="Tree"/>
+       <attr key="type" value="Companion"/>
+       <attr key="culture" value="{Gandalf}"/>
+       <attr key="block" value="Refl"/>
+    </card>
+
+    <card name="·Radagast, The Brown" graphics="LOTR-EN09026.jpg" text="The move limit is +1. Each time the fellowship moves during the regroup phase, each opponent may discard 2 cards to draw 2 cards.">
+       <attr key="unique" value="yes"/>
+       <attr key="expansion" value="9"/>
+       <attr key="twilight_cost" value="4"/>
+       <attr key="card_number" value="26"/>
+       <attr key="strength" value="8"/>
+       <attr key="signet" value="{GandalfSignet}"/>
+       <attr key="vitality" value="4"/>
+       <attr key="kind" value="Free Peoples"/>
+       <attr key="resistance" value="6"/>
+       <attr key="rarity" value="R+"/>
+       <attr key="race" value="Wizard"/>
+       <attr key="type" value="Companion"/>
+       <attr key="culture" value="{Gandalf}"/>
+       <attr key="block" value="Refl"/>
+    </card>
+
+    <card name="Sent Back" graphics="LOTR-EN09027.jpg" text="Skirmish: Discard this condition to discard each minion skirmishing a Wizard. Place that Wizard in your dead pile. Fellowship or Regroup: Play a Wizard (even if another copy of that Wizard is in your dead pile).">
+       <attr key="expansion" value="9"/>
+       <attr key="twilight_cost" value="2"/>
+       <attr key="card_number" value="27"/>
+       <attr key="kind" value="Free Peoples"/>
+       <attr key="rarity" value="R"/>
+       <attr key="type" value="Condition"/>
+       <attr key="culture" value="{Gandalf}"/>
+       <attr key="block" value="Refl"/>
+    </card>
+
+    <card name="·Gollum, Dark as Darkness" graphics="LOTR-EN09028.jpg" text="Shadow: Exert Gollum twice to exert the Ring-bearer. Shadow: Remove a burden to add {1}. Skirmish: Remove a burden to add {2}. Regroup: Remove a burden to add {3}. Regroup: Exert Gollum twice to wound the Ring-bearer.">
+       <attr key="unique" value="yes"/>
+       <attr key="expansion" value="9"/>
+       <attr key="twilight_cost" value="2"/>
+       <attr key="card_number" value="28"/>
+       <attr key="strength" value="5"/>
+       <attr key="vitality" value="4"/>
+       <attr key="kind" value="Shadow"/>
+       <attr key="site" value="3"/>
+       <attr key="rarity" value="R+"/>
+       <attr key="race" value="Gollum"/>
+       <attr key="type" value="Minion"/>
+       <attr key="culture" value="{Gollum}"/>
+       <attr key="block" value="Refl"/>
+    </card>
+
+    <card name="Slippery as Fishes" graphics="LOTR-EN09029.jpg" text="While Gollum is at a mountain, river, or underground site, he is strength +2. Regroup: Spot Gollum to reveal your hand. Place all Shadow cards revealed beneath your draw deck. Discard this condition.">
+       <attr key="expansion" value="9"/>
+       <attr key="twilight_cost" value="1"/>
+       <attr key="card_number" value="29"/>
+       <attr key="kind" value="Shadow"/>
+       <attr key="rarity" value="R+"/>
+       <attr key="type" value="Condition"/>
+       <attr key="culture" value="{Gollum}"/>
+       <attr key="block" value="Refl"/>
+    </card>
+
+    <card name="·Sméagol, Bearer of Great Secrets" graphics="LOTR-EN09030.jpg" text="Ring-bound. To play, add a burden. Each time de fellowship moves, place an unbound companion in the dead pile. Regroup: If Sméagol is the Ring-bearer, add 2 burdens to discard each minion.">
+       <attr key="unique" value="yes"/>
+       <attr key="expansion" value="9"/>
+       <attr key="twilight_cost" value="0"/>
+       <attr key="card_number" value="30"/>
+       <attr key="strength" value="3"/>
+       <attr key="ring-bearer" value="yes"/>
+       <attr key="vitality" value="4"/>
+       <attr key="kind" value="Free Peoples"/>
+       <attr key="resistance" value="7"/>
+       <attr key="rarity" value="R+"/>
+       <attr key="race" value="Gollum"/>
+       <attr key="type" value="Companion"/>
+       <attr key="culture" value="{Gollum}"/>
+       <attr key="block" value="Refl"/>
+    </card>
+
+    <card name="·Boromir, Bearer of Council" graphics="LOTR-EN09031.jpg" text="While Boromir is the Ring-bearer, at the start of each skirmish involving him, add 3 burdens or wound him twice. Each time Boromir wins a skirmish, discard each minion he is skirmishing.">
+       <attr key="unique" value="yes"/>
+       <attr key="expansion" value="9"/>
+       <attr key="twilight_cost" value="3"/>
+       <attr key="card_number" value="31"/>
+       <attr key="strength" value="7"/>
+       <attr key="ring-bearer" value="yes"/>
+       <attr key="vitality" value="3"/>
+       <attr key="kind" value="Free Peoples"/>
+       <attr key="resistance" value="6"/>
+       <attr key="rarity" value="R+"/>
+       <attr key="race" value="Man"/>
+       <attr key="type" value="Companion"/>
+       <attr key="culture" value="{Gondor}"/>
+       <attr key="block" value="Refl"/>
+    </card>
+
+    <card name="·Elendil, The Tall" graphics="LOTR-EN09032.jpg" text="To play, spot 2 {Gondor} Men. Fellowship: Play an artifact on Elendil to make the move limit +1 for this turn. Regroup: Discard a {Gondor} artifact to liberate a site.">
+       <attr key="unique" value="yes"/>
+       <attr key="expansion" value="9"/>
+       <attr key="twilight_cost" value="5"/>
+       <attr key="card_number" value="32"/>
+       <attr key="strength" value="8"/>
+       <attr key="vitality" value="5"/>
+       <attr key="kind" value="Free Peoples"/>
+       <attr key="resistance" value="6"/>
+       <attr key="rarity" value="R+"/>
+       <attr key="race" value="Man"/>
+       <attr key="type" value="Companion"/>
+       <attr key="culture" value="{Gondor}"/>
+       <attr key="block" value="Refl"/>
+    </card>
+
+    <card name="·Isildur, Bearer of Heirlooms" graphics="LOTR-EN09033.jpg" text="While Isildur is the Ring-bearer, at the start of each skirmish involving him, add 2 burdens or exert 3 companions. While Isildur bears The One Ring or an artifact, each {Gondor} knight is strength +1.">
+       <attr key="unique" value="yes"/>
+       <attr key="expansion" value="9"/>
+       <attr key="twilight_cost" value="3"/>
+       <attr key="card_number" value="33"/>
+       <attr key="strength" value="7"/>
+       <attr key="ring-bearer" value="yes"/>
+       <attr key="vitality" value="3"/>
+       <attr key="kind" value="Free Peoples"/>
+       <attr key="resistance" value="6"/>
+       <attr key="rarity" value="R+"/>
+       <attr key="race" value="Man"/>
+       <attr key="type" value="Companion"/>
+       <attr key="culture" value="{Gondor}"/>
+       <attr key="block" value="Refl"/>
+    </card>
+
+    <card name="·Narsil, Blade of the Faithful" graphics="LOTR-EN09034.jpg" text="Bearer must be a {Gondor} Man. If bearer is Elendil or Isildur, he is strength +1 for each {Gondor} artifact you can spot (limit +6). Response: If bearer is about to take a wound, exert 2 {Gondor} Men to prevent that.">
+       <attr key="unique" value="yes"/>
+       <attr key="expansion" value="9"/>
+       <attr key="twilight_cost" value="2"/>
+       <attr key="card_number" value="34"/>
+       <attr key="vitality" value="+1"/>
+       <attr key="kind" value="Free Peoples"/>
+       <attr key="rarity" value="R+"/>
+       <attr key="type" value="Artifact"/>
+       <attr key="culture" value="{Gondor}"/>
+       <attr key="block" value="Refl"/>
+    </card>
+
+    <card name="Sapling of the White Tree" graphics="LOTR-EN09035.jpg" text="To play, spot an unbound {Gondor} Man. Response: If a {Gondor} Man is about to take a wound, discard this artifact to prevent that.">
+       <attr key="expansion" value="9"/>
+       <attr key="twilight_cost" value="1"/>
+       <attr key="card_number" value="35"/>
+       <attr key="kind" value="Free Peoples"/>
+       <attr key="rarity" value="R"/>
+       <attr key="type" value="Artifact"/>
+       <attr key="culture" value="{Gondor}"/>
+       <attr key="block" value="Refl"/>
+    </card>
+
+    <card name="·Scroll of Isildur" graphics="LOTR-EN09036.jpg" text="Tale.To play, spot a {Gondor} Man. The Ring-bearer is resistance +1 for each {Gondor} artifact you can spot (limit +3). Fellowship: Discard this artifact to play a ring from your discard pile.">
+       <attr key="unique" value="yes"/>
+       <attr key="expansion" value="9"/>
+       <attr key="twilight_cost" value="1"/>
+       <attr key="card_number" value="36"/>
+       <attr key="kind" value="Free Peoples"/>
+       <attr key="rarity" value="R"/>
+       <attr key="type" value="Artifact"/>
+       <attr key="culture" value="{Gondor}"/>
+       <attr key="block" value="Refl"/>
+    </card>
+
+    <card name="·Seeing Stone of Minas Anor" graphics="LOTR-EN09037.jpg" text="To play, spot a {Gondor} Man with 3 or more vitality (or spot a {Gondor} Man and add 2 threats). Regroup: Exert a {Gondor} Man or discard this artifact to discard your hand and draw 3 cards.">
+       <attr key="unique" value="yes"/>
+       <attr key="expansion" value="9"/>
+       <attr key="twilight_cost" value="0"/>
+       <attr key="card_number" value="37"/>
+       <attr key="kind" value="Free Peoples"/>
+       <attr key="rarity" value="R"/>
+       <attr key="type" value="Artifact"/>
+       <attr key="culture" value="{Gondor}"/>
+       <attr key="block" value="Refl"/>
+    </card>
+
+    <card name="·Seeing Stone of Orthanc" graphics="LOTR-EN09038.jpg" text="To play, spot a {Gondor} Man with 3 or more vitality (or spot a {Gondor} Man and add 2 threats). Regroup: Add a threat or discard this artifact to remove {2} or to draw a card.">
+       <attr key="unique" value="yes"/>
+       <attr key="expansion" value="9"/>
+       <attr key="twilight_cost" value="0"/>
+       <attr key="card_number" value="38"/>
+       <attr key="kind" value="Free Peoples"/>
+       <attr key="rarity" value="R"/>
+       <attr key="type" value="Artifact"/>
+       <attr key="culture" value="{Gondor}"/>
+       <attr key="block" value="Refl"/>
+    </card>
+
+    <card name="·Library of Orthanc" graphics="LOTR-EN09039.jpg" text="Shadow: Play an {Isengard} minion to stack the top card of your draw deck on this card. Skirmish: Remove{1} and discard a Free Peoples card stacked here to make an {Isengard} minion strength +1. Regroup: Remove {1} to take an {Isengard} card stacked here into hand.">
+       <attr key="unique" value="yes"/>
+       <attr key="expansion" value="9"/>
+       <attr key="twilight_cost" value="2"/>
+       <attr key="card_number" value="39"/>
+       <attr key="kind" value="Shadow"/>
+       <attr key="rarity" value="R+"/>
+       <attr key="type" value="Artifact"/>
+       <attr key="culture" value="{Isengard}"/>
+       <attr key="block" value="Refl"/>
+    </card>
+
+    <card name="Sack of the Shire" graphics="LOTR-EN09040.jpg" text="If an {Isengard} minion wins a skirmish, until the regroup phase, make that minion strength +1 for each site you control and fierce.">
+       <attr key="expansion" value="9"/>
+       <attr key="twilight_cost" value="1"/>
+       <attr key="card_number" value="40"/>
+       <attr key="kind" value="Shadow"/>
+       <attr key="rarity" value="R"/>
+       <attr key="type" value="Event"/>
+       <attr key="culture" value="{Isengard}"/>
+       <attr key="block" value="Refl"/>
+    </card>
+
+    <card name="·Host of Moria, Legion of the Underdeeps" graphics="LOTR-EN09041.jpg" text="When you play Host of Moria, you may play a {Moria} card from your discard pile.">
+       <attr key="unique" value="yes"/>
+       <attr key="expansion" value="9"/>
+       <attr key="twilight_cost" value="7"/>
+       <attr key="card_number" value="41"/>
+       <attr key="strength" value="15"/>
+       <attr key="vitality" value="3"/>
+       <attr key="kind" value="Shadow"/>
+       <attr key="site" value="4"/>
+       <attr key="rarity" value="R+"/>
+       <attr key="race" value="Orc"/>
+       <attr key="type" value="Minion"/>
+       <attr key="culture" value="{Moria}"/>
+       <attr key="block" value="Refl"/>
+    </card>
+
+    <card name="·Ring of Asperity" graphics="LOTR-EN09042.jpg" text="Bearer must be a Nazgûl. When you play this artifact, you may wound an unwounded companion. Response: If a player reconciles, return bearer to his owner's hand.">
+       <attr key="unique" value="yes"/>
+       <attr key="expansion" value="9"/>
+       <attr key="twilight_cost" value="0"/>
+       <attr key="card_number" value="42"/>
+       <attr key="strength" value="+1"/>
+       <attr key="kind" value="Shadow"/>
+       <attr key="rarity" value="R"/>
+       <attr key="type" value="Artifact"/>
+       <attr key="culture" value="{Ringwraith}"/>
+       <attr key="block" value="Refl"/>
+    </card>
+
+    <card name="·Ring of Ire" graphics="LOTR-EN09043.jpg" text="Bearer must be The Witch-king. Skirmish: Exert bearer twice to make a {Ringwraith} minion damage +1. Response: If a player reconciles, return bearer to his owner's hand.">
+       <attr key="unique" value="yes"/>
+       <attr key="expansion" value="9"/>
+       <attr key="twilight_cost" value="0"/>
+       <attr key="card_number" value="43"/>
+       <attr key="strength" value="+1"/>
+       <attr key="kind" value="Shadow"/>
+       <attr key="rarity" value="R+"/>
+       <attr key="type" value="Artifact"/>
+       <attr key="culture" value="{Ringwraith}"/>
+       <attr key="block" value="Refl"/>
+    </card>
+
+    <card name="·Ring of Rancor" graphics="LOTR-EN09044.jpg" text="Bearer must be a Nazgûl. Maneuver: Remove a burden to heal each Nazgûl. Response: If a player reconciles, return bearer to his owner's hand.">
+       <attr key="unique" value="yes"/>
+       <attr key="expansion" value="9"/>
+       <attr key="twilight_cost" value="0"/>
+       <attr key="card_number" value="44"/>
+       <attr key="vitality" value="+1"/>
+       <attr key="kind" value="Shadow"/>
+       <attr key="rarity" value="R"/>
+       <attr key="type" value="Artifact"/>
+       <attr key="culture" value="{Ringwraith}"/>
+       <attr key="block" value="Refl"/>
+    </card>
+
+    <card name="·Horn of the Mark" graphics="LOTR-EN09045.jpg" text="Bearer must be Merry or Pippin. Bearer gains the Théoden signet. Response: If bearer wins a skirmish, exert him to discard each minion involved in that skirmish.">
+       <attr key="unique" value="yes"/>
+       <attr key="expansion" value="9"/>
+       <attr key="twilight_cost" value="1"/>
+       <attr key="card_number" value="45"/>
+       <attr key="strength" value="+1"/>
+       <attr key="kind" value="Free Peoples"/>
+       <attr key="rarity" value="R"/>
+       <attr key="type" value="Possession"/>
+       <attr key="culture" value="{Rohan}"/>
+       <attr key="block" value="Refl"/>
+    </card>
+
+    <card name="·The Red Arrow" graphics="LOTR-EN09046.jpg" text="Assignment: Exert a {Gondor} Man to play a {Rohan} Man. You may exert that {Rohan} Man to play a possession on him or her. Discard this artifact.">
+       <attr key="unique" value="yes"/>
+       <attr key="expansion" value="9"/>
+       <attr key="twilight_cost" value="0"/>
+       <attr key="card_number" value="46"/>
+       <attr key="kind" value="Free Peoples"/>
+       <attr key="rarity" value="R"/>
+       <attr key="type" value="Artifact"/>
+       <attr key="culture" value="{Rohan}"/>
+       <attr key="block" value="Refl"/>
+    </card>
+
+    <card name="·Ithil Stone" graphics="LOTR-EN09047.jpg" text="To play, exert a {Ringwraith} or {Sauron} minion. At the start of each of your Shadow phases, you may draw a card. Shadow: Discard this artifact to play a {Sauron} minion. Its twilight cost is -3.">
+       <attr key="unique" value="yes"/>
+       <attr key="expansion" value="9"/>
+       <attr key="twilight_cost" value="0"/>
+       <attr key="card_number" value="47"/>
+       <attr key="kind" value="Shadow"/>
+       <attr key="rarity" value="R+"/>
+       <attr key="type" value="Artifact"/>
+       <attr key="culture" value="{Sauron}"/>
+       <attr key="block" value="Refl"/>
+    </card>
+
+    <card name="·Sauron, The Lord of the Rings" graphics="LOTR-EN09048.jpg" text="Damage +2. Enduring. Fierce. For each burden you spot, threat you spot, and site you control, Sauron's twilight cost is -1.">
+       <attr key="unique" value="yes"/>
+       <attr key="expansion" value="9"/>
+       <attr key="twilight_cost" value="18"/>
+       <attr key="card_number" value="48"/>
+       <attr key="strength" value="24"/>
+       <attr key="vitality" value="5"/>
+       <attr key="kind" value="Shadow"/>
+       <attr key="site" value="6"/>
+       <attr key="rarity" value="R+"/>
+       <attr key="race" value="Maia"/>
+       <attr key="type" value="Minion"/>
+       <attr key="culture" value="{Sauron}"/>
+       <attr key="block" value="Refl"/>
+    </card>
+
+    <card name="·Bilbo, Bearer of Things Burgled" graphics="LOTR-EN09049.jpg" text="Ring-bound. Each time the fellowship moves, if the twilight pool has 2 or fewer twilight tokens, add 2 burdens or add {3}. Regroup: Add a burden to play a {Shire} tale.">
+       <attr key="unique" value="yes"/>
+       <attr key="expansion" value="9"/>
+       <attr key="twilight_cost" value="2"/>
+       <attr key="card_number" value="49"/>
+       <attr key="strength" value="3"/>
+       <attr key="ring-bearer" value="yes"/>
+       <attr key="vitality" value="4"/>
+       <attr key="kind" value="Free Peoples"/>
+       <attr key="resistance" value="8"/>
+       <attr key="rarity" value="R+"/>
+       <attr key="race" value="Hobbit"/>
+       <attr key="type" value="Companion"/>
+       <attr key="culture" value="{Shire}"/>
+       <attr key="block" value="Refl"/>
+    </card>
+
+    <card name="Everyone Knows" graphics="LOTR-EN09050.jpg" text="Tale. Each unbound Hobbit is strength +1 for each vitality over 3 he or she has. Skirmish: Prevent an unbound Hobbit from being overwhelmed unless his or her strength is tripled. Discard this condition.">
+       <attr key="expansion" value="9"/>
+       <attr key="twilight_cost" value="1"/>
+       <attr key="card_number" value="50"/>
+       <attr key="kind" value="Free Peoples"/>
+       <attr key="rarity" value="R"/>
+       <attr key="type" value="Condition"/>
+       <attr key="culture" value="{Shire}"/>
+       <attr key="block" value="Refl"/>
+    </card>
+
+    <card name="·Goldberry, River-daughter" graphics="LOTR-EN09051.jpg" text="Each time the fellowship moves to a river, heal Goldberry and Tom Bombadil. Skirmish: If the fellowship is at a river, exert Goldberry to make a companion strength +1.">
+       <attr key="unique" value="yes"/>
+       <attr key="expansion" value="9"/>
+       <attr key="twilight_cost" value="3"/>
+       <attr key="card_number" value="51"/>
+       <attr key="strength" value="4"/>
+       <attr key="vitality" value="6"/>
+       <attr key="kind" value="Free Peoples"/>
+       <attr key="site" value="2"/>
+       <attr key="rarity" value="R+"/>
+       <attr key="race" value="Unknown"/>
+       <attr key="type" value="Ally"/>
+       <attr key="culture" value="{Shire}"/>
+       <attr key="block" value="Refl"/>
+    </card>
+
+    <card name="·Tom Bombadil, The Master" graphics="LOTR-EN09052.jpg" text="To play, remove 2 burdens or 2 threats. Skirmish: Spot 2 {Shire} companions and exert Tom Bombadil X times, where X is the fellowship's site number, to cancel a skirmish involving a {Shire} companion.">
+       <attr key="unique" value="yes"/>
+       <attr key="expansion" value="9"/>
+       <attr key="twilight_cost" value="5"/>
+       <attr key="card_number" value="52"/>
+       <attr key="strength" value="14"/>
+       <attr key="vitality" value="9"/>
+       <attr key="kind" value="Free Peoples"/>
+       <attr key="site" value="2"/>
+       <attr key="rarity" value="R+"/>
+       <attr key="race" value="Unknown"/>
+       <attr key="type" value="Ally"/>
+       <attr key="culture" value="{Shire}"/>
+       <attr key="block" value="Refl"/>
+    </card>
+
+  </cards>
+</ccg-setinfo>

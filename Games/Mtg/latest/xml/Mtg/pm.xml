@@ -1,0 +1,82 @@
+<?xml version='1.0' encoding='latin1'?>
+<!DOCTYPE ccg-setinfo SYSTEM "../gccg-set.dtd">
+<ccg-setinfo name="Promo" dir="PM" abbrev="PM" game="Magic the Gathering">
+ <cards>
+  <card name="Arena" graphics="Arena.jpg" text="{3}, {T}: Tap target creature you control and target creature of an opponent's choice he or she controls. Those creatures fight each other.">
+   <attr key="rarity" value="S" />
+   <attr key="cn" value="" />
+   <attr key="cmc" value="0" />
+   <attr key="type" value="Land" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Land" />
+   <attr key="coloridentity" value="0" />
+   <attr key="artist" value="Rob Alexander" />
+  </card>
+  <card name="Giant Badger" graphics="GiantBadger.jpg" text="Whenever Giant Badger blocks, it gets +2/+2 until end of turn.">
+   <attr key="rarity" value="S" />
+   <attr key="cn" value="" />
+   <attr key="cost" value="{1}{G}{G}" />
+   <attr key="cmc" value="3" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Badger" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Green" />
+   <attr key="coloridentity" value="1" />
+   <attr key="power" value="2" />
+   <attr key="toughness" value="2" />
+   <attr key="artist" value="Liz Danforth" />
+  </card>
+  <card name="Mana Crypt" graphics="ManaCrypt.jpg" text="At the beginning of your upkeep, flip a coin. If you lose the flip, Mana Crypt deals 3 damage to you.
+{T}: Add {C}{C} to your mana pool.">
+   <attr key="rarity" value="S" />
+   <attr key="cn" value="" />
+   <attr key="cost" value="{0}" />
+   <attr key="cmc" value="0" />
+   <attr key="type" value="Artifact" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Artifact" />
+   <attr key="coloridentity" value="0" />
+   <attr key="artist" value="Mark Tedin" />
+  </card>
+  <card name="Nalathni Dragon" graphics="NalathniDragon.jpg" text="Flying; banding
+{R}: Nalathni Dragon gets +1/+0 until end of turn. If this ability has been activated four or more times this turn, sacrifice Nalathni Dragon at the beginning of the next end step.">
+   <attr key="rarity" value="S" />
+   <attr key="cn" value="" />
+   <attr key="cost" value="{2}{R}{R}" />
+   <attr key="cmc" value="4" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Dragon" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Red" />
+   <attr key="coloridentity" value="2" />
+   <attr key="power" value="1" />
+   <attr key="toughness" value="1" />
+   <attr key="artist" value="Michael Whelan" />
+  </card>
+  <card name="Sewers of Estark" graphics="SewersofEstark.jpg" text="Choose target creature. If it's attacking, it can't be blocked this turn. If it's blocking, prevent all combat damage that would be dealt this combat by it and each creature it's blocking.">
+   <attr key="rarity" value="S" />
+   <attr key="cn" value="" />
+   <attr key="cost" value="{2}{B}{B}" />
+   <attr key="cmc" value="4" />
+   <attr key="type" value="Instant" />
+   <attr key="permanent" value="0" />
+   <attr key="color" value="Black" />
+   <attr key="coloridentity" value="4" />
+   <attr key="artist" value="Melissa Benson" />
+  </card>
+  <card name="Windseeker Centaur" graphics="WindseekerCentaur.jpg" text="Vigilance">
+   <attr key="rarity" value="S" />
+   <attr key="cn" value="" />
+   <attr key="cost" value="{1}{R}{R}" />
+   <attr key="cmc" value="3" />
+   <attr key="type" value="Creature" />
+   <attr key="subtype" value="Centaur" />
+   <attr key="permanent" value="1" />
+   <attr key="color" value="Red" />
+   <attr key="coloridentity" value="2" />
+   <attr key="power" value="2" />
+   <attr key="toughness" value="2" />
+   <attr key="artist" value="Anson Maddocks" />
+  </card>
+ </cards>
+</ccg-setinfo>

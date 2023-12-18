@@ -1,0 +1,1433 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE ccg-setinfo SYSTEM "../gccg-set.dtd">
+<ccg-setinfo name="Mines of Moria" dir="Mines" abbrev="MoM" game="Lord of the Rings TCG">
+  <cards>
+    <card name="Beneath the Mountains" graphics="1beneaththemountains.jpg" text="Tale. Plays to your support area. Fellowship: Discard the top 3 cards from your draw deck to play a {Dwarven} weapon from your discard pile.">
+      <attr key="expansion" value="2"/>
+      <attr key="card_number" value="1"/>
+      <attr key="rarity" value="R"/>
+      <attr key="kind" value="Free Peoples"/>
+      <attr key="twilight_cost" value="1"/>
+      <attr key="culture" value="{Dwarven}"/>
+      <attr key="type" value="Condition"/>
+      <attr key="block" value="Fellowship"/>
+    </card>
+    <card name="Disquiet of Our People" graphics="2disquietofourpeople.jpg" text="Maneuver: Exert a Dwarf to make that Dwarf defender +1 (or defender +2 if you spot an Orc) until the regroup phase.">
+      <attr key="expansion" value="2"/>
+      <attr key="card_number" value="2"/>
+      <attr key="rarity" value="C"/>
+      <attr key="kind" value="Free Peoples"/>
+      <attr key="twilight_cost" value="1"/>
+      <attr key="culture" value="{Dwarven}"/>
+      <attr key="type" value="Event"/>
+      <attr key="block" value="Fellowship"/>
+    </card>
+    <card name="Dwarven Bracers" graphics="3dwarvenbracers.jpg" text="Bearer must be a Dwarf. Response: If bearer is about to take a wound, discard this possession to prevent that wound.">
+      <attr key="expansion" value="2"/>
+      <attr key="card_number" value="3"/>
+      <attr key="rarity" value="U"/>
+      <attr key="kind" value="Free Peoples"/>
+      <attr key="twilight_cost" value="1"/>
+      <attr key="culture" value="{Dwarven}"/>
+      <attr key="type" value="Possession"/>
+      <attr key="class" value="Bracers"/>
+      <attr key="strength" value="+1"/>
+      <attr key="block" value="Fellowship"/>
+    </card>
+    <card name="Endurance of Dwarves" graphics="4enduranceofdwarves.jpg" text="Bearer must be a Dwarf. Skirmish: Discard this condition to make bearer strength +1.">
+      <attr key="expansion" value="2"/>
+      <attr key="card_number" value="4"/>
+      <attr key="rarity" value="U"/>
+      <attr key="kind" value="Free Peoples"/>
+      <attr key="twilight_cost" value="1"/>
+      <attr key="culture" value="{Dwarven}"/>
+      <attr key="type" value="Condition"/>
+      <attr key="vitality" value="+1"/>
+      <attr key="block" value="Fellowship"/>
+    </card>
+    <card name="Flurry of Blows" graphics="5flurryofblows.jpg" text="Skirmish: Make a Dwarf strength +2 (or +4 and damage +1 if bearing 2 hand weapons).">
+      <attr key="expansion" value="2"/>
+      <attr key="card_number" value="5"/>
+      <attr key="rarity" value="C"/>
+      <attr key="kind" value="Free Peoples"/>
+      <attr key="twilight_cost" value="1"/>
+      <attr key="culture" value="{Dwarven}"/>
+      <attr key="type" value="Event"/>
+      <attr key="block" value="Fellowship"/>
+    </card>
+    <card name="·Frór, Gimli's Kinsman" graphics="6frorgimliskinsman.jpg" text="To play, spot a Dwarf. While skirmishing an Uruk-hai, Fror is strength +3.">
+      <attr key="expansion" value="2"/>
+      <attr key="card_number" value="6"/>
+      <attr key="rarity" value="C"/>
+      <attr key="kind" value="Free Peoples"/>
+      <attr key="twilight_cost" value="2"/>
+      <attr key="culture" value="{Dwarven}"/>
+      <attr key="type" value="Companion"/>
+      <attr key="race" value="Dwarf"/>
+      <attr key="strength" value="5"/>
+      <attr key="vitality" value="3"/>
+      <attr key="unique" value="yes"/>
+      <attr key="block" value="Fellowship"/>
+    </card>
+    <card name="·Glóin, Friend to Thorin" graphics="7gloinfriendtothorin.jpg" text="For each {Dwarven} tale you can spot, Glóin is strength +1 (limit +4).">
+      <attr key="expansion" value="2"/>
+      <attr key="card_number" value="7"/>
+      <attr key="rarity" value="R"/>
+      <attr key="kind" value="Free Peoples"/>
+      <attr key="twilight_cost" value="2"/>
+      <attr key="culture" value="{Dwarven}"/>
+      <attr key="type" value="Companion"/>
+      <attr key="race" value="Dwarf"/>
+      <attr key="strength" value="5"/>
+      <attr key="vitality" value="3"/>
+      <attr key="unique" value="yes"/>
+      <attr key="block" value="Fellowship"/>
+    </card>
+    <card name="Golden Light on the Land" graphics="8goldenlightontheland.jpg" text="To play, spot a Dwarf. Plays to your support area. At a site which is not underground, each {Moria} Orc's twilight cost is +2. Discard this condition during the regroup phase.">
+      <attr key="expansion" value="2"/>
+      <attr key="card_number" value="8"/>
+      <attr key="rarity" value="U"/>
+      <attr key="kind" value="Free Peoples"/>
+      <attr key="twilight_cost" value="0"/>
+      <attr key="culture" value="{Dwarven}"/>
+      <attr key="type" value="Condition"/>
+      <attr key="block" value="Fellowship"/>
+    </card>
+    <card name="Great Works Begun There" graphics="9greatworksbegunthere.jpg" text="Tale. Plays to your support area. Each time you play a Dwarf, you may discard the top 2 cards from your draw deck to take a {Dwarven} event into hand from your discard pile.">
+      <attr key="expansion" value="2"/>
+      <attr key="card_number" value="9"/>
+      <attr key="rarity" value="C"/>
+      <attr key="kind" value="Free Peoples"/>
+      <attr key="twilight_cost" value="1"/>
+      <attr key="culture" value="{Dwarven}"/>
+      <attr key="type" value="Condition"/>
+      <attr key="block" value="Fellowship"/>
+    </card>
+    <card name="Hand Axe" graphics="10handaxe.jpg" text="Bearer must be a Dwarf. This weapon may be borne in addition to 1 other hand weapon. Archery: Discard this weapon to make the fellowship archery total +1.">
+      <attr key="expansion" value="2"/>
+      <attr key="card_number" value="10"/>
+      <attr key="rarity" value="C"/>
+      <attr key="kind" value="Free Peoples"/>
+      <attr key="twilight_cost" value="0"/>
+      <attr key="culture" value="{Dwarven}"/>
+      <attr key="type" value="Possession"/>
+      <attr key="class" value="Hand Weapon"/>
+      <attr key="strength" value="+1"/>
+      <attr key="block" value="Fellowship"/>
+    </card>
+    <card name="Make Light of Burdens" graphics="11makelightofburdens.jpg" text="Plays to your support area. Maneuver: Exert a Dwarf companion and discard the top 3 cards from your draw deck to discard either a Shadow condition from a Dwarf or a weather condition.">
+      <attr key="expansion" value="2"/>
+      <attr key="card_number" value="11"/>
+      <attr key="rarity" value="R"/>
+      <attr key="kind" value="Free Peoples"/>
+      <attr key="twilight_cost" value="1"/>
+      <attr key="culture" value="{Dwarven}"/>
+      <attr key="type" value="Condition"/>
+      <attr key="block" value="Fellowship"/>
+    </card>
+    <card name="·Realm of Dwarrowdelf" graphics="12realmofdwarrowdelf.jpg" text="Plays to your support area. Skirmish: Discard the top 3 cards from your draw deck to make a Dwarf strength +1 (limit +3) and, if underground, damage +1 (limit +3).">
+      <attr key="expansion" value="2"/>
+      <attr key="card_number" value="12"/>
+      <attr key="rarity" value="R"/>
+      <attr key="kind" value="Free Peoples"/>
+      <attr key="twilight_cost" value="1"/>
+      <attr key="culture" value="{Dwarven}"/>
+      <attr key="type" value="Condition"/>
+      <attr key="unique" value="yes"/>
+      <attr key="block" value="Fellowship"/>
+    </card>
+    <card name="Tidings of Erebor" graphics="13tidingsoferebor.jpg" text="Regroup: Spot a Dwarf to draw 3 cards. Any Shadow player may remove {3} to prevent this.">
+      <attr key="expansion" value="2"/>
+      <attr key="card_number" value="13"/>
+      <attr key="rarity" value="U"/>
+      <attr key="kind" value="Free Peoples"/>
+      <attr key="twilight_cost" value="0"/>
+      <attr key="culture" value="{Dwarven}"/>
+      <attr key="type" value="Event"/>
+      <attr key="block" value="Fellowship"/>
+    </card>
+    <card name="Till Durin Wakes Again" graphics="14tilldurinwakesagain.jpg" text="Tale. Plays to your support area. Each time a Dwarf companion moves from an underground site, you may heal that Dwarf.">
+      <attr key="expansion" value="2"/>
+      <attr key="card_number" value="14"/>
+      <attr key="rarity" value="C"/>
+      <attr key="kind" value="Free Peoples"/>
+      <attr key="twilight_cost" value="0"/>
+      <attr key="culture" value="{Dwarven}"/>
+      <attr key="type" value="Condition"/>
+      <attr key="block" value="Fellowship"/>
+    </card>
+    <card name="What Are We Waiting For?" graphics="15whatarewewaitingfor.jpg" text="Fellowship: Exert a Dwarf to make an opponent draw 2 cards. That player then chooses to either discard 2 Shadow cards from hand or skip his or her next Shadow phase.">
+      <attr key="expansion" value="2"/>
+      <attr key="card_number" value="15"/>
+      <attr key="rarity" value="R"/>
+      <attr key="kind" value="Free Peoples"/>
+      <attr key="twilight_cost" value="1"/>
+      <attr key="culture" value="{Dwarven}"/>
+      <attr key="type" value="Event"/>
+      <attr key="block" value="Fellowship"/>
+    </card>
+    <card name="A Blended Race" graphics="16ablendedrace.jpg" text="To play, spot an Elf. Plays to your support area. Each Uruk-hai is strength -2 and loses all damage bonuses. Discard this condition during the regroup phase.">
+      <attr key="expansion" value="2"/>
+      <attr key="card_number" value="16"/>
+      <attr key="rarity" value="U"/>
+      <attr key="kind" value="Free Peoples"/>
+      <attr key="twilight_cost" value="1"/>
+      <attr key="culture" value="{Elven}"/>
+      <attr key="type" value="Condition"/>
+      <attr key="block" value="Fellowship"/>
+    </card>
+    <card name="Dismay Our Enemies" graphics="17dismayourenemies.jpg" text="Response: If an Elf archer wins a skirmish, make an opponent choose a minion to discard. That opponent may remove {3} to prevent this.">
+      <attr key="expansion" value="2"/>
+      <attr key="card_number" value="17"/>
+      <attr key="rarity" value="U"/>
+      <attr key="kind" value="Free Peoples"/>
+      <attr key="twilight_cost" value="0"/>
+      <attr key="culture" value="{Elven}"/>
+      <attr key="type" value="Event"/>
+      <attr key="block" value="Fellowship"/>
+    </card>
+    <card name="Hosts of the Last Alliance" graphics="18hostsofthelastalliance.jpg" text="Tale. Plays to your support area. While you can spot an Elf companion, the minion archery total is -1. Response: If an Elf is about to take a wound, discard this condition to prevent that wound.">
+      <attr key="expansion" value="2"/>
+      <attr key="card_number" value="18"/>
+      <attr key="rarity" value="U"/>
+      <attr key="kind" value="Free Peoples"/>
+      <attr key="twilight_cost" value="2"/>
+      <attr key="culture" value="{Elven}"/>
+      <attr key="type" value="Condition"/>
+      <attr key="block" value="Fellowship"/>
+    </card>
+    <card name="Release the Angry Flood" graphics="19releasetheangryflood.jpg" text="Maneuver: Exert an Elf to wound each Nazgûl once (or twice if at a river).">
+      <attr key="expansion" value="2"/>
+      <attr key="card_number" value="19"/>
+      <attr key="rarity" value="R"/>
+      <attr key="kind" value="Free Peoples"/>
+      <attr key="twilight_cost" value="1"/>
+      <attr key="culture" value="{Elven}"/>
+      <attr key="type" value="Event"/>
+      <attr key="block" value="Fellowship"/>
+    </card>
+    <card name="Secret Sentinels" graphics="20secretsentinels.jpg" text="Maneuver: Exert an Elf ally to discard a condition (or 2 conditions if you spot an Orc).">
+      <attr key="expansion" value="2"/>
+      <attr key="card_number" value="20"/>
+      <attr key="rarity" value="R"/>
+      <attr key="kind" value="Free Peoples"/>
+      <attr key="twilight_cost" value="2"/>
+      <attr key="culture" value="{Elven}"/>
+      <attr key="type" value="Event"/>
+      <attr key="block" value="Fellowship"/>
+    </card>
+    <card name="·Erland, Advisor to Brand" graphics="21erlandadvisortobrand.jpg" text="To play, spot Gandalf. Shadow players may not look at or reveal cards in your hand.">
+      <attr key="expansion" value="2"/>
+      <attr key="card_number" value="21"/>
+      <attr key="rarity" value="C"/>
+      <attr key="kind" value="Free Peoples"/>
+      <attr key="twilight_cost" value="2"/>
+      <attr key="culture" value="{Gandalf}"/>
+      <attr key="type" value="Ally"/>
+      <attr key="race" value="Man"/>
+      <attr key="home" value="3"/>
+      <attr key="strength" value="5"/>
+      <attr key="vitality" value="2"/>
+      <attr key="unique" value="yes"/>
+      <attr key="block" value="Fellowship"/>
+    </card>
+    <card name="·Gandalf's Staff" graphics="22gandalfsstaff.jpg" text="Bearer must be Gandalf. The twilight cost of each {Gandalf} spell is -1. Skirmish: Exert Gandalf twice to cancel a skirmish involving him.">
+      <attr key="expansion" value="2"/>
+      <attr key="card_number" value="22"/>
+      <attr key="rarity" value="R"/>
+      <attr key="kind" value="Free Peoples"/>
+      <attr key="twilight_cost" value="2"/>
+      <attr key="culture" value="{Gandalf}"/>
+      <attr key="type" value="Artifact"/>
+      <attr key="class" value="Staff"/>
+      <attr key="vitality" value="+1"/>
+      <attr key="unique" value="yes"/>
+      <attr key="block" value="Fellowship"/>
+    </card>
+    <card name="Gandalf's Wisdom" graphics="23gandalfswisdom.jpg" text="Plays to your support area. The twilight cost of each possession or artifact played on Gandalf or a character who has the Gandalf signet is -1.">
+      <attr key="expansion" value="2"/>
+      <attr key="card_number" value="23"/>
+      <attr key="rarity" value="C"/>
+      <attr key="kind" value="Free Peoples"/>
+      <attr key="twilight_cost" value="0"/>
+      <attr key="culture" value="{Gandalf}"/>
+      <attr key="type" value="Condition"/>
+      <attr key="block" value="Fellowship"/>
+    </card>
+    <card name="·Hugin, Emissary from Laketown" graphics="24huginemissaryfrom.jpg" text="To play, spot Gandalf. Fellowship: Exert Hugin to reveal a Free Peoples card from your discard pile and place it beneath your draw deck.">
+      <attr key="expansion" value="2"/>
+      <attr key="card_number" value="24"/>
+      <attr key="rarity" value="C"/>
+      <attr key="kind" value="Free Peoples"/>
+      <attr key="twilight_cost" value="1"/>
+      <attr key="culture" value="{Gandalf}"/>
+      <attr key="type" value="Ally"/>
+      <attr key="race" value="Man"/>
+      <attr key="home" value="3"/>
+      <attr key="strength" value="4"/>
+      <attr key="vitality" value="2"/>
+      <attr key="unique" value="yes"/>
+      <attr key="block" value="Fellowship"/>
+    </card>
+    <card name="·Járnsmid, Merchant from Dale" graphics="25jarnsmidmerchantfrom.jpg" text="To play, spot Gandalf. Each time you play a shield, armor, helm, or hand weapon, its twilight cost is -1.">
+      <attr key="expansion" value="2"/>
+      <attr key="card_number" value="25"/>
+      <attr key="rarity" value="R"/>
+      <attr key="kind" value="Free Peoples"/>
+      <attr key="twilight_cost" value="1"/>
+      <attr key="culture" value="{Gandalf}"/>
+      <attr key="type" value="Ally"/>
+      <attr key="race" value="Man"/>
+      <attr key="home" value="3"/>
+      <attr key="strength" value="4"/>
+      <attr key="vitality" value="2"/>
+      <attr key="unique" value="yes"/>
+      <attr key="block" value="Fellowship"/>
+    </card>
+    <card name="Speak &quot;Friend&quot; and Enter" graphics="26speakfriendandenter.jpg" text="Fellowship or Regroup: Spot Gandalf to play the fellowship's next site (replacing opponent's site if necessary). Draw a card if you play an underground site.">
+      <attr key="expansion" value="2"/>
+      <attr key="card_number" value="26"/>
+      <attr key="rarity" value="C"/>
+      <attr key="kind" value="Free Peoples"/>
+      <attr key="twilight_cost" value="1"/>
+      <attr key="culture" value="{Gandalf}"/>
+      <attr key="type" value="Event"/>
+      <attr key="block" value="Fellowship"/>
+    </card>
+    <card name="Staff Asunder" graphics="27staffasunder.jpg" text="Spell. Skirmish: Discard a staff Gandalf is bearing and then exert him twice to discard a minion he is skirmishing.">
+      <attr key="expansion" value="2"/>
+      <attr key="card_number" value="27"/>
+      <attr key="rarity" value="R"/>
+      <attr key="kind" value="Free Peoples"/>
+      <attr key="twilight_cost" value="0"/>
+      <attr key="culture" value="{Gandalf}"/>
+      <attr key="type" value="Event"/>
+      <attr key="block" value="Fellowship"/>
+    </card>
+    <card name="Wielder of the Flame" graphics="28wielderoftheflame.jpg" text="Spell. Maneuver: Spot Gandalf to make a companion defender +1 until the regroup phase. Any Shadow player may remove {3} to prevent this.">
+      <attr key="expansion" value="2"/>
+      <attr key="card_number" value="28"/>
+      <attr key="rarity" value="U"/>
+      <attr key="kind" value="Free Peoples"/>
+      <attr key="twilight_cost" value="1"/>
+      <attr key="culture" value="{Gandalf}"/>
+      <attr key="type" value="Event"/>
+      <attr key="block" value="Fellowship"/>
+    </card>
+    <card name="Wizard Staff" graphics="29wizardstaff.jpg" text="Bearer must be a Wizard. Skirmish: Exert bearer twice to make a minion strength -3.">
+      <attr key="expansion" value="2"/>
+      <attr key="card_number" value="29"/>
+      <attr key="rarity" value="C"/>
+      <attr key="kind" value="Free Peoples"/>
+      <attr key="twilight_cost" value="2"/>
+      <attr key="culture" value="{Gandalf}"/>
+      <attr key="type" value="Possession"/>
+      <attr key="class" value="Staff"/>
+      <attr key="strength" value="+1"/>
+      <attr key="block" value="Fellowship"/>
+    </card>
+    <card name="You Cannot Pass!" graphics="30youcannotpass.jpg" text="Spell. Maneuver: Spot Gandalf bearing a staff to prevent a minion from being fierce until the regroup phase.">
+      <attr key="expansion" value="2"/>
+      <attr key="card_number" value="30"/>
+      <attr key="rarity" value="U"/>
+      <attr key="kind" value="Free Peoples"/>
+      <attr key="twilight_cost" value="1"/>
+      <attr key="culture" value="{Gandalf}"/>
+      <attr key="type" value="Event"/>
+      <attr key="block" value="Fellowship"/>
+    </card>
+    <card name="Blood of Númenor" graphics="31bloodofnumenor.jpg" text="To play, exert a {Gondor} companion. Plays to your support area. Each {Sauron} Orc comes into play exhausted. Skip the archery phase. Discard this condition during the regroup phase.">
+      <attr key="expansion" value="2"/>
+      <attr key="card_number" value="31"/>
+      <attr key="rarity" value="U"/>
+      <attr key="kind" value="Free Peoples"/>
+      <attr key="twilight_cost" value="2"/>
+      <attr key="culture" value="{Gondor}"/>
+      <attr key="type" value="Condition"/>
+      <attr key="block" value="Fellowship"/>
+    </card>
+    <card name="Flaming Brand" graphics="32flamingbrand.jpg" text="Bearer must be a Man. This weapon may be borne in addition to 1 other hand weapon. Bearer is strength +2 and damage +1 while skirmishing a Nazgûl.">
+      <attr key="expansion" value="2"/>
+      <attr key="card_number" value="32"/>
+      <attr key="rarity" value="R"/>
+      <attr key="kind" value="Free Peoples"/>
+      <attr key="twilight_cost" value="0"/>
+      <attr key="culture" value="{Gondor}"/>
+      <attr key="type" value="Possession"/>
+      <attr key="class" value="Hand Weapon"/>
+      <attr key="strength" value="+1"/>
+      <attr key="block" value="Fellowship"/>
+    </card>
+    <card name="Flee in Terror" graphics="33fleeinterror.jpg" text="Response: If a {Gondor} companion wins a skirmish, discard an exhausted Orc. That minion's owner may remove {3} to prevent this.">
+      <attr key="expansion" value="2"/>
+      <attr key="card_number" value="33"/>
+      <attr key="rarity" value="U"/>
+      <attr key="kind" value="Free Peoples"/>
+      <attr key="twilight_cost" value="0"/>
+      <attr key="culture" value="{Gondor}"/>
+      <attr key="type" value="Event"/>
+      <attr key="block" value="Fellowship"/>
+    </card>
+    <card name="Gondor Will See It Done" graphics="34gondorwillseeitdone.jpg" text="Response: If a companion is about to take a wound, exert a {Gondor} companion to prevent that wound.">
+      <attr key="expansion" value="2"/>
+      <attr key="card_number" value="34"/>
+      <attr key="rarity" value="U"/>
+      <attr key="kind" value="Free Peoples"/>
+      <attr key="twilight_cost" value="0"/>
+      <attr key="culture" value="{Gondor}"/>
+      <attr key="type" value="Event"/>
+      <attr key="block" value="Fellowship"/>
+    </card>
+    <card name="Natural Cover" graphics="35naturalcover.jpg" text="To play, spot a ranger. Plays to your support area. While the fellowship is at a forest, the minion archery total is -2.">
+      <attr key="expansion" value="2"/>
+      <attr key="card_number" value="35"/>
+      <attr key="rarity" value="C"/>
+      <attr key="kind" value="Free Peoples"/>
+      <attr key="twilight_cost" value="1"/>
+      <attr key="culture" value="{Gondor}"/>
+      <attr key="type" value="Condition"/>
+      <attr key="block" value="Fellowship"/>
+    </card>
+    <card name="No Mere Ranger" graphics="36nomereranger.jpg" text="Skirmish: Exert Aragorn to make another companion strength +2 (or +3 if that companion has the Aragorn signet).">
+      <attr key="expansion" value="2"/>
+      <attr key="card_number" value="36"/>
+      <attr key="rarity" value="R"/>
+      <attr key="kind" value="Free Peoples"/>
+      <attr key="twilight_cost" value="0"/>
+      <attr key="culture" value="{Gondor}"/>
+      <attr key="type" value="Event"/>
+      <attr key="block" value="Fellowship"/>
+    </card>
+    <card name="Sentinels of Númenor" graphics="37sentinelsofnumenor.jpg" text="Skirmish: Make a {Gondor} companion strength +2 (or +4 if in a fierce skirmish).">
+      <attr key="expansion" value="2"/>
+      <attr key="card_number" value="37"/>
+      <attr key="rarity" value="C"/>
+      <attr key="kind" value="Free Peoples"/>
+      <attr key="twilight_cost" value="0"/>
+      <attr key="culture" value="{Gondor}"/>
+      <attr key="type" value="Event"/>
+      <attr key="block" value="Fellowship"/>
+    </card>
+    <card name="·Shield of Boromir" graphics="38shieldofboromir.jpg" text="Bearer must be a {Gondor} companion. The minion archery total is -1. If bearer is Boromir, each minion skirmishing him does not gain strength bonuses from weapons.">
+      <attr key="expansion" value="2"/>
+      <attr key="card_number" value="38"/>
+      <attr key="rarity" value="R"/>
+      <attr key="kind" value="Free Peoples"/>
+      <attr key="twilight_cost" value="1"/>
+      <attr key="culture" value="{Gondor}"/>
+      <attr key="type" value="Possession"/>
+      <attr key="class" value="Shield"/>
+      <attr key="unique" value="yes"/>
+      <attr key="block" value="Fellowship"/>
+    </card>
+    <card name="Beyond the Height of Men" graphics="39beyondtheheightofmen.jpg" text="Maneuver: Exert an Uruk-hai to discard an armor possession, helm possession, or shield possession (or all such Free Peoples possessions if you can spot 6 companions).">
+      <attr key="expansion" value="2"/>
+      <attr key="card_number" value="39"/>
+      <attr key="rarity" value="R"/>
+      <attr key="kind" value="Shadow"/>
+      <attr key="twilight_cost" value="2"/>
+      <attr key="culture" value="{Isengard}"/>
+      <attr key="type" value="Event"/>
+      <attr key="block" value="Fellowship"/>
+    </card>
+    <card name="Demands of the Sackville-Bagginses" graphics="40demandsofthesackville.jpg" text="To play, spot an {Isengard} minion. Plays to your support area. Each time a {Shire} ally exerts, add {1}.">
+      <attr key="expansion" value="2"/>
+      <attr key="card_number" value="40"/>
+      <attr key="rarity" value="C"/>
+      <attr key="kind" value="Shadow"/>
+      <attr key="twilight_cost" value="1"/>
+      <attr key="culture" value="{Isengard}"/>
+      <attr key="type" value="Condition"/>
+      <attr key="block" value="Fellowship"/>
+    </card>
+    <card name="Evil Afoot" graphics="41evilafoot.jpg" text="Shadow: Exert an Uruk-hai and spot X burdens to shuffle X minions from your discard pile into your draw deck.">
+      <attr key="expansion" value="2"/>
+      <attr key="card_number" value="41"/>
+      <attr key="rarity" value="U"/>
+      <attr key="kind" value="Shadow"/>
+      <attr key="twilight_cost" value="0"/>
+      <attr key="culture" value="{Isengard}"/>
+      <attr key="type" value="Event"/>
+      <attr key="block" value="Fellowship"/>
+    </card>
+    <card name="Goblin Man" graphics="42goblinman.jpg" text="Discard this minion if underground. Shadow: Exert this minion to look at the Free Peoples player's hand.">
+      <attr key="expansion" value="2"/>
+      <attr key="card_number" value="42"/>
+      <attr key="rarity" value="C"/>
+      <attr key="kind" value="Shadow"/>
+      <attr key="twilight_cost" value="2"/>
+      <attr key="culture" value="{Isengard}"/>
+      <attr key="type" value="Minion"/>
+      <attr key="race" value="Orc"/>
+      <attr key="strength" value="6"/>
+      <attr key="vitality" value="2"/>
+      <attr key="site" value="2"/>
+      <attr key="block" value="Fellowship"/>
+    </card>
+    <card name="·Lurtz's Sword" graphics="43lurtzssword.jpg" text="Bearer must be Lurtz. He is damage +1. Each time Lurtz wins a skirmish, the Free Peoples player must discard the top 2 cards of his or her draw deck.">
+      <attr key="expansion" value="2"/>
+      <attr key="card_number" value="43"/>
+      <attr key="rarity" value="R"/>
+      <attr key="kind" value="Shadow"/>
+      <attr key="twilight_cost" value="1"/>
+      <attr key="culture" value="{Isengard}"/>
+      <attr key="type" value="Possession"/>
+      <attr key="class" value="Hand Weapon"/>
+      <attr key="strength" value="+2"/>
+      <attr key="unique" value="yes"/>
+      <attr key="block" value="Fellowship"/>
+    </card>
+    <card name="No Business of Ours" graphics="44nobusinessofours.jpg" text="To play, spot an {Isengard} minion. Plays to your support area. The Free Peoples player may not look at or reveal cards in any Shadow player's hand.">
+      <attr key="expansion" value="2"/>
+      <attr key="card_number" value="44"/>
+      <attr key="rarity" value="C"/>
+      <attr key="kind" value="Shadow"/>
+      <attr key="twilight_cost" value="0"/>
+      <attr key="culture" value="{Isengard}"/>
+      <attr key="type" value="Condition"/>
+      <attr key="block" value="Fellowship"/>
+    </card>
+    <card name="Too Much Attention" graphics="45toomuchattention.jpg" text="Response: If the Ring-bearer puts on The One Ring, spot an {Isengard} minion to make the Free Peoples player discard the top 5 cards of his or her draw deck.">
+      <attr key="expansion" value="2"/>
+      <attr key="card_number" value="45"/>
+      <attr key="rarity" value="R"/>
+      <attr key="kind" value="Shadow"/>
+      <attr key="twilight_cost" value="1"/>
+      <attr key="culture" value="{Isengard}"/>
+      <attr key="type" value="Event"/>
+      <attr key="block" value="Fellowship"/>
+    </card>
+    <card name="·Uruk Captain" graphics="46urukcaptain.jpg" text="Damage +1. Shadow: Remove {1} and exert Uruk Captain to play an Uruk-hai from your discard pile.">
+      <attr key="expansion" value="2"/>
+      <attr key="card_number" value="46"/>
+      <attr key="rarity" value="R"/>
+      <attr key="kind" value="Shadow"/>
+      <attr key="twilight_cost" value="3"/>
+      <attr key="culture" value="{Isengard}"/>
+      <attr key="type" value="Minion"/>
+      <attr key="race" value="Uruk-hai"/>
+      <attr key="strength" value="9"/>
+      <attr key="vitality" value="2"/>
+      <attr key="site" value="5"/>
+      <attr key="unique" value="yes"/>
+      <attr key="block" value="Fellowship"/>
+    </card>
+    <card name="Uruk Scout" graphics="47urukscout.jpg" text="Tracker. Damage +1. The roaming penalty for each {Isengard} minion you play is -1. Response: If an event is played that spots or exerts a ranger, exert this minion to cancel that event.">
+      <attr key="expansion" value="2"/>
+      <attr key="card_number" value="47"/>
+      <attr key="rarity" value="C"/>
+      <attr key="kind" value="Shadow"/>
+      <attr key="twilight_cost" value="3"/>
+      <attr key="culture" value="{Isengard}"/>
+      <attr key="type" value="Minion"/>
+      <attr key="race" value="Uruk-hai"/>
+      <attr key="strength" value="7"/>
+      <attr key="vitality" value="2"/>
+      <attr key="site" value="5"/>
+      <attr key="block" value="Fellowship"/>
+    </card>
+    <card name="Wizard Storm" graphics="48wizardstorm.jpg" text="Spell. Weather. To play, exert an {Isengard} minion. Plays on a site. Limit 1 per site. When the fellowship moves from this site, every companion must exert. Discard this condition at the end of the turn.">
+      <attr key="expansion" value="2"/>
+      <attr key="card_number" value="48"/>
+      <attr key="rarity" value="U"/>
+      <attr key="kind" value="Shadow"/>
+      <attr key="twilight_cost" value="2"/>
+      <attr key="culture" value="{Isengard}"/>
+      <attr key="type" value="Condition"/>
+      <attr key="block" value="Fellowship"/>
+    </card>
+    <card name="·Archer Commander" graphics="49archercommander.jpg" text="Archer. Each other {Moria} archer is strength +2.">
+      <attr key="expansion" value="2"/>
+      <attr key="card_number" value="49"/>
+      <attr key="rarity" value="R"/>
+      <attr key="kind" value="Shadow"/>
+      <attr key="twilight_cost" value="4"/>
+      <attr key="culture" value="{Moria}"/>
+      <attr key="type" value="Minion"/>
+      <attr key="race" value="Orc"/>
+      <attr key="strength" value="8"/>
+      <attr key="vitality" value="2"/>
+      <attr key="site" value="4"/>
+      <attr key="unique" value="yes"/>
+      <attr key="block" value="Fellowship"/>
+    </card>
+    <card name="·The Balrog's Sword" graphics="50thebalrogssword.jpg" text="Bearer must be The Balrog. It is damage +1. This weapon may be borne in addition to 1 other hand weapon.">
+      <attr key="expansion" value="2"/>
+      <attr key="card_number" value="50"/>
+      <attr key="rarity" value="R"/>
+      <attr key="kind" value="Shadow"/>
+      <attr key="twilight_cost" value="1"/>
+      <attr key="culture" value="{Moria}"/>
+      <attr key="type" value="Artifact"/>
+      <attr key="class" value="Hand Weapon"/>
+      <attr key="strength" value="+3"/>
+      <attr key="unique" value="yes"/>
+      <attr key="block" value="Fellowship"/>
+    </card>
+    <card name="·The Balrog, Durin's Bane" graphics="51thebalrogdurinsbane.jpg" text="Damage +1. Fierce. While you can spot The Balrog, discard all other minions. Skip the archery phase. Discard The Balrog if not underground.">
+      <attr key="expansion" value="2"/>
+      <attr key="card_number" value="51"/>
+      <attr key="rarity" value="C"/>
+      <attr key="kind" value="Shadow"/>
+      <attr key="twilight_cost" value="12"/>
+      <attr key="culture" value="{Moria}"/>
+      <attr key="type" value="Minion"/>
+      <attr key="race" value="Balrog"/>
+      <attr key="strength" value="17"/>
+      <attr key="vitality" value="5"/>
+      <attr key="site" value="4"/>
+      <attr key="unique" value="yes"/>
+      <attr key="block" value="Fellowship"/>
+    </card>
+    <card name="·The Balrog, Flame of Udûn" graphics="52thebalrogflameofudun.jpg" text="Damage +1. Fierce. To play, spot a {Moria} Orc. Discard The Balrog if not underground. Shadow: Exert The Balrog and remove {2} to play a {Moria} Orc from your discard pile.">
+      <attr key="expansion" value="2"/>
+      <attr key="card_number" value="52"/>
+      <attr key="rarity" value="R"/>
+      <attr key="kind" value="Shadow"/>
+      <attr key="twilight_cost" value="14"/>
+      <attr key="culture" value="{Moria}"/>
+      <attr key="type" value="Minion"/>
+      <attr key="race" value="Balrog"/>
+      <attr key="strength" value="17"/>
+      <attr key="vitality" value="5"/>
+      <attr key="site" value="4"/>
+      <attr key="unique" value="yes"/>
+      <attr key="block" value="Fellowship"/>
+    </card>
+    <card name="·Cave Troll's Chain" graphics="53cavetrollschain.jpg" text="Bearer must be Cave Troll of Moria. The Free Peoples player may choose for the archery phase to be skipped. Each time Cave Troll of Moria takes a wound during the archery phase, you may wound an archer companion.">
+      <attr key="expansion" value="2"/>
+      <attr key="card_number" value="53"/>
+      <attr key="rarity" value="R"/>
+      <attr key="kind" value="Shadow"/>
+      <attr key="twilight_cost" value="1"/>
+      <attr key="culture" value="{Moria}"/>
+      <attr key="type" value="Possession"/>
+      <attr key="strength" value="+2"/>
+      <attr key="unique" value="yes"/>
+      <attr key="block" value="Fellowship"/>
+    </card>
+    <card name="Dark Fire" graphics="54darkfire.jpg" text="To play, spot The Balrog. Plays on Gandalf. Each time the fellowship moves, Gandalf must exert.">
+      <attr key="expansion" value="2"/>
+      <attr key="card_number" value="54"/>
+      <attr key="rarity" value="U"/>
+      <attr key="kind" value="Shadow"/>
+      <attr key="twilight_cost" value="1"/>
+      <attr key="culture" value="{Moria}"/>
+      <attr key="type" value="Condition"/>
+      <attr key="strength" value="-2"/>
+      <attr key="block" value="Fellowship"/>
+    </card>
+    <card name="Dark Places" graphics="55darkplaces.jpg" text="Plays to your support area. Each unique {Moria} minion is strength +1. Shadow: Spot an opponent's site to replace it with your marsh or underground site of the same number.">
+      <attr key="expansion" value="2"/>
+      <attr key="card_number" value="55"/>
+      <attr key="rarity" value="C"/>
+      <attr key="kind" value="Shadow"/>
+      <attr key="twilight_cost" value="1"/>
+      <attr key="culture" value="{Moria}"/>
+      <attr key="type" value="Condition"/>
+      <attr key="block" value="Fellowship"/>
+    </card>
+    <card name="Fill With Fear" graphics="56fillwithfear.jpg" text="Plays to your support area. While you can spot The Balrog, skip the archery phase. Maneuver: Exert The Balrog to discard a ranged weapon.">
+      <attr key="expansion" value="2"/>
+      <attr key="card_number" value="56"/>
+      <attr key="rarity" value="U"/>
+      <attr key="kind" value="Shadow"/>
+      <attr key="twilight_cost" value="0"/>
+      <attr key="culture" value="{Moria}"/>
+      <attr key="type" value="Condition"/>
+      <attr key="block" value="Fellowship"/>
+    </card>
+    <card name="Final Cry" graphics="57finalcry.jpg" text="Response: If a skirmish that involved The Balrog bearing Whip of Many Thongs is about to end, wound a companion in that skirmish twice.">
+      <attr key="expansion" value="2"/>
+      <attr key="card_number" value="57"/>
+      <attr key="rarity" value="R"/>
+      <attr key="kind" value="Shadow"/>
+      <attr key="twilight_cost" value="1"/>
+      <attr key="culture" value="{Moria}"/>
+      <attr key="type" value="Event"/>
+      <attr key="block" value="Fellowship"/>
+    </card>
+    <card name="Foul Tentacle" graphics="58foultentacle.jpg" text="Tentacle. When you play this minion, you may play a tentacle from your draw deck. This minion may not bear possessions and is discarded if not at a marsh.">
+      <attr key="expansion" value="2"/>
+      <attr key="card_number" value="58"/>
+      <attr key="rarity" value="C"/>
+      <attr key="kind" value="Shadow"/>
+      <attr key="twilight_cost" value="2"/>
+      <attr key="culture" value="{Moria}"/>
+      <attr key="type" value="Minion"/>
+      <attr key="race" value="Creature"/>
+      <attr key="strength" value="4"/>
+      <attr key="vitality" value="1"/>
+      <attr key="site" value="4"/>
+      <attr key="block" value="Fellowship"/>
+    </card>
+    <card name="Foul Things" graphics="59foulthings.jpg" text="Shadow: Play a {Moria} minion from your discard pile.">
+      <attr key="expansion" value="2"/>
+      <attr key="card_number" value="59"/>
+      <attr key="rarity" value="U"/>
+      <attr key="kind" value="Shadow"/>
+      <attr key="twilight_cost" value="2"/>
+      <attr key="culture" value="{Moria}"/>
+      <attr key="type" value="Event"/>
+      <attr key="block" value="Fellowship"/>
+    </card>
+    <card name="Goblin Bowman" graphics="60goblinbowman.jpg" text="Archer.">
+      <attr key="expansion" value="2"/>
+      <attr key="card_number" value="60"/>
+      <attr key="rarity" value="C"/>
+      <attr key="kind" value="Shadow"/>
+      <attr key="twilight_cost" value="2"/>
+      <attr key="culture" value="{Moria}"/>
+      <attr key="type" value="Minion"/>
+      <attr key="race" value="Orc"/>
+      <attr key="strength" value="4"/>
+      <attr key="vitality" value="1"/>
+      <attr key="site" value="4"/>
+      <attr key="block" value="Fellowship"/>
+    </card>
+    <card name="Goblin Flankers" graphics="61goblinflankers.jpg" text="When you play this minion, you may add {3} if the fellowship has moved more than once this turn.">
+      <attr key="expansion" value="2"/>
+      <attr key="card_number" value="61"/>
+      <attr key="rarity" value="C"/>
+      <attr key="kind" value="Shadow"/>
+      <attr key="twilight_cost" value="5"/>
+      <attr key="culture" value="{Moria}"/>
+      <attr key="type" value="Minion"/>
+      <attr key="race" value="Orc"/>
+      <attr key="strength" value="11"/>
+      <attr key="vitality" value="3"/>
+      <attr key="site" value="4"/>
+      <attr key="block" value="Fellowship"/>
+    </card>
+    <card name="Goblin Pursuer" graphics="62goblinpursuer.jpg" text="If the fellowship has moved more than once this turn, this minion is strength +3.">
+      <attr key="expansion" value="2"/>
+      <attr key="card_number" value="62"/>
+      <attr key="rarity" value="C"/>
+      <attr key="kind" value="Shadow"/>
+      <attr key="twilight_cost" value="2"/>
+      <attr key="culture" value="{Moria}"/>
+      <attr key="type" value="Minion"/>
+      <attr key="race" value="Orc"/>
+      <attr key="strength" value="6"/>
+      <attr key="vitality" value="1"/>
+      <attr key="site" value="4"/>
+      <attr key="block" value="Fellowship"/>
+    </card>
+    <card name="Goblin Reinforcements" graphics="63goblinreinforcements.jpg" text="When you play this minion, you may heal a {Moria} minion.">
+      <attr key="expansion" value="2"/>
+      <attr key="card_number" value="63"/>
+      <attr key="rarity" value="C"/>
+      <attr key="kind" value="Shadow"/>
+      <attr key="twilight_cost" value="3"/>
+      <attr key="culture" value="{Moria}"/>
+      <attr key="type" value="Minion"/>
+      <attr key="race" value="Orc"/>
+      <attr key="strength" value="8"/>
+      <attr key="vitality" value="1"/>
+      <attr key="site" value="4"/>
+      <attr key="block" value="Fellowship"/>
+    </card>
+    <card name="Goblin Scrabbler" graphics="64goblinscrabbler.jpg" text="When you play this minion, you may discard an {Elven} condition. The roaming penalty for each {Moria} Orc you play is -1.">
+      <attr key="expansion" value="2"/>
+      <attr key="card_number" value="64"/>
+      <attr key="rarity" value="C"/>
+      <attr key="kind" value="Shadow"/>
+      <attr key="twilight_cost" value="1"/>
+      <attr key="culture" value="{Moria}"/>
+      <attr key="type" value="Minion"/>
+      <attr key="race" value="Orc"/>
+      <attr key="strength" value="4"/>
+      <attr key="vitality" value="1"/>
+      <attr key="site" value="4"/>
+      <attr key="block" value="Fellowship"/>
+    </card>
+    <card name="Goblin Spearman" graphics="65goblinspearman.jpg" text="While bearing a Goblin Spear, this minion is damage +2.">
+      <attr key="expansion" value="2"/>
+      <attr key="card_number" value="65"/>
+      <attr key="rarity" value="C"/>
+      <attr key="kind" value="Shadow"/>
+      <attr key="twilight_cost" value="2"/>
+      <attr key="culture" value="{Moria}"/>
+      <attr key="type" value="Minion"/>
+      <attr key="race" value="Orc"/>
+      <attr key="strength" value="6"/>
+      <attr key="vitality" value="1"/>
+      <attr key="site" value="4"/>
+      <attr key="block" value="Fellowship"/>
+    </card>
+    <card name="Huge Tentacle" graphics="66hugetentacle.jpg" text="Tentacle. Damage +1. When you play this minion, you may play Watcher in the Water from your draw deck. This minion may not bear possessions and is discarded if not at a marsh.">
+      <attr key="expansion" value="2"/>
+      <attr key="card_number" value="66"/>
+      <attr key="rarity" value="R"/>
+      <attr key="kind" value="Shadow"/>
+      <attr key="twilight_cost" value="2"/>
+      <attr key="culture" value="{Moria}"/>
+      <attr key="type" value="Minion"/>
+      <attr key="race" value="Creature"/>
+      <attr key="strength" value="7"/>
+      <attr key="vitality" value="2"/>
+      <attr key="site" value="4"/>
+      <attr key="block" value="Fellowship"/>
+    </card>
+    <card name="Moria Archer Troop" graphics="67moriaarchertroop.jpg" text="Archer. While you can spot another {Moria} archer, add 1 to the minion archery total.">
+      <attr key="expansion" value="2"/>
+      <attr key="card_number" value="67"/>
+      <attr key="rarity" value="U"/>
+      <attr key="kind" value="Shadow"/>
+      <attr key="twilight_cost" value="6"/>
+      <attr key="culture" value="{Moria}"/>
+      <attr key="type" value="Minion"/>
+      <attr key="race" value="Orc"/>
+      <attr key="strength" value="8"/>
+      <attr key="vitality" value="3"/>
+      <attr key="site" value="4"/>
+      <attr key="block" value="Fellowship"/>
+    </card>
+    <card name="Must Do Without Hope" graphics="68mustdowithouthope.jpg" text="Maneuver: Exert The Balrog to add a burden.">
+      <attr key="expansion" value="2"/>
+      <attr key="card_number" value="68"/>
+      <attr key="rarity" value="U"/>
+      <attr key="kind" value="Shadow"/>
+      <attr key="twilight_cost" value="0"/>
+      <attr key="culture" value="{Moria}"/>
+      <attr key="type" value="Event"/>
+      <attr key="block" value="Fellowship"/>
+    </card>
+    <card name="Old Differences" graphics="69olddifferences.jpg" text="Skirmish: Make an Elf or Dwarf skirmishing a {Moria} Orc strength -1 (or -3 if you spot an Elf and a Dwarf).">
+      <attr key="expansion" value="2"/>
+      <attr key="card_number" value="69"/>
+      <attr key="rarity" value="C"/>
+      <attr key="kind" value="Shadow"/>
+      <attr key="twilight_cost" value="0"/>
+      <attr key="culture" value="{Moria}"/>
+      <attr key="type" value="Event"/>
+      <attr key="block" value="Fellowship"/>
+    </card>
+    <card name="Power and Terror" graphics="70powerandterror.jpg" text="Shadow: Reveal any number of {Moria} Orcs from your hand to play The Balrog. Its twilight cost is -2 for each Orc revealed.">
+      <attr key="expansion" value="2"/>
+      <attr key="card_number" value="70"/>
+      <attr key="rarity" value="U"/>
+      <attr key="kind" value="Shadow"/>
+      <attr key="twilight_cost" value="0"/>
+      <attr key="culture" value="{Moria}"/>
+      <attr key="type" value="Event"/>
+      <attr key="block" value="Fellowship"/>
+    </card>
+    <card name="Throw Yourself in Next Time" graphics="71throwyourselfinnexttime.jpg" text="To play, spot a {Moria} Orc. Plays on a Hobbit companion. Bearer may be exerted only by Shadow cards.">
+      <attr key="expansion" value="2"/>
+      <attr key="card_number" value="71"/>
+      <attr key="rarity" value="U"/>
+      <attr key="kind" value="Shadow"/>
+      <attr key="twilight_cost" value="0"/>
+      <attr key="culture" value="{Moria}"/>
+      <attr key="type" value="Condition"/>
+      <attr key="block" value="Fellowship"/>
+    </card>
+    <card name="Troubled Mountains" graphics="72troubledmountains.jpg" text="Shadow: Exert a {Moria} minion and spot X burdens to add {X} (limit {5}).">
+      <attr key="expansion" value="2"/>
+      <attr key="card_number" value="72"/>
+      <attr key="rarity" value="U"/>
+      <attr key="kind" value="Shadow"/>
+      <attr key="twilight_cost" value="0"/>
+      <attr key="culture" value="{Moria}"/>
+      <attr key="type" value="Event"/>
+      <attr key="block" value="Fellowship"/>
+    </card>
+    <card name="·Watcher in the Water, Keeper of Westgate" graphics="73watcherinthewaterkeeper.jpg" text="Damage +1. While you can spot Watcher in the Water, discard all other minions (except tentacles). Each tentacle is strength +2 and damage +1. This minion may not bear possessions and is discarded if not at a marsh.">
+      <attr key="expansion" value="2"/>
+      <attr key="card_number" value="73"/>
+      <attr key="rarity" value="R"/>
+      <attr key="kind" value="Shadow"/>
+      <attr key="twilight_cost" value="4"/>
+      <attr key="culture" value="{Moria}"/>
+      <attr key="type" value="Minion"/>
+      <attr key="race" value="Creature"/>
+      <attr key="strength" value="11"/>
+      <attr key="vitality" value="4"/>
+      <attr key="site" value="4"/>
+      <attr key="unique" value="yes"/>
+      <attr key="block" value="Fellowship"/>
+    </card>
+    <card name="·Whip of Many Thongs" graphics="74whipofmanythongs.jpg" text="Bearer must be The Balrog. Skirmish: Exert The Balrog to discard a helm, shield, or armor borne by a character The Balrog is skirmishing.">
+      <attr key="expansion" value="2"/>
+      <attr key="card_number" value="74"/>
+      <attr key="rarity" value="R"/>
+      <attr key="kind" value="Shadow"/>
+      <attr key="twilight_cost" value="1"/>
+      <attr key="culture" value="{Moria}"/>
+      <attr key="type" value="Artifact"/>
+      <attr key="class" value="Hand Weapon"/>
+      <attr key="strength" value="+1"/>
+      <attr key="unique" value="yes"/>
+      <attr key="block" value="Fellowship"/>
+    </card>
+    <card name="·Bill Ferny, Swarthy Sneering Fellow" graphics="75billfernyswarthy.jpg" text="Nazgûl are not roaming. The Free Peoples player may not assign a character to skirmish Bill Ferny. Discard Bill Ferny if underground.">
+      <attr key="expansion" value="2"/>
+      <attr key="card_number" value="75"/>
+      <attr key="rarity" value="R"/>
+      <attr key="kind" value="Shadow"/>
+      <attr key="twilight_cost" value="2"/>
+      <attr key="culture" value="{Ringwraith}"/>
+      <attr key="type" value="Minion"/>
+      <attr key="race" value="Man"/>
+      <attr key="strength" value="4"/>
+      <attr key="vitality" value="1"/>
+      <attr key="site" value="2"/>
+      <attr key="unique" value="yes"/>
+      <attr key="block" value="Fellowship"/>
+    </card>
+    <card name="Helpless" graphics="76helpless.jpg" text="To play, spot Frodo and a Nazgûl. Plays on Sam. Sam's game text does not apply.">
+      <attr key="expansion" value="2"/>
+      <attr key="card_number" value="76"/>
+      <attr key="rarity" value="U"/>
+      <attr key="kind" value="Shadow"/>
+      <attr key="twilight_cost" value="0"/>
+      <attr key="culture" value="{Ringwraith}"/>
+      <attr key="type" value="Condition"/>
+      <attr key="block" value="Fellowship"/>
+    </card>
+    <card name="His Terrible Servants" graphics="77histerribleservants.jpg" text="Plays to your support area. Response: If a twilight Nazgûl is about to take a wound, remove {1} to prevent that wound.">
+      <attr key="expansion" value="2"/>
+      <attr key="card_number" value="77"/>
+      <attr key="rarity" value="R"/>
+      <attr key="kind" value="Shadow"/>
+      <attr key="twilight_cost" value="2"/>
+      <attr key="culture" value="{Ringwraith}"/>
+      <attr key="type" value="Condition"/>
+      <attr key="block" value="Fellowship"/>
+    </card>
+    <card name="It Wants to be Found" graphics="78itwantstobefound.jpg" text="Maneuver: Spot a twilight Nazgûl to add a burden.">
+      <attr key="expansion" value="2"/>
+      <attr key="card_number" value="78"/>
+      <attr key="rarity" value="U"/>
+      <attr key="kind" value="Shadow"/>
+      <attr key="twilight_cost" value="2"/>
+      <attr key="culture" value="{Ringwraith}"/>
+      <attr key="type" value="Event"/>
+      <attr key="block" value="Fellowship"/>
+    </card>
+    <card name="Resistance Becomes Unbearable" graphics="79resistancebecomes.jpg" text="Maneuver: Exert a twilight Nazgûl to exert the Ring-bearer. If the Ring-bearer is then exhausted, he puts on The One Ring until the regroup phase.">
+      <attr key="expansion" value="2"/>
+      <attr key="card_number" value="79"/>
+      <attr key="rarity" value="U"/>
+      <attr key="kind" value="Shadow"/>
+      <attr key="twilight_cost" value="1"/>
+      <attr key="culture" value="{Ringwraith}"/>
+      <attr key="type" value="Event"/>
+      <attr key="block" value="Fellowship"/>
+    </card>
+    <card name="Stricken Dumb" graphics="80strickendumb.jpg" text="Maneuver: Exert The Witch-king to discard a tale or weapon.">
+      <attr key="expansion" value="2"/>
+      <attr key="card_number" value="80"/>
+      <attr key="rarity" value="R"/>
+      <attr key="kind" value="Shadow"/>
+      <attr key="twilight_cost" value="2"/>
+      <attr key="culture" value="{Ringwraith}"/>
+      <attr key="type" value="Event"/>
+      <attr key="block" value="Fellowship"/>
+    </card>
+    <card name="They Will Find the Ring" graphics="81theywillfindthering.jpg" text="Maneuver: Exert 2 Nazgûl and spot X burdens to exert X companions.">
+      <attr key="expansion" value="2"/>
+      <attr key="card_number" value="81"/>
+      <attr key="rarity" value="U"/>
+      <attr key="kind" value="Shadow"/>
+      <attr key="twilight_cost" value="1"/>
+      <attr key="culture" value="{Ringwraith}"/>
+      <attr key="type" value="Event"/>
+      <attr key="block" value="Fellowship"/>
+    </card>
+    <card name="·Úlairë Attëa, The Easterling" graphics="82ulaireatteathe.jpg" text="Twilight. When you play Úlairë Attëa, you may wound an ally.">
+      <attr key="expansion" value="2"/>
+      <attr key="card_number" value="82"/>
+      <attr key="rarity" value="U"/>
+      <attr key="kind" value="Shadow"/>
+      <attr key="twilight_cost" value="6"/>
+      <attr key="culture" value="{Ringwraith}"/>
+      <attr key="type" value="Minion"/>
+      <attr key="race" value="Nazgûl"/>
+      <attr key="strength" value="12"/>
+      <attr key="vitality" value="3"/>
+      <attr key="site" value="3"/>
+      <attr key="unique" value="yes"/>
+      <attr key="block" value="Fellowship"/>
+    </card>
+    <card name="·Úlairë Enquëa, Ringwraith in Twilight" graphics="83ulaireenquearingwraith.jpg" text="Twilight. Each time Úlairë Enquëa wins a skirmish, you may exert him to wound the Ring-bearer once (or twice if you spot 5 burdens).">
+      <attr key="expansion" value="2"/>
+      <attr key="card_number" value="83"/>
+      <attr key="rarity" value="U"/>
+      <attr key="kind" value="Shadow"/>
+      <attr key="twilight_cost" value="6"/>
+      <attr key="culture" value="{Ringwraith}"/>
+      <attr key="type" value="Minion"/>
+      <attr key="race" value="Nazgûl"/>
+      <attr key="strength" value="11"/>
+      <attr key="vitality" value="4"/>
+      <attr key="site" value="3"/>
+      <attr key="unique" value="yes"/>
+      <attr key="block" value="Fellowship"/>
+    </card>
+    <card name="·Úlairë Nelya, Ringwraith in Twilight" graphics="84ulairenelyaringwraith.jpg" text="Twilight. While you can spot 2 burdens or 2 wounds on the Ring-bearer, Úlairë Nelya is fierce and damage +1.">
+      <attr key="expansion" value="2"/>
+      <attr key="card_number" value="84"/>
+      <attr key="rarity" value="R"/>
+      <attr key="kind" value="Shadow"/>
+      <attr key="twilight_cost" value="5"/>
+      <attr key="culture" value="{Ringwraith}"/>
+      <attr key="type" value="Minion"/>
+      <attr key="race" value="Nazgûl"/>
+      <attr key="strength" value="10"/>
+      <attr key="vitality" value="3"/>
+      <attr key="site" value="2"/>
+      <attr key="unique" value="yes"/>
+      <attr key="block" value="Fellowship"/>
+    </card>
+    <card name="·The Witch-king, Lord of the Nazgûl" graphics="85thewitchkinglordofthe.jpg" text="Twilight. Return to Its Master may not be played. Each time The Witch-king wins a skirmish, you may exert him to wound the Ring-bearer twice.">
+      <attr key="expansion" value="2"/>
+      <attr key="card_number" value="85"/>
+      <attr key="rarity" value="R"/>
+      <attr key="kind" value="Shadow"/>
+      <attr key="twilight_cost" value="8"/>
+      <attr key="culture" value="{Ringwraith}"/>
+      <attr key="type" value="Minion"/>
+      <attr key="race" value="Nazgûl"/>
+      <attr key="strength" value="14"/>
+      <attr key="vitality" value="4"/>
+      <attr key="site" value="3"/>
+      <attr key="unique" value="yes"/>
+      <attr key="block" value="Fellowship"/>
+    </card>
+    <card name="Wraith-world" graphics="86wraithworld.jpg" text="Skirmish: Spot a twilight Nazgûl and the Ring-bearer wearing The One Ring to add 3 burdens.">
+      <attr key="expansion" value="2"/>
+      <attr key="card_number" value="86"/>
+      <attr key="rarity" value="R"/>
+      <attr key="kind" value="Shadow"/>
+      <attr key="twilight_cost" value="1"/>
+      <attr key="culture" value="{Ringwraith}"/>
+      <attr key="type" value="Event"/>
+      <attr key="block" value="Fellowship"/>
+    </card>
+    <card name="The Eye of Sauron" graphics="87theeyeofsauron.jpg" text="Shadow: Exert a {Sauron} Orc and spot X burdens to draw X cards (limit 5).">
+      <attr key="expansion" value="2"/>
+      <attr key="card_number" value="87"/>
+      <attr key="rarity" value="U"/>
+      <attr key="kind" value="Shadow"/>
+      <attr key="twilight_cost" value="1"/>
+      <attr key="culture" value="{Sauron}"/>
+      <attr key="type" value="Event"/>
+      <attr key="block" value="Fellowship"/>
+    </card>
+    <card name="Memory of Many Things" graphics="88memoryofmanythings.jpg" text="Maneuver: Exert a {Sauron} Orc to discard an ally (or 2 {Elven} allies).">
+      <attr key="expansion" value="2"/>
+      <attr key="card_number" value="88"/>
+      <attr key="rarity" value="C"/>
+      <attr key="kind" value="Shadow"/>
+      <attr key="twilight_cost" value="2"/>
+      <attr key="culture" value="{Sauron}"/>
+      <attr key="type" value="Event"/>
+      <attr key="block" value="Fellowship"/>
+    </card>
+    <card name="Orc Scout" graphics="89orcscout.jpg" text="Tracker. The roaming penalty for each {Sauron} minion you play is -1. Skirmish: Exert this minion to wound a character it is skirmishing.">
+      <attr key="expansion" value="2"/>
+      <attr key="card_number" value="89"/>
+      <attr key="rarity" value="C"/>
+      <attr key="kind" value="Shadow"/>
+      <attr key="twilight_cost" value="2"/>
+      <attr key="culture" value="{Sauron}"/>
+      <attr key="type" value="Minion"/>
+      <attr key="race" value="Orc"/>
+      <attr key="strength" value="6"/>
+      <attr key="vitality" value="2"/>
+      <attr key="site" value="6"/>
+      <attr key="block" value="Fellowship"/>
+    </card>
+    <card name="Orc Taskmaster" graphics="90orctaskmaster.jpg" text="Shadow: Exert this minion to add {1}.">
+      <attr key="expansion" value="2"/>
+      <attr key="card_number" value="90"/>
+      <attr key="rarity" value="C"/>
+      <attr key="kind" value="Shadow"/>
+      <attr key="twilight_cost" value="3"/>
+      <attr key="culture" value="{Sauron}"/>
+      <attr key="type" value="Minion"/>
+      <attr key="race" value="Orc"/>
+      <attr key="strength" value="8"/>
+      <attr key="vitality" value="3"/>
+      <attr key="site" value="6"/>
+      <attr key="block" value="Fellowship"/>
+    </card>
+    <card name="Southern Spies" graphics="91southernspies.jpg" text="Response: If the Ring-bearer puts on The One Ring, spot a {Sauron} minion to make the Free Peoples player discard his or her hand.">
+      <attr key="expansion" value="2"/>
+      <attr key="card_number" value="91"/>
+      <attr key="rarity" value="C"/>
+      <attr key="kind" value="Shadow"/>
+      <attr key="twilight_cost" value="0"/>
+      <attr key="culture" value="{Sauron}"/>
+      <attr key="type" value="Event"/>
+      <attr key="block" value="Fellowship"/>
+    </card>
+    <card name="Spies of Mordor" graphics="92spiesofmordor.jpg" text="Search. To play, spot a {Sauron} Orc. Plays to your support area. Each time the fellowship moves during the regroup phase, you may draw a card (or 2 cards if you spot a {Sauron} tracker).">
+      <attr key="expansion" value="2"/>
+      <attr key="card_number" value="92"/>
+      <attr key="rarity" value="U"/>
+      <attr key="kind" value="Shadow"/>
+      <attr key="twilight_cost" value="1"/>
+      <attr key="culture" value="{Sauron}"/>
+      <attr key="type" value="Condition"/>
+      <attr key="block" value="Fellowship"/>
+    </card>
+    <card name="·Tower Assassin" graphics="93towerassassin.jpg" text="Maneuver: Exert Tower Assassin to wound an ally.">
+      <attr key="expansion" value="2"/>
+      <attr key="card_number" value="93"/>
+      <attr key="rarity" value="R"/>
+      <attr key="kind" value="Shadow"/>
+      <attr key="twilight_cost" value="4"/>
+      <attr key="culture" value="{Sauron}"/>
+      <attr key="type" value="Minion"/>
+      <attr key="race" value="Orc"/>
+      <attr key="strength" value="11"/>
+      <attr key="vitality" value="3"/>
+      <attr key="site" value="6"/>
+      <attr key="unique" value="yes"/>
+      <attr key="block" value="Fellowship"/>
+    </card>
+    <card name="Verily I Come" graphics="94verilyicome.jpg" text="To play, exert a {Sauron} Orc. Plays on the Ring-bearer. Each time the Free Peoples player draws a card (or takes a card into hand) during the fellowship phase, add a burden.">
+      <attr key="expansion" value="2"/>
+      <attr key="card_number" value="94"/>
+      <attr key="rarity" value="R"/>
+      <attr key="kind" value="Shadow"/>
+      <attr key="twilight_cost" value="0"/>
+      <attr key="culture" value="{Sauron}"/>
+      <attr key="type" value="Condition"/>
+      <attr key="block" value="Fellowship"/>
+    </card>
+    <card name="Vile Blade" graphics="95vileblade.jpg" text="Bearer must be a {Sauron} Orc. Bearer is strength +2 while skirmishing a Man or Elf.">
+      <attr key="expansion" value="2"/>
+      <attr key="card_number" value="95"/>
+      <attr key="rarity" value="C"/>
+      <attr key="kind" value="Shadow"/>
+      <attr key="twilight_cost" value="1"/>
+      <attr key="culture" value="{Sauron}"/>
+      <attr key="type" value="Possession"/>
+      <attr key="class" value="Hand Weapon"/>
+      <attr key="strength" value="+2"/>
+      <attr key="block" value="Fellowship"/>
+    </card>
+    <card name="·Bilbo Baggins, Well-spoken Gentlehobbit" graphics="96bilbobagginswellspoken.jpg" text="Fellowship: Exert Bilbo and discard a tale to discard a Shadow condition from an opponent's support area.">
+      <attr key="expansion" value="2"/>
+      <attr key="card_number" value="96"/>
+      <attr key="rarity" value="U"/>
+      <attr key="kind" value="Free Peoples"/>
+      <attr key="twilight_cost" value="2"/>
+      <attr key="culture" value="{Shire}"/>
+      <attr key="type" value="Ally"/>
+      <attr key="race" value="Hobbit"/>
+      <attr key="home" value="1"/>
+      <attr key="strength" value="2"/>
+      <attr key="vitality" value="3"/>
+      <attr key="unique" value="yes"/>
+      <attr key="block" value="Fellowship"/>
+    </card>
+    <card name="Consorting With Wizards" graphics="97consortingwithwizards.jpg" text="Tale. Bearer must be Bilbo. Bilbo may not take wounds (except during the archery phase). Fellowship or Regroup: Exert Bilbo or discard this condition to remove {1}.">
+      <attr key="expansion" value="2"/>
+      <attr key="card_number" value="97"/>
+      <attr key="rarity" value="R"/>
+      <attr key="kind" value="Free Peoples"/>
+      <attr key="twilight_cost" value="0"/>
+      <attr key="culture" value="{Shire}"/>
+      <attr key="type" value="Condition"/>
+      <attr key="block" value="Fellowship"/>
+    </card>
+    <card name="Dear Friends" graphics="98dearfriends.jpg" text="Fellowship: Exert a companion to place a Free Peoples card from your discard pile beneath your draw deck (or 2 Free Peoples cards if that companion has the Frodo signet).">
+      <attr key="expansion" value="2"/>
+      <attr key="card_number" value="98"/>
+      <attr key="rarity" value="U"/>
+      <attr key="kind" value="Free Peoples"/>
+      <attr key="twilight_cost" value="0"/>
+      <attr key="culture" value="{Shire}"/>
+      <attr key="type" value="Event"/>
+      <attr key="block" value="Fellowship"/>
+    </card>
+    <card name="Deft in Their Movements" graphics="99deftintheirmovements.jpg" text="Stealth. Regroup: Spot 2 Hobbits to make each site's Shadow number -2 until the end of the turn.">
+      <attr key="expansion" value="2"/>
+      <attr key="card_number" value="99"/>
+      <attr key="rarity" value="C"/>
+      <attr key="kind" value="Free Peoples"/>
+      <attr key="twilight_cost" value="0"/>
+      <attr key="culture" value="{Shire}"/>
+      <attr key="type" value="Event"/>
+      <attr key="block" value="Fellowship"/>
+    </card>
+    <card name="Fearing the Worst" graphics="100fearingtheworst.jpg" text="Stealth. To play, exert 2 Hobbits. Plays to your support area. The twilight cost of each search card and each tracker is +2.">
+      <attr key="expansion" value="2"/>
+      <attr key="card_number" value="100"/>
+      <attr key="rarity" value="R"/>
+      <attr key="kind" value="Free Peoples"/>
+      <attr key="twilight_cost" value="0"/>
+      <attr key="culture" value="{Shire}"/>
+      <attr key="type" value="Condition"/>
+      <attr key="block" value="Fellowship"/>
+    </card>
+    <card name="·Filibert Bolger, Wily Rascal" graphics="101filibertbolgerwily.jpg" text="Skirmish: Exert a Hobbit companion twice to cancel a fierce skirmish involving that Hobbit.">
+      <attr key="expansion" value="2"/>
+      <attr key="card_number" value="101"/>
+      <attr key="rarity" value="C"/>
+      <attr key="kind" value="Free Peoples"/>
+      <attr key="twilight_cost" value="1"/>
+      <attr key="culture" value="{Shire}"/>
+      <attr key="type" value="Ally"/>
+      <attr key="race" value="Hobbit"/>
+      <attr key="home" value="1"/>
+      <attr key="strength" value="1"/>
+      <attr key="vitality" value="2"/>
+      <attr key="unique" value="yes"/>
+      <attr key="block" value="Fellowship"/>
+    </card>
+    <card name="·Frodo, Reluctant Adventurer" graphics="102frodoreluctant.jpg" text="Ring-bearer (resistance 10). The cost of each artifact, possession, and {Shire} tale played on Frodo is -1.">
+      <attr key="expansion" value="2"/>
+      <attr key="card_number" value="102"/>
+      <attr key="rarity" value="C"/>
+      <attr key="kind" value="Free Peoples"/>
+      <attr key="twilight_cost" value="0"/>
+      <attr key="culture" value="{Shire}"/>
+      <attr key="type" value="Companion"/>
+      <attr key="race" value="Hobbit"/>
+      <attr key="strength" value="3"/>
+      <attr key="vitality" value="4"/>
+      <attr key="signet" value="{AragornSignet}"/>
+      <attr key="unique" value="yes"/>
+      <attr key="block" value="Fellowship"/>
+    </card>
+    <card name="Hobbit Sword-play" graphics="103hobbitswordplay.jpg" text="Maneuver: Exert a Hobbit bearing a weapon to wound a minion. That minion's owner may remove {3} to prevent this.">
+      <attr key="expansion" value="2"/>
+      <attr key="card_number" value="103"/>
+      <attr key="rarity" value="U"/>
+      <attr key="kind" value="Free Peoples"/>
+      <attr key="twilight_cost" value="0"/>
+      <attr key="culture" value="{Shire}"/>
+      <attr key="type" value="Event"/>
+      <attr key="block" value="Fellowship"/>
+    </card>
+    <card name="·Merry, Horticulturalist" graphics="104merryhorticulturalist.jpg" text="Fellowship: Exert Merry to play Farmer Maggot from your draw deck.">
+      <attr key="expansion" value="2"/>
+      <attr key="card_number" value="104"/>
+      <attr key="rarity" value="C"/>
+      <attr key="kind" value="Free Peoples"/>
+      <attr key="twilight_cost" value="1"/>
+      <attr key="culture" value="{Shire}"/>
+      <attr key="type" value="Companion"/>
+      <attr key="race" value="Hobbit"/>
+      <attr key="strength" value="3"/>
+      <attr key="vitality" value="4"/>
+      <attr key="signet" value="{GandalfSignet}"/>
+      <attr key="unique" value="yes"/>
+      <attr key="block" value="Fellowship"/>
+    </card>
+    <card name="·Mithril-coat" graphics="105mithrilcoat.jpg" text="Bearer must be Frodo. The minion archery total is -1. Each minion skirmishing Frodo does not gain strength bonuses from weapons and loses all damage bonuses.">
+      <attr key="expansion" value="2"/>
+      <attr key="card_number" value="105"/>
+      <attr key="rarity" value="R"/>
+      <attr key="kind" value="Free Peoples"/>
+      <attr key="twilight_cost" value="2"/>
+      <attr key="culture" value="{Shire}"/>
+      <attr key="type" value="Artifact"/>
+      <attr key="class" value="Armor"/>
+      <attr key="unique" value="yes"/>
+      <attr key="block" value="Fellowship"/>
+    </card>
+    <card name="Nice Imitation" graphics="106niceimitation.jpg" text="Stealth. Plays to your support area. Response: If a Hobbit is about to take a wound, discard this condition to prevent that wound.">
+      <attr key="expansion" value="2"/>
+      <attr key="card_number" value="106"/>
+      <attr key="rarity" value="U"/>
+      <attr key="kind" value="Free Peoples"/>
+      <attr key="twilight_cost" value="1"/>
+      <attr key="culture" value="{Shire}"/>
+      <attr key="type" value="Condition"/>
+      <attr key="block" value="Fellowship"/>
+    </card>
+    <card name="Not Feared in Sunlight" graphics="107notfearedinsunlight.jpg" text="To play, spot 2 Hobbits. Plays to your support area. Each Nazgûl is strength -4. Discard this condition during the regroup phase.">
+      <attr key="expansion" value="2"/>
+      <attr key="card_number" value="107"/>
+      <attr key="rarity" value="U"/>
+      <attr key="kind" value="Free Peoples"/>
+      <attr key="twilight_cost" value="1"/>
+      <attr key="culture" value="{Shire}"/>
+      <attr key="type" value="Condition"/>
+      <attr key="block" value="Fellowship"/>
+    </card>
+    <card name="·O Elbereth! Gilthoniel!" graphics="108oelberethgilthoniel.jpg" text="Tale. Bearer must be the Ringbearer. Skirmish: Discard this condition to take off The One Ring or to cancel a skirmish involving the Ring-bearer and a Nazgûl.">
+      <attr key="expansion" value="2"/>
+      <attr key="card_number" value="108"/>
+      <attr key="rarity" value="R"/>
+      <attr key="kind" value="Free Peoples"/>
+      <attr key="twilight_cost" value="1"/>
+      <attr key="culture" value="{Shire}"/>
+      <attr key="type" value="Condition"/>
+      <attr key="strength" value="+1"/>
+      <attr key="unique" value="yes"/>
+      <attr key="block" value="Fellowship"/>
+    </card>
+    <card name="Orc-bane" graphics="109orcbane.jpg" text="Maneuver: Spot Sting or Glamdring and exert its bearer X times to wound X Orcs or X Uruk-hai.">
+      <attr key="expansion" value="2"/>
+      <attr key="card_number" value="109"/>
+      <attr key="rarity" value="R"/>
+      <attr key="kind" value="Free Peoples"/>
+      <attr key="twilight_cost" value="0"/>
+      <attr key="culture" value="{Shire}"/>
+      <attr key="type" value="Event"/>
+      <attr key="block" value="Fellowship"/>
+    </card>
+    <card name="·Pippin, Mr. Took" graphics="110pippinmrtook.jpg" text="Fellowship: Play Gandalf or Aragorn; his twilight cost is -2.">
+      <attr key="expansion" value="2"/>
+      <attr key="card_number" value="110"/>
+      <attr key="rarity" value="C"/>
+      <attr key="kind" value="Free Peoples"/>
+      <attr key="twilight_cost" value="1"/>
+      <attr key="culture" value="{Shire}"/>
+      <attr key="type" value="Companion"/>
+      <attr key="race" value="Hobbit"/>
+      <attr key="strength" value="3"/>
+      <attr key="vitality" value="4"/>
+      <attr key="signet" value="{AragornSignet}"/>
+      <attr key="unique" value="yes"/>
+      <attr key="block" value="Fellowship"/>
+    </card>
+    <card name="Practically Everyone Was Invited" graphics="111practicallyeveryonewas.jpg" text="Fellowship: Exert Bilbo to play a Hobbit from your draw deck.">
+      <attr key="expansion" value="2"/>
+      <attr key="card_number" value="111"/>
+      <attr key="rarity" value="U"/>
+      <attr key="kind" value="Free Peoples"/>
+      <attr key="twilight_cost" value="0"/>
+      <attr key="culture" value="{Shire}"/>
+      <attr key="type" value="Event"/>
+      <attr key="block" value="Fellowship"/>
+    </card>
+    <card name="A Promise" graphics="112apromise.jpg" text="Plays to your support area. While you can spot Frodo and Sam and neither is exhausted, each is strength +1.">
+      <attr key="expansion" value="2"/>
+      <attr key="card_number" value="112"/>
+      <attr key="rarity" value="R"/>
+      <attr key="kind" value="Free Peoples"/>
+      <attr key="twilight_cost" value="0"/>
+      <attr key="culture" value="{Shire}"/>
+      <attr key="type" value="Condition"/>
+      <attr key="block" value="Fellowship"/>
+    </card>
+    <card name="·Red Book of Westmarch" graphics="113redbookofwestmarch.jpg" text="Tale. Plays to your support area. Each time you play a tale, you may spot Bilbo to draw a card.">
+      <attr key="expansion" value="2"/>
+      <attr key="card_number" value="113"/>
+      <attr key="rarity" value="R"/>
+      <attr key="kind" value="Free Peoples"/>
+      <attr key="twilight_cost" value="2"/>
+      <attr key="culture" value="{Shire}"/>
+      <attr key="type" value="Possession"/>
+      <attr key="unique" value="yes"/>
+      <attr key="block" value="Fellowship"/>
+    </card>
+    <card name="·Sam, Proper Poet" graphics="114samproperpoet.jpg" text="Maneuver: Exert Sam twice to make him defender +1 until the regroup phase. Response: If Frodo is killed, make Sam the Ring-bearer (resistance 5).">
+      <attr key="expansion" value="2"/>
+      <attr key="card_number" value="114"/>
+      <attr key="rarity" value="C"/>
+      <attr key="kind" value="Free Peoples"/>
+      <attr key="twilight_cost" value="2"/>
+      <attr key="culture" value="{Shire}"/>
+      <attr key="type" value="Companion"/>
+      <attr key="race" value="Hobbit"/>
+      <attr key="strength" value="3"/>
+      <attr key="vitality" value="4"/>
+      <attr key="signet" value="{GandalfSignet}"/>
+      <attr key="unique" value="yes"/>
+      <attr key="block" value="Fellowship"/>
+    </card>
+    <card name="Hobbiton Party Field" graphics="115hobbitonpartyfield.jpg" text="Fellowship: Exert a Hobbit to play Bilbo from your draw deck.">
+      <attr key="expansion" value="2"/>
+      <attr key="card_number" value="115"/>
+      <attr key="rarity" value="U"/>
+      <attr key="kind" value="Site"/>
+      <attr key="type" value="Site"/>
+      <attr key="site" value="1"/>
+      <attr key="block" value="Fellowship"/>
+      <attr key="arrow" value="L"/>
+    </card>
+    <card name="Hobbiton Woods" graphics="116hobbitonwoods.jpg" text="Forest. Fellowship: Exert a Hobbit to play your site 2 (replacing opponent's site if necessary).">
+      <attr key="expansion" value="2"/>
+      <attr key="card_number" value="116"/>
+      <attr key="rarity" value="U"/>
+      <attr key="kind" value="Site"/>
+      <attr key="type" value="Site"/>
+      <attr key="site" value="1"/>
+      <attr key="block" value="Fellowship"/>
+      <attr key="arrow" value="L"/>
+    </card>
+    <card name="Town Center" graphics="117towncenter.jpg" text="Fellowship: Play a {Shire} ally to draw a card.">
+      <attr key="expansion" value="2"/>
+      <attr key="card_number" value="117"/>
+      <attr key="rarity" value="C"/>
+      <attr key="kind" value="Site"/>
+      <attr key="type" value="Site"/>
+      <attr key="site" value="1"/>
+      <attr key="block" value="Fellowship"/>
+      <attr key="arrow" value="L"/>
+    </card>
+    <card name="Great Chasm" graphics="118greatchasm.jpg" text="Underground. The twilight cost of the first {Moria} archer played each Shadow phase is -2.">
+      <attr key="expansion" value="2"/>
+      <attr key="card_number" value="118"/>
+      <attr key="rarity" value="U"/>
+      <attr key="kind" value="Site"/>
+      <attr key="twilight_cost" value="4"/>
+      <attr key="type" value="Site"/>
+      <attr key="site" value="4"/>
+      <attr key="block" value="Fellowship"/>
+      <attr key="arrow" value="R"/>
+    </card>
+    <card name="Hollin" graphics="119hollin.jpg" text="Plains. Uruk-hai are not roaming.">
+      <attr key="expansion" value="2"/>
+      <attr key="card_number" value="119"/>
+      <attr key="rarity" value="C"/>
+      <attr key="kind" value="Site"/>
+      <attr key="twilight_cost" value="3"/>
+      <attr key="type" value="Site"/>
+      <attr key="site" value="4"/>
+      <attr key="block" value="Fellowship"/>
+      <attr key="arrow" value="R"/>
+    </card>
+    <card name="Valley of the Silverlode" graphics="120valleyofthesilverlode.jpg" text="River. Sanctuary. When the fellowship moves to Valley of the Silverlode, each Hobbit companion may heal.">
+      <attr key="expansion" value="2"/>
+      <attr key="card_number" value="120"/>
+      <attr key="rarity" value="U"/>
+      <attr key="kind" value="Site"/>
+      <attr key="twilight_cost" value="3"/>
+      <attr key="type" value="Site"/>
+      <attr key="site" value="6"/>
+      <attr key="block" value="Fellowship"/>
+      <attr key="arrow" value="L"/>
+    </card>
+    <card name="·Gimli, Dwarf of the Mountain-race" graphics="121gimlidwarfofthemountain.jpg" text="Damage +1. Each underground site's Shadow number is -2.">
+      <attr key="expansion" value="2"/>
+      <attr key="card_number" value="121"/>
+      <attr key="rarity" value="P"/>
+      <attr key="kind" value="Free Peoples"/>
+      <attr key="twilight_cost" value="2"/>
+      <attr key="culture" value="{Dwarven}"/>
+      <attr key="type" value="Companion"/>
+      <attr key="race" value="Dwarf"/>
+      <attr key="strength" value="6"/>
+      <attr key="vitality" value="3"/>
+      <attr key="signet" value="{FrodoSignet}"/>
+      <attr key="unique" value="yes"/>
+      <attr key="block" value="Fellowship"/>
+    </card>
+    <card name="·Gandalf, The Grey Pilgrim" graphics="122gandalfthegreypilgrim.jpg" text="At the start of each of your turns, you may draw a card.">
+      <attr key="expansion" value="2"/>
+      <attr key="card_number" value="122"/>
+      <attr key="rarity" value="P"/>
+      <attr key="kind" value="Free Peoples"/>
+      <attr key="twilight_cost" value="4"/>
+      <attr key="culture" value="{Gandalf}"/>
+      <attr key="type" value="Companion"/>
+      <attr key="race" value="Wizard"/>
+      <attr key="strength" value="7"/>
+      <attr key="vitality" value="4"/>
+      <attr key="signet" value="{AragornSignet}"/>
+      <attr key="unique" value="yes"/>
+      <attr key="block" value="Fellowship"/>
+    </card>
+  </cards>
+</ccg-setinfo>

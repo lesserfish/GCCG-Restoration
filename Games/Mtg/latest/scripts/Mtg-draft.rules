@@ -1,0 +1,15 @@
+#
+# DECK RULES
+# ==========
+
+deck_rules=(,);
+server_description="Draft Table";
+deck_rules{"Draft"}=(,);
+deck_rules{"Draft"}{"deck"}=(
+  ("RuleDeckMaximum",0),
+  ("RulePass",NULL),
+);
+deck_rules{"Draft"}{"sideboard"}=(
+  ("RuleDeckMaximum",0),
+  ("RulePass",NULL),
+);
