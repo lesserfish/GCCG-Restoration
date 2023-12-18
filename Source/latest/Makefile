@@ -18,7 +18,26 @@ CXXFLAGS :=
 LDFLAGS :=
 LDFLAGS_GUI :=
 LDFLAGS_TEXT :=
+OS_LDD := -lX11
 endif
+
+ifeq "$(OS)" "mac"
+HOST :=
+PLATFORM := $(shell uname -s)
+BITS := $(shell getconf LONG_BIT)
+BINEXT :=
+CXX := g++
+CC := gcc
+LD := g++
+STRIP := strip
+CFLAGS := $(shell sdl-config --cflags)
+CXXFLAGS :=
+LDFLAGS :=
+LDFLAGS_GUI :=
+LDFLAGS_TEXT :=
+OS_LDD := -framework Cocoa
+endif
+
 
 ifeq "$(OS)" "linux32"
 HOST :=
@@ -40,6 +59,7 @@ LDFLAGS := \
 	-Wl,-rpath-link=tmp/sys-linux32/usr/lib
 LDFLAGS_GUI :=
 LDFLAGS_TEXT :=
+OS_LDD := -lX11
 DLCMD := tools/debget tmp/sys-linux32 tmp/deb-linux32 i386
 endif
 
@@ -64,6 +84,7 @@ LDFLAGS := \
 	-Wl,-rpath-link=tmp/sys-linux64/usr/lib
 LDFLAGS_GUI :=
 LDFLAGS_TEXT :=
+OS_LDD := -lX11
 DLCMD := tools/debget tmp/sys-linux64 tmp/deb-linux64 amd64
 endif
 
@@ -83,6 +104,7 @@ CXXFLAGS := -fpermissive
 LDFLAGS := -m32 -static-libgcc -static-libstdc++ -Ltmp/sdl/lib
 LDFLAGS_GUI := -mwindows -lmingw32
 LDFLAGS_TEXT := -mconsole
+OS_LDD := 
 DLCMD := $(SHELL) -c 'rm -rf "$$0"; mkdir "$$0" || exit 1; \
 	[ -f "$$0.tgz" ] && [ ! "`cat "$$0.tgz" | sha256sum | sed "s/ .*//"`" = \
 	"$$2" ] && rm "$$0.tgz"; if [ ! -f "$$0.tgz" ]; then curl -L -o "$$0.tgz" \
@@ -129,8 +151,8 @@ endif
 CXXFLAGS := -ftemplate-depth-30  $(CFLAGS) $(CXXFLAGS)
 
 LIBS_COMMON := -lSDLmain -lSDL -lSDL_net
-LIBS_GUI := $(LIBS_COMMON) -lSDL_image -lSDL_ttf -lSDL_mixer
-LIBS_TEXT := $(LIBS_COMMON) -lSDL -lSDL_net
+LIBS_GUI := $(LIBS_COMMON) -lSDL_image -lSDL_ttf -lSDL_mixer $(OS_LDD)
+LIBS_TEXT := $(LIBS_COMMON) -lSDL -lSDL_net $(OS_LDD)
 
 OBJS_COMMON := \
 	src/parser_libcards.o src/parser_libnet.o src/parser.o \
@@ -155,7 +177,7 @@ LDCMD := $(LD) $(LDFLAGS)
 ifdef DEBUG
 STRIPCMD := \# DEBUG BUILD: not stripping
 else
-STRIPCMD := $(STRIP) -s
+STRIPCMD := $(STRIP) 
 endif
 
 ###############################################################################

@@ -227,6 +227,7 @@ _ClipboardSet_Error1:
 #include <SDL/SDL_events.h>
 #include <SDL/SDL_syswm.h>
 #include <SDL/SDL_version.h>
+#include <stddef.h>
 
 static Bool MatchSelNotify( Display *display, XEvent *event, XPointer arg ) {
 	return event->type == SelectionNotify;
@@ -386,6 +387,8 @@ _ClipboardSet_Error:
 }
 
 #else
+
+#include <stddef.h>
 
 int ClipboardSet( const char *text ) {
 	return 1;

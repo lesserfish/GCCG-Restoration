@@ -1495,7 +1495,12 @@ namespace Driver
 //	bg.g=bgcolor.g;
 //	bg.b=bgcolor.b;
 
+    // MacOS bugs out when we use TTF_RenderText_Blended.
+#if defined(__APPLE__) || defined(__MACH__)
+	surface=TTF_RenderText_Solid(font[fontnumber][pointsize],text.c_str(),fg);
+#else
 	surface=TTF_RenderText_Blended(font[fontnumber][pointsize],text.c_str(),fg);
+#endif
 
 	if(!surface)
 	{
