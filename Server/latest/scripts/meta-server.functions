@@ -1378,7 +1378,7 @@ def Buy
   {
     if(factory.server==NULL)
       Reply("{red}Cards are temporarily unavailable.");
-    else if(net_isopen(factory.server))
+    else if(!net_isopen(factory.server))
       Reply("{red}Cards are temporarily unavailable.");
     else
     {
