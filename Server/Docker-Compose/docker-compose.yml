@@ -42,7 +42,7 @@ services:
     image: lesserfish/gccg-base:latest
     network_mode: "service:factory_server"
     volumes: 
-      - ../mtg:/mtg
+      - /mtg:/mtg
     depends_on:
       meta_server:
         condition: service_healthy
@@ -116,7 +116,7 @@ services:
     image: lesserfish/gccg-base:latest
     network_mode: "service:factory_server"
     volumes: 
-      - ../mtg:/mtg
+      - /mtg:/mtg
     depends_on:
       meta_server:
         condition: service_healthy
