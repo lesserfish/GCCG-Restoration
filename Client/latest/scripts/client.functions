@@ -1268,7 +1268,7 @@ def InitializeConnection
     {
       if(server.name=="none") 
       {
-        message(msg.box,"Working offline");
+        message(msg.box,"Working offline. To connect to a server type {yellow}/connect server port");
         mode="offline";
       } 
       else
@@ -1280,7 +1280,7 @@ def InitializeConnection
         if(server==NULL)
         {
           message(msg.box,"Connection failed");
-          message(msg.box,"Working offline");
+          message(msg.box,"Working offline. To connect to a server type {yellow}/connect server port");
           mode="offline";
         }
         else
@@ -2335,6 +2335,55 @@ def OfflineCommandNick
 
 HELP{"offline"}{"nick"}=("new name","change your name",NULL,
 "Use this command to change your name, in case the first name you tried was unavailable. Legal usernames can be up to 10 characters long and can contain letters, numbers, and the underscore _.");
+
+
+def OfflineCommandConnect
+{
+
+    push(p);
+    push(h);
+
+    p=port;
+    h=NULL;
+    
+    if(length(ARG)==0)
+        Msg("{red}You need to specify which server to connect to.");
+    else if(length(ARG)==1)
+    {
+        h=ARG[0];
+    }
+    else if(length(ARG)==2)
+    {
+        h=ARG[0];
+        p=ARG[1];
+    }
+    else
+        Msg("{red} Unexpected argument received. Please use /connect server [port]");
+
+    if(h!=NULL)
+    {
+        message(msg.box,"Connecting to "+h+" port "+p); 
+        server=net_connect(h,p);
+
+        if(server==NULL)
+        {
+          message(msg.box,"Connection failed");
+          message(msg.box,"Working offline");
+          mode="offline";
+        }
+        else
+        {
+          server.name=h;
+          net_send(server,("RegisterPlayer",(username,VERSION,database.cards,GAME,password{username},SYSTEM,eval("ser"+"ial"))));
+          if(TORRENT_VERSION)
+             net_send(server,("TorrentVersion",(TORRENT_VERSION,)));
+        } 
+    }
+  h=pop();
+  p=pop();
+}
+HELP{"offline"}{"connect"}=("server [port]","change your name",NULL,
+        "Use this command to connect to a server. Usage is as follows: /connect server [port].");
 
 #
 # CommandWho() - Implementation of /who command.
