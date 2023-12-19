@@ -32,7 +32,7 @@ SOURCE_DIR := ./Source/latest
 CLIENT_TGZ := $(BUILD_DIR)/gccg-client-latest.tgz
 SERVER_TGZ := $(BUILD_DIR)/gccg-server-latest.tgz
 CORE_NIX_TGZ := $(BUILD_DIR)/gccg-core-unix-latest.tgz
-CORE_WIN_TGZ := $(BUILD_DIR)/gccg-core-unix-latest.tgz
+CORE_WIN_TGZ := $(BUILD_DIR)/gccg-core-win-latest.tgz
 MTG_TGZ := $(BUILD_DIR)/gccg-mtg-latest.tgz
 FONT_TGZ := $(BUILD_DIR)/gccg-fonts-latest.tgz
 METW_TGZ := $(BUILD_DIR)/gccg-metw-latest.tgz
@@ -40,12 +40,13 @@ LOTR_TGZ := $(BUILD_DIR)/gccg-lotr-latest.tgz
 MTG_SERVER_TGZ := $(BUILD_DIR)/gccg-mtg-server-latest.tgz
 METW_SERVER_TGZ := $(BUILD_DIR)/gccg-metw-server-latest.tgz
 LOTR_SERVER_TGZ := $(BUILD_DIR)/gccg-lotr-server-latest.tgz
-MACOS_TAR_GZ := $(BUILD_DIR)/gccg-macos-latest.tgz
 
 ifeq ($(ARCH), x86_64)
 	LINUX_TAR_GZ := $(BUILD_DIR)/gccg-linux-x86_64-latest.tgz
+	MACOS_TAR_GZ := $(BUILD_DIR)/gccg-darwin-x86_64-latest.tgz
 else ifeq ($(ARCH), i386)
 	LINUX_TAR_GZ := $(BUILD_DIR)/gccg-linux-i386-latest.tgz
+	MACOS_TAR_GZ := $(BUILD_DIR)/gccg-darwin-i386-latest.tgz
 else
     $(error Unsupported architecture: $(ARCH))
 endif

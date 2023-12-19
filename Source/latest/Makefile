@@ -148,7 +148,7 @@ CFLAGS := $(CFLAGS) -g
 else
 CFLAGS := $(CFLAGS) -O3
 endif
-CXXFLAGS := -ftemplate-depth-30  $(CFLAGS) $(CXXFLAGS)
+CXXFLAGS := -ftemplate-depth-100  $(CFLAGS) $(CXXFLAGS)
 
 LIBS_COMMON := -lSDLmain -lSDL -lSDL_net
 LIBS_GUI := $(LIBS_COMMON) -lSDL_image -lSDL_ttf -lSDL_mixer $(OS_LDD)
