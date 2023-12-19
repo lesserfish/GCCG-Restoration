@@ -1,13 +1,34 @@
-# MTGServer
+# GCCG Restoration Project
 
-This is a docker-compose file to setup a Magic the Gathering GCCG Server.
-Simply clone this directory, cd to Docker-Compose, and run
+ Generic Collectible Card Game is a multiplayer multiplatform implementation of a card game engine. The card game engine is designed to be of general purpose core for several modules each defining the game specific behaviour. Players download a client for their platform and all modules of interest. After launching the client for one of the games, it connects to the central server of the game chosen. When connected, all aspects of the collecting, trading and playing are availble to the player.
+Here is a brief summary of features:
 
-        docker-compose up
+- Deck editor including import and export from/to a text file.
+- Fast game play: bureaucracy not implemented (on purpose).
+- 1-8 players.
+- You can spectate games without being a player yourself.
+- Highly customizable: macros and scripting language included.
+- Servers have knowledge of several game formats (for example Type 1, Type 1.5, etc. in Mtg).
+- Custom game formats can be defined.
+- Sell cards by determining a price and the number of cards for sale. Clients can see always the best offer.
+- Easy trading: create your want list and the server helps you to find a trade.
+- Sealed deck games.
+- Export and import to/from existing deck formats. 
 
-To connect to this server, go to where you installed GCCH and run
+GCCG was created by Tommi Ronkainen in 2001. Unfortunately, it has not received any updated in several years, all of the forums are dead, and the installers no longer work.
 
-        ./Mtg --server IPADDR --port 29100 --user USERNAME
+GCCG Restoration project aims to fix existing bugs, and create easy and accessible ways to deploy servers, and install clients, allowing people to go back to this gem of time.
 
-Dockerfile is just used to create the image lesserfish/gccg-base:latest, which is used by the docker-compose, so pay no mind to it.
+We have split this README into three sections:
+
+- Client: How to install the client in Linux, Windows or Mac OS
+- Server: How to easily deploy a server
+- Build: How to build this project from scratch.
+
+## Client
+
+## Server
+
+## Build
+
 
