@@ -62,45 +62,45 @@ $(BUILD_DIR):
 	mkdir -p $(BUILD_DIR)
 
 $(CLIENT_TGZ): $(BUILD_DIR)
-	tar -C $(CLIENT_DIR) -cvf $@ .
+	tar -C $(CLIENT_DIR) -cvzf $@ .
 
 $(SERVER_TGZ): $(BUILD_DIR)
-	tar -C $(SERVER_DIR) -cvf $@ .
+	tar -C $(SERVER_DIR) -cvzf $@ .
 
 $(CORE_NIX_TGZ): $(BUILD_DIR)
-	tar -C $(CORE_NIX_DIR) -cvf $@ .
+	tar -C $(CORE_NIX_DIR) -cvzf $@ .
 
 $(CORE_WIN_TGZ): $(BUILD_DIR)
-	tar -C $(CORE_WIN_DIR) -cvf $@ .
+	tar -C $(CORE_WIN_DIR) -cvzf $@ .
 
 $(MTG_TGZ): $(BUILD_DIR)
-	tar -C $(MTG_DIR) -cvf $@ .
+	tar -C $(MTG_DIR) -cvzf $@ .
 
 $(METW_TGZ): $(BUILD_DIR)
-	tar -C $(METW_DIR) -cvf $@ .
+	tar -C $(METW_DIR) -cvzf $@ .
 
 $(FONT_TGZ): $(BUILD_DIR)
-	tar -C $(FONT_DIR) -cvf $@ .
+	tar -C $(FONT_DIR) -cvzf $@ .
 
 $(LOTR_TGZ): $(BUILD_DIR)
-	tar -C $(LOTR_DIR) -cvf $@ .
+	tar -C $(LOTR_DIR) -cvzf $@ .
 
 $(MTG_SERVER_TGZ): $(BUILD_DIR)
-	tar -C $(MTG_SERVER_DIR) -cvf $@ .
+	tar -C $(MTG_SERVER_DIR) -cvzf $@ .
 
 $(METW_SERVER_TGZ): $(BUILD_DIR)
-	tar -C $(METW_SERVER_DIR) -cvf $@ .
+	tar -C $(METW_SERVER_DIR) -cvzf $@ .
 
 $(LOTR_SERVER_TGZ): $(BUILD_DIR)
-	tar -C $(LOTR_SERVER_DIR) -cvf $@ .
+	tar -C $(LOTR_SERVER_DIR) -cvzf $@ .
 
 $(LINUX_TAR_GZ): $(BUILD_DIR)
-	make -C $(SOURCE_DIR) && tar -C $(SOURCE_DIR) -cvf $@ ccg_client ccg_server
+	make -C $(SOURCE_DIR) && tar -C $(SOURCE_DIR) -cvzf $@ ccg_client ccg_server
 $(MACOS_TAR_GZ): $(BUILD_DIR)
 	OS=mac make -C $(SOURCE_DIR)
 	dylibbundler -od -b -x $(SOURCE_DIR)/ccg_client -p "@executable_path/.libs" -d $(SOURCE_DIR)/.libs
 	cp -n /usr/local/lib/libSDL*.dylib $(SOURCE_DIR)/.libs
-	tar -C $(SOURCE_DIR) -cvf $@ ccg_client ccg_server .libs
+	tar -C $(SOURCE_DIR) -cvzf $@ ccg_client ccg_server .libs
 
 clean:
 	rm -rf $(BUILD_DIR)
