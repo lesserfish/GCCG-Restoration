@@ -71,6 +71,8 @@ $(LINUX_TAR_GZ): $(BUILD_DIR)
 
 clean:
 	rm -rf $(BUILD_DIR)
+	rm $(SOURCE_DIR)/ccg_client
+	rm $(SOURCE_DIR)/ccg_server
 	cd $(SOURCE_DIR) && make clean
 
 
