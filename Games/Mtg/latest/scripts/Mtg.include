@@ -8,7 +8,7 @@ HELP{"chat"}{"startdraft"}[3]=HELP{"chat"}{"startdraft"}[3]+" Available cubes fo
 special_cardback=(870,871);
 
 #these exist so the format filters don't get clogged with page after page of basic lands from early sets
-MIN_STANDARD_AGE=93;
+MIN_STANDARD_AGE=96;
 MIN_MODERN_AGE=42;
 MIN_CARD_NUMBER=1001;
 
@@ -30,7 +30,7 @@ BOOK_DEFAULT_SORT=("[age]","[color]","[name]");
 imprint=0;
 # Servers
 if(server.name=="NO.DEFAULT.SERVER.FOR.THIS.GAME")
-  server.name="gccg.bornano.fr";
+  server.name="none";
 
 # lobby background color
 BGCOLOR=(98,52,23);
@@ -107,6 +107,7 @@ GAME_MENU{"Main Menu - Play"}=(
  (1,"Select Transformed Card...","","DFCSubmenu()"),
  (1,"Select Emblem Type...","","EmblemSubmenu()"),
  (1,"{hr}","",""),
+ (1,"Play Experience Counter","",'Send("Transfer",(1,("out.of.play",998),("play",0)))'),
  (1,"Play Jitte Counter","",'Send("Transfer",(1,("out.of.play",7),("play",0)))'),
  (1,"Play Storm Counter","",'Send("Transfer",(1,("out.of.play",8),("play",0)))'),
  (1,"Play Poison Counter","",'Send("Transfer",(1,("out.of.play",999),("play",0)))'),
@@ -498,6 +499,7 @@ def EmblemSubmenu
 {
   Submenu("Select Emblem",(
   ("Ajani Steadfast","",'Send("Transfer",(1,("out.of.play",224),("play",0)))'),
+  ("Arlinn, Embraced by the Moon","",'Send("Transfer",(1,("out.of.play",282),("play",0)))'),
   ("Dack Fayden","",'Send("Transfer",(1,("out.of.play",225),("play",0)))'),
   ("Daretti, Scrap Savant","",'Send("Transfer",(1,("out.of.play",243),("play",0)))'),
   ("Domri Rade","",'Send("Transfer",(1,("out.of.play",187),("play",0)))'),
@@ -508,6 +510,7 @@ def EmblemSubmenu
   ("Garruk, Apex Predator","",'Send("Transfer",(1,("out.of.play",226),("play",0)))'),
   ("Gideon, Ally of Zendikar","",'Send("Transfer",(1,("out.of.play",270),("play",0)))'),
   ("Jace, Telepath Unbound","",'Send("Transfer",(1,("out.of.play",255),("play",0)))'),
+  ("Jace, Unraveler of Secrets","",'Send("Transfer",(1,("out.of.play",283),("play",0)))'),
   ("Kiora, the Crashing Wave","",'Send("Transfer",(1,("out.of.play",200),("play",0)))'),
   ("Kiora, Master of the Depths","",'Send("Transfer",(1,("out.of.play",271),("play",0)))'),
   ("Koth of the Hammer","",'Send("Transfer",(1,("out.of.play",168),("play",0)))'),
@@ -606,6 +609,7 @@ def TokenSubmenuC
    ("Centaur 3/3 (G, enchantment)","",'Send("Transfer",(1,("out.of.play",207),("play",0)))'),
    ("Cleric 1/1 (BW, reanimation)","",'Send("Transfer",(1,("out.of.play",183),("play",0)))'),
    ("Cleric 2/1 (W, enchantment)","",'Send("Transfer",(1,("out.of.play",194),("play",0)))'),
+   ("Clue (A)","",'Send("Transfer",(1,("out.of.play",281),("play",0)))'),
    ("Construct 1/1 (C, defender)","",'Send("Transfer",(1,("out.of.play",216),("play",0)))'),
    ("Construct 6/12 (C, trample)","",'Send("Transfer",(1,("out.of.play",100),("play",0)))'),
   ));
@@ -617,6 +621,7 @@ def TokenSubmenuD
    ("{blue}{sz12}<back>","","TokenSubmenu()"),
    ("Demon */* (B, flying)","",'Send("Transfer",(1,("out.of.play",23),("play",0)))'),
    ("Demon 5/5 (B, flying)","",'Send("Transfer",(1,("out.of.play",160),("play",0)))'),
+   ("Devil 1/1 (R)","",'Send("Transfer",(1,("out.of.play",276),("play",0)))'),
    ("Djinn Monk 2/2 (U, flying)","",'Send("Transfer",(1,("out.of.play",248),("play",0)))'),
    ("Dragon 1/1 (RG, flying, devour)","",'Send("Transfer",(1,("out.of.play",24),("play",0)))'),
    ("Dragon 2/2 (R, flying)","",'Send("Transfer",(1,("out.of.play",217),("play",0)))'),
@@ -713,6 +718,8 @@ def TokenSubmenuH
    ("Horror */* (B)","",'Send("Transfer",(1,("out.of.play",237),("play",0)))'),
    ("Human 1/1 (R)","",'Send("Transfer",(1,("out.of.play",165),("play",0)))'),
    ("Human 1/1 (W)","",'Send("Transfer",(1,("out.of.play",163),("play",0)))'),
+   ("Human Cleric 1/1 (BW)","",'Send("Transfer",(1,("out.of.play",277),("play",0)))'),
+   ("Human Soldier 1/1 (W)","",'Send("Transfer",(1,("out.of.play",278),("play",0)))'),
    ("Hydra */* (G)","",'Send("Transfer",(1,("out.of.play",209),("play",0)))'),
   ));
 }
@@ -776,6 +783,7 @@ def TokenSubmenuO
    ("Octopus 8/8 (U)","",'Send("Transfer",(1,("out.of.play",268),("play",0)))'),
    ("Ogre 3/3 (R)","",'Send("Transfer",(1,("out.of.play",108),("play",0)))'),
    ("Ogre 4/4 (R)","",'Send("Transfer",(1,("out.of.play",221),("play",0)))'),
+   ("Ooze 3/3 (G)","",'Send("Transfer",(1,("out.of.play",279),("play",0)))'),
    ("Ooze */* (G)","",'Send("Transfer",(1,("out.of.play",66),("play",0)))'),
   ));
 }
@@ -869,6 +877,7 @@ def TokenSubmenuV
    ("Vampire 1/1 (B, lifelink)","",'Send("Transfer",(1,("out.of.play",164),("play",0)))'),
    ("Vampire 2/2 (B, flying)","",'Send("Transfer",(1,("out.of.play",161),("play",0)))'),
    ("Vampire */* (B)","",'Send("Transfer",(1,("out.of.play",122),("play",0)))'),
+   ("Vampire Knight 1/1 (B, lifelink)","",'Send("Transfer",(1,("out.of.play",280),("play",0)))'),
    ("Voja 2/2 (GW)","",'Send("Transfer",(1,("out.of.play",91),("play",0)))'),   
   ));
 }
