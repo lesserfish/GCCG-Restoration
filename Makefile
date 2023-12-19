@@ -67,7 +67,7 @@ $(LOTR_SERVER_TGZ): $(BUILD_DIR)
 	tar -C $(LOTR_SERVER_DIR) -cvf $@ .
 
 $(LINUX_TAR_GZ): $(BUILD_DIR)
-	cd $(SOURCE_DIR) && make all && tar cf ../../$@ ccg_client ccg_server
+	make -C $(SOURCE_DIR) && tar -C $(SOURCE_DIR) -cvf $@ ccg_client ccg_server
 
 clean:
 	rm -rf $(BUILD_DIR)
