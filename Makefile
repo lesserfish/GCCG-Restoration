@@ -99,7 +99,7 @@ $(LINUX_TAR_GZ): $(BUILD_DIR)
 $(MACOS_TAR_GZ): $(BUILD_DIR)
 	OS=mac make -C $(SOURCE_DIR)
 	dylibbundler -od -b -x $(SOURCE_DIR)/ccg_client -p "@executable_path/.libs" -d $(SOURCE_DIR)/.libs
-	cp -n /usr/local/lib/libSDL*.dylib $(SOURCE_DIR)/.libs
+	-cp -n /usr/local/lib/libSDL*.dylib $(SOURCE_DIR)/.libs 
 	tar -C $(SOURCE_DIR) -cvzf $@ ccg_client ccg_server .libs
 
 clean:
