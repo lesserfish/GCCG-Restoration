@@ -29,8 +29,76 @@ We have split this README into three sections:
 
 ## Client
 
+### Windows:
+
+Download the latest Core file from the [releases](https://github.com/lesserfish/GCCG-Restoration/releases/tag/core) section of this Github page. Extract the GCCG directory somewhere nice.
+Open the Install.bat file and follow the prompt and select the game you want to install.
+
+### Linux:
+
+Install the required libraries by running 
+
+        sudo apt install libsdl1.2debian \
+        libsdl-image1.2 \
+        libsdl-ttf2.0-0 \
+        libsdl-mixer1.2 \
+        libsdl-net1.2
+
+Download the latest Core file from the [releases](https://github.com/lesserfish/GCCG-Restoration/releases/tag/core) section of this Github page. Extract thte contents of the .tgz file to a directory of your choice.
+Open a terminal, and cd' into the directory where you extracted everything.
+
+Run the following command:
+
+    ./gccg_package install client fonts linux-x86_64
+
+Install your game of choice by running
+
+    ./gccg_package game
+
+Current supported games available are "mtg", "metw" and "lotr". You can list additional modules with ./gccg_package status
+
+Install the game cards by running:
+
+    ./gccg_package install game-cards*
+
+### MacOS:
+
+Download the latest Core file from the [releases](https://github.com/lesserfish/GCCG-Restoration/releases/tag/core) section of this Github page. Extract thte contents of the .tgz file to a directory of your choice.
+Open a terminal, and cd' into the directory where you extracted everything.
+
+Run the following command:
+
+    ./gccg_package install client fonts darwin-x86_64
+
+Install your game of choice by running
+
+    ./gccg_package game
+
+Current supported games available are "mtg", "metw" and "lotr". You can list additional modules with ./gccg_package status
+
+Install the game cards by running:
+
+    ./gccg_package install game-cards*
+
 ## Server
+
+A dockerimage containing all of server modules can be found in lesserfish/gccg-base:latest.
+
+If you are interested in deplying servers, there is docker-compose example file in Server/Docker-Compose/docker-compose.yaml in this directory.
+
+Simply download this file and run 'docker-compose up'.
 
 ## Build
 
+In Linux, download the required libraries:
+
+    sudo apt-get install libsdl1.2-dev libsdl-image1.2-dev libsdl-ttf2.0-dev libsdl-mixer1.2-dev libsdl-net1.2-dev
+
+These libraries are also available in MacOS via homebrew.
+
+Clone this repository, and run
+
+    make
+
+This will create a Build directory with all of the modules.
 
