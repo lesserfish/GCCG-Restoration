@@ -40,6 +40,7 @@ LOTR_TGZ := $(BUILD_DIR)/gccg-lotr-latest.tgz
 MTG_SERVER_TGZ := $(BUILD_DIR)/gccg-mtg-server-latest.tgz
 METW_SERVER_TGZ := $(BUILD_DIR)/gccg-metw-server-latest.tgz
 LOTR_SERVER_TGZ := $(BUILD_DIR)/gccg-lotr-server-latest.tgz
+SOURCE_TAR_TGZ := $(BUILD_DIR)/gccg-source-latest.tgz
 
 ifeq ($(ARCH), x86_64)
 	LINUX_TAR_GZ := $(BUILD_DIR)/gccg-linux-x86_64-latest.tgz
@@ -56,11 +57,14 @@ endif
 
 all: $(TARGET)
 
-linux_target: $(CLIENT_TGZ) $(SERVER_TGZ) $(CORE_NIX_TGZ) $(CORE_WIN_TGZ) $(MTG_TGZ) $(METW_TGZ) $(FONT_TGZ) $(LOTR_TGZ) $(MTG_SERVER_TGZ) $(METW_SERVER_TGZ) $(LOTR_SERVER_TGZ) $(LINUX_TAR_GZ)
-macos_target: $(CLIENT_TGZ) $(SERVER_TGZ) $(CORE_NIX_TGZ) $(CORE_WIN_TGZ) $(MTG_TGZ) $(METW_TGZ) $(FONT_TGZ) $(LOTR_TGZ) $(MTG_SERVER_TGZ) $(METW_SERVER_TGZ) $(LOTR_SERVER_TGZ) $(MACOS_TAR_GZ)
+linux_target: $(SOURCE_TAR_TGZ) $(CLIENT_TGZ) $(SERVER_TGZ) $(CORE_NIX_TGZ) $(CORE_WIN_TGZ) $(MTG_TGZ) $(METW_TGZ) $(FONT_TGZ) $(LOTR_TGZ) $(MTG_SERVER_TGZ) $(METW_SERVER_TGZ) $(LOTR_SERVER_TGZ) $(LINUX_TAR_GZ)
+macos_target: $(SOURCE_TAR_TGZ) $(CLIENT_TGZ) $(SERVER_TGZ) $(CORE_NIX_TGZ) $(CORE_WIN_TGZ) $(MTG_TGZ) $(METW_TGZ) $(FONT_TGZ) $(LOTR_TGZ) $(MTG_SERVER_TGZ) $(METW_SERVER_TGZ) $(LOTR_SERVER_TGZ) $(MACOS_TAR_GZ)
 
 $(BUILD_DIR):
 	mkdir -p $(BUILD_DIR)
+
+$(SOURCE_TAR_TGZ): $(BUILD_DIR)
+	tar -C $(SOURCE_DIR) -cvzf $@ .
 
 $(CLIENT_TGZ): $(BUILD_DIR)
 	tar -C $(CLIENT_DIR) -cvzf $@ .
@@ -104,9 +108,9 @@ $(MACOS_TAR_GZ): $(BUILD_DIR)
 	tar -C $(SOURCE_DIR) -cvzf $@ ccg_client ccg_server .libs
 
 clean:
-	rm -rf $(BUILD_DIR)
-	rm $(SOURCE_DIR)/ccg_client
-	rm $(SOURCE_DIR)/ccg_server
-	cd $(SOURCE_DIR) && make clean
+	-rm -rf $(BUILD_DIR)
+	-rm $(SOURCE_DIR)/ccg_client
+	-rm $(SOURCE_DIR)/ccg_server
+	-cd $(SOURCE_DIR) && make clean
 
 
