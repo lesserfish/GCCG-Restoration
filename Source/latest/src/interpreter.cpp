@@ -1839,6 +1839,19 @@ Data Table::load_image(const Data& args)
     return driver->LoadImage(fname,Color(0,0,0));
 }
 
+Data Table::image_exists(const Data& args)
+{
+    string orig, fname;
+    if(args.IsString()){
+        orig=args.String();
+        fname=FindFile(orig, "graphics");
+        return (fname != "");
+    }
+    else{
+	    ArgumentError("image_exists",args);
+    }
+    return Null;
+}
 /// scale_image(i,w,h) - Scale an image $i$ to new size $w \times
 /// h$. Return old size (w,h) of the image.
 Data Table::scale_image(const Data& args)
@@ -3621,6 +3634,7 @@ void Table::InitializeLibrary()
     parser.SetFunction("listbox_scroll",&Table::listbox_scroll);
     parser.SetFunction("listbox_sort_rows",&Table::listbox_sort_rows);
     parser.SetFunction("load_image",&Table::load_image);
+    parser.SetFunction("image_exists",&Table::image_exists);
     parser.SetFunction("lower",&Table::lower);
     parser.SetFunction("message",&Table::message);
     parser.SetFunction("mouse",&Table::mouse);

@@ -1016,6 +1016,7 @@ namespace CCG
 	Evaluator::Data listbox_scroll(const Evaluator::Data&);
 	Evaluator::Data listbox_sort_rows(const Evaluator::Data&);
 	Evaluator::Data load_image(const Evaluator::Data&);
+	Evaluator::Data image_exists(const Evaluator::Data&);
 	Evaluator::Data lower(const Evaluator::Data&);
 	Evaluator::Data message(const Evaluator::Data&);
 	Evaluator::Data msgbox_scroll(const Evaluator::Data&);
