@@ -1494,11 +1494,11 @@ Table::Table(const string& triggerfile1,bool fullscreen,bool debug,bool fulldebu
 
     if(Driver::use_free_fonts)
     {
-        Driver::driver->LoadFont("free/sfd/FreeSansBold.ttf","windows/cumbc.ttf");
+        Driver::driver->LoadFont("free/sfd/OpenSans-SemiBold.ttf", "free/sfd/FreeSansBold.ttf");
         Driver::driver->LoadFont("free/NATIONPP.TTF","windows/NATIONPP.TTF");
-        Driver::driver->LoadFont("free/sfd/FreeSans.ttf","windows/arialn.ttf");
-        Driver::driver->LoadFont("free/sfd/FreeSerifBold.ttf","windows/thornbcp.ttf");
-        Driver::driver->LoadFont("free/sfd/FreeSerif.ttf","windows/thorncp.ttf");
+        Driver::driver->LoadFont("free/sfd/OpenSans-Regular.ttf", "free/sfd/FreeSans.ttf");
+        Driver::driver->LoadFont("free/sfd/OpenSans-Bold.ttf", "free/sfd/FreeSerifBold.ttf");
+        Driver::driver->LoadFont("free/sfd/OpenSans-Bold.ttf", "free/sfd/FreeSerif.ttf");
         Driver::driver->LoadFont("free/sfd/FreeMonoBold.ttf","windows/courierb.ttf");
         last_font=Driver::driver->LoadFont("free/sfd/FreeMono.ttf","windows/couriern.ttf");
     }
