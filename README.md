@@ -1,5 +1,7 @@
 # GCCG Restoration Project
 
+![image](https://github.com/lesserfish/GCCG-Restoration/assets/73536889/2cb148ae-7a5a-4ad6-b809-54899ba2f4a1)
+
  Generic Collectible Card Game is a multiplayer multiplatform implementation of a card game engine. The card game engine is designed to be of general purpose core for several modules each defining the game specific behaviour. Players download a client for their platform and all modules of interest. After launching the client for one of the games, it connects to the central server of the game chosen. When connected, all aspects of the collecting, trading and playing are availble to the player.
 Here is a brief summary of features:
 
