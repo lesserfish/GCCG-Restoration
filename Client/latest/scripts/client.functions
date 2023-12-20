@@ -1106,6 +1106,7 @@ def Initialize
   table.image=load_image("table.png");
 
   background.image=load_image("background.png");
+  scale_image(background.image,screen.width,screen.height);
   background.object=create_image(0,(screen.height-image_height(background.image))/2,obj=obj+1,background.image,"background",0);
   set_attr(background.object,"visible",1);
   set_attr(background.object,"onbottom",1);
