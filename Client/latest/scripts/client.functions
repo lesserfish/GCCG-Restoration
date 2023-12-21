@@ -290,6 +290,16 @@ COLORS{'VIOLET'}=(160,0,160);
 COLORS{'WHITE'}=(255,255,255);
 COLORS{'BLACK'}=(0,0,0);
 
+# Aspect Ratios
+AR=array(4);
+AR[0]=(4.0,3.0);
+AR[1]=(16.0,9.0);
+AR[2]=(16.0,10.0);
+AR[3]=(1.0,1.0);
+
+# Maximum number of backgrounds to consider
+BACKGROUND_MAX=10;
+
 # Marker colors
 MARKER_COLOR=array(10);
 
@@ -1094,6 +1104,61 @@ def CheckInitialVariables
   CheckFunctionsOrQuit("StartGame");
 }
 
+def RandomBackground
+{
+    push(current_ar);
+    push(best_ar);
+    push(ar);
+    push(current_dist);
+    push(background_count);
+    push(n);
+    push(filename);
+    push(choice);
+
+
+    current_ar = toreal(screen.width) / toreal(screen.height);
+
+# Get the best possible Aspect Ratio
+    best_ar = AR[0];
+    best_dist = dist((current_ar, 0), (best_ar[0] / best_ar[1], 0));
+    for(ar)(AR){
+        current_dist = dist((current_ar, 0), (ar[0] / ar[1], 0));
+        if(current_dist < best_dist){
+            best_dist = current_dist;
+            best_ar = ar;
+        }
+    }
+    background_count=0;
+
+    for(n)(BACKGROUND_MAX)
+    {
+        filename = "background_" + tostr(toint(best_ar[0])) + "_" + tostr(toint(best_ar[1])) + "_" + tostr(n) + ".png";
+        if(image_exists(filename)){
+            background_count = n + 1;
+        }
+        else{
+            n=BACKGROUND_MAX;
+        }
+    }
+
+    if(background_count==0){
+        return(load_image("background.png"));
+    }
+    else{
+        choice=random(background_count);
+        filename = "background_" + tostr(toint(best_ar[0])) + "_" + tostr(toint(best_ar[1])) + "_" + tostr(choice) + ".png";
+        return(load_image(filename, "background.png"));
+    }
+
+    choice=pop();
+    filename=pop();
+    n=pop();
+    background_count=pop();
+    current_dist=pop();
+    ar=pop();
+    best_ar=pop();
+    current_ar=pop();
+}
 #
 # Initialize() - Initialize screen objects and variables.
 #
@@ -1105,7 +1170,7 @@ def Initialize
 
   table.image=load_image("table.png");
 
-  background.image=load_image("background.png");
+  background.image=RandomBackground();
   scale_image(background.image,screen.width,screen.height);
   background.object=create_image(0,(screen.height-image_height(background.image))/2,obj=obj+1,background.image,"background",0);
   set_attr(background.object,"visible",1);
