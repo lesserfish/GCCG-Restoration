@@ -161,7 +161,7 @@ OBJS_COMMON := \
 OBJS_CLIENT := \
 	$(OBJS_COMMON) src/client.o src/driver.o src/game.o src/interpreter.o \
 	src/SDL_rotozoom.o
-OBJS_CLIENT_GUI := $(OBJS_CLIENT) src/sdl-driver.o src/game-sdl-version.o
+OBJS_CLIENT_GUI := $(OBJS_CLIENT) src/sdl2-driver.o src/game-sdl-version.o
 OBJS_CLIENT_TEXT := $(OBJS_CLIENT) src/text-driver.o src/game-text-version.o
 OBJS_SERVER := $(OBJS_COMMON) src/server.o
 OBJS_SH := $(OBJS_COMMON) src/gccg.o
