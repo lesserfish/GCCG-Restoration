@@ -423,9 +423,7 @@ namespace Driver
 
     int Driver::AllocateSurface(int w,int h)
     {
-
-		std::cout << "AllocateSurface\n";
-        if(w < 0 || h < 0)
+        if(w <= 0 || h <= 0)
             throw Error::Invalid("Driver::AllocateSurface","invalid size "+ToString(w)+"x"+ToString(h));
 
         int i=1;
@@ -440,11 +438,11 @@ namespace Driver
                 w,
                 h);
 
-        SDL_SetTextureBlendMode(t, SDL_BLENDMODE_BLEND); 
-
         if(t==0)
-            throw Error::Memory("Driver::AllocateSurface(int,int)");
+            throw Error::Memory("Driver::AllocateSurface(int,int): " + string(SDL_GetError()));
 
+
+        SDL_SetTextureBlendMode(t, SDL_BLENDMODE_BLEND); 
         textures[i]=t;
 
         return i;
@@ -453,7 +451,7 @@ namespace Driver
     int Driver::SelectSurface(int num)
     {
 
-		std::cout << "SelectSurface\n";
+        std::cout << "SelectSurface\n";
         if(num==-1)
             throw Error::Invalid("Driver::SelectSurface","Surface not yet allocated");
 
@@ -473,7 +471,7 @@ namespace Driver
     void Driver::FreeSurface(int num)
     {
 
-		std::cout << "FreeSurface\n";
+        std::cout << "FreeSurface\n";
         if(num < 1 || (size_t)num >= textures.size())
             throw Error::Invalid("Driver::FreeSurface","Invalid surface number "+ToString(num));
 
@@ -487,7 +485,7 @@ namespace Driver
     void Driver::DrawSurface(int x,int y,int num)
     {
 
-		std::cout << "DrawSurface\n";
+        std::cout << "DrawSurface\n";
         if(num < 0 || (size_t)num >= textures.size())
             throw Error::Invalid("Driver::DrawSurface","Invalid surface number "+ToString(num));
         if(textures[num]==0)
@@ -537,7 +535,7 @@ namespace Driver
     void Driver::Fullscreen(bool mode)
     {
 
-		std::cout << "Fullscreen\n";
+        std::cout << "Fullscreen\n";
         if(mode!=fullscreen)
         {
             fullscreen=mode;
@@ -549,7 +547,7 @@ namespace Driver
     void Driver::Beep()
     {
 
-		std::cout << "Beep\n";
+        std::cout << "Beep\n";
         string beep_buffer="\007";
         cout << beep_buffer << flush;
 
@@ -558,28 +556,28 @@ namespace Driver
     void Driver::Blink(int enabled)
     {
 
-		std::cout << "Blink\n";
+        std::cout << "Blink\n";
         // TODO: Implement this
     }
 
     void Driver::UpdateScreen(int x0,int y0,int w,int h)
     {
 
-		std::cout << "UpdateScreen\n";
+        std::cout << "UpdateScreen\n";
         UpdateScreen();
     }
 
     void Driver::UpdateScreen()
     {
 
-		std::cout << "UpdateScreen\n";
+        std::cout << "UpdateScreen\n";
         SDL_RenderPresent(renderer);
     }
 
     void Driver::DrawCardImage(int imagenumber,int x,int y,int size,int angle,int alpha)
     {
 
-		std::cout << "DrawCardImage\n";
+        std::cout << "DrawCardImage\n";
         LoadIfUnloaded(imagenumber,size,angle);
 
         SDL_Rect dest;
@@ -594,7 +592,7 @@ namespace Driver
     int Driver::CardWidth(int imagenumber,int size,int angle)
     {
 
-		std::cout << "CardWidth\n";
+        std::cout << "CardWidth\n";
         LoadIfUnloaded(imagenumber,size,angle);
         int textureWidth, textureHeight;
         SDL_QueryTexture(cardimage[imagenumber][size][angle], NULL, NULL, &textureWidth, &textureHeight);
@@ -605,7 +603,7 @@ namespace Driver
     int Driver::CardHeight(int imagenumber,int size,int angle)
     {
 
-		std::cout << "CardHeight\n";
+        std::cout << "CardHeight\n";
         LoadIfUnloaded(imagenumber,size,angle);
         int textureWidth, textureHeight;
         SDL_QueryTexture(cardimage[imagenumber][size][angle], NULL, NULL, &textureWidth, &textureHeight);
@@ -616,7 +614,7 @@ namespace Driver
     void Driver::WaitKeyPress()
     {
 
-		std::cout << "WaitKeyPress\n";
+        std::cout << "WaitKeyPress\n";
         SDL_Event event;
 
         while(1)
@@ -638,28 +636,28 @@ namespace Driver
     void Driver::ClearArea(int x0,int y0,int w,int h)
     {
 
-		std::cout << "ClearArea\n";
+        std::cout << "ClearArea\n";
         SDL_RenderClear(renderer);
     }
 
     void Driver::SetClipping(int surf,int x0,int y0,int w,int h)
     {
 
-		std::cout << "SetClipping\n";
+        std::cout << "SetClipping\n";
         // I don't think this exists for textures
     }
 
     void Driver::ClippingOff(int surf)
     {
 
-		std::cout << "ClippingOff\n";
+        std::cout << "ClippingOff\n";
         // I don't think this exists for textures
     }
 
     void Driver::DrawFilledBox(int x0,int y0,int w,int h,Color c)
     {
 
-		std::cout << "DrawFilledBox\n";
+        std::cout << "DrawFilledBox\n";
         if(w==0 || h==0)
             return;
 
@@ -686,7 +684,7 @@ namespace Driver
     void Driver::DrawTriangleUp(int x0,int y0,int h,Color c)
     {
 
-		std::cout << "DrawTriangleUp\n";
+        std::cout << "DrawTriangleUp\n";
         if(!c.invisible)
         {
             y0+=h-1;
@@ -703,7 +701,7 @@ namespace Driver
     void Driver::DrawTriangleDown(int x0,int y0,int h,Color c)
     {
 
-		std::cout << "DrawTriangleDown\n";
+        std::cout << "DrawTriangleDown\n";
         if(!c.invisible)
         {
             for(int i=0; i<h; i++)
@@ -718,7 +716,7 @@ namespace Driver
     void Driver::DrawBox(int x0,int y0,int w,int h,Color c)
     {
 
-		std::cout << "DrawBox\n";
+        std::cout << "DrawBox\n";
         if(!c.invisible)
         {
             DrawFilledBox(x0,y0,w,1,c);
@@ -732,21 +730,21 @@ namespace Driver
     void Driver::HideMouse()
     {
 
-		std::cout << "HideMouse\n";
+        std::cout << "HideMouse\n";
         SDL_ShowCursor(SDL_DISABLE);
     }
 
     void Driver::ShowMouse()
     {
 
-		std::cout << "ShowMouse\n";
+        std::cout << "ShowMouse\n";
         SDL_ShowCursor(SDL_ENABLE);
     }
 
     Command Driver::WaitCommand(int delay)
     {
 
-		std::cout << "WaitCommand\n";
+        std::cout << "WaitCommand\n";
         static int state=0; // 0 - normal, 1 - dragging, 2 - mouse clicked (waiting drag or release)
         static string dragtype; // Description of the dragging mode (ctrl,left etc.).
         static int dragx,dragy; // Mouseposition when dragging begun
@@ -1085,7 +1083,7 @@ namespace Driver
     int Driver::LoadCardSound(int imagenumber)
     {
 
-		std::cout << "LoadCardSound\n";
+        std::cout << "LoadCardSound\n";
         if(nosounds) return 0;
 
         // Check arguments and if card is loaded already.		
@@ -1138,7 +1136,7 @@ namespace Driver
     void Driver::LoadIfUnloaded(int imagenumber,int size,int angle)
     {
 
-		std::cout << "LoadIfUnloaded\n";
+        std::cout << "LoadIfUnloaded\n";
         bool self_generated=false;
         static list<int> image_load_order;
 
@@ -1337,7 +1335,33 @@ scale_and_return:
 
     int Driver::LoadImage(const string& filename,Color c)
     {
-        return 0;
+        SDL_Surface* img=IMG_Load(filename.c_str());
+
+        SDL_Surface* imgscaled;
+        if(!img)
+            throw Error::IO("Driver::LoadImage(const string&,int,int,int)",string("Unable to load file '"+filename+"': ")+SDL_GetError());
+        if(!c.invisible)
+            SDL_SetColorKey(img,SDL_TRUE,SDL_MapRGB(img->format,c.r,c.g,c.b));
+
+        imgscaled=img;
+        if(needscale)
+        {
+            imgscaled=zoomSurface(img,double(physw)/double(scrw),double(physh)/double(scrh),SMOOTHING_ON);
+            if(!imgscaled)
+                throw Error::Memory("Driver::LoadImage(const string&,Color)");
+            if(!c.invisible)
+                SDL_SetColorKey(imgscaled,SDL_TRUE,SDL_MapRGB(imgscaled->format,c.r,c.g,c.b));
+            SDL_FreeSurface(img);
+        }
+
+        SDL_Texture *txtscaled = SDL_CreateTextureFromSurface(renderer, imgscaled);
+        SDL_Texture *txt= SDL_CreateTextureFromSurface(renderer, imgscaled);
+        image_collection_original.push_back(txtscaled);
+
+        image_collection.push_back(txt);
+
+        return image_collection.size()-1;
+
     }
 
     void Driver::ScaleImage(int img,int neww,int newh)
