@@ -18,6 +18,7 @@
    Boston, MA 02111-1307, USA.
    */
 
+#include <SDL2/SDL_render.h>
 #if !defined(WIN32) && !defined(__WIN32__)
 #include <sys/types.h>
 #include <fcntl.h>
@@ -56,20 +57,24 @@ namespace Driver
 {
     /// Do we want free fonts even if other fonts available.
     bool use_free_fonts=true;
-    /// Pointer to the physical screen.
-    static SDL_Surface* screen;
-    /// Pointer to current output surface.
-    static SDL_Surface* output=0;
-    /// Number of the current surface.
-    static int output_surface=0;
-    /// Current set of allocated surfaces. NULL denotes free postion. Surface 0 is the screen.
-    static vector<SDL_Surface*> surface;
+    /// Pointer to the window.
+    static SDL_Window* window;
+    /// Pointer to the renderer
+    static SDL_Renderer *renderer;
+    /// Index of the driver being used.
+    static int driver_index;
+    /// Pointer to current output texture.
+    static SDL_Texture *output;
+    /// Number of the current texture.
+    static int output_surface;
+    /// Current set of allocated textures. NULL denotes free postion. Surface 0 is the screen.
+    static vector<SDL_Texture*> textures;
     /// Structure of loaded cardimages: cardimage[card number][size][angle] is 0 if not loaded.
-    static map<int,map<int,map<int,SDL_Surface*> > > cardimage;
+    static map<int,map<int,map<int,SDL_Texture*> > > cardimage;
     /// Vector for image store in display format.
-    static vector<SDL_Surface*> image_collection;
+    static vector<SDL_Texture*> image_collection;
     /// Vector for image store in original format.
-    static vector<SDL_Surface*> image_collection_original;
+    static vector<SDL_Texture*> image_collection_original;
     /// Pointer to the main window icon
     SDL_Surface* main_icon=0;
 
@@ -98,7 +103,7 @@ namespace Driver
     static bool alt;
 
     /// Create own card using xml-description.
-    static SDL_Surface* CreateOwnCard(int imagenumber);
+    static SDL_Texture* CreateOwnCard(int imagenumber);
 
     /// lock dynamic libraries
 #ifdef WIN32
@@ -107,28 +112,161 @@ namespace Driver
 
     // STATIC SUPPORT FUNCTIONS
     // ========================
-
     static void SetPixel(SDL_Surface* surface,int x,int y,Uint32 pixel)
     {
+        Uint8   *bits;
+
+        bits = ((Uint8 *)surface->pixels)+y*surface->pitch+x*(surface->format->BytesPerPixel);
+
+        switch(surface->format->BytesPerPixel)
+        {
+            case 2:
+                *((Uint16 *)(bits)) = (Uint16)pixel;
+                break;
+
+            case 3:
+                Uint8 r, g, b;
+
+                r = (pixel>>surface->format->Rshift)&0xFF;
+                g = (pixel>>surface->format->Gshift)&0xFF;
+                b = (pixel>>surface->format->Bshift)&0xFF;
+                *((bits)+surface->format->Rshift/8) = r; 
+                *((bits)+surface->format->Gshift/8) = g;
+                *((bits)+surface->format->Bshift/8) = b;
+                break;
+
+            case 4:
+                *((Uint32 *)(bits)) = pixel;
+                break;
+
+            default:
+                throw Error::IO("SetPixel(SDL_Surface*,int,int,Uint32)","Unsupported color depth "+ToString(surface->format->BytesPerPixel));
+        }
     }
 
     static Uint32 GetPixel(SDL_Surface* surface,int x,int y)
     {
+        Uint8   *bits;
+
+        SDL_PixelFormat *fmt=surface->format;
+
+        bits = ((Uint8 *)surface->pixels)+y*surface->pitch+x*(fmt->BytesPerPixel);
+
+        switch(surface->format->BytesPerPixel)
+        {
+            case 2:
+                return *((Uint16 *)(bits));
+
+            case 3:
+
+                if (SDL_BYTEORDER == SDL_BIG_ENDIAN)			  
+                    return ((*bits)<<16) | ((*(bits+1))<<8) | (*(bits+2));
+                else
+                    return ((*bits)) | ((*(bits+1))<<8) | (*(bits+2)<<16);
+
+            case 4:
+                return *((Uint32 *)(bits));
+
+            default:
+                throw Error::IO("GetPixel(SDL_Surface*,int,int)","Unsupported color depth "+ToString(surface->format->BytesPerPixel));
+        }
+
         return 0;
     }
-
     static int GetEvent(SDL_Event& event)
     {
-        return 1;
-    }
+        if(SDL_PollEvent(&event)==0)
+            return 0;
+
+        if(event.type==SDL_KEYUP)
+        {
+            if(event.key.keysym.sym == SDLK_RCTRL || event.key.keysym.sym == SDLK_LCTRL)
+                control=false;
+            else if(event.key.keysym.sym == SDLK_RSHIFT || event.key.keysym.sym == SDLK_LSHIFT)
+                shift=false;
+            else if(event.key.keysym.sym == SDLK_RALT || event.key.keysym.sym == SDLK_LALT)
+                alt=false;
+        }
+        else if(event.type==SDL_KEYDOWN)
+        {
+            if(event.key.keysym.sym == SDLK_RCTRL || event.key.keysym.sym == SDLK_LCTRL)
+                control=true;
+            else if(event.key.keysym.sym == SDLK_RSHIFT || event.key.keysym.sym == SDLK_LSHIFT)
+                shift=true;
+            else if(event.key.keysym.sym == SDLK_RALT || event.key.keysym.sym == SDLK_LALT)
+                alt=true;
+        }
+        else if (event.type==SDL_MOUSEBUTTONDOWN)
+        {
+            if(event.button.button==SDL_BUTTON_LEFT)
+                mouse1=true;
+            else if(event.button.button==SDL_BUTTON_RIGHT)
+                mouse2=true;
+            else if(event.button.button==SDL_BUTTON_MIDDLE)
+                mouse3=true;
+        }
+        else if (event.type==SDL_MOUSEBUTTONUP)
+        {
+            if(event.button.button==SDL_BUTTON_LEFT)
+                mouse1=false;
+            else if(event.button.button==SDL_BUTTON_RIGHT)
+                mouse2=false;
+            else if(event.button.button==SDL_BUTTON_MIDDLE)
+                mouse3=false;
+        }
+        else if(event.type==SDL_MOUSEMOTION)
+        {
+            SDL_Event peep;
+            int count=0;
+            while(count < 50 && 
+                    SDL_PeepEvents(&peep,
+                        1,
+                        SDL_GETEVENT,
+                        SDL_MOUSEMOTION,
+                        SDL_MOUSEMOTION) ==1)
+            {
+                event.motion.x=peep.motion.x;
+                event.motion.y=peep.motion.y;
+                event.motion.xrel+=peep.motion.xrel;
+                event.motion.yrel+=peep.motion.yrel;
+                count++;
+            }
+        }
+
+        return 1;    }
 
     static string CommandModifier()
     {
-        return "";
+        if(shift && control && alt)
+            return "shift control alt ";
+        else if(shift && control)
+            return "shift control ";
+        else if(control && alt)
+            return "control alt ";
+        else if(shift && alt)
+            return "shift alt ";
+        else if(shift)
+            return "shift ";
+        else if(alt)
+            return "alt ";
+        else if(control)
+            return "control ";
+        else
+            return "";
     }
 
     static unsigned char fix_SDL_Keypad(SDL_Keycode key)
     {
+        if((key >= SDLK_KP_0 && key <= SDLK_KP_9))
+        {
+            return '0' + key - SDLK_KP_0;
+        }
+        if(key == SDLK_KP_PERIOD){
+            return '.';
+        }
+        if(key == SDLK_KP_DIVIDE){
+            return '/';
+        }
         return 0;
     }
 
@@ -139,138 +277,824 @@ namespace Driver
 
     Driver::Driver(int screenwidth,int screenheight,bool _fullscreen,int physwidth,int physheight)
     {
+        std::cout << "1\n";
+        nographics=false;
+        fullscreen=_fullscreen;
+
+        scrw=screenwidth;
+        scrh=screenheight;
+        physw=physwidth ? physwidth : scrw;
+        physh=physheight ? physheight : scrh;
+        needscale=(physw != scrw || physh != scrh);
+
+        cards=Database::cards.Cards();
+        std::cout << "2\n";
+
+        if(nosounds)
+        {
+            if(SDL_InitSubSystem(SDL_INIT_VIDEO))
+                throw Error::IO("SDL_InitSubSystem failed",SDL_GetError());
+        }
+        else
+        {
+            if(SDL_InitSubSystem(SDL_INIT_VIDEO|SDL_INIT_AUDIO))
+                throw Error::IO("SDL_InitSubSystem failed",SDL_GetError());
+
+            if(Mix_OpenAudio(44100,MIX_DEFAULT_FORMAT,2,4096)<0)
+            {
+                nosounds=true;
+                cerr << "Mix_OpenAudio failed: " << SDL_GetError();
+            }
+        }
+        std::cout << "3\n";
+
+
+        string caption="Gccg v"VERSION" ";
+        caption+=Database::game.Gamedir();
+
+        Uint32 flags=(fullscreen ? SDL_WINDOW_FULLSCREEN : 0) | SDL_WINDOW_OPENGL;
+        window = SDL_CreateWindow(caption.c_str(),
+                SDL_WINDOWPOS_UNDEFINED,
+                SDL_WINDOWPOS_UNDEFINED,
+                physw, physh,
+                flags);
+        if(!window){
+            throw Error::IO("Driver::Driver(bool)",SDL_GetError());
+        }
+
+        renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
+
+
+        if(!renderer){
+            throw Error::IO("Driver::Driver(bool)",SDL_GetError());
+        }
+
+        std::cout << "4\n";
+        SDL_RendererInfo rendererInfo;
+        SDL_GetRendererInfo(renderer, &rendererInfo);
+
+        std::cout << "5\n";
+        // TODO: Get proper driver_index
+        driver_index = 0; //rendererInfo.num;
+
+        std::cout << "6\n";
+        main_icon = IMG_Load(CCG_DATADIR"/graphics/icon32.jpg");
+        //SDL_SetWindowIcon(window, main_icon); // TODO: Setting Window ICON gives a SEGFAULT
+
+        std::cout << "7\n";
+        output = SDL_CreateTexture(renderer,
+                SDL_PIXELFORMAT_RGBA8888,
+                SDL_TEXTUREACCESS_TARGET,
+                physw,
+                physh);
+        output_surface=0;
+
+        textures.resize(100);
+        textures[0] = output;
+
+        std::cout << "8\n";
+        TTF_Init();
+
+        control=false;
+        shift=false;
+        alt=false;
+        mouse1=false;
+        mouse2=false;
+        mouse3=false;
+
+        std::cout << "9\n";
+
+        string drivername(SDL_GetVideoDriver(driver_index));
+        SDL_DisplayMode info;
+        if(SDL_GetCurrentDisplayMode(driver_index, &info) < 0)
+        {
+            throw Error::IO("Driver::Driver(bool)",SDL_GetError());
+        }
+
+        cout << Localization::Message("Graphics initialized:") << endl;
+        cout << Localization::Message("  Driver = %s", drivername) << endl;
+        cout << Localization::Message("  Fullscreen = %s", SDL_GetWindowFlags(window) & SDL_WINDOW_FULLSCREEN ? "Yes" : "No") << endl;
+        cout << Localization::Message("  Physical resolution = %s", ToString(info.w)+"x"+ToString(info.h)) << endl;
+        cout << Localization::Message("  Refresh rate = %s", ToString(info.refresh_rate) + " Hz") << endl;
+
+#ifdef WIN32
+        // PERF_IMPROVEMENT: Avoid SDL_Image to load/unload shared libs on every image
+        // This also seems to fix a double load of the same file.
+        void* jpeglib = SDL_LoadObject("jpeg.dll");	
+        void* pnglib = SDL_LoadObject("libpng12-0.dll");
+#endif
+
     }
 
     Driver::~Driver()
     {
+#ifdef WIN32
+        SDL_UnloadObject(pnglib);
+        SDL_UnloadObject(jpeglib);
+#endif
+
+        SDL_FreeSurface(main_icon);
+
+        map<int,map<int,map<int,SDL_Texture*> > >::iterator i;
+        map<int,map<int,SDL_Texture*> >::iterator j;
+        map<int,SDL_Texture*>::iterator k;
+
+        for(i=cardimage.begin(); i!=cardimage.end(); i++)
+            for(j=(*i).second.begin(); j!=(*i).second.end(); j++)
+                for(k=(*j).second.begin(); k!=(*j).second.end(); k++)
+                    SDL_DestroyTexture((*k).second);
+
+        for(size_t n=0; n<textures.size(); n++)
+            if(textures[n])
+                SDL_DestroyTexture(textures[n]);
+
+        TTF_Quit();
+
+        // TODO: free all loaded sounds
+        // Mix_FreeChunk(chunk);
+
+        Mix_CloseAudio();
+
     }
 
     int Driver::AllocateSurface(int w,int h)
     {
-        return 0;
+        if(w < 0 || h < 0)
+            throw Error::Invalid("Driver::AllocateSurface","invalid size "+ToString(w)+"x"+ToString(h));
+
+        int i=1;
+        while((size_t)i<textures.size() && textures[i])
+            i++;
+        if((size_t)i==textures.size())
+            textures.resize(textures.size()+100);
+
+        SDL_Texture* t = SDL_CreateTexture(renderer,
+                SDL_PIXELFORMAT_RGBA8888,
+                SDL_TEXTUREACCESS_TARGET,
+                w,
+                h);
+
+        SDL_SetTextureBlendMode(t, SDL_BLENDMODE_BLEND); 
+
+        if(t==0)
+            throw Error::Memory("Driver::AllocateSurface(int,int)");
+
+        textures[i]=t;
+
+        return i;
     }
 
     int Driver::SelectSurface(int num)
     {
-        return 0;
+        if(num==-1)
+            throw Error::Invalid("Driver::SelectSurface","Surface not yet allocated");
+
+        if(num < 0 || (size_t)num >= textures.size())
+            throw Error::Invalid("Driver::SelectSurface","Invalid surface number "+ToString(num));
+
+        if(textures[num]==0)
+            throw Error::Invalid("Driver::SelectSurface","No such surface "+ToString(num));
+
+        output=textures[num];
+        int ret=output_surface;
+        output_surface=num;
+
+        return ret;
     }
 
     void Driver::FreeSurface(int num)
     {
+        if(num < 1 || (size_t)num >= textures.size())
+            throw Error::Invalid("Driver::FreeSurface","Invalid surface number "+ToString(num));
+
+        if(textures[num]==0)
+            throw Error::Invalid("Driver::FreeSurface","No such surface "+ToString(num));
+
+        SDL_DestroyTexture(textures[num]);
+        textures[num]=0;
     }
 
     void Driver::DrawSurface(int x,int y,int num)
     {
+        if(num < 0 || (size_t)num >= textures.size())
+            throw Error::Invalid("Driver::DrawSurface","Invalid surface number "+ToString(num));
+        if(textures[num]==0)
+            throw Error::Invalid("Driver::DrawSurface","No such surface "+ToString(num));
+
+        SDL_Rect dst;
+
+        int textureWidth, textureHeight;
+        SDL_QueryTexture(textures[num], NULL, NULL, &textureWidth, &textureHeight);
+
+
+        dst.x=x;
+        dst.y=y;
+        dst.w=textureWidth;
+        dst.h=textureHeight;
+
+        SDL_SetRenderTarget(renderer, NULL);
+        SDL_RenderCopy(renderer, textures[num], 0, &dst);
+
     }
     int Driver::SurfaceWidth(int num) const
     {
-        return 0;
+        if(num < 0 || (size_t)num >= textures.size())
+            throw Error::Invalid("Driver::SurfaceWidth","Invalid surface number "+ToString(num));
+        if(textures[num]==0)
+            throw Error::Invalid("Driver::SurfaceWidth","No such surface "+ToString(num));
+
+        int textureWidth, textureHeight;
+        SDL_QueryTexture(textures[num], NULL, NULL, &textureWidth, &textureHeight);
+
+        return textureWidth;
     }
-	
+
     int Driver::SurfaceHeight(int num) const
     {
-        return 0;
+        if(num < 0 || (size_t)num >= textures.size())
+            throw Error::Invalid("Driver::SurfaceWidth","Invalid surface number "+ToString(num));
+        if(textures[num]==0)
+            throw Error::Invalid("Driver::SurfaceWidth","No such surface "+ToString(num));
+
+        int textureWidth, textureHeight;
+        SDL_QueryTexture(textures[num], NULL, NULL, &textureWidth, &textureHeight);
+
+        return textureHeight;    
     }
 
     void Driver::Fullscreen(bool mode)
     {
+        if(mode!=fullscreen)
+        {
+            fullscreen=mode;
+            Uint32 flags = mode ? SDL_WINDOW_FULLSCREEN_DESKTOP : 0;
+            SDL_SetWindowFullscreen(window,flags);
+        }
     }
 
     void Driver::Beep()
     {
+        string beep_buffer="\007";
+        cout << beep_buffer << flush;
+
     }
 
     void Driver::Blink(int enabled)
     {
+        // TODO: Implement this
     }
 
     void Driver::UpdateScreen(int x0,int y0,int w,int h)
     {
+        UpdateScreen();
     }
 
     void Driver::UpdateScreen()
     {
+        SDL_RenderPresent(renderer);
     }
 
     void Driver::DrawCardImage(int imagenumber,int x,int y,int size,int angle,int alpha)
     {
+        LoadIfUnloaded(imagenumber,size,angle);
+
+        SDL_Rect dest;
+
+        dest.x=x;
+        dest.y=y;
+
+        // blit graphic across.  <srcrect> is NULL: blit entire object
+        SDL_RenderCopy(renderer, cardimage[imagenumber][size][angle], NULL, &dest);
     }
 
     int Driver::CardWidth(int imagenumber,int size,int angle)
     {
-        return 0;
+        LoadIfUnloaded(imagenumber,size,angle);
+        int textureWidth, textureHeight;
+        SDL_QueryTexture(cardimage[imagenumber][size][angle], NULL, NULL, &textureWidth, &textureHeight);
+
+        return textureWidth;    
     }
 
     int Driver::CardHeight(int imagenumber,int size,int angle)
     {
-        return 0;
+        LoadIfUnloaded(imagenumber,size,angle);
+        int textureWidth, textureHeight;
+        SDL_QueryTexture(cardimage[imagenumber][size][angle], NULL, NULL, &textureWidth, &textureHeight);
+
+        return textureHeight;    
     }
 
     void Driver::WaitKeyPress()
     {
+        SDL_Event event;
+
+        while(1)
+        {
+            SDL_PollEvent(&event);
+            if(event.type==SDL_KEYDOWN)
+                break;
+        }
+
+        while(1)
+        {
+            SDL_PollEvent(&event);
+            if(event.type==SDL_KEYUP)
+                break;
+        }
+
     }
 
     void Driver::ClearArea(int x0,int y0,int w,int h)
     {
+        SDL_RenderClear(renderer);
     }
 
     void Driver::SetClipping(int surf,int x0,int y0,int w,int h)
     {
+        // I don't think this exists for textures
     }
 
     void Driver::ClippingOff(int surf)
     {
+        // I don't think this exists for textures
     }
 
     void Driver::DrawFilledBox(int x0,int y0,int w,int h,Color c)
     {
+        if(w==0 || h==0)
+            return;
+
+        if(w < 1)
+            w=1;
+        if(h < 1)
+            h=1;
+
+        if(!c.invisible)
+        {
+            SDL_Rect dst;
+
+            dst.x=x0;
+            dst.y=y0;
+            dst.w=w;
+            dst.h=h;
+
+            SDL_SetRenderDrawColor(renderer, c.r, c.g, c.b, c.a);
+            SDL_RenderFillRect(renderer, &dst);
+        }
+
     }
 
     void Driver::DrawTriangleUp(int x0,int y0,int h,Color c)
     {
+        if(!c.invisible)
+        {
+            y0+=h-1;
+            for(int i=0; i<h; i++)
+            {
+                DrawFilledBox(x0,y0,(h-i)*2,1,c);
+                x0++;
+                y0--;
+            }
+        }
+
     }
 
     void Driver::DrawTriangleDown(int x0,int y0,int h,Color c)
     {
+        if(!c.invisible)
+        {
+            for(int i=0; i<h; i++)
+            {
+                DrawFilledBox(x0,y0,(h-i)*2,1,c);
+                x0++;
+                y0++;
+            }
+        }
     }
 
     void Driver::DrawBox(int x0,int y0,int w,int h,Color c)
     {
+        if(!c.invisible)
+        {
+            DrawFilledBox(x0,y0,w,1,c);
+            DrawFilledBox(x0,y0+h-1,w,1,c);
+            DrawFilledBox(x0,y0,1,h,c);
+            DrawFilledBox(x0+w-1,y0,1,h,c);
+        }
+
     }
 
     void Driver::HideMouse()
     {
+        SDL_ShowCursor(SDL_DISABLE);
     }
 
     void Driver::ShowMouse()
     {
+        SDL_ShowCursor(SDL_ENABLE);
     }
 
     Command Driver::WaitCommand(int delay)
     {
+        static int state=0; // 0 - normal, 1 - dragging, 2 - mouse clicked (waiting drag or release)
+        static string dragtype; // Description of the dragging mode (ctrl,left etc.).
+        static int dragx,dragy; // Mouseposition when dragging begun
+        static Uint32 clicktime_l=0; // Time when mouse pressed button down.
+        static Uint32 clicktime_m=0;
+        static Uint32 clicktime_r=0;
+
+        // Get the event if any.
         Command ret;
+        SDL_Event event;
+
+        SDL_Delay(delay);
+
+        event.type = SDL_USEREVENT;
+
+        if(!GetEvent(event) && state!=2)
+            return ret;
+
+        // Handle application input focus
+        if(event.type == SDL_WINDOWEVENT)
+        {
+            if(event.window.event == SDL_WINDOWEVENT_ENTER)
+            {
+                ret.command = "input gained";
+                return ret;
+            }
+            if(event.window.event == SDL_WINDOWEVENT_LEAVE)
+            {
+                ret.command = "input lost";
+                return ret;
+            }
+        }
+
+        // Handle screen refresh.
+        if (event.type == SDL_WINDOWEVENT && event.window.event == SDL_WINDOWEVENT_EXPOSED)
+        {
+            ret.command="redraw";
+            return ret;
+        }
+
+        // Handle quit event.
+        if(event.type==SDL_QUIT)
+        {
+            ret.command="quit";
+            return ret;
+        }
+
+        // Handle key press
+        if(state==0 && event.type==SDL_KEYDOWN)
+        {
+            SDL_GetMouseState(&ret.x,&ret.y);
+
+            ret.command=CommandModifier()+"key";
+            ret.argument=SDL_GetKeyName(event.key.keysym.sym);
+            ret.key = event.text.text[0];
+            if( ret.key == 0 ) ret.key = fix_SDL_Keypad(event.key.keysym.sym);
+
+            return ret;
+        }
+
+        // Handle key release
+        if(state==0 && event.type==SDL_KEYUP)
+        {
+            SDL_GetMouseState(&ret.x,&ret.y);
+
+            ret.command=CommandModifier()+"key up";
+            ret.argument=SDL_GetKeyName(event.key.keysym.sym);
+            ret.key = event.text.text[0];
+            if( ret.key == 0 ) ret.key = fix_SDL_Keypad(event.key.keysym.sym);
+
+            return ret;
+        }
+
+        // Handle mouse wheel
+        if(event.type==SDL_MOUSEBUTTONUP && event.button.button==SDL_BUTTON_MIDDLE)
+        {
+            ret.x=event.button.x;
+            ret.y=event.button.y;
+            ret.command="wheel up";
+            return ret;
+        }
+        else if(event.type==SDL_MOUSEBUTTONDOWN && event.button.button==SDL_BUTTON_MIDDLE)
+        {
+            ret.x=event.button.x;
+            ret.y=event.button.y;
+            ret.command="wheel down";
+            return ret;
+        }
+
+        // Mouse state 1: dragging
+        if(state==1)
+        {
+            if(event.type==SDL_MOUSEBUTTONUP)
+            {
+                ret.x=event.button.x;
+                ret.y=event.button.y;
+                state=0;
+                ret.command=dragtype+" drag end";
+
+                return ret;
+            }
+            else if(event.type==SDL_MOUSEMOTION)
+            {
+                ret.x=event.motion.x;
+                ret.y=event.motion.y;
+                ret.command=dragtype+" drag";
+
+                return ret;
+            }
+
+            ret.command="";
+            return ret;
+        }
+
+        // Mouse state 2: button is just pressed down
+        static string click_command;
+        if(state==2)
+        {
+            bool motion = false;
+            int press_time=SDL_GetTicks();
+
+            if(clicktime_l)
+                press_time-=clicktime_l;
+            else if(clicktime_r)
+                press_time-=clicktime_r;
+            else if(clicktime_m)
+                press_time-=clicktime_m;
+
+            if(event.type==SDL_MOUSEMOTION)
+            {
+                static int radius=0;
+
+                if(radius==0)
+                {
+                    radius=physw/140;
+                    radius*=physw/140;                            
+                }
+
+                int x,y;
+                x=event.motion.x;
+                y=event.motion.y;
+
+                motion=(x-dragx)*(x-dragx) + (y-dragy)*(y-dragy) > radius;
+            }
+
+            if(event.type==SDL_MOUSEBUTTONUP)
+            {
+                ret.x=event.button.x;
+                ret.y=event.button.y;
+                ret.command=click_command+" click";
+                state=0;
+                return ret;
+            }
+
+            if(press_time > 400 || motion)
+            {
+                dragtype=click_command;
+                ret.x=dragx;
+                ret.y=dragy;
+                ret.command=click_command+" drag begin";
+                state=1;
+                return ret;
+            }
+
+            ret.command="";
+            return ret;
+        }
+
+        // Mouse state 0: buttons are not down.
+        if (event.type==SDL_MOUSEBUTTONDOWN)
+        {
+            if(mouse1)
+                clicktime_l=SDL_GetTicks();
+            else
+                clicktime_l=0;
+            if(mouse2)
+                clicktime_r=SDL_GetTicks();
+            else
+                clicktime_r=0;
+            if(mouse3)
+                clicktime_m=SDL_GetTicks();
+            else
+                clicktime_m=0;
+
+            if(event.button.button==SDL_BUTTON_LEFT)
+                click_command=CommandModifier()+"left";
+            else if(event.button.button==SDL_BUTTON_RIGHT)
+                click_command=CommandModifier()+"right";
+            else if(event.button.button==SDL_BUTTON_MIDDLE)
+                click_command=CommandModifier()+"middle";
+
+            state=2;
+            dragx=event.button.x;
+            dragy=event.button.y;
+        }
+
+        // Mouse state 0: moving
+        if(state==0 && event.type==SDL_MOUSEMOTION)
+        {
+            ret.command=CommandModifier()+"move";
+            ret.x=event.motion.x;
+            ret.y=event.motion.y;
+            return ret;
+        }
+
+        ret.command="";
+        return ret;
+
     }
 
     // Load cached image surface if available.
-    static SDL_Surface* CacheLoad(const string& original_file,int imagenumber,int size,int angle)
+    static SDL_Texture* CacheLoad(const string& original_file,int imagenumber,int size,int angle)
     {
-        return NULL;
+        if(nocache)
+            return 0;
+
+#ifdef WIN32
+        string cachefile=getenv("TEMP");
+        cachefile+="/gccg";
+#else
+        string cachefile="/tmp/gccg.";
+        cachefile+=getenv("USER");
+#endif
+        cachefile+="/";
+        cachefile+=Database::game.Gamedir();
+        cachefile+="/";
+        cachefile+=Database::cards.SetDirectory(Database::cards.Set(imagenumber));
+        cachefile+="/";
+        if(Localization::GetLanguage()!="en")
+        {
+            cachefile+=Localization::GetLanguage();
+            cachefile+="/";
+        }
+        cachefile+=Database::cards.ImageFile(imagenumber);
+        cachefile+="_";
+        cachefile+=ToString(size);
+        cachefile+="_";
+        cachefile+=ToString(angle);
+        cachefile+=".bmp";
+
+        struct stat original,cached;
+        if(stat(cachefile.c_str(),&cached))
+            return 0;
+        if(stat(original_file.c_str(),&original))
+            return 0;
+        if(cached.st_mtime < original.st_mtime)
+        {
+            unlink(cachefile.c_str());
+            return 0;
+        }
+
+        SDL_Surface *s = SDL_LoadBMP(cachefile.c_str());
+        SDL_Texture* t = SDL_CreateTextureFromSurface(renderer, s);
+        SDL_FreeSurface(s);
+
+        return t;
     }
 
     // Create directory safely.
     static bool CreateDir(const string& dir)
     {
+        struct stat dirfile;
+
+#ifdef WIN32
+        // PERF_IMPROVEMENT/TODO: use directory exists instead ? 
+        if( stat(dir.c_str(), &dirfile)==0 )
+        {
+            if( dirfile.st_mode & S_IFDIR ) return true;
+            if(unlink(dir.c_str())!=0) return false;
+        }
+
+        _mkdir(dir.c_str());
+#else
+        if(lstat(dir.c_str(),&dirfile)==0)
+        {
+            if(S_ISDIR(dirfile.st_mode))
+                return true;
+            if(unlink(dir.c_str())!=0)
+                return false;
+        }
+
+        mkdir(dir.c_str(),0755);
+#endif
+
         return true;
     }
 
     // Try to save cached image.
-    static void CacheSave(SDL_Surface* surface,int imagenumber,int size,int angle)
+    static void CacheSave(SDL_Texture* texture,int imagenumber,int size,int angle)
     {
+        if(nocache)
+            return;
+
+        // This is a HACK
+        // TODO: Does this even actually work?
+        //
+        SDL_Texture* target = SDL_GetRenderTarget(renderer);
+        SDL_SetRenderTarget(renderer, texture);
+        int width, height;
+        SDL_QueryTexture(texture, NULL, NULL, &width, &height);
+        SDL_Surface* surface = SDL_CreateRGBSurface(0, width, height, 32, 0, 0, 0, 0);
+        SDL_RenderReadPixels(renderer, NULL, surface->format->format, surface->pixels, surface->pitch);
+
+#ifdef WIN32
+        string cachefile=getenv("TEMP");
+        cachefile+="/gccg";
+#else
+        string cachefile="/tmp/gccg.";
+        cachefile+=getenv("USER");
+#endif
+        // PERF_IMPROVEMENT/TODO: avoid attempting creation of existing directories
+        if(!CreateDir(cachefile))
+            return;
+        cachefile+="/";
+        cachefile+=Database::game.Gamedir();
+        if(!CreateDir(cachefile))
+            return;
+        cachefile+="/";
+        cachefile+=Database::cards.SetDirectory(Database::cards.Set(imagenumber));
+        if(!CreateDir(cachefile))
+            return;
+        cachefile+="/";
+        if(Localization::GetLanguage()!="en")
+        {
+            cachefile+=Localization::GetLanguage();
+            if(!CreateDir(cachefile))
+                return;
+            cachefile+="/";
+        }
+        cachefile+=Database::cards.ImageFile(imagenumber);
+        cachefile+="_";
+        cachefile+=ToString(size);
+        cachefile+="_";
+        cachefile+=ToString(angle);
+        cachefile+=".bmp";
+
+#ifndef WIN32
+        struct stat file;
+        if(lstat(cachefile.c_str(),&file)==0)
+        {
+            if(unlink(cachefile.c_str())!=0)
+                return;
+        }
+#endif
+
+        if(SDL_SaveBMP(surface,cachefile.c_str())!=0)
+            unlink(cachefile.c_str());
     }
 
     int Driver::LoadCardSound(int imagenumber)
     {
-        return 0;
+        if(nosounds) return 0;
+
+        // Check arguments and if card is loaded already.		
+        if(imagenumber < 0 || imagenumber >= Database::cards.Cards())
+            return 0;
+
+        if(cardsound[imagenumber] != 0)
+            return cardsound[imagenumber];
+
+        int snd=-1;
+        int pos;
+
+        string file=CCG_DATADIR;
+        file+="/sounds/";
+        file+=Database::game.Gamedir();
+        file+="/";
+        file+=Database::cards.SetDirectory(Database::cards.Set(imagenumber));
+        file+="/";
+        file+=Database::cards.ImageFile(imagenumber);
+        file=Localization::File(file);
+        if((pos=file.rfind(".")) >= 0)
+        {
+            file.replace(pos, file.length()-pos, ".ogg");
+            snd=LoadSound(file.c_str());
+        }
+
+        if(snd < 0 )
+        {
+            string file=CCG_DATADIR;
+            file+="/../";
+            file+=ToLower(Database::game.Gamedir());
+            file+="/sounds/";
+            file+=Database::game.Gamedir();
+            file+="/";
+            file+=Database::cards.SetDirectory(Database::cards.Set(imagenumber));
+            file+="/";
+            file+=Database::cards.ImageFile(imagenumber);
+            file=Localization::File(file);
+            if((pos=file.rfind(".")) >= 0)
+            {
+                file.replace(pos, file.length()-pos, ".ogg");
+                snd=LoadSound(file.c_str());
+            }
+        }
+
+        cardsound[imagenumber]=snd;
+        return snd;
     }
 
     void Driver::LoadIfUnloaded(int imagenumber,int size,int angle)
@@ -426,11 +1250,11 @@ namespace Driver
         return "";
     }
 
-    static void DrawBoxToCard(SDL_Surface* ret,int imagenumber,const char* boxname)
+    static void DrawBoxToCard(SDL_Texture* ret,int imagenumber,const char* boxname)
     {
     }
 
-    static void DrawTextToCard(SDL_Surface* ret,int imagenumber,const char* textname)
+    static void DrawTextToCard(SDL_Texture* ret,int imagenumber,const char* textname)
     {
     }
 
@@ -439,7 +1263,7 @@ namespace Driver
         return "";
     }
 
-    static SDL_Surface* CreateOwnCard(int imagenumber)
+    static SDL_Texture* CreateOwnCard(int imagenumber)
     {
         return NULL;
     }

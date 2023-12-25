@@ -150,9 +150,9 @@ CFLAGS := $(CFLAGS) -O3
 endif
 CXXFLAGS := -ftemplate-depth-100  $(CFLAGS) $(CXXFLAGS)
 
-LIBS_COMMON := -lSDLmain -lSDL -lSDL_net
+LIBS_COMMON := -lSDLmain -lSDL -lSDL_net -lSDL2
 LIBS_GUI := $(LIBS_COMMON) -lSDL_image -lSDL_ttf -lSDL_mixer $(OS_LDD)
-LIBS_TEXT := $(LIBS_COMMON) -lSDL -lSDL_net $(OS_LDD)
+LIBS_TEXT := $(LIBS_COMMON) -lSDL -lSDL_net -lSDL2 $(OS_LDD)
 
 OBJS_COMMON := \
 	src/parser_libcards.o src/parser_libnet.o src/parser.o \
