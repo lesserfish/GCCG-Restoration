@@ -103,7 +103,7 @@ namespace Driver
     static bool alt;
 
     /// Create own card using xml-description.
-    static SDL_Texture* CreateOwnCard(int imagenumber);
+    static SDL_Surface* CreateOwnCard(int imagenumber);
 
     /// lock dynamic libraries
 #ifdef WIN32
@@ -277,6 +277,8 @@ namespace Driver
 
     Driver::Driver(int screenwidth,int screenheight,bool _fullscreen,int physwidth,int physheight)
     {
+
+		std::cout << "Driver\n";
         std::cout << "1\n";
         nographics=false;
         fullscreen=_fullscreen;
@@ -339,7 +341,7 @@ namespace Driver
 
         std::cout << "6\n";
         main_icon = IMG_Load(CCG_DATADIR"/graphics/icon32.jpg");
-        //SDL_SetWindowIcon(window, main_icon); // TODO: Setting Window ICON gives a SEGFAULT
+        SDL_SetWindowIcon(window, main_icon); // TODO: Setting Window ICON gives a SEGFAULT
 
         std::cout << "7\n";
         output = SDL_CreateTexture(renderer,
@@ -388,6 +390,8 @@ namespace Driver
 
     Driver::~Driver()
     {
+
+		std::cout << "~Driver\n";
 #ifdef WIN32
         SDL_UnloadObject(pnglib);
         SDL_UnloadObject(jpeglib);
@@ -419,6 +423,8 @@ namespace Driver
 
     int Driver::AllocateSurface(int w,int h)
     {
+
+		std::cout << "AllocateSurface\n";
         if(w < 0 || h < 0)
             throw Error::Invalid("Driver::AllocateSurface","invalid size "+ToString(w)+"x"+ToString(h));
 
@@ -446,6 +452,8 @@ namespace Driver
 
     int Driver::SelectSurface(int num)
     {
+
+		std::cout << "SelectSurface\n";
         if(num==-1)
             throw Error::Invalid("Driver::SelectSurface","Surface not yet allocated");
 
@@ -464,6 +472,8 @@ namespace Driver
 
     void Driver::FreeSurface(int num)
     {
+
+		std::cout << "FreeSurface\n";
         if(num < 1 || (size_t)num >= textures.size())
             throw Error::Invalid("Driver::FreeSurface","Invalid surface number "+ToString(num));
 
@@ -476,6 +486,8 @@ namespace Driver
 
     void Driver::DrawSurface(int x,int y,int num)
     {
+
+		std::cout << "DrawSurface\n";
         if(num < 0 || (size_t)num >= textures.size())
             throw Error::Invalid("Driver::DrawSurface","Invalid surface number "+ToString(num));
         if(textures[num]==0)
@@ -524,6 +536,8 @@ namespace Driver
 
     void Driver::Fullscreen(bool mode)
     {
+
+		std::cout << "Fullscreen\n";
         if(mode!=fullscreen)
         {
             fullscreen=mode;
@@ -534,6 +548,8 @@ namespace Driver
 
     void Driver::Beep()
     {
+
+		std::cout << "Beep\n";
         string beep_buffer="\007";
         cout << beep_buffer << flush;
 
@@ -541,21 +557,29 @@ namespace Driver
 
     void Driver::Blink(int enabled)
     {
+
+		std::cout << "Blink\n";
         // TODO: Implement this
     }
 
     void Driver::UpdateScreen(int x0,int y0,int w,int h)
     {
+
+		std::cout << "UpdateScreen\n";
         UpdateScreen();
     }
 
     void Driver::UpdateScreen()
     {
+
+		std::cout << "UpdateScreen\n";
         SDL_RenderPresent(renderer);
     }
 
     void Driver::DrawCardImage(int imagenumber,int x,int y,int size,int angle,int alpha)
     {
+
+		std::cout << "DrawCardImage\n";
         LoadIfUnloaded(imagenumber,size,angle);
 
         SDL_Rect dest;
@@ -569,6 +593,8 @@ namespace Driver
 
     int Driver::CardWidth(int imagenumber,int size,int angle)
     {
+
+		std::cout << "CardWidth\n";
         LoadIfUnloaded(imagenumber,size,angle);
         int textureWidth, textureHeight;
         SDL_QueryTexture(cardimage[imagenumber][size][angle], NULL, NULL, &textureWidth, &textureHeight);
@@ -578,6 +604,8 @@ namespace Driver
 
     int Driver::CardHeight(int imagenumber,int size,int angle)
     {
+
+		std::cout << "CardHeight\n";
         LoadIfUnloaded(imagenumber,size,angle);
         int textureWidth, textureHeight;
         SDL_QueryTexture(cardimage[imagenumber][size][angle], NULL, NULL, &textureWidth, &textureHeight);
@@ -587,6 +615,8 @@ namespace Driver
 
     void Driver::WaitKeyPress()
     {
+
+		std::cout << "WaitKeyPress\n";
         SDL_Event event;
 
         while(1)
@@ -607,21 +637,29 @@ namespace Driver
 
     void Driver::ClearArea(int x0,int y0,int w,int h)
     {
+
+		std::cout << "ClearArea\n";
         SDL_RenderClear(renderer);
     }
 
     void Driver::SetClipping(int surf,int x0,int y0,int w,int h)
     {
+
+		std::cout << "SetClipping\n";
         // I don't think this exists for textures
     }
 
     void Driver::ClippingOff(int surf)
     {
+
+		std::cout << "ClippingOff\n";
         // I don't think this exists for textures
     }
 
     void Driver::DrawFilledBox(int x0,int y0,int w,int h,Color c)
     {
+
+		std::cout << "DrawFilledBox\n";
         if(w==0 || h==0)
             return;
 
@@ -647,6 +685,8 @@ namespace Driver
 
     void Driver::DrawTriangleUp(int x0,int y0,int h,Color c)
     {
+
+		std::cout << "DrawTriangleUp\n";
         if(!c.invisible)
         {
             y0+=h-1;
@@ -662,6 +702,8 @@ namespace Driver
 
     void Driver::DrawTriangleDown(int x0,int y0,int h,Color c)
     {
+
+		std::cout << "DrawTriangleDown\n";
         if(!c.invisible)
         {
             for(int i=0; i<h; i++)
@@ -675,6 +717,8 @@ namespace Driver
 
     void Driver::DrawBox(int x0,int y0,int w,int h,Color c)
     {
+
+		std::cout << "DrawBox\n";
         if(!c.invisible)
         {
             DrawFilledBox(x0,y0,w,1,c);
@@ -687,16 +731,22 @@ namespace Driver
 
     void Driver::HideMouse()
     {
+
+		std::cout << "HideMouse\n";
         SDL_ShowCursor(SDL_DISABLE);
     }
 
     void Driver::ShowMouse()
     {
+
+		std::cout << "ShowMouse\n";
         SDL_ShowCursor(SDL_ENABLE);
     }
 
     Command Driver::WaitCommand(int delay)
     {
+
+		std::cout << "WaitCommand\n";
         static int state=0; // 0 - normal, 1 - dragging, 2 - mouse clicked (waiting drag or release)
         static string dragtype; // Description of the dragging mode (ctrl,left etc.).
         static int dragx,dragy; // Mouseposition when dragging begun
@@ -908,7 +958,7 @@ namespace Driver
     }
 
     // Load cached image surface if available.
-    static SDL_Texture* CacheLoad(const string& original_file,int imagenumber,int size,int angle)
+    static SDL_Surface* CacheLoad(const string& original_file,int imagenumber,int size,int angle)
     {
         if(nocache)
             return 0;
@@ -948,11 +998,7 @@ namespace Driver
             return 0;
         }
 
-        SDL_Surface *s = SDL_LoadBMP(cachefile.c_str());
-        SDL_Texture* t = SDL_CreateTextureFromSurface(renderer, s);
-        SDL_FreeSurface(s);
-
-        return t;
+        return SDL_LoadBMP(cachefile.c_str());
     }
 
     // Create directory safely.
@@ -985,20 +1031,10 @@ namespace Driver
     }
 
     // Try to save cached image.
-    static void CacheSave(SDL_Texture* texture,int imagenumber,int size,int angle)
+    static void CacheSave(SDL_Surface* surface,int imagenumber,int size,int angle)
     {
         if(nocache)
             return;
-
-        // This is a HACK
-        // TODO: Does this even actually work?
-        //
-        SDL_Texture* target = SDL_GetRenderTarget(renderer);
-        SDL_SetRenderTarget(renderer, texture);
-        int width, height;
-        SDL_QueryTexture(texture, NULL, NULL, &width, &height);
-        SDL_Surface* surface = SDL_CreateRGBSurface(0, width, height, 32, 0, 0, 0, 0);
-        SDL_RenderReadPixels(renderer, NULL, surface->format->format, surface->pixels, surface->pitch);
 
 #ifdef WIN32
         string cachefile=getenv("TEMP");
@@ -1048,6 +1084,8 @@ namespace Driver
 
     int Driver::LoadCardSound(int imagenumber)
     {
+
+		std::cout << "LoadCardSound\n";
         if(nosounds) return 0;
 
         // Check arguments and if card is loaded already.		
@@ -1099,6 +1137,201 @@ namespace Driver
 
     void Driver::LoadIfUnloaded(int imagenumber,int size,int angle)
     {
+
+		std::cout << "LoadIfUnloaded\n";
+        bool self_generated=false;
+        static list<int> image_load_order;
+
+        // Check arguments and if card is loaded already.
+
+        if(imagenumber < 0 || imagenumber >= Database::cards.Cards())
+            throw Error::Range("Driver::LoadIfUnloaded()","Invalid imagenumber "+ToString(imagenumber));
+        if(size < 1)
+            throw Error::Range("Driver::LoadIfUnloaded()","Invalid size");
+        if(angle < 0 || angle >= 360)
+            throw Error::Range("Driver::LoadIfUnloaded()","Invalid angle");
+
+        if(cardimage[imagenumber][size][angle])
+            return;
+
+        // Main loop of image loader.
+
+try_again:
+
+        SDL_Surface* newcard=0;
+
+        string file=CCG_DATADIR;
+        file+="/graphics/";
+        file+=Database::game.Gamedir();
+        file+="/";
+        file+=Database::cards.SetDirectory(Database::cards.Set(imagenumber));
+        file+="/";
+        file+=Database::cards.ImageFile(imagenumber);
+        file=Localization::File(file);
+
+        // Load from cache or from original image file or generate it.
+        if(!nographics || imagenumber==0)
+        {
+            newcard=CacheLoad(file,imagenumber,size,angle);
+            if(newcard)
+                goto scale_and_return;
+            newcard=IMG_Load(file.c_str());
+        }
+
+        if(!nographics && !newcard)
+        {
+            string file=CCG_DATADIR;
+            file+="/../";
+            file+=ToLower(Database::game.Gamedir());
+            file+="/graphics/";
+            file+=Database::game.Gamedir();
+            file+="/";
+            file+=Database::cards.SetDirectory(Database::cards.Set(imagenumber));
+            file+="/";
+            file+=Database::cards.ImageFile(imagenumber);
+            file=Localization::File(file);
+            newcard=IMG_Load(file.c_str());
+        }
+
+        if(!newcard && imagenumber==0)
+        {
+            cerr << "Warning: cannot load " << file << endl;
+            file=CCG_DATADIR;
+            file+="/graphics/unknown_card.png";
+            newcard=IMG_Load(file.c_str());
+        }
+
+        if(!newcard)
+        {
+            if(imagenumber==0)
+                throw Error::IO("Driver::LoadIfUnloaded(int,int,int)","Unable to load 0-image file '"+file+"'");
+
+            newcard=CreateOwnCard(imagenumber);
+
+            self_generated=true;
+        }
+
+        if(!newcard)
+            goto out_of_memory;
+
+        // Now stretch it to the correct size and angle.
+
+        // Use the information to set up parameters for creating a surface
+        SDL_Surface* tmp;
+
+        if(angle==0 && size!=100)
+        {
+            // Circumvent buggy SDL_rotozoom and check if there is memory.
+            tmp=SDL_CreateRGBSurface(0, physw, physh, 32, 0, 0, 0, 0);
+            if(!tmp)
+                goto out_of_memory;
+            SDL_FreeSurface(tmp);
+
+            tmp=zoomSurface(newcard,double(size)/100.0,double(size)/100.0,SMOOTHING_OFF);
+            SDL_FreeSurface(newcard);
+            newcard=tmp;
+
+            if(!newcard)
+                goto out_of_memory;
+        }
+        else if(angle)
+        {
+            // Circumvent buggy SDL_rotozoom and check if there is memory.
+            tmp=SDL_CreateRGBSurface(0, physw, physh, 32, 0, 0, 0, 0);
+            if(!tmp)
+                goto out_of_memory;
+            SDL_FreeSurface(tmp);
+
+            int a=angle;
+            if(a)
+                a=360-angle;
+            if(a%90)
+                tmp=rotozoomSurface(newcard,double(a),double(size)/100.0,SMOOTHING_ON);
+            else
+                //multiples of 90 degrees allow straightforward translation
+                //so no smoothing necessary
+                tmp=rotozoomSurface(newcard,double(a),double(size)/100.0,SMOOTHING_OFF);
+            SDL_FreeSurface(newcard);
+            newcard=tmp;
+
+            if(!newcard)
+                goto out_of_memory;
+        }
+        // otherwise size and angle are both unchanged, so do nothing
+
+        // Save it to the cache.
+
+        if(!self_generated)
+            CacheSave(newcard,imagenumber,size,angle);
+
+        goto scale_and_return;
+
+        // What to do when out of memory.
+
+out_of_memory:
+
+        if(newcard)
+            SDL_FreeSurface(newcard);
+
+        if(image_load_order.size()==0)
+            throw Error::Memory("Driver::LoadIfUnloaded(int,int,int)");
+
+        for(int k=20; k; k--)
+        {
+            if(image_load_order.size())
+            {
+                int img=image_load_order.front();
+                image_load_order.pop_front();
+
+                if(img > 0)
+                {
+                    map<int,map<int,SDL_Texture*> >::iterator i;
+                    for(i=cardimage[img].begin(); i!=cardimage[img].end(); i++)
+                    {
+                        int sz=i->first;
+                        map<int,SDL_Texture*>::iterator j;
+                        for(j=(*i).second.begin(); j!=(*i).second.end();j++)
+                        {
+                            int an=j->first;
+                            SDL_DestroyTexture(cardimage[img][sz][an]);
+                            cardimage[img][sz][an]=0;
+                        }
+                    }
+                }
+            }
+        }
+
+        goto try_again;
+
+scale_and_return:
+
+        // Scale if needed.
+        if(needscale)
+        {
+            // Circumvent buggy SDL_rotozoom and check if there is memory.
+
+            tmp=SDL_CreateRGBSurface(0, physw, physh, 32, 0, 0, 0, 0);
+            if(!tmp)
+                goto out_of_memory;
+            SDL_FreeSurface(tmp);
+
+            tmp=zoomSurface(newcard,double(physw)/double(scrw),double(physh)/double(scrh),SMOOTHING_ON);
+            SDL_FreeSurface(newcard);
+            newcard=tmp;
+        }
+
+        if(!newcard)
+            goto out_of_memory;
+
+        cardimage[imagenumber][size][angle]=SDL_CreateTextureFromSurface(renderer, newcard);
+        SDL_FreeSurface(newcard);
+
+        newcard=0;
+
+        if(!cardimage[imagenumber][size][angle])
+            goto out_of_memory;
+
+        image_load_order.push_back(imagenumber);
     }
 
 
@@ -1109,28 +1342,40 @@ namespace Driver
 
     void Driver::ScaleImage(int img,int neww,int newh)
     {
+
+        std::cout << "ScaleImage\n";
     }
 
     void Driver::DrawImage(int image_number,int x,int y,int scl,int alpha,Color colorkey)
     {
+
+        std::cout << "DrawImage\n";
     }
 
     int Driver::ImageWidth(int image_number)
     {
+
+        std::cout << "ImageWidth\n";
         return 0;
     }
 
     int Driver::ImageHeight(int image_number)
     {
+
+        std::cout << "ImageHeight\n";
         return 0;
     }
 
     void Driver::GetRGB(int image_number,int x,int y,int &r,int &g,int &b)
     {
+
+        std::cout << "GetRGB\n";
     }
 
     int Driver::ValidImage(int number)
     {
+
+        std::cout << "ValidImage\n";
         return 1;
     }
 
@@ -1144,10 +1389,14 @@ namespace Driver
     /// Render text to surface.
     void Driver::DrawTextToSurface(int fontnumber,int pointsize,int x0,int y0,const string& _text,Color color,Color bgcolor,bool addshadow)
     {
+
+        std::cout << "DrawTextToSurface\n";
     }
 
     int Driver::LoadFont(const string& primary,const string& secondary)
     {
+
+        std::cout << "LoadFont\n";
         return 0;
     }
 
@@ -1168,26 +1417,36 @@ namespace Driver
 
     void Driver::DrawText(int fontnumber,int pointsize,int x0,int y0,const string& text,Color color,Color bgcolor)
     {
+
+        std::cout << "DrawText\n";
     }
 
     void Driver::DrawTextShadow(int fontnumber,int pointsize,int x0,int y0,const string& text,Color color,Color bgcolor)
     {
+
+        std::cout << "DrawTextShadow\n";
     }
 
     /// Calculate width of the text.
     int Driver::GetTextWidth(string text,TextStyle style)
     {
+
+        std::cout << "GetTextWidth\n";
         return 0;
     }
 
     /// Calculate height of the text.
     int Driver::GetTextHeight(string text,TextStyle style)
     {
+
+        std::cout << "GetTextHeight\n";
         return 0;
     }
 
     int Driver::GetTextHeight(string text,TextStyle style,int width)
     {
+
+        std::cout << "GetTextHeight\n";
         return 0;
     }
 
@@ -1205,10 +1464,14 @@ namespace Driver
 
     void Driver::RenderTextFitVertical(const string& text,TextStyle& style,int x0,int y0,int width,int height)
     {
+
+        std::cout << "RenderTextFitVertical\n";
     }
 
     void Driver::RenderTextFitHorizontal(const string& text,TextStyle& style,int x0,int y0,int width,int height)
     {
+
+        std::cout << "RenderTextFitHorizontal\n";
     }
 
     // CARD CREATION
@@ -1263,18 +1526,20 @@ namespace Driver
         return "";
     }
 
-    static SDL_Texture* CreateOwnCard(int imagenumber)
+    static SDL_Surface* CreateOwnCard(int imagenumber)
     {
         return NULL;
     }
 
     int Driver::LoadSound(const string& filename)
     {
+        std::cout << "LoadSound\n";
         return 0;
     }
 
     void Driver::PlaySound(int sound_number)
     {
+        std::cout << "PlaySound\n";
     }
 }
 

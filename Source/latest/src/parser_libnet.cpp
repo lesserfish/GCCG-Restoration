@@ -22,8 +22,8 @@
 #include <vector>
 #include <time.h>
 #include <signal.h>
-#include "SDL_net.h"
-#include "SDL_thread.h"
+#include "SDL2/SDL_net.h"
+#include "SDL2/SDL_thread.h"
 #include "parser.h"
 
 #define MAX_CONNECTIONS 1024
@@ -414,7 +414,7 @@ namespace Evaluator
 					people[which].closed=false;
 					if(people[which].writer_thread)
 						SDL_WaitThread(people[which].writer_thread,0);
-					people[which].writer_thread=SDL_CreateThread(writer_thread,&people[which]);
+					people[which].writer_thread=SDL_CreateThread(writer_thread,"", &people[which]);
 					if(people[which].writer_thread==NULL)
 					{
 						cout << "ERROR: Cannot create thread" << endl;
@@ -781,7 +781,7 @@ namespace Evaluator
 		external_function["net_server_send"]=&Libnet::net_server_send;
 		external_function["net_server_send_all"]=&Libnet::net_server_send_all;
 
-		if (SDL_Init(SDL_INIT_TIMER|SDL_INIT_NOPARACHUTE|SDL_INIT_EVENTTHREAD) < 0)
+		if (SDL_Init(SDL_INIT_TIMER|SDL_INIT_NOPARACHUTE|SDL_INIT_EVENTS) < 0)
 			throw Error::IO("LibraryInitializer::LibraryInitializer()","Couldn't initialize SDL");
 		if (SDLNet_Init() < 0)
 			throw Error::IO("LibraryInitializer::LibraryInitializer()","Couldn't initialize SDL_net");
